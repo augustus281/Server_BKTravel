@@ -1,0 +1,291 @@
+{
+    "destinations": [
+      {
+        "name": "Hà Nội",
+        "attractions": [
+          { "name": "Hồ Hoàn Kiếm" },
+          { "name": "Cầu Thê Húc" },
+          { "name": "Đền Ngọc Sơn" },
+          { "name": "Nhà ngục Hỏa Lò" },
+          { "name": "Phố cổ Hà Nội" },
+          { "name": "Lăng Bác" },
+          { "name": "Văn Miếu - Quốc Tử Giám" },
+          { "name": "Chùa Trấn Quốc" },
+          { "name": "Chùa Một Cột" },
+          { "name": "Nhà thờ lớn Hà Nội" },
+          { "name": "Làng gồm Bát Tràng" },
+          { "name": "Làng lụa Vạn Phúc" },
+          { "name": "Chợ Đồng Xuân" },
+          { "name": "Bảo Tàng Lịch sử Quốc gia Việt Nam" }
+        ]
+      },
+      {
+        "name": "TP. Hồ Chí Minh",
+        "attractions": [
+            { "name": "Bưu điện thành phố" },
+            { "name": "Nhà thờ Đức Bà" },
+            { "name": "Dinh Độc Lập" },
+            { "name": "Chợ Bến Thành" },
+            { "name": "Bảo tàng chứng tích Chiến tranh" },
+            { "name": "Thảo cầm viên" },
+            { "name": "Công viên Tao Đàn" },
+            { "name": "Phố đi bộ Nguyễn Huệ" },
+            { "name": "Landmark 81" },
+            { "name": "Bến Nhà Rồng" },
+            { "name": "Bảo tàng Mỹ thuật Việt Nam" },
+            { "name": "Công viên nước Đầm Sen" }
+        ]
+      },
+      {
+        "name": "TP. Đà Nẵng",
+        "attractions": [
+            { "name": "Bà Nà Hills" },
+            { "name": "Cầu Rồng" },
+            { "name": "Bãi biển Mỹ Khê" },
+            { "name": "Chùa Linh Ứng" },
+            { "name": "Ngũ Hành Sơn" },
+            { "name": "Công viên Châu Á" },
+            { "name": "Biển Non Nước" },
+            { "name": "Chợ Cồn" },
+            { "name": "Cầu Tình yêu" },
+            { "name": "Khu du lịch sinh thái núi Thần Tài" }
+        ]
+      },
+      {
+        "name": "Quảng Nam",
+        "attractions": [
+            { "name": "Phố cổ Hội An" },
+            { "name": "Vinpearl Land Hội An" },
+            { "name": "Đảo Cù Lao Chàm" },
+            { "name": "Thánh địa Mỹ Sơn" },
+            { "name": "Ngũ Hành Sơn" },
+            { "name": "Bãi biển Cửa Đại" },
+            { "name": "Thành phố Tam Kỳ" }
+        ]
+      },
+      {
+        "name": "Khánh Hòa",
+        "attractions": [
+            { "name": "Tháp Bà" },
+            { "name": "Vịnh Nha Trang" },
+            { "name": "Đảo Hòn Mun" },
+            { "name": "Đảo Bình Ba" },
+            { "name": "Vinpearl Land Nha Trang" },
+            { "name": "Bãi biển Nha Trang" },
+            { "name": "Chùa Long Sơn" }
+        ]
+      },
+      {
+        "name": "Kiên Giang",
+        "attractions": [
+            { "name": "Đảo Phú Quốc" },
+            { "name": "Côn Đảo" },
+            { "name": "Vườn Quốc gia U Minh Thượng" },
+            { "name": "Chùa Tam Bảo" },
+            { "name": "Di tích lịch sử Nhà tù Phú Quốc" },
+            { "name": "Chợ đêm Phú Quốc" }
+        ]
+      },
+      {
+        "name": "Lâm Đồng",
+        "attractions": [
+            { "name": "Thung lũng tình yêu" },
+            { "name": "Đồi Mộng Mơ" },
+            { "name": "Nhà thờ Con Gà" },
+            { "name": "Núi LangBiang" },
+            { "name": "Làng Cù Lần" },
+            { "name": "Hồ Xuân Hương" },
+            { "name": "Đồi chè Cầu Đất" },
+            { "name": "Chợ đêm Đà Lạt" }
+        ]
+      },
+      {
+        "name": "Lào Cai",
+        "attractions": [
+            { "name": "Núi Hàm Rồng" },
+            { "name": "Cổng trời Sapa" },
+            { "name": "Bản Cát Cát" },
+            { "name": "Bản Tả Phìn" },
+            { "name": "Vườn Quốc gia Hoàng Liên Sơn" },
+            { "name": "Thác tình yêu" },
+            { "name": "Chợ tình Sapa" }
+        ]
+      },
+      {
+        "name": "Thừa Thiên Huế",
+        "attractions": [
+            { "name": "Đại Nội Huế" },
+            { "name": "Chùa Thiên Mụ" },
+            { "name": "Lăng Cô" },
+            { "name": "Núi Bạch Mã" },
+            { "name": "Chợ Đông Ba" },
+            { "name": "Biển Thuận An" },
+            { "name": "Cầu Tràng Tiền" },
+            { "name": "Nhà thờ Phủ Cam" }
+        ]
+      },
+      {
+        "name": "Quảng Ninh",
+        "attractions": [
+            { "name": "Vịnh Hạ Long" },
+            { "name": "Công viên Sun World Hạ Long" },
+            { "name": "Bãi Cháy" },
+            { "name": "Động Thiên Cung" },
+            { "name": "Quần thể di tích Yên Tử" },
+            { "name": "Làng chài Cửa Vạn" },
+            { "name": "Chợ Hạ Long" }
+        ]
+      },
+      {
+        "name": "Bà Rịa - Vũng Tàu",
+        "attractions": [
+            { "name": "Biển Vũng Tàu" },
+            { "name": "Bãi Trước" },
+            { "name": "Bãi Sau" },
+            { "name": "Đồi Con Heo" },
+            { "name": "Tượng Chúa Kitô" },
+            { "name": "Bạch Dinh" },
+            { "name": "Quảng trường" },
+            { "name": "Khu du lịch Hồ Tràm" },
+            { "name": "Khu du lịch Hồ Cốc" }
+        ]
+      },
+      {
+        "name": "Cần Thơ",
+        "attractions": [
+            { "name": "Chợ nổi Cái Răng" },
+            { "name": "Bến Ninh Kiều" },
+            { "name": "Vườn cò Bằng Lăng" },
+            { "name": "Thiền viện Trúc Lâm Phương Nam" },
+            { "name": "Chợ đêm Tây Đô" },
+            { "name": "Bảo tàng Cần Thơ" }
+        ]
+      },
+      {
+        "name": "Bình Thuận",
+        "attractions": [
+            { "name": "Mũi Né" },
+            { "name": "Hòn Rơm" },
+            { "name": "Suối Tiên" },
+            { "name": "Làng chài Mũi Né" },
+            { "name": "Bãi đá Ông Địa" },
+            { "name": "Tháp Chàm" },
+            { "name": "Chợ Phan Thiết" }
+        ]
+      },
+      {
+        "name": "Bình Định",
+        "attractions": [
+            { "name": "Eo Gió" },
+            { "name": "Biển Kỳ Co" },
+            { "name": "Hòn Khô" },
+            { "name": "Tháp Đôi" },
+            { "name": "Chùa Ông Núi" },
+            { "name": "Biển Quy Nhơn" },
+            { "name": "Làng chài Nhơn Lý"},
+            { "name": "Chợ Quy Nhơn"},
+            { "name": "Vườn quốc gia Núi Bà"}
+        ]
+      },
+      {
+        "name": "Vĩnh Phúc",
+        "attractions": [
+            { "name": "Biển hồ Đại Lải" },
+            { "name": "Khu du lịch sinh thái Hồ Núi Cốc" },
+            { "name": "Chùa Tam Đảo" },
+            { "name": "Thiền viện Trúc Lâm Tây Thiên" },
+            { "name": "Đồi hoa hồng" },
+            { "name": "Làng gốm Hương Canh" },
+            { "name": "Đồi chè Long Đinh"},
+            { "name": "Chợ đêm Tam Đảo"}
+        ]
+      },
+      {
+        "name": "Cao Bằng",
+        "attractions": [
+            { "name": "Hang Pác Bó"},
+            { "name": "Núi Các Mác"},
+            { "name": "Thác Bản Giốc"},
+            { "name": "Động Ngườm Ngao"},
+            { "name": "Động Ngườm Thuồng Luồng"}
+        ]
+      },
+      {
+        "name": "Bắc Ninh",
+        "attractions": [
+            { "name": "Khu di tích lịch sử Đền Đô"},
+            { "name": "Chùa Phật Tích"},
+            { "name": "Làng tranh Đông Hồ"}
+        ]
+      },
+      {
+        "name": "Ninh Bình",
+        "attractions": [
+            { "name": "Quần thể danh thắng Tràng An" },
+            { "name": "Cố đô Hoa Lư" },
+            { "name": "Hang Múa" },
+            { "name": "Tam Cốc - Bích Động" },
+            { "name": "Vườn quốc gia Cúc Phương" },
+            { "name": "Làng chài Ninh Hải" }
+        ]
+      },
+      {
+        "name": "Hà Giang",
+        "attractions": [
+            { "name": "Cao nguyên đá Đồng Văn" },
+            { "name": "Cột cờ Lũng Cú" },
+            { "name": "Cột cờ Lũng Cú" },
+            { "name": "Mèo Vạc" },
+            { "name": "Sông Nho Quế" },
+            { "name": "Đèo Mãi Pì Lèng" },
+            { "name": "Phố Cáo" }
+        ]
+      },
+      {
+        "name": "Điện Biên",
+        "attractions": [
+            { "name": "Di tích chiến thắng Điện Biên Phủ" },
+            { "name": "Tượng đài chiến thắng Điện Biên Phủ" },
+            { "name": "Thung lũng Mường Than" },
+            { "name": "Đồi A1" },
+            { "name": "Chợ Mường Thanh" }
+        ]
+      },
+      {
+        "name": "Lạng Sơn",
+        "attractions": [
+            { "name": "Đền Mẫu Đồng Đăng" },
+            { "name": "Thành nhà Mạc" },
+            { "name": "Núi Tô Thị" },
+            { "name": "Chợ Kỳ Lừa" }
+        ]
+      },
+      {
+        "name": "Quảng Bình",
+        "attractions": [
+            { "name": "Vườn quốc gia Phong Nha - Kẻ Bàng" },
+            { "name": "Biển Nhật Lệ" },
+            { "name": "Vũng Chùa - Đảo Yến" },
+            { "name": "Suối nước Moọc" },
+            { "name": "Đèo Ngang" }
+        ]
+      },
+      {
+        "name": "Quảng Ngãi",
+        "attractions": [
+            { "name": "Đảo Lý Sơn" },
+            { "name": "Cánh đồng muối Sa Huỳnh" },
+            { "name": "Núi Thiên Ấn" },
+            { "name": "Khu di tích lịch sử văn hóa Sa Huỳnh" }
+        ]
+      },
+      {
+        "name": "Đắk Lắk",
+        "attractions": [
+            { "name": "Biển hồ T'Nưng" },
+            { "name": "Thác Đray Sáp" },
+            { "name": "Vườn quốc gia Chư Yang Sin" }
+        ]
+      }
+    ]
+  }

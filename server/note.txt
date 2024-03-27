@@ -1,0 +1,236 @@
+try {
+            const destinationNames = req.fields.destinations || [];
+            const attractions = req.fields.attractions || [];
+
+            // check or create destination
+            const destinationPromises = destinationNames.map(async (name) => {
+                const exist_des = await checkExistDestination(name);
+                if (!exist_des) {
+                    return await Destination.create({ name });
+                }
+                return exist_des;
+            });
+
+            const destinations = await Promise.all(destinationPromises);
+
+            // create attractiosn for each destination
+            const attractionsByDestination = attractions.reduce((acc, attraction) => {
+                const destination_id = attraction.destination_id;
+    
+                // const exist_attraction = await checkExistAttraction(attraction.name, destination_id);
+                const exist_attraction = acc[destination_id] || []
+                const new_attraction = {
+                    name: attraction.name,
+                    address: attraction.address,
+                    destination_id: destination_id
+                }
+                acc[destination_id] = [...exist_attraction, new_attraction]
+    
+                return acc;
+            }, {});
+
+            // create list attractions from attractionsByDestination Object
+            const allAttractions = Object.values(attractionsByDestination).flat()
+            const attractionPromises = allAttractions.map(async (attraction) => {
+                const destination_id = attraction.destination_id;
+                const exist_attraction = await checkExistAttraction(attraction.name, destination_id);
+
+                if (!exist_attraction) {
+                    return Attraction.create({
+                        name: attraction.name,
+                        address: attraction.address,
+                        destination_id: destination_id
+                    })
+                }
+
+                return exist_attraction
+            })
+
+            const createdAttractions = await Promise.all(attractionPromises);
+
+            const { name, max_customer, departure_date, departure_time, departure_place,
+                time, price, highlight, note, description, deadline_book_time } = req.fields; 
+
+            const result = req.files.cover_image.path
+            const link_cover_image = await cloudinary.uploader.upload(result)
+        
+            const newTour = await Tour.create({
+                name, max_customer, departure_date, departure_time, departure_place,
+                time, price, highlight, note, description, deadline_book_time, destination_id: dest_id,
+                cover_image: link_cover_image.secure_url, current_customers: 0
+            })
+
+            
+    
+        } catch(err) {
+            return res.status(500).json({ message: error.message })
+        }
+
+
+//=================
+try {
+            const {
+                name,
+                max_customer,
+                departure_date,
+                departure_time,
+                departure_place,
+                destination_places,
+                time,
+                price,
+                highlight,
+                note,
+                description,
+                deadline_book_time,
+            } = req.fields;
+        
+            const destinations = destination_places.split(',').map(destination => destination.trim());
+        
+            // Create destinations if they don't exist
+            for (const dest of destinations) {
+                const [destination, created] = await Destination.findOrCreate({
+                    where: { name: dest },
+                    defaults: { name: dest },
+                });
+            }
+        
+            // Create attractions and associate them with destinations
+            for (const dest of destinations) {
+                const destination = await Destination.findOne({ where: { name: dest } });
+        
+                for (let k = 0; req.fields[`attractions[${k}][${dest}]`]; k++) {
+                    const attraction_name = req.fields[`attractions[${k}][${dest}]`];
+                    const [attraction, created] = await Attraction.findOrCreate({
+                        where: { name: attraction_name, destination_id: destination.destination_id },
+                        defaults: { name: attraction_name, destination_id: destination.destination_id },
+                    });
+                }
+            }
+        
+            // Upload cover image of the tour
+            const result = req.files.cover_image.path;
+            const link_cover_image = await cloudinary.uploader.upload(result);
+        
+            // Create the tour
+            const newTour = await Tour.create({
+                name,
+                max_customer,
+                departure_date,
+                departure_time,
+                departure_place,
+                destination_place: destination_places,
+                time,
+                price,
+                highlight,
+                note,
+                description,
+                deadline_book_time,
+                cover_image: link_cover_image.secure_url,
+                current_customers: 0,
+            });
+        
+            // Associate destinations with the tour
+            for (const dest of destinations) {
+                const destination = await Destination.findOne({ where: { name: dest } });
+        
+                await DestinationTour.create({
+                    tour_id: newTour.tour_id,
+                    destination_id: destination.destination_id,
+                });
+        
+                // Associate attractions with the tour
+                const attractions = await Attraction.findAll({ where: { destination_id: destination.destination_id } });
+        
+                for (const attraction of attractions) {
+                    await AttractionTour.create({
+                        tour_id: newTour.tour_id,
+                        attraction_id: attraction.attraction_id,
+                    });
+                }
+            }
+        
+            return res.status(201).json({
+                data: newTour,
+                message: 'Create tour successfully!',
+            });
+
+
+// before
+// const { name, max_customer, departure_date, departure_time, departure_place, destination_places,
+            //     time, price, highlight, note, description, deadline_book_time } = req.fields; 
+            // const destinations = destination_places.split(',').map(destination => destination.trim())
+
+            // // create destination if it not exist
+            // for (let i = 0; i < destinations.length ; i++) {
+            //     const exist_dest = await Destination.findOne({
+            //         where: { name: destinations[i] }
+            //     })
+            //     if (!exist_dest) await Destination.create({ name: destinations[i] })
+            // }
+
+            // // get and create attractions of destination
+            // for (let i = 0; i < destinations.length ; i++) {
+            //     let attractions = []
+            //     let k = 0;
+            //     const destination = await Destination.findOne({ 
+            //         where: { name: destinations[i]}
+            //     })
+            //     while (req.fields[`attractions[${k}][${destinations[i]}]`]) {
+            //         const attraction_name = req.fields[`attractions[${k}][${destinations[i]}]`]
+            //         const exist_attraction = await checkExistAttraction(attraction_name, destination.destination_id)
+            //         if (!exist_attraction) {
+            //             attractions.push({ name: attraction_name, destination_id: destination.destination_id})
+            //         }
+            //         k++;
+            //     }
+            //     if (attractions && Array.isArray(attractions)) {
+            //         await Promise.all(
+            //                 attractions.map(async (attraction) => {
+            //                 const { name, address } = attraction;
+            //                 await Attraction.create(
+            //                     { name, address, destination_id: destination.destination_id },
+            //                 );
+            //             })
+            //         );
+            //     }
+            // }
+            
+            // // upload cover image of tour
+            // const result = req.files.cover_image.path
+            // const link_cover_image = await cloudinary.uploader.upload(result)
+
+            // // create tour
+            // const newTour = await Tour.create({
+            //     name, max_customer, departure_date, departure_time, departure_place, destination_place: destination_places,
+            //     time, price, highlight, note, description, deadline_book_time, 
+            //     cover_image: link_cover_image.secure_url, current_customers: 0
+            // })
+
+            // // create destination-tour table
+            // for (let i = 0; i < destinations.length; i++) {
+            //     await DestinationTour.create({
+            //         tour_id: newTour.tour_id,
+            //         destination_id: (await Destination.findOne({
+            //             where: { name: destinations[i]}
+            //         })).destination_id
+            //     })
+    
+            //     // create attraction-tour table
+            //     const dest_id = (await Destination.findOne({
+            //         where: { name: destinations[i]}
+            //     })).destination_id
+
+            //     const attractions = await Attraction.findAll({
+            //         where: { destination_id: dest_id }
+            //     })
+
+            //     const list_attraction = await attractions.map(attraction => ({
+            //         attraction_id: attraction.attraction_id
+            //     }))
+
+            //     for(let k = 0; k < list_attraction.length; k++) {
+            //         await AttractionTour.create({
+            //             tour_id: newTour.tour_id,
+            //             attraction_id: list_attraction[k]['attraction_id']
+            //         })
+            //     }
