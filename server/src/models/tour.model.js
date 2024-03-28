@@ -5,6 +5,7 @@ const sequelize = require("../database/index")
 
 const { StatusTour } = require("../common/status");
 const OrderItem = require("./order_item.model");
+const Comment = require("./comment.model");
 
 class Tour extends Model {}
 Tour.init({
@@ -88,6 +89,7 @@ Tour.init({
     }
 },  { sequelize, modelName: 'tour' })
 
-Tour.hasMany(OrderItem, { foreignKey: "tour_id"})
+Tour.hasMany(OrderItem, { foreignKey: "tour_id" })
+Tour.hasMany(Comment, { foreignKey: "tour_id" })
 
 module.exports = Tour
