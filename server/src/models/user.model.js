@@ -3,6 +3,7 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../database/index");
 
+const Comment = require("./comment.model")
 const Order = require("./order.model");
 const Wishlist = require("./wishlist.model");
 const Message = require("./message.model");
@@ -88,5 +89,6 @@ User.hasMany(Message, { foreignKey: "user_id" })
 User.hasMany(GroupMember, { foreignKey: "user_id"})
 User.hasOne(Cart, { foreignKey: "user_id"})
 User.hasMany(Order, { foreignKey: 'user_id' });
+User.hasMany(Comment, { foreignKey: "user_id"})
 
 module.exports = User;
