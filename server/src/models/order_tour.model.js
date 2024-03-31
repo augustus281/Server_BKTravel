@@ -11,14 +11,6 @@ OrderTour.init({
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-    },
-    tour_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-    },
-    order_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
     }
 }, { sequelize, modelName: "order_tour" })
 
