@@ -27,9 +27,25 @@ Order.init(
             allowNull: false,
             defaultValue: StatusOrder.PENDING
         },
+        name_customer: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        address_customer: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        phone_customer: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         total: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false
+        },
+        total_to_pay: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: true
         }
     }, { sequelize, modelName: 'order' }
 );
