@@ -1,30 +1,20 @@
 'use strict'
 
-const { DataTypes } = require("sequelize")
+const { DataTypes, Model } = require("sequelize")
 const sequelize = require("../database/index")
 const Order = require("./order.model")
 const Voucher = require("./voucher.model")
 
-const OrderVoucher = sequelize.define('order_voucher', {
-    order_id: {
+class VoucherOrder extends Model {};
+VoucherOrder.init({
+    id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: Order,
-            key: 'order_id'
-        }
-    },
-    voucher_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: Voucher,
-            key: 'voucher_id'
-        }
+        primaryKey: true,
+        autoIncrement: true
     }
-})
+}, { sequelize, modelName: "voucher_order" })
 
-Order.belongsToMany(Voucher, { through: OrderVoucher })
-Voucher.belongsToMany(Order, { through: OrderVoucher })
+Order.belongsToMany(Voucher, { through: VoucherOrder, foreignKey: "order_id" })
+Voucher.belongsToMany(Order, { through: VoucherOrder, foreignKey: "voucher_id" })
 
-module.exports = OrderVoucher
+module.exports = VoucherOrder

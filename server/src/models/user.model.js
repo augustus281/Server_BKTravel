@@ -9,6 +9,7 @@ const Wishlist = require("./wishlist.model");
 const Message = require("./message.model");
 const GroupMember = require("./group_member.model");
 const Cart = require("./cart.model");
+const Review = require("./review.model");
 
 const role_user = {
     ADMIN: 'admin',
@@ -90,5 +91,6 @@ User.hasMany(GroupMember, { foreignKey: "user_id"})
 User.hasOne(Cart, { foreignKey: "user_id"})
 User.hasMany(Order, { foreignKey: 'user_id' });
 User.hasMany(Comment, { foreignKey: "user_id"})
+User.hasMany(Review, { foreignKey: "user_id" })
 
 module.exports = User;

@@ -17,8 +17,7 @@ const { findVoucherById } = require('../services/voucher.service');
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
 let url = process.env.vnp_Url;
-const returnUrl = process.env.vnp_ReturnUrl; // cai nay ong de link giao dien thanh cong nha vi du:
-// https:localhost:3000/success_payment
+const returnUrl = process.env.vnp_ReturnUrl; // cai nay ong de link giao dien thanh cong nha vi du: https:localhost:3000/success_payment
 
 class PaymentController {
     /**
@@ -121,6 +120,10 @@ class PaymentController {
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
+    }
+
+    payDirectly = async (req, res, next) => {
+
     }
 
     getResultPayment = async (req, res, next) => {

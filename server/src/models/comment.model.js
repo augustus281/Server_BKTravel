@@ -14,6 +14,10 @@ Comment.init({
         type: DataTypes.TEXT,
         allowNull: false
     },
+    image: {
+        type: DataTypes.TEXT,
+        allowNull: true
+    },
     comment_left: {
         type: DataTypes.INTEGER,
         allowNull: false,

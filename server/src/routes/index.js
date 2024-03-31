@@ -15,5 +15,7 @@ router.use('/api/v1/user/cart', require("./cart"))
 router.use('/api/v1/user/payment', require("./payment"))
 router.use('/api/v1/tour', require("./tour"))
 router.use('/api/v1/voucher', require("./voucher"))
+router.use('/api/v1/review', require("./review"))
+router.use('/api/v1/order', require("./order"))
 
 module.exports = router

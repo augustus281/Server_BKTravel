@@ -11,7 +11,12 @@ const findVoucherById = async (id) => {
     return await Voucher.findOne({ where: { voucher_id: id }})
 }
 
+const findVoucherByCode = async (code) => {
+    return await Voucher.findOne({ where: { code_voucher: code }})
+}
+
 module.exports = {
     updateNumberVoucher,
-    findVoucherById
+    findVoucherById,
+    findVoucherByCode
 }

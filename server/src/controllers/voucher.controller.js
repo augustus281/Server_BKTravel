@@ -1,10 +1,11 @@
 'use strict'
 
+const { NotFoundError } = require("../core/error.response")
+const Order = require("../models/order.model")
 const Voucher = require("../models/voucher.model")
 const cloudinary = require("../utils/cloudinary")
 const Sequelize = require("sequelize")
 const Op = Sequelize.Op
-const cron = require("node-cron")
 
 class VoucherController {
 
@@ -56,6 +57,22 @@ class VoucherController {
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
+        }
+    }
+
+    getVoucherByOrderId = async (req, res, next) => {
+        try {
+            const order_id = req.params;
+            const order = await Order.findByPk(order_id, { include: Voucher })
+            if (!order) throw new NotFoundError("Not found order!")
+
+            return res.status(200).json({
+                message: "Get vouchers of order successfully!",
+                vouchers: order.Voucher
+            })
+
+        } catch (error) {
+            return res.status(500).json({ message: error.message });
         }
     }
 
