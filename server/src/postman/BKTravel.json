@@ -131,6 +131,37 @@
 			"response": []
 		},
 		{
+			"name": "Payment directly",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Refund payment",
 			"request": {
 				"method": "POST",
@@ -167,7 +198,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/user/payment/vnpay_ipn?vnp_Amount=362454000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14354454&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240325153833&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14354454&vnp_TransactionStatus=00&vnp_TxnRef=25083946&vnp_SecureHash=be884fb1fb6b5a69de8e0580b782e8c1837ff881bee136aa511e00b0535130b4fbe14f0e335d73849e3115837a4c4021ee4d94f088c552f75ab28150fc17d98b",
+					"raw": "http://localhost:8080/api/v1/user/payment/vnpay_ipn?vnp_Amount=1000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14361736&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240331235635&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14361736&vnp_TransactionStatus=00&vnp_TxnRef=31165829&vnp_SecureHash=49349457522a26132c845864656b0c044c3c3328ae081a2864d31c60177066c148eef62d6e7accb2a39442228f1fe1f36d70b63d2626df843573015c3064ff7b",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -183,7 +214,7 @@
 					"query": [
 						{
 							"key": "vnp_Amount",
-							"value": "362454000"
+							"value": "1000000"
 						},
 						{
 							"key": "vnp_BankCode",
@@ -191,7 +222,7 @@
 						},
 						{
 							"key": "vnp_BankTranNo",
-							"value": "VNP14354454"
+							"value": "VNP14361736"
 						},
 						{
 							"key": "vnp_CardType",
@@ -203,7 +234,7 @@
 						},
 						{
 							"key": "vnp_PayDate",
-							"value": "20240325153833"
+							"value": "20240331235635"
 						},
 						{
 							"key": "vnp_ResponseCode",
@@ -215,7 +246,7 @@
 						},
 						{
 							"key": "vnp_TransactionNo",
-							"value": "14354454"
+							"value": "14361736"
 						},
 						{
 							"key": "vnp_TransactionStatus",
@@ -223,11 +254,11 @@
 						},
 						{
 							"key": "vnp_TxnRef",
-							"value": "25083946"
+							"value": "31165829"
 						},
 						{
 							"key": "vnp_SecureHash",
-							"value": "be884fb1fb6b5a69de8e0580b782e8c1837ff881bee136aa511e00b0535130b4fbe14f0e335d73849e3115837a4c4021ee4d94f088c552f75ab28150fc17d98b"
+							"value": "49349457522a26132c845864656b0c044c3c3328ae081a2864d31c60177066c148eef62d6e7accb2a39442228f1fe1f36d70b63d2626df843573015c3064ff7b"
 						}
 					]
 				}
