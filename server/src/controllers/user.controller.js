@@ -264,41 +264,6 @@ class UserController {
         }
     }
 
-    addTourToOrder = async (req, res, next) => {
-        const { tour_id, user_id } = req.params
-        try {
-            // const existOrder = await Order.findOne({
-            //     where: {
-            //        user_id: user_id
-            //     }, include: [{
-            //         model: Tour,
-            //         where: {
-            //             tour_id: tour_id
-            //         }
-            //     }]
-            // })
-
-            // if (existOrder) {
-            //     return res.status(400).json({
-            //         message: "Tour already exists in the wishlist!"
-            //     })
-            // }
-            const new_order = await OrderTour.create({
-                order_id: user_id,
-                tour_id: tour_id
-            })
-
-            return res.status(201).json({
-                message: "Add tour to order successfully!",
-                wishlist: new_order
-            })
-        } catch (error) {
-            return res.status(500).json({
-                message: error.message
-            })
-        }
-    }
-
     getAllToursFromOrder = async (req, res, next) => {
         const user_id = req.params.user_id
         const user = User.findByPk(user_id)
