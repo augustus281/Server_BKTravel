@@ -10,6 +10,15 @@ const { findOrderById } = require("../services/order.service");
 const { findTourById } = require("../services/tour.service");
 const { findUserById } = require("../services/user.service");
 const { findVoucherByCode } = require("../services/voucher.service");
+const moment = require('moment');
+const { sortObject } = require("../utils/payment")
+let querystring = require('qs');
+const crypto = require('crypto');
+
+const tmnCode = process.env.vnp_TmnCode;
+const secretKey = process.env.vnp_HashSecret;
+let url = process.env.vnp_Url;
+const returnUrl = process.env.vnp_ReturnUrl;
 
 class OrderController {
 
@@ -106,7 +115,7 @@ class OrderController {
                 }
             }
 
-            totalToPay = totalToPay <= 0 ? 0 : totalToPay;
+            totalToPay = totalToPay <= 0 ? 5000 : totalToPay;
 
             order.total_to_pay = totalToPay;
             await order.save();
@@ -116,6 +125,66 @@ class OrderController {
                 order: order,
                 listVoucher: listVouchers
             })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    payOrderDirectly = async (req, res, next) => {
+        try {
+            const { user_id, order_id } = req.body;
+
+            let date = new Date();
+            let createDate = moment(date).format('YYYYMMDDHHmmss');
+            let orderId = moment(date).format('DDHHmmss');
+
+            const order = await Order.findOne({
+                where: {
+                    user_id: user_id,
+                    order_id: order_id
+                }
+            })
+            if (!order) throw new NotFoundError("Not found order to pay!")
+
+            process.env.TZ = 'Asia/Ho_Chi_Minh';
+        
+            let ipAddr = req.headers['x-forwarded-for'] ||
+            req.connection.remoteAddress ||
+            req.socket.remoteAddress ||
+            req.connection.socket.remoteAddress;
+        
+            // let amount = order.total;
+            let amount = order.total_to_pay <= 5000 ? 10000 : order.total_to_pay; 
+            let bankCode = 'NCB';
+            
+            let vnpUrl = url;
+            let currCode = 'VND';
+            let vnp_Params = {};
+            vnp_Params['vnp_Version'] = '2.1.0';
+            vnp_Params['vnp_Command'] = 'pay';
+            vnp_Params['vnp_TmnCode'] = tmnCode;
+            vnp_Params['vnp_Locale'] = 'vn';
+            vnp_Params['vnp_CurrCode'] = currCode;
+            vnp_Params['vnp_TxnRef'] = orderId;
+            vnp_Params['vnp_OrderInfo'] = `Thanh toan don hang ve du lich`;
+            vnp_Params['vnp_OrderType'] = 'other';
+            vnp_Params['vnp_Amount'] = amount * 100;
+            vnp_Params['vnp_ReturnUrl'] = returnUrl;
+            vnp_Params['vnp_IpAddr'] = ipAddr;
+            vnp_Params['vnp_CreateDate'] = createDate;
+            vnp_Params['vnp_BankCode'] = bankCode;
+        
+            vnp_Params = sortObject(vnp_Params);
+        
+            let signData = querystring.stringify(vnp_Params, { encode: false });
+            let hmac = crypto.createHmac("sha512", secretKey);
+            vnp_Params['vnp_SecureHash'] = hmac.update(Buffer.from(signData, 'utf-8')).digest("hex");
+            vnpUrl += '?' + querystring.stringify(vnp_Params, { encode: false });
+
+            return res.status(200).json({
+                link_payment: vnpUrl,
+                order: order
+            }) 
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
