@@ -5,8 +5,6 @@ const {default: helmet} = require('helmet')
 const compression = require('compression')
 const bodyParser = require('body-parser')
 const cors = require("cors")
-const { checkEnable } = require('./utils')
-const config = require('./config/config')
 const app = express();
 
 require("./utils/passport")
@@ -25,11 +23,6 @@ app.use(bodyParser.json())
 // init mysql
 require('./database/index')
 
-// init redis
-require("./config/redis.config")
-// if (checkEnable(config.redis.enable)) {
-//     require("./config/redis.config")
-// }
 
 app.use(cors({ origin: 'http://localhost:3000' }));
 
