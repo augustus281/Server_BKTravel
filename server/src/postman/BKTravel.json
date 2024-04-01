@@ -406,6 +406,40 @@
 			"response": []
 		},
 		{
+			"name": "Get detail order by user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/:order_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						":order_id"
+					],
+					"variable": [
+						{
+							"key": "order_id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get Wishlist by user",
 			"request": {
 				"method": "GET",
