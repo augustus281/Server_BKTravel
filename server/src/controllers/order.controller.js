@@ -15,7 +15,6 @@ const { sortObject } = require("../utils/payment")
 let querystring = require('qs');
 const crypto = require('crypto');
 const Cart = require("../models/cart.model");
-const { error } = require("console");
 
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
@@ -228,6 +227,18 @@ class OrderController {
                 link_payment: vnpUrl,
                 order: order
             }) 
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    getDetailOrderByUser = async (req, res, next) => {
+        try {
+            const order_id = req.params.order_id;
+            const order = await Order.findByPk(order_id, { include: OrderItem })
+            if (!order) throw new NotFoundError("Not found order!")
+
+            return res.status(200).json({ order: order })
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
