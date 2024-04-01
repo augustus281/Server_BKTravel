@@ -923,7 +923,7 @@
 						},
 						{
 							"key": "price",
-							"value": "1000",
+							"value": "732528",
 							"type": "text"
 						},
 						{
@@ -990,6 +990,59 @@
 			"response": []
 		},
 		{
+			"name": "Create review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tour_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "is_comment",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "number_rate",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create order by tour id",
 			"request": {
 				"method": "POST",
@@ -1021,6 +1074,74 @@
 						"api",
 						"v1",
 						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create order from cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_items\": [3, 2],\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/create-from-cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"create-from-cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get pending order by user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/1/pending",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"1",
+						"pending"
 					]
 				}
 			},
@@ -1855,7 +1976,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": \"2\",\r\n    \"tour\": {\r\n        \"tour_id\": 1,\r\n        \"adult_quantity\": 1,\r\n        \"child_quantity\": 2\r\n    }\r\n}",
+					"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"tour\": {\r\n        \"tour_id\": 2,\r\n        \"adult_quantity\": 1,\r\n        \"child_quantity\": 2\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
