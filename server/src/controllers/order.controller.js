@@ -14,6 +14,7 @@ const moment = require('moment');
 const { sortObject } = require("../utils/payment")
 let querystring = require('qs');
 const crypto = require('crypto');
+const Cart = require("../models/cart.model");
 
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
@@ -61,25 +62,66 @@ class OrderController {
                 price: tour.price
             });
     
-            // apply voucher to order
-            // if (listCodeVoucher && listCodeVoucher > 0) {
-            //     for (const code of listCodeVoucher) {
-            //         const voucher = await findVoucherByCode(code);
-            //         if (!voucher) throw new NotFoundError("Not found voucher by code!")
-    
-            //         totalToPay = voucher.type == 'percentage' ? parseFloat((1 - voucher.value_discount) * totalToPay)
-            //             : parseFloat(totalToPay) - voucher.value_discount
-    
-            //         await VoucherOrder.create({
-            //             order_id: new_order.order_id,
-            //             voucher_id: voucher.voucher_id
-            //         })
-            //     }
-            // }
-    
             return res.status(200).json({ 
                 order: new_order
             })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    createOrderFromCart = async (req, res, next) => {
+        try {
+            const { order_items, user_id, 
+                name_customer, phone_customer, 
+                address_customer
+            } = req.body;
+
+            const new_order = await Order.create({
+                user_id,
+                name_customer,
+                phone_customer,
+                address_customer: address_customer ? address_customer : null,
+                total: 0,
+                total_to_pay: 0
+            })
+
+            // find cart of user
+            const cart = await Cart.findOne({ where: { user_id: user_id }})
+
+            let total_price = 0;
+            for (const item of order_items) {
+                
+                // chech order_item in cart ?
+                const order_item = await OrderItem.findOne({ where: { id: item, cart_id: cart.cart_id }});
+                if (!order_item) return res.status(404).json({ message: "Not found order item in cart!" })
+                order_item.order_id = new_order.order_id;
+                await order_item.save()
+
+                let tour = await findTourById(order_item.tour_id)
+                if (tour.current_customers >= tour.max_customer)
+                    return res.status(400).json({ message: "Tour is full!"})
+
+                const adultTotal = order_item.adult_quantity * parseFloat(order_item.price);
+                const childTotal = 0.75 * order_item.child_quantity * parseFloat(order_item.price);
+                let total_item = adultTotal + childTotal;
+
+                if (order_item.adult_quantity + order_item.child_quantity + tour.current_customers > tour.max_customer)
+                    return res.status(400).json({ message: "Slot is full!"});
+                total_price += parseFloat(total_item);
+                
+                tour.current_customers += (order_item.adult_quantity + order_item.child_quantity);
+                await tour.save();
+            }
+            new_order.total = total_price;
+            new_order.total_to_pay = total_price;
+            await new_order.save()
+
+            return res.status(200).json({
+                message: "Create order from cart successfully!",
+                order: new_order
+            })
+
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
