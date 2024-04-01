@@ -15,6 +15,7 @@ const { sortObject } = require("../utils/payment")
 let querystring = require('qs');
 const crypto = require('crypto');
 const Cart = require("../models/cart.model");
+const { error } = require("console");
 
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
@@ -230,6 +231,27 @@ class OrderController {
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
+    }
+
+    getPendingOrderByUser = async (req, res, next) => {
+        try {
+            const user_id = req.params.user_id;
+    
+            const order = await Order.findAll({
+                where: { user_id: user_id, status: StatusOrder.PENDING }
+            })
+    
+            if (!order) 
+                return res.status(404).json({ message: "You haven't complete order"})
+    
+            return res.status(200).json({
+                message: "Get pending order successfully!",
+                pending_orders: order
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+       
     }
 
     getCompleteOrderByUser = async (req, res, next) => {
