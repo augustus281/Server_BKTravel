@@ -2,6 +2,7 @@
 
 const cloudinary = require("../utils/cloudinary")
 
+const Comment = require("../models/comment.model")
 const Tour = require("../models/tour.model")
 const Schedule = require("../models/schedule.model")
 const Sequelize = require("sequelize")
@@ -25,7 +26,6 @@ const slugify = (text) => {
 ``
 class TourController {
 
-    // not complete
     createTour = async (req, res, next) => {
         try {
             const {
@@ -250,6 +250,24 @@ class TourController {
             return res.status(500).json({ message: error.message });
         }
     };
+
+    getCommentOfTour = async (req, res, next) => {
+        try {
+            const tour_id = req.params.tour_id;
+            const comments = await Comment.findAll({
+                where: {
+                    tour_id: tour_id
+                }
+            })
+
+            return res.status(200).json({
+                message: "Get comment of tour successfully!",
+                comments: comments
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
     
     getDestinationTour = async(req, res, next) => {
         try {
