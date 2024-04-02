@@ -1,13 +1,16 @@
 'use strict'
 
 const cloudinary = require("../utils/cloudinary")
-const { NotFoundError } = require("../core/error.response")
+const { NotFoundError, BadRequestError } = require("../core/error.response")
 const Review = require("../models/review.model")
 const { findTourById } = require("../services/tour.service")
 const { findUserById } = require("../services/user.service")
 const Comment = require("../models/comment.model")
+const Order = require("../models/order.model")
+const { StatusOrder } = require("../common/status")
 
 class ReviewController {
+
     creatReview = async (req, res, next) => {
         try {
             const { 
@@ -18,12 +21,18 @@ class ReviewController {
                 parent_comment_id,
                 number_rate
             } = req.fields;
-            console.log(`:::`, req.fields)
 
             const user = await findUserById(user_id);
             if (!user) throw new NotFoundError("Not found user!");
 
             // check tour is ordered by user ?
+            // const checkedOrder = await Order.findOne({
+            //     where: {
+            //         user_id: user_id,
+            //         status: StatusOrder.COMPLETE
+            //     }
+            // })
+            // if (!checkedOrder) throw new BadRequestError("You can't review tour!")
 
             const tour = await findTourById(tour_id);
             if (!tour) throw new NotFoundError("Not found tour for reviewing!");
@@ -37,11 +46,14 @@ class ReviewController {
                 i++;
             }
 
-            const new_comment = is_comment ? ( await Comment.create({
-                content,
-                parent_comment_id,
-                image: list_image.length > 0 ? JSON.stringify(list_image) : null
-            }) ) : null;
+            let new_comment
+            if (is_comment != 0) {
+                new_comment = await Comment.create({
+                    content: content,
+                    parent_comment_id,
+                    image: list_image.length > 0 ? JSON.stringify(list_image) : null
+                })
+            }
 
             const tour_review = await Review.findOne({ where: { tour_id: tour_id }});
             if (!tour_review) {
@@ -68,10 +80,10 @@ class ReviewController {
                 tour_review.rating_3 = number_rate == 3 ? tour_review.rating_3++ : tour_review.rating_3;
                 tour_review.rating_4 = number_rate == 4 ? tour_review.rating_4++ : tour_review.rating_4;
                 tour_review.rating_5 = number_rate == 5 ? tour_review.rating_5++ : tour_review.rating_5;
-                const av = (tour_review.average_rate * tour_review.count + number_rate) / (tour_review.count + 1);
-                console.log(`av:::`, av)
-                return res.status(200).json({ message: "OK"})
-                tour_review.average_rate = (tour_review.average_rate * tour_review.count + number_rate) / (tour_review.count + 1);
+                const av = (parseFloat(tour_review.average_rate * tour_review.count) + parseFloat(number_rate)) 
+                / (parseFloat(tour_review.count) + 1);
+            
+                tour_review.average_rate = av;
                 tour_review.count++;
                 await tour_review.save();
 
