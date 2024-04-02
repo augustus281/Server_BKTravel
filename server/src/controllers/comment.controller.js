@@ -1,17 +1,29 @@
 'use strict'
 
-const { Sequelize } = require("sequelize")
+const { Sequelize, JSON } = require("sequelize")
 const Comment = require("../models/comment.model")
 const Tour = require("../models/tour.model")
+const { findTourById } = require("../services/tour.service")
 
 const Op = Sequelize.Op
 
 class CommentController {
     createComment = async (req, res, next) => {
         try {
-            const { tour_id, content, user_id, parent_comment_id } = req.body;
+            const { content, user_id, tour_id, parent_comment_id } = req.fields;
+
+            const list_image = [];
+            let i = 0;
+            while(req.files[`image[${i}]`]) {
+                const path_image = req.files[`image[${i}]`].path
+                const image = await cloudinary.uploader.upload(path_image)
+                list_image.push(image.secure_url)
+                i++;
+            }
+
             const comment = await Comment.create({
-                tour_id, content, user_id, parent_comment_id
+                tour_id, content, user_id, parent_comment_id,
+                list_image: list_image.length > 0 ? JSON.stringify(list_image) : null
             });
 
             let rightValue;
@@ -111,10 +123,11 @@ class CommentController {
 
     deleteComment = async (req, res, next) => {
         try {
-            const { tour_id, comment_id } = req.body
+            const { tour_id, comment_id } = req.body;
+            console.log(1);
 
-            const tour = await Tour.findOne({ where: { tour_id: tour_id }})
-            if (!tour) return res.status(404).json({ message: "Not found tour for deleting comment!" })
+            const tour = await findTourById(tour_id);
+            if (!tour) return res.status(404).json({ message: "Not found tour for deleting comment!" });
     
             const comment = await Comment.findOne({ where: { comment_id: comment_id }})
             if (!comment) return res.status(404).json({ message: "Not found comment!" })
@@ -125,6 +138,7 @@ class CommentController {
     
             // 2. Calc width
             const width = rightValue - leftValue + 1
+            console.log(leftValue, rightValue)
     
             // 3. Delete all child comments
             await Comment.destroy({
