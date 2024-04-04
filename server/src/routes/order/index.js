@@ -11,6 +11,7 @@ router.post("/payment", asyncHandler(orderController.payOrderDirectly))
 router.get("/:user_id/pending", asyncHandler(orderController.getPendingOrderByUser))
 router.get("/:user_id/complete", asyncHandler(orderController.getCompleteOrderByUser))
 router.post("/:order_id/applyVoucher", asyncHandler(orderController.applyVoucherToOrder))
+router.put("/removeVoucher", asyncHandler(orderController.removeVoucherFromOrder))
 router.get("/:order_id", asyncHandler(orderController.getDetailOrderByUser))
 
 module.exports = router
