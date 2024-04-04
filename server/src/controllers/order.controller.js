@@ -5,6 +5,7 @@ const { NotFoundError } = require("../core/error.response");
 const Order = require("../models/order.model");
 const OrderItem = require("../models/order_item.model");
 const OrderTour = require("../models/order_tour.model");
+const Voucher = require("../models/voucher.model")
 const VoucherOrder = require("../models/voucher_order.model")
 const { findOrderById } = require("../services/order.service");
 const { findTourById } = require("../services/tour.service");
@@ -129,8 +130,9 @@ class OrderController {
 
     applyVoucherToOrder = async (req, res, next) => {
         try {
-            const { order_id } = req.params;
+            const order_id = req.params.order_id;
             const { listVoucherCodes } = req.body;
+            console.log(listVoucherCodes)
 
             const order = await findOrderById(order_id);
             if (!order) throw new NotFoundError("Not found order for applying voucher!");
@@ -145,8 +147,6 @@ class OrderController {
 
                     totalToPay = voucher.type == 'percentage' ? parseFloat((1 - voucher.value_discount) * totalToPay)
                                     : (parseFloat(totalToPay) - voucher.value_discount);
-
-                    console.log("code:::", code, "-", totalToPay)
 
                     await VoucherOrder.create({
                         order_id,
@@ -166,6 +166,39 @@ class OrderController {
                 message: "Apply voucher for order successfully!",
                 order: order,
                 listVoucher: listVouchers
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    removeVoucherFromOrder = async (req, res, next) => {
+        try {
+            const { order_id, code } = req.body;
+            const order = await findOrderById(order_id);
+            if (!order) throw new NotFoundError("Order is not found!");
+
+            const voucher = await findVoucherByCode(code);
+            if (!voucher) throw new NotFoundError("Voucher is not found!");
+
+            let totalToPay = order.total_to_pay;
+            totalToPay = voucher.type == 'percentage' ? 
+                    (parseFloat(voucher.value_discount * order.total) + parseFloat(totalToPay))
+                    : (parseFloat(totalToPay) + parseFloat(voucher.value_discount));
+
+            order.total_to_pay = totalToPay >= order.total ? order.total : totalToPay;
+            await order.save();
+
+            // remove voucher from order
+            await VoucherOrder.destroy({
+                where: {
+                    order_id: order.order_id,
+                    voucher_id: voucher.voucher_id
+                }
+            })
+            return res.status(200).json({ 
+                message: "Remover voucher from order successfully!",
+                order: order
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
@@ -235,7 +268,7 @@ class OrderController {
     getDetailOrderByUser = async (req, res, next) => {
         try {
             const order_id = req.params.order_id;
-            const order = await Order.findByPk(order_id, { include: OrderItem })
+            const order = await Order.findByPk(order_id, { include: [OrderItem, Voucher] })
             if (!order) throw new NotFoundError("Not found order!")
 
             return res.status(200).json({ order: order })
