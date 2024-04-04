@@ -16,7 +16,8 @@ const Voucher = sequelize.define("voucher", {
     },
     code_voucher: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     type: {
         type: DataTypes.ENUM(TypeDiscount.PERCENTAGE, TypeDiscount.FIXED),
