@@ -11,10 +11,11 @@ add tour to wishlist, add tour to cart, checkout, payment by vnpay
 - Voucher: CRUD, disactive for vouchers are expired
 - Cart: Incre/ decre quantity, remove order_item from cart, ...
 - Intergrate bot of discord for logging system
+- Nested comment, delete comment
+- Rating tour
 
 #### UPDATING....
-- Comment 
-- Rating tour 
+- Chat app realtime
 
 ## TECHNOLOGY:
 ### BACKEND:
