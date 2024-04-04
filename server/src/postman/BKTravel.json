@@ -325,18 +325,39 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/api/v1/auth/google/callback",
-					"protocol": "http",
+					"raw": "https://localhost:8080/api/v1/auth/google?code=4%2F0AeaYSHCswazedp_83lToPrdj51swHmPlehla3kXUx2uRzeVhPeHdTwvYZUZpWQqMUZxe1g&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=hcmut.edu.vn&prompt=consent",
+					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "5000",
+					"port": "8080",
 					"path": [
 						"api",
 						"v1",
 						"auth",
-						"google",
-						"callback"
+						"google"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "4%2F0AeaYSHCswazedp_83lToPrdj51swHmPlehla3kXUx2uRzeVhPeHdTwvYZUZpWQqMUZxe1g"
+						},
+						{
+							"key": "scope",
+							"value": "email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email"
+						},
+						{
+							"key": "authuser",
+							"value": "0"
+						},
+						{
+							"key": "hd",
+							"value": "hcmut.edu.vn"
+						},
+						{
+							"key": "prompt",
+							"value": "consent"
+						}
 					]
 				}
 			},
@@ -1090,7 +1111,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"child_quantity\": 2,\r\n    \"adult_quantity\": 3,\r\n    \"tour_id\": 1,\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"child_quantity\": 2,\r\n    \"adult_quantity\": 3,\r\n    \"tour_id\": 2,\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1182,6 +1203,44 @@
 			"response": []
 		},
 		{
+			"name": "Remove voucher from order",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"order_id\": 10,\r\n    \"code\": \"ABC123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/order/removeVoucher",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"removeVoucher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Apply voucher to order",
 			"request": {
 				"method": "POST",
@@ -1195,7 +1254,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"listVoucherCodes\": [\"ABZ\", \"ABC123\"]\r\n}",
+					"raw": "{\r\n   \"listVoucherCodes\": [\"ABC123\"]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1203,7 +1262,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/order/1/applyVoucher",
+					"raw": "http://localhost:8080/api/v1/order/:order_id/applyVoucher",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1213,8 +1272,14 @@
 						"api",
 						"v1",
 						"order",
-						"1",
+						":order_id",
 						"applyVoucher"
+					],
+					"variable": [
+						{
+							"key": "order_id",
+							"value": "10"
+						}
 					]
 				}
 			},
@@ -1222,8 +1287,11 @@
 		},
 		{
 			"name": "Get Comment by parent_comment_id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
-				"method": "DELETE",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
@@ -1234,12 +1302,95 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"tour_id\": 1,\r\n    \"parent_comment_id\": 37\r\n}",
+					"raw": "{\r\n    \"parent_comment_id\": 1,\r\n    \"tour_id\": 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get comment of tour",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tour/1/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tour",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create comment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"value": "Tôi đồng ý với đánh giá của bạn hay thiệt ",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "tour_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "parent_comment_id",
+							"value": "2",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:8080/api/v1/comment",
@@ -1692,6 +1843,43 @@
 							"key": "tour_id",
 							"value": "1"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete comment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tour_id\": 1,\r\n    \"comment_id\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/comment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"comment"
 					]
 				}
 			},
@@ -2306,19 +2494,10 @@
 			"response": []
 		},
 		{
-			"name": "GoogleCallback Copy",
+			"name": "Get info user by google",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"huybachkhoa2801@gmail.com\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
 					"raw": "http://localhost:8080/api/v1/auth/login-success/114100398577489927435",
 					"protocol": "http",
