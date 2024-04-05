@@ -1,7 +1,7 @@
 'use strict'
 
 const { StatusOrder } = require("../common/status");
-const { NotFoundError } = require("../core/error.response");
+const { NotFoundError, BadRequestError } = require("../core/error.response");
 const Order = require("../models/order.model");
 const OrderItem = require("../models/order_item.model");
 const OrderTour = require("../models/order_tour.model");
@@ -16,6 +16,7 @@ const { sortObject } = require("../utils/payment")
 let querystring = require('qs');
 const crypto = require('crypto');
 const Cart = require("../models/cart.model");
+const { isExpired } = require("../utils/checkExpire");
 
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
@@ -132,7 +133,6 @@ class OrderController {
         try {
             const order_id = req.params.order_id;
             const { listVoucherCodes } = req.body;
-            console.log(listVoucherCodes)
 
             const order = await findOrderById(order_id);
             if (!order) throw new NotFoundError("Not found order for applying voucher!");
@@ -144,6 +144,12 @@ class OrderController {
                 for (const code of listVoucherCodes) {
                     const voucher = await findVoucherByCode(code);
                     if (!voucher) throw new NotFoundError("Not found voucher by code!");
+
+                    // check expired of voucher
+                    if (isExpired(voucher.expired_data)) throw new BadRequestError("Voucher is expired, you can't apply it!");
+
+                    // check slot of voucher
+                    if (voucher.count == 0) throw new BadRequestError("Voucher has no slots for you apply!");
 
                     totalToPay = voucher.type == 'percentage' ? parseFloat((1 - voucher.value_discount) * totalToPay)
                                     : (parseFloat(totalToPay) - voucher.value_discount);
@@ -220,6 +226,9 @@ class OrderController {
                 }
             })
             if (!order) throw new NotFoundError("Not found order to pay!")
+
+            order.payment_id = orderId;
+            await order.save()
 
             process.env.TZ = 'Asia/Ho_Chi_Minh';
         
