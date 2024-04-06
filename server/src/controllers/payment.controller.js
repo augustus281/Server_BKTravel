@@ -10,7 +10,6 @@ const User = require('../models/user.model')
 const Order = require('../models/order.model');
 const { StatusOrder } = require('../common/status');
 const { updateTotalCart } = require('../services/cart.service');
-const Voucher = require('../models/voucher.model');
 const { findVoucherById } = require('../services/voucher.service');
 
 
@@ -122,10 +121,6 @@ class PaymentController {
         }
     }
 
-    payDirectly = async (req, res, next) => {
-
-    }
-
     getResultPayment = async (req, res, next) => {
         try {
             const vnp_Params = req.query;
@@ -144,6 +139,8 @@ class PaymentController {
             if(secureHash === signed){
                 const orderId = vnp_Params['vnp_TxnRef'];
                 const rspCode = vnp_Params['vnp_ResponseCode'];
+
+                console.log(`orderId:::`, orderId)
                 
                 if (rspCode === '00') {
                     // convert status of order ---> COMPLETE
