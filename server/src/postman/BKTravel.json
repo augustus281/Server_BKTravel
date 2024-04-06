@@ -137,7 +137,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 1\r\n}",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 9\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -198,7 +198,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/user/payment/vnpay_ipn?vnp_Amount=1000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14361736&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240331235635&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14361736&vnp_TransactionStatus=00&vnp_TxnRef=31165829&vnp_SecureHash=49349457522a26132c845864656b0c044c3c3328ae081a2864d31c60177066c148eef62d6e7accb2a39442228f1fe1f36d70b63d2626df843573015c3064ff7b",
+					"raw": "http://localhost:8080/api/v1/user/payment/vnpay_ipn?vnp_Amount=1000000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14367534&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240405121259&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14367534&vnp_TransactionStatus=00&vnp_TxnRef=05051315&vnp_SecureHash=32726c4d1631af0fa0aa4888f11ba99979d868178816c140f304a6d442afb069eee823a2853499da9e267d948434e1ab521a15cfc204c68bebdd511987db2cfb",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -222,7 +222,7 @@
 						},
 						{
 							"key": "vnp_BankTranNo",
-							"value": "VNP14361736"
+							"value": "VNP14367534"
 						},
 						{
 							"key": "vnp_CardType",
@@ -234,7 +234,7 @@
 						},
 						{
 							"key": "vnp_PayDate",
-							"value": "20240331235635"
+							"value": "20240405121259"
 						},
 						{
 							"key": "vnp_ResponseCode",
@@ -246,7 +246,7 @@
 						},
 						{
 							"key": "vnp_TransactionNo",
-							"value": "14361736"
+							"value": "14367534"
 						},
 						{
 							"key": "vnp_TransactionStatus",
@@ -254,11 +254,11 @@
 						},
 						{
 							"key": "vnp_TxnRef",
-							"value": "31165829"
+							"value": "05051315"
 						},
 						{
 							"key": "vnp_SecureHash",
-							"value": "49349457522a26132c845864656b0c044c3c3328ae081a2864d31c60177066c148eef62d6e7accb2a39442228f1fe1f36d70b63d2626df843573015c3064ff7b"
+							"value": "32726c4d1631af0fa0aa4888f11ba99979d868178816c140f304a6d442afb069eee823a2853499da9e267d948434e1ab521a15cfc204c68bebdd511987db2cfb"
 						}
 					]
 				}
@@ -453,7 +453,7 @@
 					"variable": [
 						{
 							"key": "order_id",
-							"value": "3"
+							"value": "10"
 						}
 					]
 				}
@@ -1372,7 +1372,7 @@
 					"formdata": [
 						{
 							"key": "content",
-							"value": "Tôi đồng ý với đánh giá của bạn hay thiệt ",
+							"value": "Tôi không đồng ý với đánh giá của bạn hay thiệt ",
 							"type": "text"
 						},
 						{
@@ -1387,7 +1387,7 @@
 						},
 						{
 							"key": "parent_comment_id",
-							"value": "2",
+							"value": "1",
 							"type": "text"
 						}
 					]
