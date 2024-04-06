@@ -26,13 +26,13 @@ class ReviewController {
             if (!user) throw new NotFoundError("Not found user!");
 
             // check tour is ordered by user ?
-            // const checkedOrder = await Order.findOne({
-            //     where: {
-            //         user_id: user_id,
-            //         status: StatusOrder.COMPLETE
-            //     }
-            // })
-            // if (!checkedOrder) throw new BadRequestError("You can't review tour!")
+            const checkedOrder = await Order.findOne({
+                where: {
+                    user_id: user_id,
+                    status: StatusOrder.COMPLETE
+                }
+            })
+            if (!checkedOrder) throw new BadRequestError("You can't review tour!")
 
             const tour = await findTourById(tour_id);
             if (!tour) throw new NotFoundError("Not found tour for reviewing!");
