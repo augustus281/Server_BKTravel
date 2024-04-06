@@ -3,6 +3,7 @@
 const { Sequelize, JSON } = require("sequelize")
 const Comment = require("../models/comment.model")
 const Tour = require("../models/tour.model")
+const User = require("../models/user.model")
 const { findTourById } = require("../services/tour.service")
 
 const Op = Sequelize.Op
@@ -11,6 +12,9 @@ class CommentController {
     createComment = async (req, res, next) => {
         try {
             const { content, user_id, tour_id, parent_comment_id } = req.fields;
+
+            const user = await User.findOne({ where: { user_id: user_id }})
+            if (!user) return res.status(404).json({ message: "Not found user!" })
 
             const list_image = [];
             let i = 0;
@@ -22,12 +26,14 @@ class CommentController {
             }
 
             const comment = await Comment.create({
-                tour_id, content, user_id, parent_comment_id,
+                tour_id, content, user_id, 
+                parent_comment_id: parent_comment_id != "null" ? parent_comment_id : null , 
+                user_name: user.firstname + " " + user.lastname,
                 list_image: list_image.length > 0 ? JSON.stringify(list_image) : null
             });
 
             let rightValue;
-            if (parent_comment_id) {
+            if (parent_comment_id !== "null") {
                 // reply comment
                 const parent_comment = await Comment.findOne({ where: { comment_id: parent_comment_id }});
                 if (!parent_comment) return res.status(404).json({ message: "Not found parent comment!" });
@@ -96,7 +102,6 @@ class CommentController {
                         comment_left: { [Op.gt]: parent.comment_left },
                         comment_right: { [Op.lte]: parent.comment_right }
                     },
-                    attributes: ['comment_left', 'comment_right', 'content', 'parent_comment_id'],
                     order: [['comment_left', 'ASC']],
                     limit,
                     offset
