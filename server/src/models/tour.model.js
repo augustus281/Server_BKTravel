@@ -76,6 +76,16 @@ Tour.init({
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false
     },
+    average_rate: {
+        type: DataTypes.DECIMAL(3, 1),
+        allowNull: false,
+        defaultValue: 0.0
+    },
+    count_reviewer: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+    },
     highlight: {
         type: DataTypes.TEXT,
         allowNull: false
