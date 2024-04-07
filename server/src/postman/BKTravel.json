@@ -551,6 +551,52 @@
 			"response": []
 		},
 		{
+			"name": "Get comment by number_rate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tour/comments?number_rate=4&tour_id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tour",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "number_rate",
+							"value": "4"
+						},
+						{
+							"key": "tour_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Update Info User",
 			"request": {
 				"method": "PUT",
@@ -1071,12 +1117,17 @@
 						},
 						{
 							"key": "is_comment",
-							"value": "0",
+							"value": "true",
 							"type": "text"
 						},
 						{
 							"key": "number_rate",
-							"value": "1",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Ay da",
 							"type": "text"
 						}
 					]
@@ -1287,9 +1338,6 @@
 		},
 		{
 			"name": "Get Comment by parent_comment_id",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [
@@ -1300,17 +1348,8 @@
 						"disabled": true
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"parent_comment_id\": 1,\r\n    \"tour_id\": 1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/comment",
+					"raw": "http://localhost:8080/api/v1/tour/:tour_id/comments/:parent_comment_id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1319,7 +1358,20 @@
 					"path": [
 						"api",
 						"v1",
-						"comment"
+						"tour",
+						":tour_id",
+						"comments",
+						":parent_comment_id"
+					],
+					"variable": [
+						{
+							"key": "tour_id",
+							"value": "1"
+						},
+						{
+							"key": "parent_comment_id",
+							"value": "1"
+						}
 					]
 				}
 			},
@@ -1388,7 +1440,8 @@
 						{
 							"key": "parent_comment_id",
 							"value": "1",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
