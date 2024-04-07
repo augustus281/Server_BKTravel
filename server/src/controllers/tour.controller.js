@@ -10,9 +10,10 @@ const Destination = require("../models/destination.model")
 const DestinationTour = require("../models/destination_tour.model")
 const Op = Sequelize.Op
 const Attraction = require("../models/attraction.model")
-const { StatusTour } = require("../common/status")
+const { StatusTour, TypeNotification } = require("../common/status")
 const { findTourById } = require("../services/tour.service")
 const AttractionTour = require("../models/attraction_tour.model")
+const { pushNotiToSystem } = require("../services/notification.service")
 
 const slugify = (text) => {
     return text.toString().toLowerCase()
@@ -123,7 +124,7 @@ class TourController {
                     defaults: { attraction_id: exist_attraction.attraction_id, tour_id: newTour.tour_id }
                 })
             }
-        
+            
             return res.status(201).json({
                 message: 'Create tour successfully!',
                 data: newTour
@@ -257,7 +258,8 @@ class TourController {
             const comments = await Comment.findAll({
                 where: {
                     tour_id: tour_id
-                }
+                },
+                order:[['createdAt', 'DESC']]
             })
 
             return res.status(200).json({
