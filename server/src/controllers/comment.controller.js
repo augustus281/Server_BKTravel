@@ -111,7 +111,8 @@ class CommentController {
                 comments = await Comment.findAll({
                     where: {
                         tour_id: tour_id
-                    }, attributes: ['comment_left', 'comment_right', 'content', 'parent_comment_id'],
+                    }, 
+                    attributes: ['comment_left', 'comment_right', 'content', 'parent_comment_id'],
                     order: [['comment_left', 'ASC']],
                     limit,
                     offset
