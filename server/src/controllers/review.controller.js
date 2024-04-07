@@ -47,10 +47,13 @@ class ReviewController {
             }
 
             let new_comment
-            if (is_comment != 0) {
+            if (is_comment != "false") {
                 new_comment = await Comment.create({
                     content: content,
                     parent_comment_id,
+                    rating: number_rate,
+                    user_id, tour_id,
+                    user_name: user.firstname + " " + user.lastname,
                     image: list_image.length > 0 ? JSON.stringify(list_image) : null
                 })
             }
@@ -61,31 +64,56 @@ class ReviewController {
                     user_id,
                     tour_id,
                     comment_id: new_comment ? new_comment.comment_id : null,
-                    rating_1: number_rate == 1 ? 1 : 0,
-                    rating_2: number_rate == 2 ? 1 : 0,
-                    rating_3: number_rate == 3 ? 1 : 0,
-                    rating_4: number_rate == 4 ? 1 : 0,
-                    rating_5: number_rate == 5 ? 1 : 0,
+                    rating_1: parseInt(number_rate) == 1 ? 1 : 0,
+                    rating_2: parseInt(number_rate) == 2 ? 1 : 0,
+                    rating_3: parseInt(number_rate) == 3 ? 1 : 0,
+                    rating_4: parseInt(number_rate) == 4 ? 1 : 0,
+                    rating_5: parseInt(number_rate) == 5 ? 1 : 0,
                     count: 1,
                     average_rate: number_rate
                 })
+
+                new_comment.review_id = new_review.review_id;
+                await new_comment.save();
 
                 return res.status(200).json({ 
                     message: "Review tour successfully!",
                     new_review: new_review
                 })
             } else {
-                tour_review.rating_1 = number_rate == 1 ? tour_review.rating_1++ : tour_review.rating_1;
-                tour_review.rating_2 = number_rate == 2 ? tour_review.rating_2++ : tour_review.rating_2;
-                tour_review.rating_3 = number_rate == 3 ? tour_review.rating_3++ : tour_review.rating_3;
-                tour_review.rating_4 = number_rate == 4 ? tour_review.rating_4++ : tour_review.rating_4;
-                tour_review.rating_5 = number_rate == 5 ? tour_review.rating_5++ : tour_review.rating_5;
+                new_comment.review_id = tour_review.review_id;
+                await new_comment.save();
+
+                switch (parseInt(number_rate)) {
+                    case 1:
+                        tour_review.rating_1++;
+                        break;
+                    case 2:
+                        tour_review.rating_2++;
+                        break;
+                    case 3:
+                        tour_review.rating_3++;
+                        break;
+                    case 4:
+                        tour_review.rating_4++;
+                        break;
+                    case 5:
+                        tour_review.rating_5++;
+                        break;
+                    default:
+                        throw new Error('Invalid rating'); 
+                }
                 const av = (parseFloat(tour_review.average_rate * tour_review.count) + parseFloat(number_rate)) 
                 / (parseFloat(tour_review.count) + 1);
             
                 tour_review.average_rate = av;
                 tour_review.count++;
                 await tour_review.save();
+
+                // update averag_rate & count_reviewer of tour
+                tour.average_rate = av;
+                tour.count_reviewer++;
+                await tour.save();
 
                 return res.status(200).json({ 
                     message: "Review tour successfully!",
