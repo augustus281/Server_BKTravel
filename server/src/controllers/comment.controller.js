@@ -27,7 +27,7 @@ class CommentController {
             }
 
             const comment = await Comment.create({
-                tour_id, content, user_id, 
+                tour_id, content, user_id, rating: 0,
                 parent_comment_id: parent_comment_id ? parent_comment_id : null , 
                 user_name: user.firstname + " " + user.lastname,
                 list_image: list_image.length > 0 ? JSON.stringify(list_image) : null
