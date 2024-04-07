@@ -88,14 +88,12 @@ class CommentController {
 
     getCommentsByParentId = async (req, res, next) => {
         try {
-            const { tour_id, parent_comment_id, limit = 50, offset = 0 } = req.body;
+            const { tour_id, parent_comment_id, limit = 50, offset = 0 } = req.params;
             let comments;
             
             if (parent_comment_id) {
                 const parent = await Comment.findOne({ where: { comment_id: parent_comment_id }});
                 if (!parent) return res.status(404).json({ message: "Not found comment for tour!"});
-
-                console.log(`parent:::`, parent)
 
                 comments = await Comment.findAll({
                     where: {
