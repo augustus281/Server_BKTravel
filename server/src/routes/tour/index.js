@@ -4,6 +4,7 @@ const express = require("express")
 const router = express.Router()
 const { asyncHandler } = require('../../auth/checkAuth')
 const tourController = require("../../controllers/tour.controller")
+const commentController = require("../../controllers/comment.controller")
 const formidableMiddleware = require('express-formidable');
 
 router.use(formidableMiddleware());
@@ -15,6 +16,7 @@ router.get("/all/online", asyncHandler(tourController.getOnlineTours))
 router.get("/search", tourController.searchTour)
 router.get("/:tour_id", asyncHandler(tourController.getTour))
 router.get("/:tour_id/comments", asyncHandler(tourController.getCommentOfTour))
+router.get("/:tour_id/comments/:parent_comment_id", asyncHandler(commentController.getCommentsByParentId))
 router.get("/:tour_id/destination", asyncHandler(tourController.getDestinationTour))
 router.get("/:tour_id/schedule", asyncHandler(tourController.getScheduleByIdTour))
 router.put("/:tour_id", asyncHandler(tourController.updateTour))
