@@ -11,7 +11,8 @@ const Op = Sequelize.Op
 class CommentController {
     createComment = async (req, res, next) => {
         try {
-            const { content, user_id, tour_id, parent_comment_id } = req.fields;
+            const { content, user_id, tour_id } = req.fields;
+            const parent_comment_id  = req.fields.parent_comment_id
 
             const user = await User.findOne({ where: { user_id: user_id }})
             if (!user) return res.status(404).json({ message: "Not found user!" })
@@ -27,13 +28,13 @@ class CommentController {
 
             const comment = await Comment.create({
                 tour_id, content, user_id, 
-                parent_comment_id: parent_comment_id != "null" ? parent_comment_id : null , 
+                parent_comment_id: parent_comment_id ? parent_comment_id : null , 
                 user_name: user.firstname + " " + user.lastname,
                 list_image: list_image.length > 0 ? JSON.stringify(list_image) : null
             });
 
             let rightValue;
-            if (parent_comment_id !== "null") {
+            if (parent_comment_id) {
                 // reply comment
                 const parent_comment = await Comment.findOne({ where: { comment_id: parent_comment_id }});
                 if (!parent_comment) return res.status(404).json({ message: "Not found parent comment!" });
