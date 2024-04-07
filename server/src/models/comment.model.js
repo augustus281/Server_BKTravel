@@ -40,6 +40,10 @@ Comment.init({
             key: "comment_id"
         }
     },
+    rating: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
     is_deleted: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
