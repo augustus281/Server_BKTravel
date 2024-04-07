@@ -270,7 +270,25 @@ class TourController {
             return res.status(500).json({ message: error.message })
         }
     }
-    
+
+    getReviewByNumberRate = async (req, res, next) => {
+        const { tour_id, number_rate } = req.query;
+
+        const tour = await findTourById(tour_id);
+        if (!tour) throw new Notification("Not found tour!");
+
+        const comments = await Comment.findAll({
+            where: {
+                rating: number_rate
+            }
+        })
+
+        return res.status(200).json({
+            message: "Get comments by number_rate successfully!",
+            comments: comments
+        })
+    }
+     
     getDestinationTour = async(req, res, next) => {
         try {
             const tour_id = req.params.tour_id;
