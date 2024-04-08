@@ -1408,6 +1408,36 @@
 			"response": []
 		},
 		{
+			"name": "Get all reviews of tour",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tour/1/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tour",
+						"1",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create comment",
 			"request": {
 				"method": "POST",
