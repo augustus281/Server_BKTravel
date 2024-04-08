@@ -14,6 +14,7 @@ const { StatusTour, TypeNotification } = require("../common/status")
 const { findTourById } = require("../services/tour.service")
 const AttractionTour = require("../models/attraction_tour.model")
 const { pushNotiToSystem } = require("../services/notification.service")
+const Review = require("../models/review.model")
 
 const slugify = (text) => {
     return text.toString().toLowerCase()
@@ -275,7 +276,7 @@ class TourController {
         const { tour_id, number_rate } = req.query;
 
         const tour = await findTourById(tour_id);
-        if (!tour) throw new Notification("Not found tour!");
+        if (!tour) return res.status(404).json({ message: "Not found tour!" })
 
         const comments = await Comment.findAll({
             where: {
@@ -287,6 +288,26 @@ class TourController {
             message: "Get comments by number_rate successfully!",
             comments: comments
         })
+    }
+
+    getAllReviewsByTourId = async (req, res, next) => {
+        try {
+            const tour_id = req.params.tour_id
+            const tour = await findTourById(tour_id)
+            if (!tour) return res.status(404).json({ message: "Not found tour!" })
+    
+            const all_reviews = await Review.findAll({
+                where: { tour_id: tour_id },
+                include: [ Comment ]
+            })
+
+            return res.status(200).json({
+                message: "Get all reviews of tour successfully!",
+                all_reviews: all_reviews
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
     }
      
     getDestinationTour = async(req, res, next) => {
