@@ -258,7 +258,8 @@ class TourController {
             const tour_id = req.params.tour_id;
             const comments = await Comment.findAll({
                 where: {
-                    tour_id: tour_id
+                    tour_id: tour_id,
+                    rating: 0
                 },
                 order:[['createdAt', 'DESC']]
             })
