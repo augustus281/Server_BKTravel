@@ -76,6 +76,10 @@ class ReviewController {
                 new_comment.review_id = new_review.review_id;
                 await new_comment.save();
 
+                tour.average_rate = parseInt(number_rate);
+                tour.count_reviewer = 1;
+                await tour.save()
+
                 return res.status(200).json({ 
                     message: "Review tour successfully!",
                     new_review: new_review
