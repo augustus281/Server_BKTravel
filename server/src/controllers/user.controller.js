@@ -185,9 +185,7 @@ class UserController {
                     user_id: user_id
                 })
             }
-            console.log(`1`)
-            console.log(`exist`, existWishlist ? existWishlist.wishlist_id : wishlist.wishlist_id)
-            
+
             const wishlist_tour = await WishlistTour.findOrCreate({
                 where: {
                     wishlist_id: existWishlist ? existWishlist.wishlist_id : wishlist.wishlist_id,
@@ -200,7 +198,13 @@ class UserController {
             })
 
             return res.status(201).json({
-                message: "Add tour to wishlist successfully!"
+                message: "Add tour to wishlist successfully!",
+                wishlist: await Wishlist.findAll({
+                    where: {
+                        wishlist_id: user_id,
+                    },
+                    include: [Tour]
+                })
             })
         } catch (error) {
             return res.status(500).json({
@@ -218,21 +222,16 @@ class UserController {
                 return res.status(404).json({ message: "Not found user" });
             }
     
-            const wishlist = await WishlistTour.findAll({
+            const wishlist = await Wishlist.findAll({
                 where: {
-                    wishlist_id: user_id
-                }
+                    wishlist_id: user_id,
+                },
+                include: [Tour]
             })
 
-            const tour_ids = wishlist.map((wishlist_tour) => wishlist_tour.dataValues.tour_id)
-            const tours = await Tour.findAll({
-                where: {
-                    tour_id: tour_ids
-                }
-            })
             return res.status(200).json({
                 message: "Get wishlist successfully",
-                data: tours,
+                data: wishlist,
             });
         } catch (error) {
             return res.status(500).json({ message: error.message });
