@@ -495,13 +495,7 @@ class TourController {
             }
     
             if (departure_date) {
-                const userProvidedDate = new Date(departure_date);
-
-                searchConditions.push({
-                    departure_date: {
-                        [Op.gte]: userProvidedDate
-                    }
-                });
+                searchConditions.push({ departure_date: departure_date });
             }
     
             if (time) {
