@@ -11,6 +11,10 @@ const passport = require("passport")
 
 const redirectURI = "auth/google";
 
+const HEADER = {
+    AUTHORIZATION: 'authorization' 
+}
+
 class AuthController {
     register = async (req, res, next) => {
         const { firstname, lastname, email, password, confirm_password } = req.body
@@ -85,14 +89,18 @@ class AuthController {
 
     logout = async (req, res, next) => {
         try {
-            res.clearCookie('refresh_token', {path: '/api/v1/user/refresh_token'})
-            return res.status(200).json({ status: 'Success', message: "Logout successfully!"})
+            const token = req.headers[HEADER.AUTHORIZATION]
+            const user = await User.findOne({ where: { access_token: token }})
+            if (!user) return res.status(400).json({ message: "Token is not valid!" })
+            user.access_token = null;
+            await user.save()
+
+            return res.status(200).json({ message: "Logout successfully!"})
         } catch (error) {
-            return res.status(500).json({ status: 'Fail', message: error.message })
+            return res.status(500).json({ status: 'Logout failed!', message: error.message })
         }
     }
 
-    // refresh token
     refreshToken = async (req, res) => {
         try {
             const refresh_token = req.cookies.refresh_token || req.query.refresh_token
@@ -137,7 +145,7 @@ class AuthController {
     oauth2GoogleLogin = async (req, res) => {
         const redirectUrl = "https://accounts.google.com/o/oauth2/v2/auth";
         const options = {
-            redirect_uri: `https://localhost:8080/${redirectURI}`,
+            redirect_uri: `https://localhost:8080/api/v1/${redirectURI}`,
             client_id: process.env.GOOGLE_CLIENT_ID,
             access_type: "offline",
             response_type: "code",
@@ -154,6 +162,7 @@ class AuthController {
     }   
 
     oauth2GoogleCallback = async (req, res, next) => {
+        console.log(1)
         passport.authenticate('google', (err, profile) => {
             req.user = profile
             next()
