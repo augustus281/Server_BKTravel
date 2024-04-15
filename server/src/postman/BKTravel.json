@@ -69,6 +69,43 @@
 			"response": []
 		},
 		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTI5NDY4MzUsImV4cCI6MTcxMjk0ODYzNX0.ZUrXFupnztMpgTGlCn_DUXVeAQwAWMtXfTUtTzD2SeQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"huy2801@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Forgotpassword",
 			"request": {
 				"method": "POST",
@@ -515,7 +552,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/search?departure_place=Phú Yên&destination_place=Đà Nẵng&time=1 ngày",
+					"raw": "http://localhost:8080/api/v1/tour/search?departure_date=2024-01-21",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -530,20 +567,64 @@
 					"query": [
 						{
 							"key": "departure_place",
-							"value": "Phú Yên"
+							"value": "Phú Yên",
+							"disabled": true
 						},
 						{
 							"key": "destination_place",
-							"value": "Đà Nẵng"
+							"value": "Đà Nẵng",
+							"disabled": true
 						},
 						{
 							"key": "time",
-							"value": "1 ngày"
+							"value": "1 ngày",
+							"disabled": true
 						},
 						{
 							"key": "departure_date",
-							"value": "2024-01-26",
-							"disabled": true
+							"value": "2024-01-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get weather of city",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/schedule/weather?city=Ho Chi Minh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"schedule",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Ho Chi Minh"
 						}
 					]
 				}
@@ -989,7 +1070,7 @@
 						},
 						{
 							"key": "departure_date",
-							"value": "2024-01-26",
+							"value": "2024-04-13",
 							"type": "text"
 						},
 						{
