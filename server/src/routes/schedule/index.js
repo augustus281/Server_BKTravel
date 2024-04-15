@@ -6,5 +6,6 @@ const { asyncHandler } = require('../../auth/checkAuth')
 const scheduleController = require("../../controllers/schedule.controller")
 
 router.post("/", asyncHandler(scheduleController.createSchedule))
+router.get("/weather", asyncHandler(scheduleController.getWeatherData))
 
 module.exports = router
