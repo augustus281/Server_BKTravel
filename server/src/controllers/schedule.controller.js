@@ -73,6 +73,25 @@ class ScheduleController {
             return res.status(500).json({ message: error.message })
         }
     }
+
+    getWeatherData = async(req, res, next) => {
+        const { city } = req.query
+        const apiKey = process.env.API_KEY_WEATHER
+        const encodedCity = encodeURIComponent(city);
+        console.log(`apiKey:::`, city)
+        const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&APPID=${apiKey}`;
+        try {
+            const response = await fetch(weatherURL)
+            const weatherData = await response.json()
+            return res.status(200).json({
+                message: "Get weather of city successfully!",
+                data: weatherData
+            })
+        } catch (error) {
+            console.log("Error fetching weather data:", error);
+            throw error;
+        }
+    }
 }
 
 module.exports = new ScheduleController()
