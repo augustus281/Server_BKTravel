@@ -435,6 +435,44 @@
 			"response": []
 		},
 		{
+			"name": "Propose tour",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTM0NjEyOTQsImV4cCI6MTcxMzQ2MzA5NH0.bOOEPc-B3ZNVAkR9uVWOzOVPPowtuM4eCJj8YjGV0Do",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departure_place\": \"TP. Hồ Chí Minh\", \r\n    \"destination_places\": [\"TP. Hồ Chí Minh\",\"Hà Nội\"],\r\n    \"attractions\": [\"Landmark 81\",\"Công viên Tao Đàn\", \"Bến Nhà Rồng\", \"Văn Miếu - Quốc Tử Giám\", \"Lăng Bác\"],\r\n    \"departure_time\": \"7 AM\",\r\n    \"departure_date\": \"2024-04-19\",\r\n    \"time\": \"7 ngày\",\r\n    \"max_number\": 10,\r\n    \"note\": \"Tour có nhiều trẻ em\",\r\n    \"user_id\": 1          \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/1/tour",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1",
+						"tour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get completed order by user",
 			"request": {
 				"method": "GET",
@@ -794,6 +832,44 @@
 							"key": "tour_id",
 							"value": "1"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Response tour from user",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"status\": \"reject\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tour/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tour",
+						"23"
 					]
 				}
 			},
@@ -2440,6 +2516,35 @@
 						"v1",
 						"destination",
 						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all cities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/destination/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"destination",
+						"cities"
 					]
 				}
 			},
