@@ -549,6 +549,60 @@ class TourController {
             return res.status(500).json({ message: error.message })
         }
     }
+
+    getPendingTours = async(req, res, next) => {
+        try {
+            const tours = await Tour.findAll({
+                where: {
+                    status: StatusTour.PENDING
+                }, attributes: {
+                    exclude: ['updatedAt', 'createdAt']
+                },
+                order: [['tour_id', 'DESC']]
+            })
+            return res.status(200).json({
+                tours: tours
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    getSuccessTours = async(req, res, next) => {
+        try {
+            const tours = await Tour.findAll({
+                where: {
+                    status: StatusTour.SUCCESS
+                }, attributes: {
+                    exclude: ['updatedAt', 'createdAt']
+                },
+                order: [['tour_id', 'DESC']]
+            })
+            return res.status(200).json({
+                tours: tours
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    getRejectedTours = async(req, res, next) => {
+        try {
+            const tours = await Tour.findAll({
+                where: {
+                    status: StatusTour.REJECT
+                }, attributes: {
+                    exclude: ['updatedAt', 'createdAt']
+                },
+                order: [['tour_id', 'DESC']]
+            })
+            return res.status(200).json({
+                tours: tours
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
 }
 
 module.exports = new TourController()
