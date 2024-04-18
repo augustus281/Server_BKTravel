@@ -16,6 +16,7 @@ add tour to wishlist, add tour to cart, checkout, payment by vnpay
 
 #### UPDATING....
 - Chat app realtime
+- API google map + weather
 
 ## TECHNOLOGY:
 ### BACKEND:

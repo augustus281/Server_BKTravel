@@ -5,8 +5,8 @@ const OAuth2Account = require("../models/oauth2_account.model")
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    // callbackURL: `http://localhost:${process.env.PORT}/api/v1/auth/google/callback`,
-    callbackURL: `/auth/google/callback`,
+    callbackURL: `http://localhost:${process.env.PORT}/api/v1/auth/google`,
+    // callbackURL: `/auth/google/callback`,
     passReqToCallback: true
 },
 

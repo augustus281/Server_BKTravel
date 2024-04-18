@@ -17,7 +17,7 @@ Tour.init({
     },
     name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     cover_image: {
         type: DataTypes.TEXT,
@@ -32,16 +32,19 @@ Tour.init({
         allowNull: true
     },
     status: {
-        type: DataTypes.ENUM(StatusTour.WAITING, StatusTour.ONLINE, StatusTour.DELETED),
+        type: DataTypes.ENUM(StatusTour.WAITING, StatusTour.ONLINE, StatusTour.DELETED,
+        StatusTour.PENDING, StatusTour.SUCCESS, StatusTour.REJECT),
         defaultValue: StatusTour.WAITING,
     }, 
     current_customers: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true,
+        defaultValue: 0
     },
     max_customer: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true,
+        defaultValue: 0
     },
     departure_place: {
         type: DataTypes.STRING,
@@ -49,11 +52,11 @@ Tour.init({
     },
     departure_date: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     destination_place: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     }, 
     booked_number : {
         type: DataTypes.INTEGER,
@@ -66,37 +69,38 @@ Tour.init({
     },
     departure_time: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     deadline_book_time: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     price: {
         type: DataTypes.DECIMAL(10, 2),
-        allowNull: false
+        allowNull: true,
+        defaultValue: 0
     },
     average_rate: {
         type: DataTypes.DECIMAL(3, 1),
-        allowNull: false,
+        allowNull: true,
         defaultValue: 0.0
     },
     count_reviewer: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         defaultValue: 0
     },
     highlight: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: true
     },
     note: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: true
     }
 },  { sequelize, modelName: 'tour' })
 

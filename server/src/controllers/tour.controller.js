@@ -15,6 +15,7 @@ const { findTourById } = require("../services/tour.service")
 const AttractionTour = require("../models/attraction_tour.model")
 const { pushNotiToSystem } = require("../services/notification.service")
 const Review = require("../models/review.model")
+const UserTour = require("../models/user_tour.model")
 
 const slugify = (text) => {
     return text.toString().toLowerCase()
@@ -25,7 +26,7 @@ const slugify = (text) => {
         .replace(/^-+/, '')            
         .replace(/-+$/, '');          
 };
-``
+
 class TourController {
 
     createTour = async (req, res, next) => {
@@ -510,6 +511,43 @@ class TourController {
         return res.status(200).json({
             data: tours
         })
+    }
+
+    // response tour from user
+    responseTour = async (req, res, next) => {
+        try {
+            const tour_id = req.params.tour_id
+            const { user_id, status } = req.body
+            const tourUser = await UserTour.findOne({
+                where: {
+                    user_id: user_id,
+                    tour_id: tour_id
+                }
+            })
+            if (!tourUser) return res.status(404).json({ message: "Not foud userTour proposed!"})
+
+            const tour = await findTourById(tour_id)
+            if (!tour) return res.status(404).json({ message: "Not found status!" })
+
+            switch(status) {
+                case "reject":
+                    tour.status = StatusTour.REJECT
+                    await tour.save()
+                    return res.status(200).json({ 
+                        message: "Reject tour successfully!",
+                        data: tour
+                    })
+                case "success":
+                        tour.status = StatusTour.SUCCESS
+                        await tour.save()
+                        return res.status(200).json({ 
+                            message: "Response tour successfully!",
+                            data: tour
+                        })
+            }
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
     }
 }
 

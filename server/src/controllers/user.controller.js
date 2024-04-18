@@ -10,10 +10,16 @@ const { isExpired } = require("../utils/checkExpire")
 const Wishlist = require("../models/wishlist.model")
 const Tour = require("../models/tour.model")
 const Order = require("../models/order.model")
+const Attraction = require("../models/attraction.model")
+const AttractionTour = require("../models/attraction_tour.model")
+const Destination = require("../models/destination.model")
+const DestinationTour = require("../models/destination_tour.model")
 const WishlistTour = require("../models/wishlist_tour.model")
 const OrderTour = require("../models/order_tour.model")
 const { findUserById } = require("../services/user.service")
 const { findTourById } = require("../services/tour.service")
+const { StatusTour } = require("../common/status")
+const UserTour = require("../models/user_tour.model")
 
 class UserController {
 
@@ -274,7 +280,6 @@ class UserController {
                 user_id: user_id
             }, include: [{
                 model: Tour,
-                // attributes: ['tour_id', 'name', 'departure_date', 'price'],
             }]
         })
 
@@ -313,6 +318,72 @@ class UserController {
             return res.status(500).json({
                 message: error.message
             })
+        }
+    }
+
+    proposeTour = async (req, res, next) => {
+        try {
+            const { departure_place, 
+                destination_places,
+                attractions,
+                departure_time,
+                departure_date,
+                time,
+                max_number,
+                note,
+                user_id
+            } = req.body
+
+            const currentDate = new Date()
+    
+            const user = await findUserById(user_id)
+            if (!user) return res.status(404).json({ message: "Not found user for proposing tour! "})
+            const newTour = await Tour.create({
+                name: "Tour of " + user.firstname + " " + user.lastname,
+                destination_place: JSON.stringify(destination_places),
+                attractions,
+                departure_time,
+                departure_date,
+                time,
+                max_number,
+                note,
+                departure_place,
+                deadline_book_time: new Date(currentDate),
+                status: StatusTour.PENDING
+            })
+
+            // Associate destinations with the tour
+            for (const dest of destination_places) {
+                const destination = await Destination.findOne({ where: { name: dest } });
+                await DestinationTour.create({
+                    tour_id: newTour.tour_id,
+                    destination_id: destination.destination_id,
+                });
+            }
+
+            // Associate attractions with the tour
+            for (const attraction of attractions) {
+                const exist_attraction = await Attraction.findOne({
+                    where: { name: attraction }
+                })
+                console.log(`${attraction}:::`, exist_attraction)
+                const [attraction_tour, created] = await AttractionTour.findOrCreate({
+                    where: { attraction_id: exist_attraction.attraction_id, tour_id: newTour.tour_id },
+                    defaults: { attraction_id: exist_attraction.attraction_id, tour_id: newTour.tour_id }
+                })
+            }
+
+            await UserTour.create({
+                user_id: user_id,
+                tour_id: newTour.tour_id
+            })
+
+            return res.status(200).json({
+                message: "Propose tour successfully!",
+                data: newTour
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
         }
     }
 }

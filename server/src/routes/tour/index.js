@@ -7,8 +7,7 @@ const tourController = require("../../controllers/tour.controller")
 const commentController = require("../../controllers/comment.controller")
 const formidableMiddleware = require('express-formidable');
 
-router.use(formidableMiddleware());
-router.post("/", asyncHandler(tourController.createTour))
+router.post("/", formidableMiddleware(), asyncHandler(tourController.createTour))
 router.get("/all", asyncHandler(tourController.getAllTours))
 router.get("/all/waiting", asyncHandler(tourController.getWaitingTours))
 router.get("/all/deleted", asyncHandler(tourController.getDeletedTours))
@@ -22,6 +21,7 @@ router.get("/:tour_id/comments/:parent_comment_id", asyncHandler(commentControll
 router.get("/:tour_id/destination", asyncHandler(tourController.getDestinationTour))
 router.get("/:tour_id/schedule", asyncHandler(tourController.getScheduleByIdTour))
 router.put("/:tour_id", asyncHandler(tourController.updateTour))
+router.patch("/:tour_id", asyncHandler(tourController.responseTour))
 router.put("/recover/:tour_id", asyncHandler(tourController.recoverTour))
 router.post("/upload/:tour_id", asyncHandler(tourController.updateCoverImageTour))
 router.delete("/:tour_id", asyncHandler(tourController.deleteTour))

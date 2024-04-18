@@ -9,6 +9,8 @@ const { authenticate } = require("../../middlewares/authenticate")
 const upload = require("../../config/cloudinary.config")
 
 router.get("/:user_id", authenticate, asyncHandler(userController.getInfoUser))
+router.get("/:user_id", authenticate, asyncHandler(userController.getInfoUser))
+router.post("/:user_id/tour", authenticate, asyncHandler(userController.proposeTour))
 router.get("/:user_id/completed_order", asyncHandler(orderController.getCompleteOrderByUser))
 router.get("/:user_id/failed_order", asyncHandler(orderController.getFailedOrderByUser))
 router.post("/change-password", authenticate, asyncHandler(userController.changePassword))

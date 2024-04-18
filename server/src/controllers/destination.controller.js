@@ -6,6 +6,7 @@ const fs = require("fs")
 const path = require('path');
 const { checkExistDestination } = require("../services/destination.service")
 const jsonFilePath = path.join(__dirname, '../data', 'destination_data.json');
+const cityFilePath = path.join(__dirname, '../data', 'city_data.json');
 
 class DestinationController {
 
@@ -51,6 +52,20 @@ class DestinationController {
                 data: all_destinations
             })
         } catch(error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }    
+
+    getAllCities = async (req, res, next) => {
+        try {
+            const data = await fs.readFileSync(cityFilePath, 'utf-8')
+            const cities = JSON.parse(data)
+
+            return res.status(200).json({
+                message: "Get cities successfully!",
+                cities: cities
+            })
+        } catch (error) {
             return res.status(500).json({ message: error.message })
         }
     }

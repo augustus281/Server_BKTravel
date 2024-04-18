@@ -2,9 +2,12 @@
 
 const Voucher = require("../models/voucher.model")
 
-const updateNumberVoucher = async (id, count) => {
-    const voucher = await Voucher.findOne({ where: { voucher_id: id }})
-    // updating.....
+const decreaseCountOfVoucher = async (code) => {
+    const voucher = await Voucher.findOne({ where: { code: code }})
+    if (!voucher) return null;
+    voucher.count--;
+    await voucher.save();
+    return voucher;
 }
 
 const findVoucherById = async (id) => {
@@ -16,7 +19,7 @@ const findVoucherByCode = async (code) => {
 }
 
 module.exports = {
-    updateNumberVoucher,
+    decreaseCountOfVoucher,
     findVoucherById,
     findVoucherByCode
 }

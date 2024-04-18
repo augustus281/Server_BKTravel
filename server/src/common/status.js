@@ -1,7 +1,10 @@
 const StatusTour = {
     WAITING: 'waiting',
     ONLINE: 'online',
-    DELETED: 'deleted'
+    DELETED: 'deleted',
+    PENDING: 'pending',
+    REJECT: 'reject',
+    SUCCESS: 'success'
 }
 
 const StatusOrder = {
@@ -22,9 +25,17 @@ const TypeDiscount = {
     PERCENTAGE: "percentage"
 }
 
+const TypeNotification = {
+    ORDER_001: "order successfully",
+    ORDER_002: "order failed",
+    PROMOTION_001: "new PROMOTION",
+    TOUR_001: "new tour by customer like"
+}
+
 module.exports = {
     StatusTour,
     StatusOrder,
     RoleUser,
-    TypeDiscount
+    TypeDiscount,
+    TypeNotification
 }
