@@ -20,6 +20,7 @@ const { findUserById } = require("../services/user.service")
 const { findTourById } = require("../services/tour.service")
 const { StatusTour } = require("../common/status")
 const UserTour = require("../models/user_tour.model")
+const { where } = require("sequelize")
 
 class UserController {
 
@@ -380,11 +381,97 @@ class UserController {
 
             return res.status(200).json({
                 message: "Propose tour successfully!",
-                data: newTour
+                data: await Tour.findOne({
+                    where: {
+                        tour_id: newTour.tour_id
+                    },
+                    include: [Destination, Attraction]
+                })
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
+    }
+
+    getPendingTour = async (req, res, next) => {
+        try {
+            const user_id = req.params.user_id;
+            const pendingTour = await User.findAll({
+                where: {
+                    user_id: user_id
+                }, include: [{
+                    model: Tour,
+                    where: { status: StatusTour.PENDING }, 
+                    include: [
+                        Attraction, Destination
+                    ]
+                }]
+            })
+
+            if (!pendingTour) return res.status(404).json({ message: "Not found pending tour! "})
+
+            return res.status(200).json({
+                message: "Get all pending tours successfully!",
+                data: pendingTour
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+        
+    }
+
+    getRejectTour = async (req, res, next) => {
+        try {
+            const user_id = req.params.user_id;
+            const rejectedTour = await User.findAll({
+                where: {
+                    user_id: user_id
+                }, include: [{
+                    model: Tour,
+                    where: { status: StatusTour.REJECT }, 
+                    include: [
+                        Attraction, Destination
+                    ]
+                }]
+            })
+
+            if (!rejectedTour) return res.status(404).json({ message: "Not found pending tour! "})
+
+            return res.status(200).json({
+                message: "Get all reject tours successfully!",
+                data: rejectedTour
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+        
+    }
+
+    getSuccessTour = async (req, res, next) => {
+        try {
+            const user_id = req.params.user_id;
+            const successTour = await User.findAll({
+                where: {
+                    user_id: user_id
+                }, include: [{
+                    model: Tour,
+                    where: { status: StatusTour.SUCCESS }, 
+                    include: [
+                        Attraction, Destination
+                    ]
+                }]
+            })
+
+            if (!successTour) return res.status(404).json({ message: "Not found pending tour! "})
+
+            return res.status(200).json({
+                message: "Get all success tours successfully!",
+                data: successTour
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+        
     }
 }
 
