@@ -7,6 +7,7 @@ const path = require('path');
 const { checkExistDestination } = require("../services/destination.service")
 const jsonFilePath = path.join(__dirname, '../data', 'destination_data.json');
 const cityFilePath = path.join(__dirname, '../data', 'city_data.json');
+const cityVNFilePath = path.join(__dirname, '../data', 'city_vi_data.json');
 
 class DestinationController {
 
@@ -61,9 +62,13 @@ class DestinationController {
             const data = await fs.readFileSync(cityFilePath, 'utf-8')
             const cities = JSON.parse(data)
 
+            const dataVN = await fs.readFileSync(cityVNFilePath, 'utf-8')
+            const citiesVN = JSON.parse(dataVN)
+
             return res.status(200).json({
                 message: "Get cities successfully!",
-                cities: cities
+                cities: cities,
+                citiesVN: citiesVN
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
