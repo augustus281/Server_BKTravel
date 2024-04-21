@@ -521,7 +521,7 @@ class TourController {
     responseTour = async (req, res, next) => {
         try {
             const tour_id = req.params.tour_id
-            const { user_id, status } = req.body
+            const { user_id, status, price, reason } = req.body
             const tourUser = await UserTour.findOne({
                 where: {
                     user_id: user_id,
@@ -532,17 +532,20 @@ class TourController {
 
             const tour = await findTourById(tour_id)
             if (!tour) return res.status(404).json({ message: "Not found status!" })
-
+            console.log("status:::", status)
             switch(status) {
                 case "reject":
                     tour.status = StatusTour.REJECT
+                    tour.note = reason
                     await tour.save()
                     return res.status(200).json({ 
                         message: "Reject tour successfully!",
-                        data: tour
+                        data: tour,
+                        reason: reason
                     })
                 case "success":
                         tour.status = StatusTour.SUCCESS
+                        tour.price = parseFloat(price)
                         await tour.save()
                         return res.status(200).json({ 
                             message: "Response tour successfully!",
