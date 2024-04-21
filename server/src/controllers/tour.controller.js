@@ -388,6 +388,7 @@ class TourController {
                 attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
+                include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
 
@@ -407,6 +408,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
+                include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
@@ -425,6 +427,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
+                include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
@@ -443,6 +446,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
+                include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
@@ -558,6 +562,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
+                include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
@@ -576,6 +581,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
+                include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
@@ -594,6 +600,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
+                include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
