@@ -16,6 +16,7 @@ const AttractionTour = require("../models/attraction_tour.model")
 const { pushNotiToSystem } = require("../services/notification.service")
 const Review = require("../models/review.model")
 const UserTour = require("../models/user_tour.model")
+const User = require("../models/user.model")
 
 const slugify = (text) => {
     return text.toString().toLowerCase()
@@ -565,7 +566,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
-                include: [Destination, Attraction],
+                include: [Destination, Attraction, User],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
@@ -584,7 +585,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
-                include: [Destination, Attraction],
+                include: [Destination, Attraction, User],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
@@ -603,7 +604,7 @@ class TourController {
                 }, attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
-                include: [Destination, Attraction],
+                include: [Destination, Attraction, User],
                 order: [['tour_id', 'DESC']]
             })
             return res.status(200).json({
