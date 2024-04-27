@@ -21,7 +21,7 @@ io.on("connection", (socket) => {
     })
 
     // add member to group
-    socket.on("add ember", async (userID) => {
+    socket.on("add member", async (userID) => {
         const target = onlineUsers.find((user) => user.userId == userID)
 
         if (target) {
