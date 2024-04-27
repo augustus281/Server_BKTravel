@@ -8,6 +8,7 @@ const OrderItem = require("./order_item.model");
 const Comment = require("./comment.model");
 const Review = require("./review.model");
 const Group = require("./group.model");
+const Notification = require("./notification.model")
 
 class Tour extends Model {}
 Tour.init({
@@ -109,5 +110,6 @@ Tour.hasMany(OrderItem, { foreignKey: "tour_id" })
 Tour.hasMany(Comment, { foreignKey: "tour_id" })
 Tour.hasMany(Review, { foreignKey: "tour_id" })
 Tour.hasOne(Group, { foreignKey: "tour_id" })
+Tour.hasMany(Notification, { foreignKey: "tour_id" })
 
 module.exports = Tour
