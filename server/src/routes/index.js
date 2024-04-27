@@ -17,5 +17,6 @@ router.use('/api/v1/comment', require("./comment"))
 router.use('/api/v1/voucher', require("./voucher"))
 router.use('/api/v1/review', require("./review"))
 router.use('/api/v1/order', require("./order"))
+router.use('/api/v1/groups', require("./group"))
 
 module.exports = router

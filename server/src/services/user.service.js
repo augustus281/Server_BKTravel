@@ -9,7 +9,7 @@ const findUserByEmail = async (email) => {
 }
 
 const findUserById = async (user_id) => {
-    return await User.findOne({ where: { user_id }})
+    return await User.findOne({ where: { user_id: user_id }})
 }
 
 const uploadPicture = async (picture_url) => {

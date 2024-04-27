@@ -2,23 +2,29 @@
 
 const { DataTypes, Model } = require("sequelize")
 const sequelize = require("../database/index")
+const User = require("./user.model")
+const Group = require("./group.model")
 
-class GroupMember extends Model {}
-GroupMember.init({
-    group_id: {
+class GroupUser extends Model {}
+GroupUser.init({
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false
     },
-    joined_datetime: {
-        type: DataTypes.DATE,
-        allowNull: true
+    user_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
     },
-    left_datetime: {
-        type: DataTypes.DATE,
-        allowNull: true
+    group_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
     }
-}, { sequelize, modelName: "group_member" })
+    
+}, { sequelize, modelName: "group_user" })
 
-module.exports = GroupMember 
+Group.belongsToMany(User, { through: GroupUser, foreignKey: "group_id" })
+User.belongsToMany(Group, { through: GroupUser, foreignKey: "user_id" })
+
+module.exports = GroupUser
