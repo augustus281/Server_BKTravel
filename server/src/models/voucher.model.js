@@ -1,7 +1,7 @@
 'use strict'
 
 const { DataTypes } = require("sequelize")
-const sequelize = require("../database/index")
+const sequelize = require("../database/connect.mysql")
 const { TypeDiscount } = require("../common/status")
 
 const Voucher = sequelize.define("voucher", {

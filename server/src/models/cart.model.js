@@ -1,7 +1,7 @@
 'use strict'
 
 const { DataTypes, Model } = require("sequelize")
-const sequelize = require("../database/index")
+const sequelize = require("../database/connect.mysql")
 const OrderItem = require("./order_item.model")
 
 class Cart extends Model {}

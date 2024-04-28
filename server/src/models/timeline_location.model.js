@@ -1,7 +1,7 @@
 'use strict'
 
 const { DataTypes } = require("sequelize")
-const sequelize = require("../database/index")
+const sequelize = require("../database/connect.mysql")
 const Timeline = require("../models/timeline.model")
 const Location = require("../models/location.model")
 
