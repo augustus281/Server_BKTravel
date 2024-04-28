@@ -10,13 +10,13 @@ const Destination = require("../models/destination.model")
 const DestinationTour = require("../models/destination_tour.model")
 const Op = Sequelize.Op
 const Attraction = require("../models/attraction.model")
-const { StatusTour, TypeNotification } = require("../common/status")
+const { StatusTour } = require("../common/status")
 const { findTourById } = require("../services/tour.service")
 const AttractionTour = require("../models/attraction_tour.model")
-const { pushNotiToSystem } = require("../services/notification.service")
 const Review = require("../models/review.model")
 const UserTour = require("../models/user_tour.model")
 const User = require("../models/user.model")
+const redis = require("redis")
 
 const slugify = (text) => {
     return text.toString().toLowerCase()
@@ -27,6 +27,14 @@ const slugify = (text) => {
         .replace(/^-+/, '')            
         .replace(/-+$/, '');          
 };
+
+let redisClient;
+(async () => {
+    redisClient = redis.createClient();
+    redisClient.on("error", (error) => console.error(`Error : ${error}`));
+    redisClient.on("connect", () => console.log("Redis connected"));
+    await redisClient.connect();
+})();
 
 class TourController {
 
@@ -103,8 +111,12 @@ class TourController {
                 deadline_book_time,
                 cover_image: link_cover_image.secure_url,
                 current_customers: 0,
-                list_image: JSON.stringify(list_image)
+                list_image: JSON.stringify(list_image),
+                status: StatusTour.WAITING
             });
+
+            // Delete cached data from Redis
+            redisClient.del("waiting_tours")
             
             // Associate destinations with the tour
             for (const dest of destinations) {
@@ -155,6 +167,9 @@ class TourController {
                 tour.cover_image = link_cover_image.secure_url
                 await tour.save()
             } 
+
+            // Deleted cached data from Redis
+            redisClient.del("tours")
 
             return res.status(200).json({
                 message: "Update tour successfully!",
@@ -385,7 +400,16 @@ class TourController {
 
     getAllTours = async(req, res, next) => {
         try {
-            const all_tours = await Tour.findAll({
+            const cachedData = await redisClient.get('tours');
+            if (cachedData) {
+                return res.send({
+                    success: true,
+                    message: 'All tours retrieved from cache successfully!',
+                    data   : JSON.parse(cachedData)
+                });
+            }
+
+            const results = await Tour.findAll({
                 attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
@@ -393,9 +417,22 @@ class TourController {
                 order: [['tour_id', 'DESC']]
             })
 
-            return res.status(200).json({
-                data: all_tours
-            })
+            if (!results.length) {
+                return res.send({
+                    success: false,
+                    message: 'No tours found!',
+                    data   : results
+                });
+            }
+    
+            // Cache data in Redis for 1 hour (3600 seconds)
+            redisClient.setEx('tours', 3600, JSON.stringify(results));
+    
+            return res.send({
+                success: true,
+                message: 'Tours retrieved from database successfully!',
+                data   : results
+            });
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
@@ -403,18 +440,42 @@ class TourController {
 
     getWaitingTours = async(req, res, next) => {
         try {
-            const tours = await Tour.findAll({
+            const cachedData = await redisClient.get('waiting_tours');
+            if (cachedData) {
+                return res.send({
+                    success: true,
+                    message: 'All waiting tours retrieved from cache successfully!',
+                    data   : JSON.parse(cachedData)
+                });
+            }
+
+            const results = await Tour.findAll({
                 where: {
                     status: StatusTour.WAITING
-                }, attributes: {
+                },
+                attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
                 include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
-            return res.status(200).json({
-                tours: tours
-            })
+
+            if (!results.length) {
+                return res.send({
+                    success: false,
+                    message: 'No waiting tours found!',
+                    data   : results
+                });
+            }
+    
+            // Cache data in Redis for 1 hour (3600 seconds)
+            redisClient.setEx('waiting_tours', 3600, JSON.stringify(results));
+    
+            return res.send({
+                success: true,
+                message: 'Waiting tours retrieved from database successfully!',
+                data   : results
+            });
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
@@ -422,18 +483,42 @@ class TourController {
 
     getOnlineTours = async(req, res, next) => {
         try {
-            const tours = await Tour.findAll({
+            const cachedData = await redisClient.get('online_tours');
+            if (cachedData) {
+                return res.send({
+                    success: true,
+                    message: 'All online tours retrieved from cache successfully!',
+                    data   : JSON.parse(cachedData)
+                });
+            }
+
+            const results = await Tour.findAll({
                 where: {
                     status: StatusTour.ONLINE
-                }, attributes: {
+                },
+                attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
                 include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
-            return res.status(200).json({
-                tours: tours
-            })
+
+            if (!results.length) {
+                return res.send({
+                    success: false,
+                    message: 'No online tours found!',
+                    data   : results
+                });
+            }
+    
+            // Cache data in Redis for 1 hour (3600 seconds)
+            redisClient.setEx('online_tours', 3600, JSON.stringify(results));
+    
+            return res.send({
+                success: true,
+                message: 'Online tours retrieved from database successfully!',
+                data   : results
+            });
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
@@ -441,18 +526,42 @@ class TourController {
 
     getDeletedTours = async(req, res, next) => {
         try {
-            const tours = await Tour.findAll({
+            const cachedData = await redisClient.get('deleted_tours');
+            if (cachedData) {
+                return res.send({
+                    success: true,
+                    message: 'All deleted tours retrieved from cache successfully!',
+                    data   : JSON.parse(cachedData)
+                });
+            }
+
+            const results = await Tour.findAll({
                 where: {
                     status: StatusTour.DELETED
-                }, attributes: {
+                },
+                attributes: {
                     exclude: ['updatedAt', 'createdAt']
                 },
                 include: [Destination, Attraction],
                 order: [['tour_id', 'DESC']]
             })
-            return res.status(200).json({
-                tours: tours
-            })
+
+            if (!results.length) {
+                return res.send({
+                    success: false,
+                    message: 'No deleted tours found!',
+                    data   : results
+                });
+            }
+    
+            // Cache data in Redis for 1 hour (3600 seconds)
+            redisClient.setEx('deleted_tours', 3600, JSON.stringify(results));
+    
+            return res.send({
+                success: true,
+                message: 'Deleted tours retrieved from database successfully!',
+                data   : results
+            });
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
@@ -465,6 +574,9 @@ class TourController {
             if (!tour) return res.status(404).json({ Message: "Not found tour!"})
             tour.status = StatusTour.WAITING
             await tour.save()
+
+            redisClient.del("waiting_tours")
+
             return res.status(200).json({ message: "Recover tour successfully"})
         } catch (error) {
             return res.status(500).json({ message: error.message })
@@ -478,6 +590,10 @@ class TourController {
             if (!tour) return res.status(404).json({ Message: "Not found tour!"})
             tour.status = StatusTour.DELETED
             await tour.save()
+
+            // Deleted cached data from Redis
+            redisClient.del("deleted_tours")
+
             return res.status(200).json({ message: "Delete tour successfully"})
         } catch (error) {
             return res.status(500).json({ message: error.message })

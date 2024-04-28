@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 require('./database/connect.mysql')
 
 // init redis
-require('./database/connect.redis')
+// require('./database/connect.redis')
 app.use(cors({ origin: 'http://localhost:3000' }));
 
 

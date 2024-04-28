@@ -13,13 +13,18 @@ add tour to wishlist, add tour to cart, checkout, payment by vnpay
 - Intergrate bot of discord for logging system
 - Nested comment, delete comment
 - Rating tour
+- Chat realtime for group
+- API weather
+- Using Redis for caching database
+- Notification
 
 #### UPDATING....
-- Chat app realtime
-- API google map + weather
+- Chat app with system
+- API google map
+- Recommendation system
 
 ## TECHNOLOGY:
 ### BACKEND:
 - NodeJS
-- Database: MySQL
+- Database: MySQL, Redis
 - Docker for CI
