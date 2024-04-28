@@ -1,7 +1,7 @@
 'use strict'
 
 const { DataTypes, Model } = require("sequelize")
-const sequelize = require("../database/index")
+const sequelize = require("../database/connect.mysql")
 const Tour = require("./tour.model")
 
 class Schedule extends Model {}

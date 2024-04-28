@@ -1,7 +1,7 @@
 'use strict'
 
 const { Model, DataTypes } = require("sequelize")
-const sequelize = require("../database/index")
+const sequelize = require("../database/connect.mysql")
 
 class Comment extends Model {}
 Comment.init({

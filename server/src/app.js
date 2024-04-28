@@ -21,9 +21,10 @@ app.use(express.urlencoded({
 app.use(bodyParser.json())
 
 // init mysql
-require('./database/index')
+require('./database/connect.mysql')
 
-
+// init redis
+require('./database/connect.redis')
 app.use(cors({ origin: 'http://localhost:3000' }));
 
 
