@@ -14,9 +14,9 @@ const io = require("socket.io")(server, {
 // using socket
 const onlineUsers = [];
 io.use(function (socket, next) {
-    if (socket.handshake.query && socket.handshake.query.token) {
+    if (socket.handshake.query && socket.handshake.query.access_token) {
         jwt.verify(
-            socket.handshake.query.token,
+            socket.handshake.query.access_token,
             process.env.JWT_SECRET,
             function (err, decoded) {
                 if (err) return next(new Error("Authentication error"));
