@@ -576,6 +576,8 @@ class TourController {
             await tour.save()
 
             redisClient.del("waiting_tours")
+            redisClient.del("online_tours")
+            redisClient.del("deleted_tours")
 
             return res.status(200).json({ message: "Recover tour successfully"})
         } catch (error) {
@@ -592,7 +594,8 @@ class TourController {
             await tour.save()
 
             // Deleted cached data from Redis
-            redisClient.del("deleted_tours")
+            redisClient.del("waiting_tours")
+            redisClient.del("online_tours")
 
             return res.status(200).json({ message: "Delete tour successfully"})
         } catch (error) {
