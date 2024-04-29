@@ -13,7 +13,22 @@ const io = require("socket.io")(server, {
 
 // using socket
 const onlineUsers = [];
-io.on("connection", (socket) => {
+io.use(function (socket, next) {
+    if (socket.handshake.query && socket.handshake.query.token) {
+        jwt.verify(
+            socket.handshake.query.token,
+            process.env.JWT_SECRET,
+            function (err, decoded) {
+                if (err) return next(new Error("Authentication error"));
+                socket.decoded = decoded;
+                next();
+            }
+        );
+    } else {
+        next(new Error("Authentication error"));
+    }
+})
+.on("connection", (socket) => {
     console.log("A connection has been made");
     // store in users array in online
     socket.on("online", (userID) => {
@@ -61,3 +76,4 @@ io.on("connection", (socket) => {
     });
 
 })
+
