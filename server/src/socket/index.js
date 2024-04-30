@@ -1,13 +1,13 @@
 const app = require("../app");
 const Group = require("../models/group.model")
 const GroupUser = require("../models/group_member.model");
+const jwt = require("jsonwebtoken")
 
 const server = require("http").createServer(app)
 const io = require("socket.io")(server, {
     cors: {
         origin: 'http://localhost:3000',
-        METHODS: ["POST", "GET"],
-        Credential: true
+        METHODS: ["POST", "GET"]
     }
 })
 
@@ -15,9 +15,10 @@ const io = require("socket.io")(server, {
 const onlineUsers = [];
 io.use(function (socket, next) {
     if (socket.handshake.query && socket.handshake.query.access_token) {
+        console.log("token:::", socket.handshake.query.access_token)
         jwt.verify(
             socket.handshake.query.access_token,
-            process.env.JWT_SECRET,
+            process.env.ACCESS_TOKEN_SECRET,
             function (err, decoded) {
                 if (err) return next(new Error("Authentication error"));
                 socket.decoded = decoded;
@@ -33,6 +34,7 @@ io.use(function (socket, next) {
     // store in users array in online
     socket.on("online", (userID) => {
         onlineUsers.push({ userId: userID, socketId: socket.id })
+        console.log(`User ${userID} is online`);
     })
 
     // add member to group
