@@ -21,6 +21,9 @@ const { findTourById } = require("../services/tour.service")
 const { StatusTour } = require("../common/status")
 const UserTour = require("../models/user_tour.model")
 const { where } = require("sequelize")
+const { NotFoundError, BadRequestError } = require("../core/error.response")
+const GroupUser = require("../models/group_member.model")
+const Group = require("../models/group.model")
 
 class UserController {
 
@@ -473,6 +476,34 @@ class UserController {
             return res.status(500).json({ message: error.message })
         }
         
+    }
+
+    getAllGroupsByUserId = async (req, res, next) => {
+        try {
+            const user_id = req.params.user_id
+
+            const user = await findUserById(user_id)
+            if (!user) throw new NotFoundError("Not found user!")
+
+            const allGroups = await User.findAll({
+                where: {
+                    user_id: user_id
+                },
+                attributes: ["user_id", "email", "lastname", "firstname"],
+                include: [
+                    Group
+                ]
+            })
+
+            if (allGroups.length == 0) throw new BadRequestError("User doesn't join any group!")
+            return res.status(200).json({
+                message: "Get all groups by user_id successfully!",
+                data: allGroups
+            })
+            
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
     }
 }
 
