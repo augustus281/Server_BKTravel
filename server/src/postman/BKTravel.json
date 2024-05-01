@@ -1512,7 +1512,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/groups/:group_id",
+					"raw": "http://localhost:8080/api/v1/groups/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1522,13 +1522,7 @@
 						"api",
 						"v1",
 						"groups",
-						":group_id"
-					],
-					"variable": [
-						{
-							"key": "group_id",
-							"value": ""
-						}
+						"1"
 					]
 				}
 			},
@@ -1689,6 +1683,35 @@
 					"path": [
 						"api",
 						"v1",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all groups by userid",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTQ1ODMwNDUsImV4cCI6MTcxNDU4NDg0NX0.qr9BSXxuD0X4WDDb0qX7yCo901bPUIzdFP4QPyIiTfc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/user/1/groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1",
 						"groups"
 					]
 				}
@@ -3127,6 +3150,14 @@
 						"114100398577489927435"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
