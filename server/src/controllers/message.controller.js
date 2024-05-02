@@ -12,7 +12,7 @@ class MessageController {
             const group = await findGroupByID(group_id)
             if (!group) return res.status(404).json({ message: "Not found group!" })
 
-            const user = await findGroupByID(user_id)
+            const user = await findUserById(user_id)
             if (!user) return res.status(404).json({ message: "Not found user" })
 
             const newMessage = await Message.create({
@@ -24,7 +24,8 @@ class MessageController {
             if (!newMessage) return res.status(400).json({ message: "Failed to create message!" })
             return res.status(200).json({
                 message: "Create message successfully!",
-                data: newMessage
+                data: newMessage,
+                user: user
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
