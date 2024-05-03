@@ -5,6 +5,15 @@ const Attraction = require("../models/attraction.model")
 const OtherAttraction = require("../models/other_attraction.model")
 const Schedule = require("../models/schedule.model")
 const { findTourById } = require("../services/tour.service")
+const redis = require("redis")
+
+let redisClient;
+(async () => {
+    redisClient = redis.createClient();
+    redisClient.on("error", (error) => console.error(`Error : ${error}`));
+    redisClient.on("connect", () => console.log("Redis connected"));
+    await redisClient.connect();
+})();
 
 class ScheduleController {
     createSchedule = async(req, res, next) => {
@@ -52,6 +61,9 @@ class ScheduleController {
 
             tour.status = StatusTour.ONLINE
             await tour.save()
+
+            redisClient.del("waiting_tours")
+            redisClient.del("online_tours")
             
             return res.status(201).json({ 
                 data: new_schedule,
