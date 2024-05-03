@@ -10,6 +10,7 @@ router.get("/", asyncHandler(groupController.getAllGroups))
 router.get("/tours/:tour_id", asyncHandler(groupController.getGroupByTourId))
 router.get("/:group_id", asyncHandler(groupController.getGroupById))
 router.post("/:group_id", asyncHandler(groupController.addUserToGroup))
+router.post("/:group_id/join", asyncHandler(groupController.joinGroup))
 router.get("/:group_id/messages", asyncHandler(groupController.getAllMessagesFromGroup))
 
 module.exports = router
