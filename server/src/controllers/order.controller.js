@@ -64,6 +64,18 @@ class OrderController {
                 price: tour.price
             });
     
+            // add newOrderItem to Cart
+            const cart = await Cart.findOne({ where: { user_id: user_id }})
+
+            let newCart
+            if (!cart) {
+                newCart = await Cart.create({
+                    user_id: user_id,
+                    total: price,
+                    amount_items: 1
+                })
+            }
+
             return res.status(200).json({ 
                 order: new_order
             })
