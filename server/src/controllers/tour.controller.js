@@ -630,7 +630,12 @@ class TourController {
                 [Op.and]: searchConditions
             };
         }
-        const tours = await Tour.findAll({ where: condition })
+        const tours = await Tour.findAll({ 
+            where: {
+                conditions, 
+                status: StatusTour.ONLINE
+            }
+        })
 
         return res.status(200).json({
             data: tours
