@@ -6,12 +6,22 @@ const Voucher = require("../models/voucher.model")
 const cloudinary = require("../utils/cloudinary")
 const Sequelize = require("sequelize")
 const Op = Sequelize.Op
+const randomestring = require("randomstring")
+const redis = require("redis")
+
+let redisClient;
+(async () => {
+    redisClient = redis.createClient();
+    redisClient.on("error", (error) => console.error(`Error : ${error}`));
+    redisClient.on("connect", () => console.log("Redis connected"));
+    await redisClient.connect();
+})();
 
 class VoucherController {
 
     createVoucher = async (req, res, next) => {
         try {
-            const { code_voucher, type, value_discount, max_number,
+            const { type, value_discount, max_number,
                 min_order_value, start_date, expired_date, description
             } = req.fields
     
@@ -19,7 +29,7 @@ class VoucherController {
             const link_image = await cloudinary.uploader.upload(result)
 
             const new_voucher = await Voucher.create({
-                code_voucher: code_voucher,
+                code_voucher: randomestring.generate(7),
                 type: type,
                 value_discount: value_discount,
                 max_number: max_number,
