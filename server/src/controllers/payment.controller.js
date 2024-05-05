@@ -6,11 +6,13 @@ let querystring = require('qs');
 const crypto = require('crypto');
 const { findTourById } = require('../services/tour.service');
 const OrderItem = require('../models/order_item.model');
+const OrderTour  = require('../models/order_tour.model')
 const User = require('../models/user.model')
 const Order = require('../models/order.model');
 const { StatusOrder } = require('../common/status');
 const { updateTotalCart } = require('../services/cart.service');
 const { findVoucherById } = require('../services/voucher.service');
+const Tour = require('../models/tour.model');
 
 
 const tmnCode = process.env.vnp_TmnCode;
@@ -148,8 +150,15 @@ class PaymentController {
                     order.status = StatusOrder.COMPLETE;
                     await order.save()
 
-                    console.log(`total:::`, order.total)
-                    await OrderItem.destroy({ where: { order_id: order.order_id } });
+                    // update current_customers & booked_number tour
+                    const listOrderItems = await OrderItem.findAll({ where: { order_id: order.order_id } });
+                    for (const orderItem of listOrderItems) {
+                        const tour = await findTourById(orderItem.tour_id)
+
+                        tour.current_customers += orderItem.quantity
+                        tour.booked_number += orderItem.quantity
+                        await tour.save()
+                    }
 
                     // update total of cart
                     await updateTotalCart(order.user_id, order.total)
