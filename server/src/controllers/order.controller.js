@@ -58,6 +58,7 @@ class OrderController {
             const newOrderItem = await OrderItem.create({
                 child_quantity,
                 adult_quantity,
+                quantity: child_quantity + adult_quantity,
                 total_price: price,
                 order_id: new_order.order_id,
                 tour_id,
@@ -158,7 +159,7 @@ class OrderController {
                     if (!voucher) throw new NotFoundError("Not found voucher by code!");
 
                     // check expired of voucher
-                    if (isExpired(voucher.expired_data)) throw new BadRequestError("Voucher is expired, you can't apply it!");
+                    if (!isExpired(voucher.expired_date)) throw new BadRequestError("Voucher is expired, you can't apply it!");
 
                     // check slot of voucher
                     if (voucher.count == 0) throw new BadRequestError("Voucher has no slots for you apply!");
