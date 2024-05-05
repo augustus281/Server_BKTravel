@@ -97,7 +97,7 @@ Tour.init({
         allowNull: true
     },
     note: {
-        type: DataTypes.STRING,
+        type: DataTypes.TEXT,
         allowNull: true
     },
     description: {
