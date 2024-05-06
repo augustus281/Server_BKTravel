@@ -13,5 +13,7 @@ router.get("/:user_id/complete", asyncHandler(orderController.getCompleteOrderBy
 router.post("/:order_id/applyVoucher", asyncHandler(orderController.applyVoucherToOrder))
 router.put("/removeVoucher", asyncHandler(orderController.removeVoucherFromOrder))
 router.get("/:order_id", asyncHandler(orderController.getDetailOrderByUser))
+router.get("/:order_id/vouchers", asyncHandler(orderController.getVoucherByOrderId))
+router.post("/:order_id/vouchers", asyncHandler(orderController.removeVoucherFromOrder))
 
 module.exports = router
