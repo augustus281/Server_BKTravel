@@ -26,22 +26,30 @@ class CartController {
             if (!user) return res.status(404).json({ message: "Not found user!" })
     
             // create cart if user doesn't have
-            const [cart, cart_created] = await Cart.findOrCreate({
-                where: { user_id: user_id },
-                defaults: { user_id: user_id }
+            const existCart = await Cart.findOne({
+                where: {
+                    user_id: user_id
+                }
             })
             
+            let cart
+            if (!existCart) {
+                cart = await Cart.create({
+                    user_id: user_id
+                })
+            }
+            
+            const cartId = existCart ? existCart.cart_id : cart.cart_id;
+
             // check order_item in cart if it isn't, create order_item
             const { tour_id, adult_quantity, child_quantity } = req.body.tour
             const tour = await findTourById(tour_id)
             if (!tour) return res.status(404).json({ message: "Not found tour!" })
     
             const order_item = await OrderItem.findOne({
-                where: { cart_id: cart.cart_id, tour_id: tour_id }
+                where: { cart_id: cartId, tour_id: tour_id }
             })
 
-            // console.log(`new_total:::`, parseFloat(adult_quantity * (tour.price)) + parseFloat(0.75 * child_quantity * (tour.price)))
-            // return res.status(200).json({ message: "OK"})
             const total_price = parseFloat(adult_quantity * (tour.price)) + parseFloat(0.75 * child_quantity * (tour.price));
             let orderItem
             if (!order_item) {
@@ -51,7 +59,7 @@ class CartController {
                     quantity: adult_quantity + child_quantity,
                     adult_quantity: adult_quantity,
                     child_quantity: child_quantity,
-                    cart_id: cart.cart_id,
+                    cart_id: cartId,
                     total_price: parseFloat(total_price)
                 })
             } else {
@@ -63,18 +71,26 @@ class CartController {
             }
 
             // calculate total price of order item
-            const child_order = orderItem ? orderItem.child_quantity : order_item.child_quantity;
-            const adult_order = orderItem ? orderItem.adult_quantity : order_item.adult_quantity;
-            const new_total = parseFloat(adult_order * (tour.price)) + parseFloat(0.75 * child_order * (tour.price));
+            const new_total = parseFloat(adult_quantity * (tour.price)) + parseFloat(0.75 * child_quantity * (tour.price));
+            console.log("new_total:::", new_total)
             
             // update total of cart
-            cart.total = parseFloat(cart.total) + parseFloat(new_total);
-            cart.amount_items = order_item ? cart.amount_items : cart.amount_items++;
-            await cart.save()
+            if (existCart) {
+                existCart.total = parseFloat(existCart.total) + parseFloat(new_total);
+                console.log("total cart_created:::", existCart.total)
+                existCart.amount_items = order_item ? existCart.amount_items : existCart.amount_items++;
+                await existCart.save()
+            }
+            else {
+                cart.total = parseFloat(cart.total) + parseFloat(new_total);
+                console.log("total cart:::", cart.total)
+                cart.amount_items = order_item ? cart.amount_items : cart.amount_items++;
+                await cart.save()
+            }
 
             return res.status(200).json({
                 message: "Add tour to cart successfully!",
-                cart: cart
+                cart: cart ? cart : existCart
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
@@ -125,7 +141,7 @@ class CartController {
             await order_item.save()
             
             const new_total = parseFloat(cart.total) + parseFloat(order_item.price)
-            cart.total = parseFloat(cart.total) + parseFloat(new_total);
+            cart.total = parseFloat(new_total);
             await cart.save()
 
             return res.status(200).json({ 
