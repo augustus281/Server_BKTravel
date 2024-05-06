@@ -626,13 +626,15 @@ class TourController {
             if (time) {
                 searchConditions.push({ time: { [Op.like]: '%' + time + '%' } });
             }
+
+            searchConditions.push({ status: StatusTour.ONLINE })
+            
             condition = {
                 [Op.and]: searchConditions
             };
         }
         const tours = await Tour.findAll({ 
-            where: condition,
-            status: StatusTour.ONLINE
+            where: condition
         })
 
         return res.status(200).json({
