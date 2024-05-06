@@ -175,7 +175,7 @@ class CartController {
                 cart.amount_items--;
             }
             
-            const new_total = parseFloat(cart.total) - parseFloat(order_item.price)
+            const new_total = parseFloat(cart.total) - parseFloat(tour.price)
             cart.total = new_total <= 0 ? 0 : new_total;
             await cart.save()
 
@@ -231,7 +231,7 @@ class CartController {
 
             order_item.child_quantity--;
             order_item.quantity--;
-            order_item.total_price = parseFloat(order_item.total_price) - parseFloat(tour.price)
+            order_item.total_price = parseFloat(order_item.total_price) - parseFloat(0.75 * tour.price)
             await order_item.save()
 
             if (order_item.quantity == 0) {
@@ -239,7 +239,7 @@ class CartController {
                 cart.amount_items--;
             }
             
-            const new_total = parseFloat(cart.total) - parseFloat(0.75 * order_item.price)
+            const new_total = parseFloat(cart.total) - parseFloat(0.75 * tour.price)
             cart.total = new_total <= 0 ? 0 : new_total;
             cart.amount_items = new_total <= 0 ? 0 : new_total;
             await cart.save()
