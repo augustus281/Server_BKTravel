@@ -70,22 +70,6 @@ class VoucherController {
         }
     }
 
-    getVoucherByOrderId = async (req, res, next) => {
-        try {
-            const order_id = req.params;
-            const order = await Order.findByPk(order_id, { include: Voucher })
-            if (!order) throw new NotFoundError("Not found order!")
-
-            return res.status(200).json({
-                message: "Get vouchers of order successfully!",
-                vouchers: order.Voucher
-            })
-
-        } catch (error) {
-            return res.status(500).json({ message: error.message });
-        }
-    }
-
     getAllVouchers = async (req, res, next) => {
         try {
             const all_vouchers = await Voucher.findAll({
