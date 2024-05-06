@@ -165,7 +165,10 @@ class OrderController {
                     // check slot of voucher
                     if (voucher.count == 0) throw new BadRequestError("Voucher has no slots for you apply!");
                     voucher.remain_number--;
-                    await voucher.save()
+                    await voucher.save();
+
+                    if (voucher.remain_number <= 0) voucher.remain_number = 0;
+                    await voucher.save();
 
                     totalToPay = voucher.type == 'percentage' ? parseFloat((1 - voucher.value_discount) * totalToPay)
                                     : (parseFloat(totalToPay) - voucher.value_discount);
@@ -215,6 +218,9 @@ class OrderController {
 
             // update slot voucher
             voucher.remain_number++;
+            await voucher.save();
+
+            if (voucher.remain_number >= voucher.max_number) voucher.remain_number = voucher.max_number
             await voucher.save();
 
             // remove voucher from order
