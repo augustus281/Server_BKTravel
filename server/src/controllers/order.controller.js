@@ -17,6 +17,7 @@ let querystring = require('qs');
 const crypto = require('crypto');
 const Cart = require("../models/cart.model");
 const { isExpired } = require("../utils/checkExpire");
+const { Op } = require("sequelize");
 
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
@@ -163,6 +164,8 @@ class OrderController {
 
                     // check slot of voucher
                     if (voucher.count == 0) throw new BadRequestError("Voucher has no slots for you apply!");
+                    voucher.remain_number--;
+                    await voucher.save()
 
                     totalToPay = voucher.type == 'percentage' ? parseFloat((1 - voucher.value_discount) * totalToPay)
                                     : (parseFloat(totalToPay) - voucher.value_discount);
@@ -193,7 +196,9 @@ class OrderController {
 
     removeVoucherFromOrder = async (req, res, next) => {
         try {
-            const { order_id, code } = req.body;
+            const order_id = req.params.order_id
+
+            const { code } = req.body;
             const order = await findOrderById(order_id);
             if (!order) throw new NotFoundError("Order is not found!");
 
@@ -208,10 +213,14 @@ class OrderController {
             order.total_to_pay = totalToPay >= order.total ? order.total : totalToPay;
             await order.save();
 
+            // update slot voucher
+            voucher.remain_number++;
+            await voucher.save();
+
             // remove voucher from order
             await VoucherOrder.destroy({
                 where: {
-                    order_id: order.order_id,
+                    order_id: order_id,
                     voucher_id: voucher.voucher_id
                 }
             })
@@ -350,6 +359,22 @@ class OrderController {
             message: "Get failed order successfully!",
             failed_orders: order
         })
+    }
+
+    getVoucherByOrderId = async (req, res, next) => {
+        try {
+            const order_id = req.params.order_id;
+            const vouchers = await Order.findByPk(order_id, { include: Voucher })
+            if (!vouchers) throw new NotFoundError("Not found order!")
+
+            return res.status(200).json({
+                message: "Get vouchers of order successfully!",
+                vouchers: vouchers
+            })
+
+        } catch (error) {
+            return res.status(500).json({ message: error.message });
+        }
     }
 }   
 
