@@ -8,6 +8,7 @@ const { findUserById } = require("../services/user.service")
 const Comment = require("../models/comment.model")
 const Order = require("../models/order.model")
 const { StatusOrder } = require("../common/status")
+const Tour = require("../models/tour.model")
 
 class ReviewController {
 
@@ -19,23 +20,26 @@ class ReviewController {
                 is_comment,
                 content,
                 parent_comment_id,
+                payment_id,
                 number_rate
             } = req.fields;
 
             const user = await findUserById(user_id);
             if (!user) throw new NotFoundError("Not found user!");
 
-            // check tour is ordered by user ?
-            const checkedOrder = await Order.findOne({
+            const tour = await findTourById(tour_id);
+            if (!tour) throw new NotFoundError("Not found tour for reviewing!");
+
+            // check user is booked tour
+            const order = await Tour.findOne({
                 where: {
                     user_id: user_id,
+                    payment_id: payment_id,
                     status: StatusOrder.COMPLETE
                 }
             })
-            if (!checkedOrder) throw new BadRequestError("You can't review tour!")
 
-            const tour = await findTourById(tour_id);
-            if (!tour) throw new NotFoundError("Not found tour for reviewing!");
+            if (!order) throw new BadRequestError("Order is not completed, you can't review!")
 
             const list_image = [];
             let i = 0;
