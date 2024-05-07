@@ -236,7 +236,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/user/payment/vnpay_ipn?vnp_Amount=549396000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14403010&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240506003702&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14403010&vnp_TransactionStatus=00&vnp_TxnRef=05173749&vnp_SecureHash=0b337189401b2a1fa3241dfdab9bb8dc0ac06bd1615576a4c94d83f4f6de1a1565620fc67f4d20815213b34e809d6c53f9f114ae3e7d076d0fe90417ed4b304e",
+					"raw": "http://localhost:8080/api/v1/user/payment/vnpay_ipn?vnp_Amount=549396000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14405827&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240507232319&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14405827&vnp_TransactionStatus=00&vnp_TxnRef=07162434&vnp_SecureHash=090ffb7703d3d3115e1db833e3430534c73135447c9d9cd5c405ad226ec1bc72a9ddbfbd776fa046d85d14462998f678796db82d4c07c1471e829e2db46c2a2e",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -260,7 +260,7 @@
 						},
 						{
 							"key": "vnp_BankTranNo",
-							"value": "VNP14403010"
+							"value": "VNP14405827"
 						},
 						{
 							"key": "vnp_CardType",
@@ -272,7 +272,7 @@
 						},
 						{
 							"key": "vnp_PayDate",
-							"value": "20240506003702"
+							"value": "20240507232319"
 						},
 						{
 							"key": "vnp_ResponseCode",
@@ -284,7 +284,7 @@
 						},
 						{
 							"key": "vnp_TransactionNo",
-							"value": "14403010"
+							"value": "14405827"
 						},
 						{
 							"key": "vnp_TransactionStatus",
@@ -292,11 +292,11 @@
 						},
 						{
 							"key": "vnp_TxnRef",
-							"value": "05173749"
+							"value": "07162434"
 						},
 						{
 							"key": "vnp_SecureHash",
-							"value": "0b337189401b2a1fa3241dfdab9bb8dc0ac06bd1615576a4c94d83f4f6de1a1565620fc67f4d20815213b34e809d6c53f9f114ae3e7d076d0fe90417ed4b304e"
+							"value": "090ffb7703d3d3115e1db833e3430534c73135447c9d9cd5c405ad226ec1bc72a9ddbfbd776fa046d85d14462998f678796db82d4c07c1471e829e2db46c2a2e"
 						}
 					]
 				}
@@ -991,13 +991,12 @@
 					{
 						"key": "Authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
 						"uuid": "e0f6920b-5765-42d0-b312-3a907c3c5e68"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 2\r\n}",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"tour_id\": 2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1032,13 +1031,12 @@
 					{
 						"key": "Authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
 						"uuid": "84f7d1d0-46f1-4a7c-a7dc-14e27ee87bb8"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 2\r\n}",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"tour_id\": 2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -3034,7 +3032,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/user/cart/2",
+					"raw": "http://localhost:8080/api/v1/user/1/cart",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -3044,8 +3042,8 @@
 						"api",
 						"v1",
 						"user",
-						"cart",
-						"2"
+						"1",
+						"cart"
 					]
 				}
 			},
