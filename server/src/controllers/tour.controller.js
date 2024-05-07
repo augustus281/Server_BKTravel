@@ -169,7 +169,7 @@ class TourController {
             } 
 
             // Deleted cached data from Redis
-            redisClient.del("tours")
+            redisClient.del("online_tours")
 
             return res.status(200).json({
                 message: "Update tour successfully!",
@@ -657,7 +657,6 @@ class TourController {
 
             const tour = await findTourById(tour_id)
             if (!tour) return res.status(404).json({ message: "Not found status!" })
-            console.log("status:::", status)
             switch(status) {
                 case "reject":
                     tour.status = StatusTour.REJECT
