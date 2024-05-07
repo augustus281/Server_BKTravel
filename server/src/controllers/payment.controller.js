@@ -13,6 +13,7 @@ const { StatusOrder } = require('../common/status');
 const { updateTotalCart } = require('../services/cart.service');
 const { findVoucherById } = require('../services/voucher.service');
 const Tour = require('../models/tour.model');
+const { Op } = require('sequelize');
 
 
 const tmnCode = process.env.vnp_TmnCode;
@@ -141,8 +142,6 @@ class PaymentController {
             if(secureHash === signed){
                 const orderId = vnp_Params['vnp_TxnRef'];
                 const rspCode = vnp_Params['vnp_ResponseCode'];
-
-                console.log(`orderId:::`, orderId)
                 
                 if (rspCode === '00') {
                     // convert status of order ---> COMPLETE
@@ -160,6 +159,22 @@ class PaymentController {
                         await tour.save()
                     }
 
+                    // remove tour from cart
+                    // const listTourIds = listOrderItems.map(orderItem => orderItem.tour_id)
+                    // console.log("list tour ids", listTourIds)
+                    // await OrderTour.destroy({
+                    //     where: {
+                    //         order_id: order.order_id,
+                    //         tour_id: { [Op.in]: listTourIds }
+                    //     }
+                    // })
+
+                    await OrderItem.destroy({
+                        where: {
+                            id: { [Op.in]: listOrderItems.map(orderItem => orderItem.id)}
+                        }
+                    })
+                    
                     // update total of cart
                     await updateTotalCart(order.user_id, order.total)
 
