@@ -6,7 +6,6 @@ const { asyncHandler } = require('../../auth/checkAuth')
 const cartController = require('../../controllers/cart.controller')
 
 router.post("/", asyncHandler(cartController.addTourToCart))
-router.get("/:user_id", asyncHandler(cartController.getCartByUser))
 router.put("/order-item/child-quantity/increment", asyncHandler(cartController.incrementChildQuantityOrderItem))
 router.put("/order-item/child-quantity/decrement", asyncHandler(cartController.decrementChildQuantityOrderItem))
 router.put("/order-item/adult-quantity/increment", asyncHandler(cartController.incrementAdultQuantityOrderItem))
