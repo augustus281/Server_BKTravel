@@ -129,6 +129,11 @@ class OrderController {
                 
                 tour.current_customers += (order_item.adult_quantity + order_item.child_quantity);
                 await tour.save();
+
+                await OrderTour.create({
+                    order_id: new_order.order_id,
+                    tour_id: order_item.tour_id
+                })
             }
             new_order.total = total_price;
             new_order.total_to_pay = total_price;
@@ -342,7 +347,7 @@ class OrderController {
         const order = await Order.findAll({
             where: { user_id: user_id, status: StatusOrder.COMPLETE },
             include: [
-                Tour
+                Tour, OrderItem
             ]
         })
 
