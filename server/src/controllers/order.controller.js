@@ -18,6 +18,7 @@ const crypto = require('crypto');
 const Cart = require("../models/cart.model");
 const { isExpired } = require("../utils/checkExpire");
 const { Op } = require("sequelize");
+const Tour = require("../models/tour.model");
 
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
@@ -339,7 +340,10 @@ class OrderController {
         const user_id = req.params.user_id;
 
         const order = await Order.findAll({
-            where: { user_id: user_id, status: StatusOrder.COMPLETE }
+            where: { user_id: user_id, status: StatusOrder.COMPLETE },
+            include: [
+                Tour
+            ]
         })
 
         if (!order) 
