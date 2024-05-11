@@ -4,8 +4,9 @@ const express = require("express")
 const router = express.Router()
 const { asyncHandler } = require('../../auth/checkAuth')
 const scheduleController = require("../../controllers/schedule.controller")
+const { authenticate } = require("../../middlewares/authenticate")
 
-router.post("/", asyncHandler(scheduleController.createSchedule))
+router.post("/", authenticate, asyncHandler(scheduleController.createSchedule))
 router.get("/weather", asyncHandler(scheduleController.getWeatherData))
 
 module.exports = router

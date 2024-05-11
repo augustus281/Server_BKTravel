@@ -5,6 +5,6 @@ const router = express.Router()
 const { asyncHandler } = require('../../auth/checkAuth')
 const notificationController = require("../../controllers/notification.controller")
 
-router.post("/", asyncHandler(notificationController.createnNotification))
+router.post("/", authenticate, asyncHandler(notificationController.createnNotification))
 
 module.exports = router

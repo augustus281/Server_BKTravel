@@ -5,9 +5,10 @@ const router = express.Router()
 const { asyncHandler } = require('../../auth/checkAuth')
 const commentController = require("../../controllers/comment.controller")
 const formidableMiddleware = require('express-formidable');
+const { authenticate } = require("../../middlewares/authenticate")
 
-router.post("/", formidableMiddleware(), asyncHandler(commentController.createComment))
+router.post("/", formidableMiddleware(), authenticate, asyncHandler(commentController.createComment))
 router.get("/", asyncHandler(commentController.getCommentsByParentId))
-router.delete("/", asyncHandler(commentController.deleteComment))
+router.delete("/", authenticate, asyncHandler(commentController.deleteComment))
 
 module.exports = router

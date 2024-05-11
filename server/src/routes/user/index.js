@@ -26,6 +26,6 @@ router.delete("/:user_id/wishlist/tours/:tour_id", authenticate, asyncHandler(us
 router.put("/:user_id", authenticate, asyncHandler(userController.updateInfoUser))
 router.post("/:user_id/upload", authenticate, upload.single("avatar"), asyncHandler(userController.uploadAvatar))
 router.post("/forgot-password", asyncHandler(userController.forgotPassword))
-router.post("/reset-password", asyncHandler(userController.resetPassword))
+router.post("/reset-password", authenticate, asyncHandler(userController.resetPassword))
 
 module.exports = router
