@@ -7,332 +7,2975 @@
 	},
 	"item": [
 		{
-			"name": "Register",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"firstname\": \"Huy\",\r\n    \"lastname\": \"Nguyen\",\r\n    \"email\": \"huy28011@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"confirm_password\": \"123456789\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Huy\",\r\n    \"lastname\": \"Nguyen\",\r\n    \"email\": \"huy28011@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"confirm_password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/auth/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"auth",
-						"register"
-					]
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"huy28011@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTI5NDY4MzUsImV4cCI6MTcxMjk0ODYzNX0.ZUrXFupnztMpgTGlCn_DUXVeAQwAWMtXfTUtTzD2SeQ",
+								"type": "text",
+								"uuid": "c3b21d15-7146-4367-b0e4-2c289077050a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"huy2801@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Propose tour",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTM0NjEyOTQsImV4cCI6MTcxMzQ2MzA5NH0.bOOEPc-B3ZNVAkR9uVWOzOVPPowtuM4eCJj8YjGV0Do",
+								"uuid": "68d2b940-0e60-4ba3-a11a-55bb8c8f54cb"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"departure_place\": \"TP. Hồ Chí Minh\", \r\n    \"destination_places\": [\"TP. Hồ Chí Minh\",\"Hà Nội\"],\r\n    \"attractions\": [\"Landmark 81\",\"Công viên Tao Đàn\", \"Bến Nhà Rồng\", \"Văn Miếu - Quốc Tử Giám\", \"Lăng Bác\"],\r\n    \"departure_time\": \"7 AM\",\r\n    \"departure_date\": \"2024-04-19\",\r\n    \"time\": \"7 ngày\",\r\n    \"max_number\": 10,\r\n    \"note\": \"Tour có nhiều trẻ em\",\r\n    \"user_id\": 1          \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/tours",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"tours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgotpassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"huy.nguyen28012002@hcmut.edu.vn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Info User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "78959091-76dd-4cf4-a865-56b346e11e31"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone_number\": \"0979957328\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resetpassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"new_password\": \"28012002\",\r\n    \"confirm_password\": \"28012002\",\r\n    \"code\": \"811445\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetInfoUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "03bd4956-4be6-4962-8ebd-1ea967326768"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/:user_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								":user_id"
+							],
+							"variable": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"uuid": "27b9494b-d31a-45a5-baaf-8730dee43763"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pending tour of user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "400d96d8-2813-497f-83f1-cadde5d627fb"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/pendingtour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"pendingtour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get success tour of user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "4a2043e1-3bc0-44da-a403-9d9e662df872"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/succestour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"succestour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload avatar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjE5NzAzNSwiZXhwIjoxNzA2MTk4ODM1fQ.dHvw5h0TaP9U7bJeNBS9OwcVVTKz5fGoDeAPnAifkp8",
+								"uuid": "ae1b1057-cf42-49cc-b0ab-958b6cb7e1a2"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "postman-cloud:///1eebb9c4-2edb-4130-aa70-4a78117f814c"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get completed order by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "251a61f1-b8e6-4d08-b2de-92db4a8a71d2"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/completed_order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"completed_order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get reject tour of user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "d5775a16-98f3-493c-a73e-bf4c78ec5a07"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/rejectedtour",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"rejectedtour"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cart by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "0a0ae11c-3577-4cd1-af45-7d485adac037",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add tour to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "29ba44a4-546c-429e-b602-86eeb6a1a1af",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"tour\": {\r\n        \"tour_id\": 2,\r\n        \"adult_quantity\": 1,\r\n        \"child_quantity\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"carts"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"huy28011@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Payment directly",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"payments"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/auth/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"auth",
-						"login"
-					]
+				{
+					"name": "Create payment url",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_items\": [2],\r\n    \"user_id\": 2,\r\n    \"voucher_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get result payment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/payment/vnpay_ipn?vnp_Amount=549396000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14405827&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240507232319&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14405827&vnp_TransactionStatus=00&vnp_TxnRef=07162434&vnp_SecureHash=090ffb7703d3d3115e1db833e3430534c73135447c9d9cd5c405ad226ec1bc72a9ddbfbd776fa046d85d14462998f678796db82d4c07c1471e829e2db46c2a2e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"payment",
+								"vnpay_ipn"
+							],
+							"query": [
+								{
+									"key": "vnp_Amount",
+									"value": "549396000"
+								},
+								{
+									"key": "vnp_BankCode",
+									"value": "NCB"
+								},
+								{
+									"key": "vnp_BankTranNo",
+									"value": "VNP14405827"
+								},
+								{
+									"key": "vnp_CardType",
+									"value": "ATM"
+								},
+								{
+									"key": "vnp_OrderInfo",
+									"value": "Thanh+toan+don+hang+ve+du+lich"
+								},
+								{
+									"key": "vnp_PayDate",
+									"value": "20240507232319"
+								},
+								{
+									"key": "vnp_ResponseCode",
+									"value": "00"
+								},
+								{
+									"key": "vnp_TmnCode",
+									"value": "7ONWQPBC"
+								},
+								{
+									"key": "vnp_TransactionNo",
+									"value": "14405827"
+								},
+								{
+									"key": "vnp_TransactionStatus",
+									"value": "00"
+								},
+								{
+									"key": "vnp_TxnRef",
+									"value": "07162434"
+								},
+								{
+									"key": "vnp_SecureHash",
+									"value": "090ffb7703d3d3115e1db833e3430534c73135447c9d9cd5c405ad226ec1bc72a9ddbfbd776fa046d85d14462998f678796db82d4c07c1471e829e2db46c2a2e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refund payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_items\": [1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction",
+							"protocol": "https",
+							"host": [
+								"sandbox",
+								"vnpayment",
+								"vn"
+							],
+							"path": [
+								"merchant_webapi",
+								"api",
+								"transaction"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Logout",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTI5NDY4MzUsImV4cCI6MTcxMjk0ODYzNX0.ZUrXFupnztMpgTGlCn_DUXVeAQwAWMtXfTUtTzD2SeQ",
-						"type": "text",
-						"uuid": "154a1ea5-5181-49f7-8a3c-57cd5351edc2"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"huy2801@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get detail order by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "605af8e3-435c-4895-9d62-738ee6401212"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/:order_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								":order_id"
+							],
+							"variable": [
+								{
+									"key": "order_id",
+									"value": "10",
+									"uuid": "9536966a-7b7f-4c8d-88ef-2aaa58034032"
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/auth/logout",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"auth",
-						"logout"
-					]
+				{
+					"name": "Increment child quantity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "70ae623a-4f27-4e3f-98de-58e7e78e2888"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"tour_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/carts/order-item/child-quantity/increment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"carts",
+								"order-item",
+								"child-quantity",
+								"increment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Increase adult quantity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "7b249a5d-0b08-4b66-b2a9-23a2f3a7e539"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"tour_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/carts/order-item/adult-quantity/increment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"carts",
+								"order-item",
+								"adult-quantity",
+								"increment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrease adult quantity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "c8373d52-5f4f-473d-a6f2-9a9dcae3cb1a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/carts/order-item/adult-quantity/decrement",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"carts",
+								"order-item",
+								"adult-quantity",
+								"decrement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrease child quantity",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "0d4446fe-c710-489d-8eac-17e75552db01"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/carts/order-item/child-quantity/decrement",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"carts",
+								"order-item",
+								"child-quantity",
+								"decrement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order from cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "76a367b2-94c6-4b63-8d72-65ddeaf16613",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_items\": [14],\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order by tour id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "1406bbe3-e28d-46f1-8343-8102a7f7a650",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"child_quantity\": 2,\r\n    \"adult_quantity\": 3,\r\n    \"tour_id\": 1,\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove tour to wishlist",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "07687d1e-a43d-4dee-bf1b-d03962fe2d75",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tour Ngày Tham Quan Đà Nẵng\n",
+									"type": "text"
+								},
+								{
+									"key": "max_customer",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "departure_date",
+									"value": "2024-01-26",
+									"type": "text"
+								},
+								{
+									"key": "deadline_book_time",
+									"value": "2024-01-30",
+									"type": "text"
+								},
+								{
+									"key": "departure_time",
+									"value": "7 AM",
+									"type": "text"
+								},
+								{
+									"key": "departure_place",
+									"value": "Hồ Chí Minh",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1eebc125-0093-4d00-89f3-9bedc2c1b433"
+								},
+								{
+									"key": "destination_place",
+									"value": "Hồ Chí Minh",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "1 ngày 5 giờ",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "747328",
+									"type": "text"
+								},
+								{
+									"key": "highlight",
+									"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
+									"type": "text"
+								},
+								{
+									"key": "attractions[0][name]",
+									"value": "Dinh Độc Lập",
+									"type": "text"
+								},
+								{
+									"key": "attractions[1][name]",
+									"value": "Cầu Bà Đen",
+									"type": "text"
+								},
+								{
+									"key": "attractions[2][name]",
+									"value": "Chợ Bến Thành",
+									"type": "text"
+								},
+								{
+									"key": "attractions[3][name]",
+									"value": "Công viên Lê Thị Riêng",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/wishlist/tours/:tour_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"wishlist",
+								"tours",
+								":tour_id"
+							],
+							"variable": [
+								{
+									"key": "tour_id",
+									"value": "2",
+									"uuid": "17177c41-7d6f-4d1a-ada4-be30b631ad40"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get pending order by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "c4338cc2-d2fa-438d-85c7-61712473c3e0",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/1/pending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"1",
+								"pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete order_item from order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "71ce556d-2e09-4b58-9422-c927afac24ea",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tour_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/carts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"carts",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Forgotpassword",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"huy.nguyen28012002@hcmut.edu.vn\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Tour",
+			"item": [
+				{
+					"name": "Update Tour",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "daf6f19f-561d-4dca-ad6d-0357bf552ee2"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description_place",
+									"value": "Có nhiều địa điểm thu hút khách du lịch",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1eed1523-535d-4d30-9ce6-d8b6bd223964"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/:tour_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								":tour_id"
+							],
+							"variable": [
+								{
+									"key": "tour_id",
+									"value": "1",
+									"uuid": "763147d5-623b-4db9-8f6a-20552e359e16"
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/forgot-password",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"forgot-password"
-					]
+				{
+					"name": "Recover tour",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "5574b4ad-7858-4db6-b03d-d0f758fd0c01"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/recover/:tour_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"recover",
+								":tour_id"
+							],
+							"variable": [
+								{
+									"key": "tour_id",
+									"value": "1",
+									"uuid": "6e2696fb-2e0c-471b-b4b9-1bd634a23161"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Tour",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "9c056c2d-82e9-4456-8243-6eef3c101bba",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/search?destination_place=Đà Nẵng",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"search"
+							],
+							"query": [
+								{
+									"key": "departure_place",
+									"value": "Phú Yên",
+									"disabled": true
+								},
+								{
+									"key": "destination_place",
+									"value": "Đà Nẵng"
+								},
+								{
+									"key": "time",
+									"value": "1 ngày",
+									"disabled": true
+								},
+								{
+									"key": "departure_date",
+									"value": "2024-01-21",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete tour",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "c566af6b-6ca8-48b1-b676-ab05e941f595",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tour Ngày Tham Quan Đà Nẵng\n",
+									"type": "text"
+								},
+								{
+									"key": "max_customer",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "departure_date",
+									"value": "2024-01-26",
+									"type": "text"
+								},
+								{
+									"key": "deadline_book_time",
+									"value": "2024-01-30",
+									"type": "text"
+								},
+								{
+									"key": "departure_time",
+									"value": "7 AM",
+									"type": "text"
+								},
+								{
+									"key": "departure_place",
+									"value": "Đà Nẵng",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1eebc125-0093-4d00-89f3-9bedc2c1b433"
+								},
+								{
+									"key": "destination_place",
+									"value": "Đà Nẵng",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "1 ngày 5 giờ",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "747328",
+									"type": "text"
+								},
+								{
+									"key": "highlight",
+									"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/:tour_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								":tour_id"
+							],
+							"variable": [
+								{
+									"key": "tour_id",
+									"value": "1",
+									"uuid": "1a50ec28-bb22-4d77-b644-c5aa9797e397"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create tour",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "9208cdb0-db0c-4b7f-974e-8550e5c45d16",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tour Ngày Tham Quan Đà Nẵng\n",
+									"type": "text"
+								},
+								{
+									"key": "max_customer",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "departure_date",
+									"value": "2024-04-13",
+									"type": "text"
+								},
+								{
+									"key": "deadline_book_time",
+									"value": "2024-01-30",
+									"type": "text"
+								},
+								{
+									"key": "departure_time",
+									"value": "7 AM",
+									"type": "text"
+								},
+								{
+									"key": "destination_places",
+									"value": "Bình Định, Phú Yên",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "1 ngày 5 giờ",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "732528",
+									"type": "text"
+								},
+								{
+									"key": "highlight",
+									"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
+									"type": "text"
+								},
+								{
+									"key": "attractions[0][Phú Yên]",
+									"value": "Tháp Nghinh Phong",
+									"type": "text"
+								},
+								{
+									"key": "attractions[1][Phú Yên]",
+									"value": "Xóm rế",
+									"type": "text"
+								},
+								{
+									"key": "attractions[0][Bình Định]",
+									"value": "Đập Đá",
+									"type": "text"
+								},
+								{
+									"key": "attractions[1][Bình Định]",
+									"value": "Đa cua",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1eed137c-d19f-4160-a111-e30af71d0e4d"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload cover image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "d6cae230-0f46-42fd-aac5-38575207a60a"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1eed137c-d19f-4160-a111-e30af71d0e4d"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/:tour_id/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								":tour_id",
+								"upload"
+							],
+							"variable": [
+								{
+									"key": "tour_id",
+									"value": "",
+									"uuid": "7843935a-451c-4c25-8fc4-46e1c95d0598"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Response tour from user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "7a5697dd-f280-41ef-bbf8-16d5ffa4d9fd",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// {\r\n//     \"user_id\": 1,\r\n//     \"status\": \"reject\",\r\n//     \"reason\": \"Hiện tại chúng tôi không hỗ trợ tour như vậy!\"\r\n// }\r\n\r\n{\r\n    \"user_id\": 1,\r\n    \"status\": \"success\",\r\n    \"price\": 19999000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/24/response",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"24",
+								"response"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one tour",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "9082c762-ed73-47f1-8dbf-25adb090c80a",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all attractions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "ca2ab714-a899-4994-9b06-51d009fc47cc",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/attractions/all?destination=Bình Định",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"attractions",
+								"all"
+							],
+							"query": [
+								{
+									"key": "destination",
+									"value": "Bình Định"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get waiting tours",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "d8750b90-67b1-4ffc-b1a6-1c8ab708ca6c",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/all/waiting",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"all",
+								"waiting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all cities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "4e55c250-82be-4f3e-b7e6-79c9eae67971",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/destinations/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"destinations",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get online tours",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "6562a821-73f7-42cd-aa98-7010cdb3602c",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/all/online",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"all",
+								"online"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get deleted tours",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "e47b2e15-5c35-45c7-b5af-f8fbdd114cf2",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/all/deleted",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"all",
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create destination & attractions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "827d469b-3ac7-4f22-85d9-d0701746c241",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/destinations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"destinations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Schedule for tour",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "0fd441c2-ee25-49e1-8695-1e7b7a7ad195",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tour_id\": 2,\r\n    \"schedule_detail\": [\r\n  {\r\n    \"schedule_date\": \"Ngày 1\",\r\n    \"date\": \"08/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Ăn sáng\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Xóm rế\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  },\r\n  {\r\n    \"schedule_date\": \"Ngày 2\",\r\n    \"date\": \"09/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Đập Đá\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Đa cua\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  }\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/schedules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all pending tours",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "5a0fb726-bf53-4c9b-b6fa-d6793571dcf5",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/all/pending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"all",
+								"pending"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all destinations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "c440348b-db8c-448f-a52e-112a75e27c2a",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/destinations/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"destinations",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete schedule",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "c7cc9f84-7dcc-493d-987b-714f0e944ad7",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tour Ngày Tham Quan Đà Nẵng\n",
+									"type": "text"
+								},
+								{
+									"key": "max_customer",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "departure_date",
+									"value": "2024-01-26",
+									"type": "text"
+								},
+								{
+									"key": "deadline_book_time",
+									"value": "2024-01-30",
+									"type": "text"
+								},
+								{
+									"key": "departure_time",
+									"value": "7 AM",
+									"type": "text"
+								},
+								{
+									"key": "departure_place",
+									"value": "Đà Nẵng",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1eebc125-0093-4d00-89f3-9bedc2c1b433"
+								},
+								{
+									"key": "destination_place",
+									"value": "Đà Nẵng",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "1 ngày 5 giờ",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "747328",
+									"type": "text"
+								},
+								{
+									"key": "highlight",
+									"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/schedules/:tour_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"schedules",
+								":tour_id"
+							],
+							"variable": [
+								{
+									"key": "tour_id",
+									"value": "1",
+									"uuid": "1187169e-6855-4c58-a1a9-60000ee9dd64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get weather of city",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "c99d1851-3b39-4b12-8714-41ff9eaedd4b",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/schedules/weather?city=HaiPhong",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"schedules",
+								"weather"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "HaiPhong"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get destination of tour",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "499782f9-b4d7-4e5e-a031-9e93bdf24bb2",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/6/destinations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"6",
+								"destinations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get schedule of tour",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "29318fe1-6275-4846-af8d-1021056a0e67",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/1/schedules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"1",
+								"schedules"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Create payment url",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"order_items\": [2],\r\n    \"user_id\": 2,\r\n    \"voucher_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Group",
+			"item": [
+				{
+					"name": "Get all groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"type": "text",
+								"uuid": "3a5d9caf-e5ee-460f-87d6-eb36bb5a5415",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"groups"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/payment",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"payment"
-					]
+				{
+					"name": "Get all groups by userid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTQ1ODMwNDUsImV4cCI6MTcxNDU4NDg0NX0.qr9BSXxuD0X4WDDb0qX7yCo901bPUIzdFP4QPyIiTfc",
+								"uuid": "3aa891e2-732e-47d0-81f2-bcffb62823de"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/1/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get group by tour id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"type": "text",
+								"uuid": "c8671740-7480-4d3c-bf1e-c6f5b19a6cf8",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/groups/tours/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"groups",
+								"tours",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gett all messages of group",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "f1a07d67-1c81-4de6-bef3-aa47010a7bc8",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/groups/1/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"groups",
+								"1",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get group by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"type": "text",
+								"uuid": "86206929-42b7-439f-933b-765830b42cff",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/groups/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"groups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Join group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "f3a0e7bc-85a2-469e-ab45-e4105f60cc38",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"user_id\": 2,\r\n   \"tour_id\": 1,\r\n   \"order_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/groups/1/join",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"groups",
+								"1",
+								"join"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add user to group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "baed7011-58c5-4073-9ba4-05ae2c505956",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"user_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/groups/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"groups",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"type": "text",
+								"uuid": "7faf7b37-c584-4fea-97e4-9a47a436c498",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"tour_id\": 1,\r\n   \"name\": \"Group chat 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/groups",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"type": "text",
+								"uuid": "17e68fc8-56a3-4e44-b7ef-7d9571a3a643",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"group_id\": 1,\r\n   \"user_id\": 1,\r\n   \"content\": \"Alo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"messages"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Payment directly",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Review",
+			"item": [
+				{
+					"name": "Get Comment by parent_comment_id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "d2cdee86-a587-49c4-9a8a-223e355f6fd1",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/:tour_id/comments/:parent_comment_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								":tour_id",
+								"comments",
+								":parent_comment_id"
+							],
+							"variable": [
+								{
+									"key": "tour_id",
+									"value": "1",
+									"uuid": "8627360a-20d2-42b5-8b15-534823be9b1f"
+								},
+								{
+									"key": "parent_comment_id",
+									"value": "1",
+									"uuid": "934cbba4-8e15-42e3-b239-445381d6c06b"
+								}
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order/payment",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order",
-						"payment"
-					]
+				{
+					"name": "Create review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "818daab4-6b31-4edb-a66d-840048394e6b",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tour_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "is_comment",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "number_rate",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Ay da",
+									"type": "text"
+								},
+								{
+									"key": "payment_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comment by number_rate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
+								"uuid": "5eb2e2bc-8439-4da9-9e8e-efa73e1fabd7",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/comments?number_rate=4&tour_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"comments"
+							],
+							"query": [
+								{
+									"key": "number_rate",
+									"value": "4"
+								},
+								{
+									"key": "tour_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get comment of tour",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "9c6e150d-988c-46e4-b2e5-35f3b961487e",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/1/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all reviews of tour",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "fe71adb2-0e92-4b9c-b3ae-6b732f25c34b",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/1/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "579ac40d-81e0-4bf7-bb71-92387191c39b",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "Tôi không đồng ý với đánh giá của bạn hay thiệt ",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "tour_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "parent_comment_id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "8e45c8f3-17a6-4c7f-a664-5386f2a93d2f",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tour_id\": 1,\r\n    \"comment_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"comments"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Refund payment",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"order_items\": [1]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Voucher",
+			"item": [
+				{
+					"name": "Remove voucher from order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "d726133b-f2bb-4a49-8b53-3587b96a1f37",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_id\": 10,\r\n    \"code\": \"ABC123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/1/vouchers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"1",
+								"vouchers"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction",
-					"protocol": "https",
-					"host": [
-						"sandbox",
-						"vnpayment",
-						"vn"
-					],
-					"path": [
-						"merchant_webapi",
-						"api",
-						"transaction"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get result payment",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/payment/vnpay_ipn?vnp_Amount=549396000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14405827&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240507232319&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14405827&vnp_TransactionStatus=00&vnp_TxnRef=07162434&vnp_SecureHash=090ffb7703d3d3115e1db833e3430534c73135447c9d9cd5c405ad226ec1bc72a9ddbfbd776fa046d85d14462998f678796db82d4c07c1471e829e2db46c2a2e",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"payment",
-						"vnpay_ipn"
-					],
-					"query": [
-						{
-							"key": "vnp_Amount",
-							"value": "549396000"
+				{
+					"name": "Apply voucher to order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "57be4a2e-e3d6-46b4-9a71-e059c85bac75",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"listVoucherCodes\": [\"nE8ed15\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "vnp_BankCode",
-							"value": "NCB"
-						},
-						{
-							"key": "vnp_BankTranNo",
-							"value": "VNP14405827"
-						},
-						{
-							"key": "vnp_CardType",
-							"value": "ATM"
-						},
-						{
-							"key": "vnp_OrderInfo",
-							"value": "Thanh+toan+don+hang+ve+du+lich"
-						},
-						{
-							"key": "vnp_PayDate",
-							"value": "20240507232319"
-						},
-						{
-							"key": "vnp_ResponseCode",
-							"value": "00"
-						},
-						{
-							"key": "vnp_TmnCode",
-							"value": "7ONWQPBC"
-						},
-						{
-							"key": "vnp_TransactionNo",
-							"value": "14405827"
-						},
-						{
-							"key": "vnp_TransactionStatus",
-							"value": "00"
-						},
-						{
-							"key": "vnp_TxnRef",
-							"value": "07162434"
-						},
-						{
-							"key": "vnp_SecureHash",
-							"value": "090ffb7703d3d3115e1db833e3430534c73135447c9d9cd5c405ad226ec1bc72a9ddbfbd776fa046d85d14462998f678796db82d4c07c1471e829e2db46c2a2e"
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/1/vouchers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"1",
+								"vouchers"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Resetpassword",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"new_password\": \"28012002\",\r\n    \"confirm_password\": \"28012002\",\r\n    \"code\": \"811445\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/reset-password",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"reset-password"
-					]
+				{
+					"name": "Get all vouchers by orderId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"uuid": "c4a4b4ae-dcce-4564-ae33-8a966a07f841",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/orders/1/vouchers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"1",
+								"vouchers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get voucher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vouchers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vouchers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all vouchers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vouchers/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vouchers",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create voucher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "description",
+									"value": "Giảm giá 100K",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "percentage",
+									"type": "text"
+								},
+								{
+									"key": "value_discount",
+									"value": "0.1",
+									"type": "text"
+								},
+								{
+									"key": "max_number",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "min_order_value",
+									"value": "100000",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2024/3/25",
+									"type": "text"
+								},
+								{
+									"key": "expired_date",
+									"value": "2024/6/5",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1eedd801-5670-4710-939b-22ae34334e3b"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vouchers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vouchers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete voucher",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vouchers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vouchers",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "GetRedirectGoogle",
@@ -402,237 +3045,6 @@
 			"response": []
 		},
 		{
-			"name": "GetInfoUser",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "251757b4-a1f0-4a35-8d07-2f1ebb42c188"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/:user_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						":user_id"
-					],
-					"variable": [
-						{
-							"key": "user_id",
-							"value": "1",
-							"uuid": "5db3a57f-6add-48dd-829f-b1434c532f73"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get pending tour of user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "cb8df2ab-a366-4294-ac9e-7fe88a57e12a"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/1/pendingtour",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"1",
-						"pendingtour"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get success tour of user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "4a2043e1-3bc0-44da-a403-9d9e662df872"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/1/successtour",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"1",
-						"successtour"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get reject tour of user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "0eef161e-8814-4a49-aa12-235a74d18fcd"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/1/rejectedtour",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"1",
-						"rejectedtour"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Propose tour",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTM0NjEyOTQsImV4cCI6MTcxMzQ2MzA5NH0.bOOEPc-B3ZNVAkR9uVWOzOVPPowtuM4eCJj8YjGV0Do",
-						"type": "text",
-						"uuid": "28fe4de8-7b88-4b0c-b48e-2788ba42f391"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"departure_place\": \"TP. Hồ Chí Minh\", \r\n    \"destination_places\": [\"TP. Hồ Chí Minh\",\"Hà Nội\"],\r\n    \"attractions\": [\"Landmark 81\",\"Công viên Tao Đàn\", \"Bến Nhà Rồng\", \"Văn Miếu - Quốc Tử Giám\", \"Lăng Bác\"],\r\n    \"departure_time\": \"7 AM\",\r\n    \"departure_date\": \"2024-04-19\",\r\n    \"time\": \"7 ngày\",\r\n    \"max_number\": 10,\r\n    \"note\": \"Tour có nhiều trẻ em\",\r\n    \"user_id\": 1          \r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/1/tour",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"1",
-						"tour"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get completed order by user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "251a61f1-b8e6-4d08-b2de-92db4a8a71d2"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/2/completed_order",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"2",
-						"completed_order"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get detail order by user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "854853b2-18c3-42dd-95b6-b421034cd1bf"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order/:order_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order",
-						":order_id"
-					],
-					"variable": [
-						{
-							"key": "order_id",
-							"value": "10",
-							"uuid": "2b4edea2-801d-4241-b28a-ce9c646d24c6"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Get Wishlist by user",
 			"request": {
 				"method": "GET",
@@ -640,12 +3052,11 @@
 					{
 						"key": "Authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "167f9d39-1e37-4421-9f2e-16545c53c346"
+						"uuid": "61dc48ce-1598-41b4-ae3f-912d6cbf883e"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/user/wishlist/:user_id",
+					"raw": "http://localhost:8080/api/v1/users/1/wishlist",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -654,981 +3065,9 @@
 					"path": [
 						"api",
 						"v1",
-						"user",
-						"wishlist",
-						":user_id"
-					],
-					"variable": [
-						{
-							"key": "user_id",
-							"value": "1",
-							"uuid": "24ac13f2-9c58-4703-9b97-13d2028dc698"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Search Tour",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"uuid": "425cf8b3-1b54-4e4a-9114-dbc7d7cf1d7d",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/search?destination_place=Đà Nẵng",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"search"
-					],
-					"query": [
-						{
-							"key": "departure_place",
-							"value": "Phú Yên",
-							"disabled": true
-						},
-						{
-							"key": "destination_place",
-							"value": "Đà Nẵng"
-						},
-						{
-							"key": "time",
-							"value": "1 ngày",
-							"disabled": true
-						},
-						{
-							"key": "departure_date",
-							"value": "2024-01-21",
-							"disabled": true
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get weather of city",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "bed67f36-0cbf-477d-90d6-2388d1eb199c",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/schedule/weather?city=HaiPhong",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"schedule",
-						"weather"
-					],
-					"query": [
-						{
-							"key": "city",
-							"value": "HaiPhong"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get comment by number_rate",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-						"type": "text",
-						"uuid": "f31ac1ef-5e69-4791-ab1c-314ed9cfd7e4",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/comments?number_rate=4&tour_id=1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"comments"
-					],
-					"query": [
-						{
-							"key": "number_rate",
-							"value": "4"
-						},
-						{
-							"key": "tour_id",
-							"value": "1"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Info User",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "3bc130fb-4e93-44a0-b0eb-a2c288466d36"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"phone_number\": \"0979957328\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/update/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"update",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Tour",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "5ac9ca12-fa2c-488b-b809-b42a11cd0365"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "description_place",
-							"value": "Có nhiều địa điểm thu hút khách du lịch",
-							"type": "text"
-						},
-						{
-							"key": "cover_image",
-							"type": "file",
-							"src": "postman-cloud:///1eed1523-535d-4d30-9ce6-d8b6bd223964"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/:tour_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						":tour_id"
-					],
-					"variable": [
-						{
-							"key": "tour_id",
-							"value": "1",
-							"uuid": "bf265e7d-617f-451b-9d45-2da3777499ad"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Recover tour",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "c76d57a0-f9b9-40b2-bfae-c1c49f869362"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/recover/:tour_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"recover",
-						":tour_id"
-					],
-					"variable": [
-						{
-							"key": "tour_id",
-							"value": "1",
-							"uuid": "f62b56de-c894-45b1-8e14-a1be1ef1a383"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Response tour from user",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "b191b244-6a69-42e9-9076-b59bb205e32f",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "// {\r\n//     \"user_id\": 1,\r\n//     \"status\": \"reject\",\r\n//     \"reason\": \"Hiện tại chúng tôi không hỗ trợ tour như vậy!\"\r\n// }\r\n\r\n{\r\n    \"user_id\": 1,\r\n    \"status\": \"success\",\r\n    \"price\": 19999000\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/24/response",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"24",
-						"response"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Increment child quantity",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "e0f6920b-5765-42d0-b312-3a907c3c5e68"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"tour_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/cart/order-item/child-quantity/increment",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"cart",
-						"order-item",
-						"child-quantity",
-						"increment"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Increase adult quantity",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "84f7d1d0-46f1-4a7c-a7dc-14e27ee87bb8"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"tour_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/cart/order-item/adult-quantity/increment",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"cart",
-						"order-item",
-						"adult-quantity",
-						"increment"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Decrease adult quantity",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "ee3a48ef-72a6-4150-8b62-4f4837dbb13e"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/cart/order-item/adult-quantity/decrement",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"cart",
-						"order-item",
-						"adult-quantity",
-						"decrement"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Decrease child quantity",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "d9d6df79-ee54-41ba-b247-63d54bd70c71"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/cart/order-item/child-quantity/decrement",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"cart",
-						"order-item",
-						"child-quantity",
-						"decrement"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Upload cover image",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "4d0a70f5-b98f-4d73-bb17-c5b8b403105a"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "cover_image",
-							"type": "file",
-							"src": "postman-cloud:///1eed137c-d19f-4160-a111-e30af71d0e4d"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/upload/:tour_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"upload",
-						":tour_id"
-					],
-					"variable": [
-						{
-							"key": "tour_id",
-							"value": "1",
-							"uuid": "015299b2-5642-4a8b-a0c4-a0ca88421647"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Upload avatar",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjE5NzAzNSwiZXhwIjoxNzA2MTk4ODM1fQ.dHvw5h0TaP9U7bJeNBS9OwcVVTKz5fGoDeAPnAifkp8",
-						"type": "text",
-						"uuid": "da332b03-c478-4046-a133-f030e495fd13"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "avatar",
-							"type": "file",
-							"src": "postman-cloud:///1eebb9c4-2edb-4130-aa70-4a78117f814c"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/upload/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"upload",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create tour",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "d0a85278-0ecd-47bb-b0c9-f5d02ea99aef",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Tour Ngày Tham Quan Đà Nẵng\n",
-							"type": "text"
-						},
-						{
-							"key": "max_customer",
-							"value": "200",
-							"type": "text"
-						},
-						{
-							"key": "departure_date",
-							"value": "2024-04-13",
-							"type": "text"
-						},
-						{
-							"key": "deadline_book_time",
-							"value": "2024-01-30",
-							"type": "text"
-						},
-						{
-							"key": "departure_time",
-							"value": "7 AM",
-							"type": "text"
-						},
-						{
-							"key": "destination_places",
-							"value": "Bình Định, Phú Yên",
-							"type": "text"
-						},
-						{
-							"key": "time",
-							"value": "1 ngày 5 giờ",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "732528",
-							"type": "text"
-						},
-						{
-							"key": "highlight",
-							"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
-							"type": "text"
-						},
-						{
-							"key": "note",
-							"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
-							"type": "text"
-						},
-						{
-							"key": "attractions[0][Phú Yên]",
-							"value": "Tháp Nghinh Phong",
-							"type": "text"
-						},
-						{
-							"key": "attractions[1][Phú Yên]",
-							"value": "Xóm rế",
-							"type": "text"
-						},
-						{
-							"key": "attractions[0][Bình Định]",
-							"value": "Đập Đá",
-							"type": "text"
-						},
-						{
-							"key": "attractions[1][Bình Định]",
-							"value": "Đa cua",
-							"type": "text"
-						},
-						{
-							"key": "cover_image",
-							"type": "file",
-							"src": "postman-cloud:///1eed137c-d19f-4160-a111-e30af71d0e4d"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create review",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "a0244aa0-6c9f-4d3e-9e86-6dbccf983c7a",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "user_id",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "tour_id",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "is_comment",
-							"value": "true",
-							"type": "text"
-						},
-						{
-							"key": "number_rate",
-							"value": "4",
-							"type": "text"
-						},
-						{
-							"key": "content",
-							"value": "Ay da",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/review",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"review"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create order by tour id",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "3de112f6-7511-440e-8fc3-2fb0d8641443",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"child_quantity\": 2,\r\n    \"adult_quantity\": 3,\r\n    \"tour_id\": 1,\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create order from cart",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "885658c2-89c8-467c-a9b1-a8275091914c",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_items\": [14],\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order/create-from-cart",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order",
-						"create-from-cart"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create group",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "2df19e38-57fa-4d46-9d51-4705d5f154e8",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"tour_id\": 1,\r\n   \"name\": \"Group chat 1\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/groups",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"groups"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add user to group",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "2649dd81-1a29-4402-9cdd-fdbbf923d5e3",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"user_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/groups/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"groups",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Join group",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "7cccded1-7cd9-4cc7-981d-7e8fdb5c6433",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"user_id\": 2,\r\n   \"tour_id\": 1,\r\n   \"order_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/groups/1/join",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"groups",
+						"users",
 						"1",
-						"join"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create message",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "c273cc88-ee97-48cd-84a1-ecc482b2ebb9",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"group_id\": 1,\r\n   \"user_id\": 1,\r\n   \"content\": \"Alo\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/messages",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"messages"
+						"wishlist"
 					]
 				}
 			},
@@ -1643,7 +3082,7 @@
 						"key": "Authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
 						"type": "text",
-						"uuid": "cdc9b1ec-32e9-4f05-a375-b51ead5a4b29",
+						"uuid": "0f3ddd96-af2b-42df-94c3-fc23b068fcfc",
 						"disabled": true
 					}
 				],
@@ -1673,656 +3112,6 @@
 			"response": []
 		},
 		{
-			"name": "Get group by id",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "5e505ae8-3674-4fa6-829a-dae40a247dc2",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/groups/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"groups",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get group by tour id",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "a1a6b1fb-4bb3-4e87-9f19-9b247a39c694",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/groups/tours/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"groups",
-						"tours",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all groups",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "40015f46-8bb1-4944-841c-441dc570b98c",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/groups",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"groups"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gett all messages of group",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "d83b4fbb-6077-491f-ae32-8b62dbe57e39",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/groups/1/messages",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"groups",
-						"1",
-						"messages"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all groups by userid",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTQ1ODMwNDUsImV4cCI6MTcxNDU4NDg0NX0.qr9BSXxuD0X4WDDb0qX7yCo901bPUIzdFP4QPyIiTfc",
-						"type": "text",
-						"uuid": "a408aaf0-0e8b-488e-b2b8-33d3b10a32bd"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/1/groups",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"1",
-						"groups"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get pending order by user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "7bf61771-d49f-4a15-92cd-f1e2fef3a56f",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order/1/pending",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order",
-						"1",
-						"pending"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Remove voucher from order",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "5c3973f5-e532-40d8-8163-9dfb2e002922",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"order_id\": 10,\r\n    \"code\": \"ABC123\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order/removeVoucher",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order",
-						"removeVoucher"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Apply voucher to order",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "752570fb-f042-4eba-ad5c-c064acc72b37",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n   \"listVoucherCodes\": [\"nE8ed15\"]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order/1/applyVoucher",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order",
-						"1",
-						"applyVoucher"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all vouchers by orderId",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "8655c758-9bc6-471c-bc70-427b6db5ebab",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order/1/vouchers",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order",
-						"1",
-						"vouchers"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Remove voucher from order",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "29cc28a7-851a-4343-ac7c-e0a9e37e1545",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"code\": \"nE8ed15\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/order/1/vouchers",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"order",
-						"1",
-						"vouchers"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Comment by parent_comment_id",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "a7705051-a19e-494f-a2e5-795356638850",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/:tour_id/comments/:parent_comment_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						":tour_id",
-						"comments",
-						":parent_comment_id"
-					],
-					"variable": [
-						{
-							"key": "tour_id",
-							"value": "1",
-							"uuid": "fdf77931-1ba5-4abc-8917-694c5d5bfbe9"
-						},
-						{
-							"key": "parent_comment_id",
-							"value": "1",
-							"uuid": "21d70a3e-6b17-4d06-a95f-907c659f7241"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get comment of tour",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "76a77527-9a80-4afd-8865-faa434d6c3d9",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/1/comments",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"1",
-						"comments"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all reviews of tour",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "dbc9e47e-9ddf-460d-8fc2-97b0149ab824",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/1/reviews",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"1",
-						"reviews"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create comment",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "804c4ef4-db62-43c2-a847-fa0c00fa6fad",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "content",
-							"value": "Tôi không đồng ý với đánh giá của bạn hay thiệt ",
-							"type": "text"
-						},
-						{
-							"key": "user_id",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "tour_id",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "parent_comment_id",
-							"value": "1",
-							"type": "text",
-							"disabled": true
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/comment",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"comment"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create voucher",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "description",
-							"value": "Giảm giá 100K",
-							"type": "text"
-						},
-						{
-							"key": "type",
-							"value": "percentage",
-							"type": "text"
-						},
-						{
-							"key": "value_discount",
-							"value": "0.1",
-							"type": "text"
-						},
-						{
-							"key": "max_number",
-							"value": "15",
-							"type": "text"
-						},
-						{
-							"key": "min_order_value",
-							"value": "100000",
-							"type": "text"
-						},
-						{
-							"key": "start_date",
-							"value": "2024/3/25",
-							"type": "text"
-						},
-						{
-							"key": "expired_date",
-							"value": "2024/6/5",
-							"type": "text"
-						},
-						{
-							"key": "image",
-							"type": "file",
-							"src": "postman-cloud:///1eedd801-5670-4710-939b-22ae34334e3b"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/voucher",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"voucher"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get voucher",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/voucher/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"voucher",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete voucher",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/voucher/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"voucher",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all vouchers",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/voucher/all",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"voucher",
-						"all"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create destination & attractions",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "f0898360-0bc2-42c1-9c7e-1be9260f7a7d",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/destination",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"destination"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Add tour to wishlist",
 			"request": {
 				"method": "POST",
@@ -2331,7 +3120,7 @@
 						"key": "Authorization",
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
 						"type": "text",
-						"uuid": "ed2085c1-6f7c-42d8-9d63-f3fbbb7b588b",
+						"uuid": "f979912e-9988-419e-92a6-6e162b3883f0",
 						"disabled": true
 					}
 				],
@@ -2355,1008 +3144,10 @@
 						{
 							"key": "user_id",
 							"value": "1",
-							"uuid": "9aa05cf1-8e7a-4e69-b441-aae7a02fe7df"
+							"uuid": "419f8343-f796-4295-98b1-bfba9c979e84"
 						}
 					]
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "Remove tour to wishlist",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "2f6bcc7c-e32f-4c38-87c9-aa5f7aff9a70",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Tour Ngày Tham Quan Đà Nẵng\n",
-							"type": "text"
-						},
-						{
-							"key": "max_customer",
-							"value": "200",
-							"type": "text"
-						},
-						{
-							"key": "departure_date",
-							"value": "2024-01-26",
-							"type": "text"
-						},
-						{
-							"key": "deadline_book_time",
-							"value": "2024-01-30",
-							"type": "text"
-						},
-						{
-							"key": "departure_time",
-							"value": "7 AM",
-							"type": "text"
-						},
-						{
-							"key": "departure_place",
-							"value": "Hồ Chí Minh",
-							"type": "text"
-						},
-						{
-							"key": "cover_image",
-							"type": "file",
-							"src": "postman-cloud:///1eebc125-0093-4d00-89f3-9bedc2c1b433"
-						},
-						{
-							"key": "destination_place",
-							"value": "Hồ Chí Minh",
-							"type": "text"
-						},
-						{
-							"key": "time",
-							"value": "1 ngày 5 giờ",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "747328",
-							"type": "text"
-						},
-						{
-							"key": "highlight",
-							"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
-							"type": "text"
-						},
-						{
-							"key": "note",
-							"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
-							"type": "text"
-						},
-						{
-							"key": "attractions[0][name]",
-							"value": "Dinh Độc Lập",
-							"type": "text"
-						},
-						{
-							"key": "attractions[1][name]",
-							"value": "Cầu Bà Đen",
-							"type": "text"
-						},
-						{
-							"key": "attractions[2][name]",
-							"value": "Chợ Bến Thành",
-							"type": "text"
-						},
-						{
-							"key": "attractions[3][name]",
-							"value": "Công viên Lê Thị Riêng",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/wishlist/:user_id/tours/:tour_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"wishlist",
-						":user_id",
-						"tours",
-						":tour_id"
-					],
-					"variable": [
-						{
-							"key": "user_id",
-							"value": "1",
-							"uuid": "36fd1bdd-9c21-405a-beb2-60aa2062127d"
-						},
-						{
-							"key": "tour_id",
-							"value": "2",
-							"uuid": "2ee96a3a-db12-4fd2-aae4-81ff89f543b3"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete tour",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "2d517ef3-dfaf-4716-9996-dbcb300ce52a",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Tour Ngày Tham Quan Đà Nẵng\n",
-							"type": "text"
-						},
-						{
-							"key": "max_customer",
-							"value": "200",
-							"type": "text"
-						},
-						{
-							"key": "departure_date",
-							"value": "2024-01-26",
-							"type": "text"
-						},
-						{
-							"key": "deadline_book_time",
-							"value": "2024-01-30",
-							"type": "text"
-						},
-						{
-							"key": "departure_time",
-							"value": "7 AM",
-							"type": "text"
-						},
-						{
-							"key": "departure_place",
-							"value": "Đà Nẵng",
-							"type": "text"
-						},
-						{
-							"key": "cover_image",
-							"type": "file",
-							"src": "postman-cloud:///1eebc125-0093-4d00-89f3-9bedc2c1b433"
-						},
-						{
-							"key": "destination_place",
-							"value": "Đà Nẵng",
-							"type": "text"
-						},
-						{
-							"key": "time",
-							"value": "1 ngày 5 giờ",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "747328",
-							"type": "text"
-						},
-						{
-							"key": "highlight",
-							"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
-							"type": "text"
-						},
-						{
-							"key": "note",
-							"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/:tour_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						":tour_id"
-					],
-					"variable": [
-						{
-							"key": "tour_id",
-							"value": "1",
-							"uuid": "d1c19e53-da5c-44d0-b8f0-43b117a19b52"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete comment",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "c74776be-a025-41f6-bac9-4986aba0198e",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"tour_id\": 1,\r\n    \"comment_id\": 2\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/comment",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"comment"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete order_item from order",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "37a14cad-5a2a-4791-a024-7c97bad02b01",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"tour_id\": 1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/cart/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"cart",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete schedule",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "c07cee2f-513a-4452-b0f5-861e899590cf",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Tour Ngày Tham Quan Đà Nẵng\n",
-							"type": "text"
-						},
-						{
-							"key": "max_customer",
-							"value": "200",
-							"type": "text"
-						},
-						{
-							"key": "departure_date",
-							"value": "2024-01-26",
-							"type": "text"
-						},
-						{
-							"key": "deadline_book_time",
-							"value": "2024-01-30",
-							"type": "text"
-						},
-						{
-							"key": "departure_time",
-							"value": "7 AM",
-							"type": "text"
-						},
-						{
-							"key": "departure_place",
-							"value": "Đà Nẵng",
-							"type": "text"
-						},
-						{
-							"key": "cover_image",
-							"type": "file",
-							"src": "postman-cloud:///1eebc125-0093-4d00-89f3-9bedc2c1b433"
-						},
-						{
-							"key": "destination_place",
-							"value": "Đà Nẵng",
-							"type": "text"
-						},
-						{
-							"key": "time",
-							"value": "1 ngày 5 giờ",
-							"type": "text"
-						},
-						{
-							"key": "price",
-							"value": "747328",
-							"type": "text"
-						},
-						{
-							"key": "highlight",
-							"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
-							"type": "text"
-						},
-						{
-							"key": "note",
-							"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
-							"type": "text"
-						},
-						{
-							"key": "description",
-							"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/schedule/:tour_id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"schedule",
-						":tour_id"
-					],
-					"variable": [
-						{
-							"key": "tour_id",
-							"value": "1",
-							"uuid": "0791861a-8f18-445d-9ba7-7d889e97b62b"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get one tour",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "3e23e249-f4b0-4597-85aa-b691daf88b09",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get destination of tour",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "a17afed7-7785-493d-88bb-c88ab6d22060",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/6/destination",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"6",
-						"destination"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get schedule of tour",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "8c58827b-7a8f-45f8-bbbe-3e24b86e2ca6",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/1/schedule",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"1",
-						"schedule"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all tours",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "9db7df89-7fe3-4c46-8eee-33c1e3ff0487",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/all",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"all"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all pending tours",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "99203c9d-2bb4-4f4d-a7cb-d4527c45c6db",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/all/pending",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"all",
-						"pending"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Schedule for tour",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"uuid": "a934f328-5f3d-428a-aefc-23f50ec0ca7f",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"tour_id\": 2,\r\n    \"schedule_detail\": [\r\n  {\r\n    \"schedule_date\": \"Ngày 1\",\r\n    \"date\": \"08/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Ăn sáng\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Xóm rế\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  },\r\n  {\r\n    \"schedule_date\": \"Ngày 2\",\r\n    \"date\": \"09/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Đập Đá\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Đa cua\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  }\r\n]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/schedule",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"schedule"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add tour to cart",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "6bb46fab-68e9-447a-8f96-dc6fc059be00",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"tour\": {\r\n        \"tour_id\": 2,\r\n        \"adult_quantity\": 1,\r\n        \"child_quantity\": 2\r\n    }\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/cart",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"cart"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get cart by user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "e0f152ce-061b-490d-b897-46e115900ac8",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/1/cart",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"1",
-						"cart"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all destinations",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "1fd4dd3c-c43a-4dec-8baa-cbfa49a85421",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/destination/all",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"destination",
-						"all"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all cities",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "b92f952b-cbf8-48f3-876a-87e6046ab74f",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/destination/cities",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"destination",
-						"cities"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get all attractions",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "308e5d5a-b9d3-4ef5-9af2-f0b551a57044",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/attraction/all?destination=Bình Định",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"attraction",
-						"all"
-					],
-					"query": [
-						{
-							"key": "destination",
-							"value": "Bình Định"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get waiting tours",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "9d9ca085-6bb7-4a02-84ab-f2e9ed4d4f56",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/all/waiting",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"all",
-						"waiting"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get online tours",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "df72635c-46d5-41fa-a34d-6f782bbfb6d9",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/all/online",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"all",
-						"online"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get deleted tours",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "6c0cbbe7-8428-42be-b718-085c234db00f",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/tour/all/deleted",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"tour",
-						"all",
-						"deleted"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Change password",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwODU5MjU1NSwiZXhwIjoxNzA4NTk0MzU1fQ.uxDO_jeiEz4GBykNVo8y2pxYgkHLwnkWT_-4_jUDrUs",
-						"type": "text",
-						"uuid": "0357c231-2f94-4917-94e4-05b5754801e1"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"old_password\": \"28012002\",\r\n    \"new_password\": \"11111111\",\r\n    \"confirm_password\": \"11111111\",\r\n    \"email\": \"huy.nguyen28012002@hcmut.edu.vn\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/change-password",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"change-password"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Reset password",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-						"type": "text",
-						"uuid": "cf5ffba8-98a7-4b22-87b3-ee5bc399891c",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"new_password\": \"abcd1234\",\r\n    \"confirm_password\": \"abcd1234\",\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/v1/user/reset-password/:user_id/:access_token",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"user",
-						"reset-password",
-						":user_id",
-						":access_token"
-					],
-					"variable": [
-						{
-							"key": "user_id",
-							"value": "1",
-							"uuid": "47bd4434-9f69-4db7-8754-144a5a5b69d7"
-						},
-						{
-							"key": "access_token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJ0eXBlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjAwMDIzMCwiZXhwIjoxNzA2MDAyMDMwfQ.XOK83etMFi_ZQW3OX_QNP0TQIa3Xp7ndezPhaqOoOOw",
-							"uuid": "ac5b8259-737a-4dfc-8b2f-84a591f9c83f"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get info user by google",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/v1/auth/login-success/114100398577489927435",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"v1",
-						"auth",
-						"login-success",
-						"114100398577489927435"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": []
 			},
 			"response": []
 		}
