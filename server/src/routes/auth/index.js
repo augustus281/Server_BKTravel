@@ -7,6 +7,7 @@ const passport = require("passport")
 
 router.post('/register', asyncHandler(authController.register))
 router.post('/login', asyncHandler(authController.login))
+router.post('/admin/login', asyncHandler(authController.adminLogin))
 router.post('/logout', asyncHandler(authController.logout))
 router.post('/forgotPassword', asyncHandler(authController.forgotPassword))
 
