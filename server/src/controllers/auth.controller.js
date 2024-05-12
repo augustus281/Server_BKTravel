@@ -8,6 +8,7 @@ const authService = require("../services/auth.service")
 const querystring = require("querystring")
 const { createAccessToken, createRefreshToken } = require("../services/auth.service")
 const passport = require("passport")
+const Admin = require("../models/admin.model")
 
 const redirectURI = "auth/google";
 
@@ -40,20 +41,6 @@ class AuthController {
                 message: "Register successfully!"
             })
         }
-        // let new_customer
-        // if (savedUser) {
-        //     new_customer = await Customer.create({
-        //         user_id: newUser.user_id,
-        //         level: 'Đồng',
-        //         score: 0
-        //     })
-        // }
-
-        // return res.status(201).json({
-        //     message: "Register successfully!",
-        //     user: newUser,
-        //     customer: new_customer
-        // })
     }
 
     login = async (req, res, next) => {
@@ -85,6 +72,26 @@ class AuthController {
             access_token: access_token,
             refresh_token: refresh_token
         })
+    }
+
+    adminLogin = async (req, res, next) => {
+        try {
+            const { email, password } = req.body;
+
+            const admin = await Admin.findOne({ where: { email }})
+            if (!admin) {
+                return res.status(404).json({ message: "Not found email of admin!" })
+            }
+
+            const validPassword = await bcrypt.compare(password, admin.password)
+            if (!validPassword) {
+                return res.status(401).json({ message: "Password is wrong!" })
+            }
+
+            return res.status(200).json({ message: "Login admin successfully!" })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
     }
 
     logout = async (req, res, next) => {
