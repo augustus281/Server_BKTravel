@@ -151,8 +151,7 @@ class OrderController {
 
     applyVoucherToOrder = async (req, res, next) => {
         try {
-            const order_id = req.params.order_id;
-            const { listVoucherCodes } = req.body;
+            const { listVoucherCodes, order_id } = req.body;
 
             const order = await findOrderById(order_id);
             if (!order) throw new NotFoundError("Not found order for applying voucher!");
@@ -205,9 +204,7 @@ class OrderController {
 
     removeVoucherFromOrder = async (req, res, next) => {
         try {
-            const order_id = req.params.order_id
-
-            const { code } = req.body;
+            const { code, order_id } = req.body;
             const order = await findOrderById(order_id);
             if (!order) throw new NotFoundError("Order is not found!");
 
