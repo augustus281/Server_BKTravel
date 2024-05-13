@@ -19,7 +19,9 @@ const { Op } = require('sequelize');
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
 let url = process.env.vnp_Url;
-const returnUrl = process.env.vnp_ReturnUrl; // cai nay ong de link giao dien thanh cong nha vi du: https:localhost:3000/success_payment
+const returnUrl = process.env.vnp_ReturnUrl; 
+
+let isUpdated = false;
 
 class PaymentController {
     /**
@@ -144,6 +146,8 @@ class PaymentController {
                 const rspCode = vnp_Params['vnp_ResponseCode'];
                 
                 if (rspCode === '00') {
+                    isUpdated = true;
+
                     // convert status of order ---> COMPLETE
                     const order = await Order.findOne({ where: { payment_id: orderId }})
                     order.status = StatusOrder.COMPLETE;
@@ -152,31 +156,22 @@ class PaymentController {
                     // update current_customers & booked_number tour
                     const listOrderItems = await OrderItem.findAll({ where: { order_id: order.order_id } });
                     for (const orderItem of listOrderItems) {
-                        const tour = await findTourById(orderItem.tour_id)
-
-                        tour.current_customers += orderItem.quantity
-                        tour.booked_number += orderItem.quantity
-                        await tour.save()
+                        if (!orderItem.is_updated_slot) {
+                            const tour = await findTourById(orderItem.tour_id)
+                            tour.current_customers += orderItem.quantity
+                            tour.booked_number += orderItem.quantity
+                            orderItem.is_updated_slot = true
+                            await tour.save()
+                        }
+                        else continue
                     }
 
-                    // remove tour from cart
-                    // const listTourIds = listOrderItems.map(orderItem => orderItem.tour_id)
-                    // console.log("list tour ids", listTourIds)
-                    // await OrderTour.destroy({
-                    //     where: {
-                    //         order_id: order.order_id,
-                    //         tour_id: { [Op.in]: listTourIds }
-                    //     }
-                    // })
-
+                    // remove tour from cart 
                     await OrderItem.destroy({
                         where: {
                             id: { [Op.in]: listOrderItems.map(orderItem => orderItem.id)}
                         }
                     })
-                    
-                    // update total of cart
-                    await updateTotalCart(order.user_id, order.total)
 
                     return res.status(200).json({ RspCode: '00', Message: 'You pay for order successfully!' });
                 } else {

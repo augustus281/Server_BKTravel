@@ -87,7 +87,7 @@ class OrderController {
         }
     }
 
-    createOrderFromCart = async (req, res, next) => {
+    cFromCart = async (req, res, next) => {
         try {
             const { order_items, user_id, 
                 name_customer, phone_customer, 

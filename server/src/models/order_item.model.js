@@ -27,6 +27,11 @@ OrderItem.init({
         type: DataTypes.FLOAT,
         allowNull: false
     },
+    is_updated_slot: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
     total_price: {
         type: DataTypes.DECIMAL(20, 2),
         allowNull: false,
