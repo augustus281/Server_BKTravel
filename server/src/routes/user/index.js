@@ -21,11 +21,11 @@ router.get("/:user_id/completed_order", asyncHandler(orderController.getComplete
 router.get("/:user_id/failed_order", asyncHandler(orderController.getFailedOrderByUser))
 router.post("/change-password", authenticate, asyncHandler(userController.changePassword))
 router.get("/:user_id/wishlist", authenticate, asyncHandler(userController.getWishlistByCustomer))
-router.post("/:user_id/wishlist/tours/:tour_id", authenticate, asyncHandler(userController.addTourToWishlist))
+router.post("/wishlist", authenticate, asyncHandler(userController.addTourToWishlist))
 router.delete("/:user_id/wishlist/tours/:tour_id", authenticate, asyncHandler(userController.removeTourFromWishlist))
 router.put("/:user_id", authenticate, asyncHandler(userController.updateInfoUser))
 router.post("/:user_id/upload", authenticate, upload.single("avatar"), asyncHandler(userController.uploadAvatar))
 router.post("/forgot-password", asyncHandler(userController.forgotPassword))
-router.post("/reset-password", authenticate, asyncHandler(userController.resetPassword))
+router.post("/reset-password",  asyncHandler(userController.resetPassword))
 
 module.exports = router
