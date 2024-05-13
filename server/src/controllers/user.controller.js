@@ -181,7 +181,7 @@ class UserController {
     }
 
     addTourToWishlist = async (req, res, next) => {
-        const { tour_id, user_id } = req.params
+        const { tour_id, user_id } = req.body
         try {
             const existWishlist = await Wishlist.findOne({
                 where: {
