@@ -22,7 +22,7 @@ router.get("/:user_id/failed_order", asyncHandler(orderController.getFailedOrder
 router.post("/change-password", authenticate, asyncHandler(userController.changePassword))
 router.get("/:user_id/wishlist", authenticate, asyncHandler(userController.getWishlistByCustomer))
 router.post("/wishlist", authenticate, asyncHandler(userController.addTourToWishlist))
-router.delete("/:user_id/wishlist/tours/:tour_id", authenticate, asyncHandler(userController.removeTourFromWishlist))
+router.delete("/wishlist", authenticate, asyncHandler(userController.removeTourFromWishlist))
 router.put("/:user_id", authenticate, asyncHandler(userController.updateInfoUser))
 router.post("/:user_id/upload", authenticate, upload.single("avatar"), asyncHandler(userController.uploadAvatar))
 router.post("/forgot-password", asyncHandler(userController.forgotPassword))

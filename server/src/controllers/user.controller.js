@@ -234,7 +234,7 @@ class UserController {
     
             const wishlist = await Wishlist.findAll({
                 where: {
-                    wishlist_id: user_id,
+                    user_id: user_id,
                 },
                 include: [Tour]
             })
@@ -249,7 +249,7 @@ class UserController {
     };    
 
     removeTourFromWishlist = async (req, res, next) => {
-        const { tour_id, user_id } = req.params;
+        const { tour_id, user_id } = req.body;
         try {
             const user = await findUserById(user_id)
             if (!user) return res.status(404).json({ message: "Not found user!" })
