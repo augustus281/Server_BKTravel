@@ -158,13 +158,18 @@ class PaymentController {
 
                     // update current_customers & booked_number tour
                     const listOrderItems = await OrderItem.findAll({ where: { order_id: order.order_id } });
+                    
+                    console.log("1", listOrderItems)
                     for (const orderItem of listOrderItems) {
-                        if (!orderItem.is_updated_slot) {
+                        console.log("orderItem.is_updated_slot", orderItem.is_updated_slot)
+                        if (orderItem.is_updated_slot == 0) {
                             const tour = await findTourById(orderItem.tour_id)
                             tour.current_customers += orderItem.quantity
                             tour.booked_number += orderItem.quantity
-                            orderItem.is_updated_slot = true
+                            orderItem.is_updated_slot = 1
                             await tour.save()
+                            
+                            redisClient.del("online_tours")
                         }
                         else continue
                     }
