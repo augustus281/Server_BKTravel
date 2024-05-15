@@ -257,9 +257,15 @@ class UserController {
             const tour = await findTourById(tour_id)
             if (!tour) return res.status(404).json({ message: "Not found tour!" })
 
+            const wishlistUser = await Wishlist.findOne({
+                where: {
+                    user_id: user_id
+                }
+            })
+
             const wishlist = await WishlistTour.findOne({
                 where: {
-                    wishlist_id: user_id,
+                    wishlist_id: wishlistUser.wishlist_id,
                     tour_id: tour_id
                 }
             })
