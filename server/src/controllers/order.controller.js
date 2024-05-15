@@ -87,7 +87,7 @@ class OrderController {
         }
     }
 
-    cFromCart = async (req, res, next) => {
+    createOrderFromCart = async (req, res, next) => {
         try {
             const { order_items, user_id, 
                 name_customer, phone_customer, 
@@ -116,6 +116,7 @@ class OrderController {
                 await order_item.save()
 
                 let tour = await findTourById(order_item.tour_id)
+                console.log("current_customers", tour.current_customers, tour.max_customer)
                 if (tour.current_customers >= tour.max_customer)
                     return res.status(400).json({ message: "Tour is full!"})
 
