@@ -17,7 +17,6 @@ let querystring = require('qs');
 const crypto = require('crypto');
 const Cart = require("../models/cart.model");
 const { isExpired } = require("../utils/checkExpire");
-const { Op } = require("sequelize");
 const Tour = require("../models/tour.model");
 
 const tmnCode = process.env.vnp_TmnCode;
