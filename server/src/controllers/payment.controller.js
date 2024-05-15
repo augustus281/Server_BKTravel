@@ -151,8 +151,6 @@ class PaymentController {
                 const rspCode = vnp_Params['vnp_ResponseCode'];
                 
                 if (rspCode === '00') {
-                    isUpdated = true;
-
                     // convert status of order ---> COMPLETE
                     const order = await Order.findOne({ where: { payment_id: orderId }})
                     order.status = StatusOrder.COMPLETE;
