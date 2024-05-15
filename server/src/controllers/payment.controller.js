@@ -12,16 +12,19 @@ const Order = require('../models/order.model');
 const { StatusOrder } = require('../common/status');
 const { updateTotalCart } = require('../services/cart.service');
 const { findVoucherById } = require('../services/voucher.service');
-const Tour = require('../models/tour.model');
 const { Op } = require('sequelize');
-
-
+const redis = require("redis")
+let redisClient;
+(async () => {
+    redisClient = redis.createClient();
+    redisClient.on("error", (error) => console.error(`Error : ${error}`));
+    redisClient.on("connect", () => console.log("Redis connected"));
+    await redisClient.connect();
+})();
 const tmnCode = process.env.vnp_TmnCode;
 const secretKey = process.env.vnp_HashSecret;
 let url = process.env.vnp_Url;
 const returnUrl = process.env.vnp_ReturnUrl; 
-
-let isUpdated = false;
 
 class PaymentController {
     /**
@@ -72,6 +75,8 @@ class PaymentController {
                 
                 tour.current_customers += (order_item.adult_quantity + order_item.child_quantity);
                 await tour.save()
+
+                redisClient.del("online_tours")
             }
             new_order.total = total_price;
             await new_order.save()
