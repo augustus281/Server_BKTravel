@@ -31,7 +31,7 @@ class ReviewController {
             if (!tour) throw new NotFoundError("Not found tour for reviewing!");
 
             // check user is booked tour
-            const order = await Tour.findOne({
+            const order = await Order.findOne({
                 where: {
                     user_id: user_id,
                     payment_id: payment_id,
