@@ -11,7 +11,7 @@ const DestinationTour = require("../models/destination_tour.model")
 const Op = Sequelize.Op
 const Attraction = require("../models/attraction.model")
 const { StatusTour } = require("../common/status")
-const { findTourById } = require("../services/tour.service")
+const { findTourById, duplicateTour } = require("../services/tour.service")
 const AttractionTour = require("../models/attraction_tour.model")
 const Review = require("../models/review.model")
 const UserTour = require("../models/user_tour.model")
@@ -146,6 +146,20 @@ class TourController {
             });
                     
             } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    duplicateTour = async (req, res, next) => {
+        const tour_id = req.params.tour_id
+        try {
+            const newTour = await duplicateTour(tour_id)
+            if (!newTour) return res.status(400).json({ message: "Failed to copy tour!" })
+            return res.status(201).json({
+                message: "Copy tour successfully!",
+                data: newTour
+            })
+        } catch (error) {
             return res.status(500).json({ message: error.message })
         }
     }
