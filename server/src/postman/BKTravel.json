@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstname\": \"Huy\",\r\n    \"lastname\": \"Nguyen\",\r\n    \"email\": \"huy28011@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"confirm_password\": \"123456789\"\r\n}",
+							"raw": "{\r\n    \"firstname\": \"Huy\",\r\n    \"lastname\": \"Nguyen\",\r\n    \"email\": \"huy280111@gmail.com\",\r\n    \"password\": \"123456789\",\r\n    \"confirm_password\": \"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -47,7 +47,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"huy28011@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+							"raw": "{\r\n    \"email\": \"huy280111@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -184,7 +184,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"huy.nguyen28012002@hcmut.edu.vn\"\r\n}",
+							"raw": "{\r\n    \"email\": \"huy280111@gmail.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -286,7 +286,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/users/:user_id",
+							"raw": "http://localhost:8080/api/v1/users/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -296,13 +296,7 @@
 								"api",
 								"v1",
 								"users",
-								":user_id"
-							],
-							"variable": [
-								{
-									"key": "user_id",
-									"value": "1"
-								}
+								"1"
 							]
 						}
 					},
@@ -498,7 +492,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/users/1/wishlist",
+							"raw": "http://localhost:8080/api/v1/users/2/wishlist",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -508,7 +502,7 @@
 								"api",
 								"v1",
 								"users",
-								"1",
+								"2",
 								"wishlist"
 							]
 						}
@@ -527,7 +521,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": 1,\r\n    \"tour_id\": 1\r\n}",
+							"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -558,8 +552,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -597,10 +590,15 @@
 					"name": "Payment directly",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDExQGdtYWlsLmNvbSIsInJvbGVfdXNlciI6ImN1c3RvbWVyIiwiaWF0IjoxNzE1NjEwNTczLCJleHAiOjE3MTU2MTIzNzN9.Pjvx5eXT7H6IWVd65ed4Cn4Ew0byJiReofYcegOolXs"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 2\r\n}",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 8\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -631,7 +629,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"order_items\": [2],\r\n    \"user_id\": 2,\r\n    \"voucher_id\": 2\r\n}",
+							"raw": "{\r\n    \"order_items\": [2],\r\n    \"user_id\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -659,9 +657,14 @@
 					"name": "Get result payment",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDExQGdtYWlsLmNvbSIsInJvbGVfdXNlciI6ImN1c3RvbWVyIiwiaWF0IjoxNzE1NjEwNTczLCJleHAiOjE3MTU2MTIzNzN9.Pjvx5eXT7H6IWVd65ed4Cn4Ew0byJiReofYcegOolXs"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/users/payment/vnpay_ipn?vnp_Amount=549396000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14405827&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240507232319&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14405827&vnp_TransactionStatus=00&vnp_TxnRef=07162434&vnp_SecureHash=090ffb7703d3d3115e1db833e3430534c73135447c9d9cd5c405ad226ec1bc72a9ddbfbd776fa046d85d14462998f678796db82d4c07c1471e829e2db46c2a2e",
+							"raw": "http://localhost:8080/api/v1/users/payment/vnpay_ipn?vnp_Amount=366264000&vnp_BankCode=NCB&vnp_BankTranNo=VNP14416285&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240515233341&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14416285&vnp_TransactionStatus=00&vnp_TxnRef=15233424&vnp_SecureHash=ca50b75b393e08855686ac23a110b1f943ee079fafab9835b3ccb759eaacc20006f26200598ab8f68ac11437a7a95674657fbcd87778ca01ba47ef7cac0ac1eb",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -677,7 +680,7 @@
 							"query": [
 								{
 									"key": "vnp_Amount",
-									"value": "549396000"
+									"value": "366264000"
 								},
 								{
 									"key": "vnp_BankCode",
@@ -685,7 +688,7 @@
 								},
 								{
 									"key": "vnp_BankTranNo",
-									"value": "VNP14405827"
+									"value": "VNP14416285"
 								},
 								{
 									"key": "vnp_CardType",
@@ -697,7 +700,7 @@
 								},
 								{
 									"key": "vnp_PayDate",
-									"value": "20240507232319"
+									"value": "20240515233341"
 								},
 								{
 									"key": "vnp_ResponseCode",
@@ -709,7 +712,7 @@
 								},
 								{
 									"key": "vnp_TransactionNo",
-									"value": "14405827"
+									"value": "14416285"
 								},
 								{
 									"key": "vnp_TransactionStatus",
@@ -717,11 +720,11 @@
 								},
 								{
 									"key": "vnp_TxnRef",
-									"value": "07162434"
+									"value": "15233424"
 								},
 								{
 									"key": "vnp_SecureHash",
-									"value": "090ffb7703d3d3115e1db833e3430534c73135447c9d9cd5c405ad226ec1bc72a9ddbfbd776fa046d85d14462998f678796db82d4c07c1471e829e2db46c2a2e"
+									"value": "ca50b75b393e08855686ac23a110b1f943ee079fafab9835b3ccb759eaacc20006f26200598ab8f68ac11437a7a95674657fbcd87778ca01ba47ef7cac0ac1eb"
 								}
 							]
 						}
@@ -954,13 +957,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_items\": [14],\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_items\": [2],\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -991,8 +993,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -1015,133 +1016,6 @@
 								"api",
 								"v1",
 								"orders"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Remove tour to wishlist",
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "Tour Ngày Tham Quan Đà Nẵng\n",
-									"type": "text"
-								},
-								{
-									"key": "max_customer",
-									"value": "200",
-									"type": "text"
-								},
-								{
-									"key": "departure_date",
-									"value": "2024-01-26",
-									"type": "text"
-								},
-								{
-									"key": "deadline_book_time",
-									"value": "2024-01-30",
-									"type": "text"
-								},
-								{
-									"key": "departure_time",
-									"value": "7 AM",
-									"type": "text"
-								},
-								{
-									"key": "departure_place",
-									"value": "Hồ Chí Minh",
-									"type": "text"
-								},
-								{
-									"key": "cover_image",
-									"type": "file",
-									"src": "postman-cloud:///1eebc125-0093-4d00-89f3-9bedc2c1b433"
-								},
-								{
-									"key": "destination_place",
-									"value": "Hồ Chí Minh",
-									"type": "text"
-								},
-								{
-									"key": "time",
-									"value": "1 ngày 5 giờ",
-									"type": "text"
-								},
-								{
-									"key": "price",
-									"value": "747328",
-									"type": "text"
-								},
-								{
-									"key": "highlight",
-									"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
-									"type": "text"
-								},
-								{
-									"key": "note",
-									"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
-									"type": "text"
-								},
-								{
-									"key": "attractions[0][name]",
-									"value": "Dinh Độc Lập",
-									"type": "text"
-								},
-								{
-									"key": "attractions[1][name]",
-									"value": "Cầu Bà Đen",
-									"type": "text"
-								},
-								{
-									"key": "attractions[2][name]",
-									"value": "Chợ Bến Thành",
-									"type": "text"
-								},
-								{
-									"key": "attractions[3][name]",
-									"value": "Công viên Lê Thị Riêng",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/v1/users/1/wishlist/tours/:tour_id",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"1",
-								"wishlist",
-								"tours",
-								":tour_id"
-							],
-							"variable": [
-								{
-									"key": "tour_id",
-									"value": "2"
-								}
 							]
 						}
 					},
@@ -1667,7 +1541,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/tours/1",
+							"raw": "http://localhost:8080/api/v1/tours/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1677,7 +1551,35 @@
 								"api",
 								"v1",
 								"tours",
-								"1"
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Copy tour",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"2"
 							]
 						}
 					},
@@ -1729,7 +1631,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/tours/all/waiting",
+							"raw": "http://localhost:8080/api/v1/tours/all/pending",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1740,7 +1642,7 @@
 								"v1",
 								"tours",
 								"all",
-								"waiting"
+								"pending"
 							]
 						}
 					},
@@ -2199,7 +2101,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/users/1/groups",
+							"raw": "http://localhost:8080/api/v1/users/2/groups",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2209,7 +2111,7 @@
 								"api",
 								"v1",
 								"users",
-								"1",
+								"2",
 								"groups"
 							]
 						}
@@ -2349,13 +2251,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"user_id\": 2\r\n}",
+							"raw": "{\r\n   \"user_id\": 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2387,8 +2288,7 @@
 							{
 								"key": "Authorization",
 								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"body": {
@@ -2836,12 +2736,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/orders/1/vouchers",
+							"raw": "http://localhost:8080/api/v1/orders/2/vouchers",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2851,7 +2750,7 @@
 								"api",
 								"v1",
 								"orders",
-								"1",
+								"2",
 								"vouchers"
 							]
 						}
@@ -2991,6 +2890,42 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Remove tour to wishlist",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/wishlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"wishlist"
+					]
+				}
+			},
+			"response": []
 		},
 		{
 			"name": "GetRedirectGoogle",
