@@ -405,86 +405,77 @@ class UserController {
 
     getPendingTour = async (req, res, next) => {
         try {
-            const user_id = req.params.user_id;
-            const pendingTour = await User.findAll({
+            const user_id = req.params.user_id
+            const pendingTours = await Tour.findAll({
                 where: {
-                    user_id: user_id
-                }, include: [{
-                    model: Tour,
-                    where: { status: StatusTour.PENDING }, 
-                    include: [
-                        Attraction, Destination
-                    ]
+                    status: StatusTour.PENDING
+                }, attributes: {
+                    exclude: ['updatedAt', 'createdAt']
+                },
+                include: [ Destination, Attraction, {
+                    model: User,
+                    where: {
+                        user_id
+                    }
                 }],
                 order: [['tour_id', 'DESC']]
             })
-
-            if (!pendingTour) return res.status(404).json({ message: "Not found pending tour! "})
-
             return res.status(200).json({
-                message: "Get all pending tours successfully!",
-                data: pendingTour
+                tours: pendingTours
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
-        
     }
 
     getRejectTour = async (req, res, next) => {
         try {
-            const user_id = req.params.user_id;
-            const rejectedTour = await User.findAll({
+            const user_id = req.params.user_id
+            const pendingTours = await Tour.findAll({
                 where: {
-                    user_id: user_id
-                }, include: [{
-                    model: Tour,
-                    where: { status: StatusTour.REJECT }, 
-                    include: [
-                        Attraction, Destination
-                    ]
+                    status: StatusTour.REJECT
+                }, attributes: {
+                    exclude: ['updatedAt', 'createdAt']
+                },
+                include: [ Destination, Attraction, {
+                    model: User,
+                    where: {
+                        user_id
+                    }
                 }],
                 order: [['tour_id', 'DESC']]
             })
-
-            if (!rejectedTour) return res.status(404).json({ message: "Not found pending tour! "})
-
             return res.status(200).json({
-                message: "Get all reject tours successfully!",
-                data: rejectedTour
+                tours: pendingTours
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
-        
     }
 
     getSuccessTour = async (req, res, next) => {
         try {
-            const user_id = req.params.user_id;
-            const successTour = await User.findAll({
+            const user_id = req.params.user_id
+            const pendingTours = await Tour.findAll({
                 where: {
-                    user_id: user_id
-                }, include: [{
-                    model: Tour,
-                    where: { status: StatusTour.SUCCESS }, 
-                    include: [
-                        Attraction, Destination
-                    ]
+                    status: StatusTour.SUCCESS
+                }, attributes: {
+                    exclude: ['updatedAt', 'createdAt']
+                },
+                include: [ Destination, Attraction, {
+                    model: User,
+                    where: {
+                        user_id
+                    }
                 }],
                 order: [['tour_id', 'DESC']]
             })
-
-            if (!successTour) return res.status(404).json({ message: "Not found pending tour! "})
-
             return res.status(200).json({
-                message: "Get all success tours successfully!",
-                data: successTour
+                tours: pendingTours
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
-        
     }
 
     getAllGroupsByUserId = async (req, res, next) => {
