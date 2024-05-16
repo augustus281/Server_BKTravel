@@ -415,7 +415,8 @@ class UserController {
                     include: [
                         Attraction, Destination
                     ]
-                }]
+                }],
+                order: [['tour_id', 'DESC']]
             })
 
             if (!pendingTour) return res.status(404).json({ message: "Not found pending tour! "})
@@ -442,7 +443,8 @@ class UserController {
                     include: [
                         Attraction, Destination
                     ]
-                }]
+                }],
+                order: [['tour_id', 'DESC']]
             })
 
             if (!rejectedTour) return res.status(404).json({ message: "Not found pending tour! "})
@@ -469,7 +471,8 @@ class UserController {
                     include: [
                         Attraction, Destination
                     ]
-                }]
+                }],
+                order: [['tour_id', 'DESC']]
             })
 
             if (!successTour) return res.status(404).json({ message: "Not found pending tour! "})
