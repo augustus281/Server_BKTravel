@@ -35,6 +35,7 @@ const duplicateTour = async(tour_id) => {
         delete newTourData.tour_id;
         delete newTourData.current_customers;
         delete newTourData.booked_number;
+        delete newTourData.status;
 
         const duplicatedTour = await Tour.create(newTourData, { transaction })
 
