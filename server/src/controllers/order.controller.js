@@ -324,7 +324,7 @@ class OrderController {
             const order = await Order.findAll({
                 where: { user_id: user_id, status: StatusOrder.PENDING },
                 include: [
-                    Tour
+                    Tour, OrderItem
                 ]
             })
     
