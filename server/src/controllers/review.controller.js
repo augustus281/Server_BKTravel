@@ -36,7 +36,7 @@ class ReviewController {
                     user_id
                 }
             })
-            if (reviewTour) return res.status(400).json({ message: "You can't review tour!"})
+            if (reviewTour) return res.status(400).json({ message: "You can't review tour because you reviewed tour before!"})
         
             // check user is booked tour
             const order = await Order.findOne({
