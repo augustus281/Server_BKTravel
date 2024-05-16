@@ -5,6 +5,7 @@ const Attraction = require("../models/attraction.model")
 const AttractionTour = require("../models/attraction_tour.model")
 const Destination = require("../models/destination.model")
 const DestinationTour = require("../models/destination_tour.model")
+const Schedule = require("../models/schedule.model")
 const Tour = require("../models/tour.model")
 
 const findTourById = async(tour_id) => {
@@ -21,7 +22,8 @@ const duplicateTour = async(tour_id) => {
         const tour = await Tour.findByPk(tour_id, {
             include: [
                 { model: Destination, as: "destinations" },
-                { model: Attraction, as: "attractions" }
+                { model: Attraction, as: "attractions" },
+                { model: Schedule, as: "schedule"}
             ]
         });
 
@@ -35,6 +37,15 @@ const duplicateTour = async(tour_id) => {
         delete newTourData.booked_number;
 
         const duplicatedTour = await Tour.create(newTourData, { transaction })
+
+        // Copy schedule to new tour
+        if (tour.schedule) {
+            const newScheduleData = {
+                tour_id: duplicatedTour.tour_id,
+                schedule_detail: tour.schedule.schedule_detail
+            };
+            await Schedule.create(newScheduleData, { transaction });
+        }
 
         // Copy destinations relate to new tour
         const destinationsData = tour.destinations.map(dest => ({
