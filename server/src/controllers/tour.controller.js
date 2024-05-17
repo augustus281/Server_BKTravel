@@ -18,16 +18,6 @@ const UserTour = require("../models/user_tour.model")
 const User = require("../models/user.model")
 const redis = require("redis")
 
-const slugify = (text) => {
-    return text.toString().toLowerCase()
-        .replace(/\s+/g, '-')           
-        .replace(/[^\w\-]+/g, '')       
-
-        .replace(/\-\-+/g, '-')        
-        .replace(/^-+/, '')            
-        .replace(/-+$/, '');          
-};
-
 let redisClient;
 (async () => {
     redisClient = redis.createClient();
@@ -155,6 +145,8 @@ class TourController {
         try {
             const newTour = await duplicateTour(tour_id)
             if (!newTour) return res.status(400).json({ message: "Failed to copy tour!" })
+
+            redisClient.delete("waiting_tours")
             return res.status(201).json({
                 message: "Copy tour successfully!",
                 data: newTour
