@@ -75,6 +75,73 @@ class ScheduleController {
         }
     }
 
+    updateSchedule = async (req, res, next) => {
+        try {
+            const id = req.params.id;
+            const {
+                tour_id, schedule_detail
+            } = req.body
+
+            const tour = await findTourById(tour_id)
+            if (!tour) {
+                return res.status(404).json({ message: "Not found tour!" })
+            }
+
+            const schedule = await Schedule.findOne({
+                where: {
+                    id,
+                    tour_id
+                }
+            })
+            if (!schedule) {
+                return res.status(404).json({ message: "Not found schedule for updating!" })
+            }
+
+            for (const scheduleItem of schedule_detail) {
+                for (const detail of scheduleItem.detail) {
+                    const name = detail.name;
+    
+                    const attraction = await Attraction.findOne({ where: { name: name } });
+                    if (!attraction) {
+                        let exist_attraction = await OtherAttraction.findOne({ where: { name: name } });
+                        if (!exist_attraction) {
+                            exist_attraction = await OtherAttraction.create({
+                                name: detail.name,
+                                note: detail.note || null,
+                                description: detail.description
+                            });
+                        } else {
+                            exist_attraction.note = detail.note || null;
+                            exist_attraction.description = detail.description;
+                            await exist_attraction.save();
+                        }
+                    } else {
+                        attraction.note = detail.note || null;
+                        attraction.description = detail.description;
+                        await attraction.save();
+                    }
+                }
+            }
+
+            schedule.schedule_detail = JSON.parse(JSON.stringify(schedule_detail));
+            await schedule.save();
+
+            tour.status = StatusTour.ONLINE;
+            await tour.save();
+
+            redisClient.del("waiting_tours");
+            redisClient.del("online_tours");
+
+            return res.status(200).json({
+                message: "Update schedule for tour successfully!",
+                data: schedule
+            });
+
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
     deleteSchedule = async(req, res, next) => {
         try {
             const tour_id = req.params.tour_id
