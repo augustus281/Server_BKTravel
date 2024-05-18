@@ -591,6 +591,27 @@ class TourController {
         }
     }
 
+    convertWaitingToOnlineTour = async(req, res, next) => {
+        try {
+            const tour_id = req.params.tour_id
+            const tour = await Tour.findOne({ where : { tour_id, status: StatusTour.WAITING }})
+            if (!tour) return res.status(404).json({ Message: "Not found tour!"})
+            tour.status = StatusTour.ONLINE
+            await tour.save()
+
+            redisClient.del("waiting_tours")
+            redisClient.del("online_tours")
+            redisClient.del("deleted_tours")
+
+            return res.status(200).json({ 
+                message: "Convert tour successfully",
+                tour: tour
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
     deleteTour = async (req, res, next) => {
         try {
             const tour_id = req.params.tour_id

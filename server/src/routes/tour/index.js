@@ -28,6 +28,7 @@ router.get("/:tour_id/schedules", asyncHandler(tourController.getScheduleByIdTou
 router.put("/:tour_id", formidableMiddleware(), authenticate, asyncHandler(tourController.updateTour))
 router.put("/:tour_id/response", authenticate, asyncHandler(tourController.responseTour))
 router.put("/recover/:tour_id", authenticate, asyncHandler(tourController.recoverTour))
+router.patch("/:tour_id/public", authenticate, asyncHandler(tourController.convertWaitingToOnlineTour))
 router.post("/:tour_id/upload", authenticate, asyncHandler(tourController.updateCoverImageTour))
 router.delete("/:tour_id", authenticate, asyncHandler(tourController.deleteTour))
 
