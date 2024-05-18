@@ -115,7 +115,6 @@ class OrderController {
                 await order_item.save()
 
                 let tour = await findTourById(order_item.tour_id)
-                console.log("current_customers", tour.current_customers, tour.max_customer)
                 if (tour.current_customers >= tour.max_customer)
                     return res.status(400).json({ message: "Tour is full!"})
 
@@ -342,23 +341,27 @@ class OrderController {
     }
 
     getCompleteOrderByUser = async (req, res, next) => {
-        const user_id = req.params.user_id;
+        try {
+            const user_id = req.params.user_id;
 
-        const order = await Order.findAll({
-            where: { user_id: user_id, status: StatusOrder.COMPLETE },
-            include: [
-                Tour, OrderItem
-            ]
-        })
-
-        if (!order) 
-            return res.status(404).json({ message: "You haven't complete order"})
-
-        return res.status(200).json({
-            message: "Get complete order successfully!",
-            complete_orders: order
-        })
-    }
+            const order = await Order.findAll({
+                where: { user_id: user_id, status: StatusOrder.COMPLETE },
+                include: [{
+                    model: OrderItem
+                }]
+            });
+    
+            if (!order) 
+                return res.status(404).json({ message: "You haven't complete order"})
+    
+            return res.status(200).json({
+                message: "Get complete order successfully!",
+                complete_orders: order
+            })
+        } catch(error) {
+            return res.status(500).json({ message: error.message })
+        }
+    } 
 
     getFailedOrderByUser = async (req, res, next) => {
         const user_id = req.params.user_id;
