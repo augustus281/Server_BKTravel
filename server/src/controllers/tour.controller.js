@@ -176,6 +176,7 @@ class TourController {
 
             // Deleted cached data from Redis
             redisClient.del("online_tours")
+            redisClient.del("waiting_tours")
 
             return res.status(200).json({
                 message: "Update tour successfully!",
