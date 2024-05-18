@@ -1768,8 +1768,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -2029,9 +2028,9 @@
 					"response": []
 				},
 				{
-					"name": "Get schedule of tour",
+					"name": "Update schedule",
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
@@ -2039,8 +2038,17 @@
 								"disabled": true
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tour_id\": 2,\r\n    \"schedule_detail\": [\r\n        {\r\n            \"date\": \"08/03/2024\",\r\n            \"detail\": [\r\n                {\r\n                    \"name\": \"Ăn sáng\",\r\n                    \"note\": \"Updated note for Cố Đô Huế\",\r\n                    \"range_time\": \"8AM-10AM\",\r\n                    \"description\": \"Updated description for Cố Đô Huế\"\r\n                },\r\n                {\r\n                    \"name\": \"Xóm rế\",\r\n                    \"note\": \"Updated note for Chùa Thiên Mụ\",\r\n                    \"range_time\": \"12PM-2PM\",\r\n                    \"description\": \"Updated description for Chùa Thiên Mụ\"\r\n                }\r\n            ],\r\n            \"schedule_date\": \"Ngày 1\"\r\n        },\r\n        {\r\n            \"date\": \"09/03/2024\",\r\n            \"detail\": [\r\n                {\r\n                    \"name\": \"Đập Đá\",\r\n                    \"note\": \"Updated note for Đập Đá\",\r\n                    \"range_time\": \"8AM-10AM\",\r\n                    \"description\": \"Updated description for Đập Đá\"\r\n                },\r\n                {\r\n                    \"name\": \"Đa cua\",\r\n                    \"note\": \"Updated note for Đa cua\",\r\n                    \"range_time\": \"12PM-2PM\",\r\n                    \"description\": \"Updated description for Đa cua\"\r\n                }\r\n            ],\r\n            \"schedule_date\": \"Ngày 2\"\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/tours/1/schedules",
+							"raw": "http://localhost:8080/api/v1/schedules/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2049,9 +2057,8 @@
 							"path": [
 								"api",
 								"v1",
-								"tours",
-								"1",
-								"schedules"
+								"schedules",
+								"1"
 							]
 						}
 					},
@@ -2287,8 +2294,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -2405,8 +2411,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -2439,7 +2444,7 @@
 								},
 								{
 									"key": "payment_id",
-									"value": "",
+									"value": "15233424",
 									"type": "text"
 								}
 							]
@@ -3026,6 +3031,34 @@
 						"api",
 						"v1",
 						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pendingtour",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/1/pendingtour",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1",
+						"pendingtour"
 					]
 				}
 			},
