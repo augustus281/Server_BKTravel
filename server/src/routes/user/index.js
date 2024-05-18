@@ -11,7 +11,7 @@ const cartController = require("../../controllers/cart.controller")
 
 router.get("/:user_id", authenticate, asyncHandler(userController.getInfoUser))
 router.get("/:user_id", authenticate, asyncHandler(userController.getInfoUser))
-router.post("/:user_id/tours", authenticate, asyncHandler(userController.proposeTour))
+router.post("/tours", authenticate, asyncHandler(userController.proposeTour))
 router.get("/:user_id/groups", authenticate, asyncHandler(userController.getAllGroupsByUserId))
 router.get("/:user_id/cart", authenticate, asyncHandler(cartController.getCartByUser))
 router.get("/:user_id/pendingtour", authenticate, asyncHandler(userController.getPendingTour))
