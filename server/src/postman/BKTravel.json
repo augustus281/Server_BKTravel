@@ -210,19 +210,9 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTI5NDY4MzUsImV4cCI6MTcxMjk0ODYzNX0.ZUrXFupnztMpgTGlCn_DUXVeAQwAWMtXfTUtTzD2SeQ",
-								"type": "text"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJlbWFpbCI6Imh1eTI4MDFAZ21haWwuY29tIiwicm9sZV91c2VyIjoiY3VzdG9tZXIiLCJpYXQiOjE3MTI5NDY4MzUsImV4cCI6MTcxMjk0ODYzNX0.ZUrXFupnztMpgTGlCn_DUXVeAQwAWMtXfTUtTzD2SeQ"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"huy2801@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "http://localhost:8080/api/v1/auth/logout",
 							"protocol": "http",
@@ -559,8 +549,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"url": {
@@ -778,7 +767,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/orders/2",
+							"raw": "http://localhost:8080/api/v1/orders/9",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -788,7 +777,7 @@
 								"api",
 								"v1",
 								"orders",
-								"2"
+								"9"
 							]
 						}
 					},
@@ -962,7 +951,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_items\": [2],\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_items\": [3],\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1028,8 +1017,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"url": {
@@ -1057,13 +1045,12 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tour_id\": 1\r\n}",
+							"raw": "{\r\n    \"tour_id\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1071,7 +1058,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/users/carts/1",
+							"raw": "http://localhost:8080/api/v1/users/carts/12",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1082,7 +1069,7 @@
 								"v1",
 								"users",
 								"carts",
-								"1"
+								"12"
 							]
 						}
 					},
@@ -1202,7 +1189,7 @@
 							"variable": [
 								{
 									"key": "tour_id",
-									"value": "13"
+									"value": "14"
 								}
 							]
 						}
@@ -1376,8 +1363,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -1502,7 +1488,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/tours/:tour_id/upload",
+							"raw": "http://localhost:8080/api/v1/tours/1/upload",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1512,14 +1498,8 @@
 								"api",
 								"v1",
 								"tours",
-								":tour_id",
+								"1",
 								"upload"
-							],
-							"variable": [
-								{
-									"key": "tour_id",
-									"value": ""
-								}
 							]
 						}
 					},
@@ -1532,8 +1512,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -1546,7 +1525,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/tours/24/response",
+							"raw": "http://localhost:8080/api/v1/tours/18/response",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1556,7 +1535,7 @@
 								"api",
 								"v1",
 								"tours",
-								"24",
+								"18",
 								"response"
 							]
 						}
@@ -1586,6 +1565,34 @@
 								"v1",
 								"tours",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get top rated tours",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/toprated",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"toprated"
 							]
 						}
 					},
@@ -1660,12 +1667,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/tours/all/pending",
+							"raw": "http://localhost:8080/api/v1/tours/all/waiting",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1676,7 +1682,7 @@
 								"v1",
 								"tours",
 								"all",
-								"pending"
+								"waiting"
 							]
 						}
 					},
@@ -1807,7 +1813,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tour_id\": 2,\r\n    \"schedule_detail\": [\r\n  {\r\n    \"schedule_date\": \"Ngày 1\",\r\n    \"date\": \"08/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Ăn sáng\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Xóm rế\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  },\r\n  {\r\n    \"schedule_date\": \"Ngày 2\",\r\n    \"date\": \"09/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Đập Đá\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Đa cua\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  }\r\n]\r\n}",
+							"raw": "{\r\n    \"tour_id\": 20,\r\n    \"schedule_detail\": [\r\n  {\r\n    \"schedule_date\": \"Ngày 1\",\r\n    \"date\": \"08/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Ăn sáng\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Xóm rế\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  },\r\n  {\r\n    \"schedule_date\": \"Ngày 2\",\r\n    \"date\": \"09/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Đập Đá\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Đa cua\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  }\r\n]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2110,9 +2116,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"type": "text",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"url": {
@@ -2196,8 +2200,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"url": {
@@ -2297,7 +2300,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"user_id\": 3\r\n}",
+							"raw": "{\r\n   \"user_id\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2363,9 +2366,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"type": "text",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -2509,8 +2510,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM"
 							}
 						],
 						"body": {
@@ -2609,8 +2609,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"body": {
@@ -2844,7 +2843,12 @@
 					"name": "Create voucher",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6Imh1eTI4MDExMUBnbWFpbC5jb20iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcxNjAxOTY4NiwiZXhwIjoxNzE2MDIxNDg2fQ.FdmR-DRPnRmVt2tkf2xkxc0CfVBa6cNdZj-TnZVLgRo"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -3093,6 +3097,58 @@
 						"users",
 						"1",
 						"pendingtour"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create account for tour guide",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tour_guides",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tour_guides"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tour guides",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/tour_guides",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"tour_guides"
 					]
 				}
 			},

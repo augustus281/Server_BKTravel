@@ -20,5 +20,6 @@ router.use('/api/v1/orders', require("./order"))
 router.use('/api/v1/groups', require("./group"))
 router.use('/api/v1/messages', require("./message"))
 router.use('/api/v1/notifications', require("./notification"))
+router.use('/api/v1/tour_guides', require("./tour_guide"))
 
 module.exports = router

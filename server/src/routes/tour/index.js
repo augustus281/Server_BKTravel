@@ -10,6 +10,7 @@ const { authenticate } = require("../../middlewares/authenticate")
 
 router.post("/", formidableMiddleware(), authenticate, asyncHandler(tourController.createTour))
 router.get("/all", asyncHandler(tourController.getAllTours))
+router.get("/toprated", asyncHandler(tourController.getTopRatedTours))
 router.get("/all/waiting", authenticate, asyncHandler(tourController.getWaitingTours))
 router.get("/all/deleted", authenticate, asyncHandler(tourController.getDeletedTours))
 router.get("/all/online", asyncHandler(tourController.getOnlineTours))
