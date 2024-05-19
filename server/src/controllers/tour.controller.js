@@ -11,7 +11,7 @@ const DestinationTour = require("../models/destination_tour.model")
 const Op = Sequelize.Op
 const Attraction = require("../models/attraction.model")
 const { StatusTour } = require("../common/status")
-const { findTourById, duplicateTour } = require("../services/tour.service")
+const { findTourById, duplicateTour, getTopRatedTour } = require("../services/tour.service")
 const AttractionTour = require("../models/attraction_tour.model")
 const Review = require("../models/review.model")
 const UserTour = require("../models/user_tour.model")
@@ -277,6 +277,18 @@ class TourController {
         }
     };
 
+    getTopRatedTours = async (req, res, next) => {
+        try {
+            const tours = await getTopRatedTour()
+            return res.status(200).json({
+                message: "Get top rated tour successfully!",
+                data: tours
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+ 
     getCommentOfTour = async (req, res, next) => {
         try {
             const tour_id = req.params.tour_id;

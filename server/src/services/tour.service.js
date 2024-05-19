@@ -5,6 +5,7 @@ const Attraction = require("../models/attraction.model")
 const AttractionTour = require("../models/attraction_tour.model")
 const Destination = require("../models/destination.model")
 const DestinationTour = require("../models/destination_tour.model")
+const Review = require("../models/review.model")
 const Schedule = require("../models/schedule.model")
 const Tour = require("../models/tour.model")
 
@@ -74,8 +75,23 @@ const duplicateTour = async(tour_id) => {
     }
 }
 
+const getTopRatedTour = async () => {
+    try {
+        const tours = await Tour.findAll({
+            order: [['average_rate', 'DESC']],
+            limit: 10
+        })
+
+        return tours
+    } catch (error) {
+        console.error("Error fetching top rated tours: ", error)
+        throw error
+    }
+}
+
 module.exports = {
     findTourById,
     findIdByNameTour,
-    duplicateTour
+    duplicateTour,
+    getTopRatedTour
 }
