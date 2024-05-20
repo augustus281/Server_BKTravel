@@ -2,12 +2,14 @@
 
 const { RoleUser } = require("../common/status");
 const { BadRequestError } = require("../core/error.response");
-const GuideTour = require("../models/guide_tour.model");
+const GuideTour = require("../models/task.model");
 const TourGuide = require("../models/tour_guide.model");
 const { findTourById } = require("../services/tour.service")
 const bcrypt = require('bcrypt');
 const { isAdmin } = require("../middlewares/authenticate");
 const User = require("../models/user.model");
+const { Op } = require("sequelize");
+const Task = require("../models/task.model");
 
 const role_user = {
     ADMIN: 'admin',
@@ -18,39 +20,74 @@ const role_user = {
 class TourGuideController {
     assignTourToTourGuide = async (req, res, next) => {
         try {
-            const { tour_id, tour_guide_id } = req.body
+            const { tour_id, listTourGuides, number, description } = req.body;
+            
             const tour = await findTourById(tour_id);
             if (!tour) {
-                return res.status(404).json({ message: "Not found to assign!" })
+                return res.status(404).json({ message: "Tour not found to assign!" });
             }
-            await GuideTour.create({
-                tour_id, tour_guide_id
-            })
+    
+            const guideNames = listTourGuides.map(fullName => {
+                const parts = fullName.split(' ');
+                const firstname = parts.pop();
+                const lastname = parts.join(' ');
+                return { firstname, lastname };
+            });
+    
+            const conditions = guideNames.map(name => ({
+                firstname: name.firstname,
+                lastname: name.lastname,
+                role_user: RoleUser.GUIDER
+            }));
+
+            console.log("conditions::::", conditions)
+    
+            const tourGuides = await User.findAll({
+                where: {
+                    [Op.or]: conditions
+                }
+            });
+    
+            if (tourGuides.length === 0) {
+                return res.status(404).json({ message: "No tour guides found!" });
+            }
+
+            const listTourGuideIds = tourGuides.map(tourGuide => tourGuide.user_id);
+    
+            const tasks = listTourGuideIds.map(tourGuideId => ({
+                tour_id,
+                user_id: tourGuideId,
+                number,
+                description
+            }));
+    
+            await Task.bulkCreate(tasks);
+    
             return res.status(200).json({
                 message: "Assign tour for tour guide successfully!"
-            })
+            });
         } catch (error) {
-            return res.status(500).json({ message: error.message })
+            return res.status(500).json({ message: error.message });
         }
-    }
+    };
 
     responseTask = async (req, res, next) => {
         try {
-            const { tour_id, reason, tour_guide_id } = req.body
-            const guideTour = await GuideTour.findOne({
+            const { task_id, reason } = req.body
+            const task = await Task.findOne({
                 where: {
-                    tour_id, 
-                    tour_guide_id
+                    task_id
                 }
             })
 
-            if (!guideTour) {
-                return res.status(404).json({ message: "Not found tour is assigned!" })
+            if (!task) {
+                return res.status(404).json({ message: "Not found task is assigned!" })
             }
 
-            // TODO
-
-            return res.status(200).json({ message: "Response task successfully!" })
+            return res.status(200).json({ 
+                message: "Response task successfully!",
+                reason: reason
+            })
         } catch (error) { 
             return res.status(500).json({
                 message: error.message
@@ -135,6 +172,14 @@ class TourGuideController {
                 message: "Create tour guide successfully!",
                 tour_guide: newTourGuide
             })
+
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    getAllTask = async (req, res, next) => {
+        try {
 
         } catch (error) {
             return res.status(500).json({ message: error.message })
