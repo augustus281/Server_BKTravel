@@ -2949,7 +2949,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"tourguide1@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"gender\": \"male\",\r\n    \"phone_number\": \"0979957328\",\r\n    \"lastname\": \"Nguyen\",\r\n    \"firstname\": \"Huy\"\r\n}",
+							"raw": "{\r\n    \"email\": \"tourguide2@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"gender\": \"male\",\r\n    \"phone_number\": \"0979957328\",\r\n    \"lastname\": \"Nguyen Duc\",\r\n    \"firstname\": \"Huy\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2957,7 +2957,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/admin/management",
+							"raw": "http://localhost:8080/admin/manage-account",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2965,7 +2965,41 @@
 							"port": "8080",
 							"path": [
 								"admin",
-								"management"
+								"manage-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign task for tour guide",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6Imh1eTI4MDExMUBnbWFpbC5jb20iLCJyb2xlX3VzZXIiOiJhZG1pbiIsImlhdCI6MTcxNjIyMTQ3OCwiZXhwIjoxNzE2MjIzMjc4fQ.bzmuAFFQ32UTv3HPZw3AZLuLD-7sttDLlguuQxOEAVI"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tour_id\": 1,\r\n    \"number\": 2,\r\n     \"listTourGuides\": [\"Nguyen Huy\", \"Nguyen Duc Huy\"],\r\n    \"description\": \"Tour có nhiều trẻ em\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"task"
 							]
 						}
 					},
