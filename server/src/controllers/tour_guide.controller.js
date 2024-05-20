@@ -1,10 +1,13 @@
 'use strict'
 
 const { RoleUser } = require("../common/status");
+const { BadRequestError } = require("../core/error.response");
 const GuideTour = require("../models/guide_tour.model");
 const TourGuide = require("../models/tour_guide.model");
 const { findTourById } = require("../services/tour.service")
 const bcrypt = require('bcrypt');
+const { isAdmin } = require("../middlewares/authenticate");
+const User = require("../models/user.model");
 
 const role_user = {
     ADMIN: 'admin',
@@ -93,6 +96,48 @@ class TourGuideController {
             })
         } catch (error) {
             throw new Error("Error: ", error.message)
+        }
+    }
+
+    createTourGuideAccount = async (req, res, next) => {
+        try {
+            const {
+                email, 
+                password, 
+                lastname,
+                firstname,
+                gender,
+                dob,
+                phone_number
+            } = req.body
+
+            const access_token = req.headers['authorization']
+            const checkAdmin = await isAdmin(access_token)
+            if (!checkAdmin) throw new BadRequestError("Can't create tour guide account!")
+
+            const tourGuide = await User.findOne({
+                where: { email }
+            })
+            if (tourGuide) throw new BadRequestError("Email is existed!")
+            const newTourGuide = await User.create({
+                email,
+                password: await bcrypt.hash(password, 10),
+                lastname,
+                firstname,
+                gender,
+                dob,
+                phone_number,
+                role_user: RoleUser.GUIDER
+            })
+
+            if (!newTourGuide) throw new BadRequestError("Create new tour guide failed!")
+            return res.status(201).json({
+                message: "Create tour guide successfully!",
+                tour_guide: newTourGuide
+            })
+
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
         }
     }
 }
