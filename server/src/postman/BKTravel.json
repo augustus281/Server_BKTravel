@@ -10,106 +10,6 @@
 			"name": "User",
 			"item": [
 				{
-					"name": "Get Wishlist by user",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8080/api/v1/users/2/wishlist",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"2",
-								"wishlist"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add tour to wishlist",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDExQGdtYWlsLmNvbSIsInJvbGVfdXNlciI6ImN1c3RvbWVyIiwiaWF0IjoxNzE1NjA4Mjk2LCJleHAiOjE3MTU2MTAwOTZ9.yWxUVFMZqMSUQuqiKKFqXXzQePmi79wyG0zfhxCHRZ4"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/v1/users/wishlist",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"wishlist"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Add tour to cart",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"tour\": {\r\n        \"tour_id\": 2,\r\n        \"adult_quantity\": 1,\r\n        \"child_quantity\": 2\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/api/v1/users/carts",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"v1",
-								"users",
-								"carts"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Register",
 					"request": {
 						"method": "POST",
@@ -565,6 +465,106 @@
 								"users",
 								"1",
 								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wishlist by user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNjA3NDI0NiwiZXhwIjoxNzA2MDc2MDQ2fQ.e8ceK8R1EA9l2Rg0L5EP9foKw1mja0OJuIFNqj8TiRM"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/2/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add tour to wishlist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDExQGdtYWlsLmNvbSIsInJvbGVfdXNlciI6ImN1c3RvbWVyIiwiaWF0IjoxNzE1NjA4Mjk2LCJleHAiOjE3MTU2MTAwOTZ9.yWxUVFMZqMSUQuqiKKFqXXzQePmi79wyG0zfhxCHRZ4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 2,\r\n    \"tour_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/wishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add tour to cart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1\",\r\n    \"tour\": {\r\n        \"tour_id\": 2,\r\n        \"adult_quantity\": 1,\r\n        \"child_quantity\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"carts"
 							]
 						}
 					},
@@ -2935,6 +2935,95 @@
 			]
 		},
 		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Create tour guide account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6Imh1eTI4MDExMUBnbWFpbC5jb20iLCJyb2xlX3VzZXIiOiJhZG1pbiIsImlhdCI6MTcxNjIyMTQ3OCwiZXhwIjoxNzE2MjIzMjc4fQ.bzmuAFFQ32UTv3HPZw3AZLuLD-7sttDLlguuQxOEAVI"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"tourguide1@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"gender\": \"male\",\r\n    \"phone_number\": \"0979957328\",\r\n    \"lastname\": \"Nguyen\",\r\n    \"firstname\": \"Huy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/management",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"management"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all booked numbers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6Imh1eTI4MDExMUBnbWFpbC5jb20iLCJyb2xlX3VzZXIiOiJhZG1pbiIsImlhdCI6MTcxNjIyMTQ3OCwiZXhwIjoxNzE2MjIzMjc4fQ.bzmuAFFQ32UTv3HPZw3AZLuLD-7sttDLlguuQxOEAVI"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/total-bookednumber",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"total-bookednumber"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get total revenue",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJlbWFpbCI6Imh1eTI4MDExMUBnbWFpbC5jb20iLCJyb2xlX3VzZXIiOiJhZG1pbiIsImlhdCI6MTcxNjIyMTQ3OCwiZXhwIjoxNzE2MjIzMjc4fQ.bzmuAFFQ32UTv3HPZw3AZLuLD-7sttDLlguuQxOEAVI"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/total-revenue",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"total-revenue"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Remove tour to wishlist",
 			"request": {
 				"method": "DELETE",
@@ -3131,7 +3220,7 @@
 		{
 			"name": "Get all tour guides",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",

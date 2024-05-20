@@ -5,6 +5,7 @@ const router = express.Router()
 const { pushToLogDiscord } = require("../middlewares/index")
 
 router.use(pushToLogDiscord)
+router.use('/admin', require("./admin"))
 router.use('/api/v1/auth', require("./auth"))
 router.use('/api/v1/attractions', require("./attraction"))
 router.use('/api/v1/destinations', require("./destination"))

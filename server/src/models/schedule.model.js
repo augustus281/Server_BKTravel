@@ -17,6 +17,4 @@ Schedule.init({
     }
 }, { sequelize, modelName: "schedule"} )
 
-// Schedule.belongsTo(Tour, { foreignKey: "tour_id" })
-
 module.exports = Schedule
