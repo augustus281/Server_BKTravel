@@ -97,7 +97,11 @@ class TourGuideController {
 
     getAllTourGuide = async (req, res, next) => {
         try {
-            const allTourGuides = await TourGuide.findAll()
+            const allTourGuides = await User.findAll({
+                where: {
+                    role_user: RoleUser.GUIDER
+                }
+            })
             return res.status(200).json({
                 message: "Get all tour guides successfully!",
                 data: allTourGuides
