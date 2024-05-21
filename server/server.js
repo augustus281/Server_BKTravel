@@ -72,8 +72,8 @@ io.use(function (socket, next) {
     });
 
     // broadcast the message to a room
-    socket.on("send message", (msg, room) => {
-        io.in(room).emit("room message", msg);
+    socket.on("send message", (msg, room, userID) => {
+        io.in(room).emit("room message", msg, userID);
     });
 
     // on disconnection
