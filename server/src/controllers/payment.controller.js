@@ -159,7 +159,6 @@ class PaymentController {
                     // update current_customers & booked_number tour
                     const listOrderItems = await OrderItem.findAll({ where: { order_id: order.order_id } });
                     
-                    console.log("1", listOrderItems)
                     for (const orderItem of listOrderItems) {
                         console.log("orderItem.is_updated_slot", orderItem.is_updated_slot)
                         if (orderItem.is_updated_slot == 0) {
@@ -172,15 +171,10 @@ class PaymentController {
                             redisClient.del("online_tours")
                         }
                         else continue
+
+                        await orderItem.update({ cart_id: null });
                     }
-
-                    // remove tour from cart 
-                    await OrderItem.destroy({
-                        where: {
-                            id: { [Op.in]: listOrderItems.map(orderItem => orderItem.id)}
-                        }
-                    })
-
+                    
                     return res.status(200).json({ RspCode: '00', Message: 'You pay for order successfully!' });
                 } else {
                     // convert status of order ---> FAILED
