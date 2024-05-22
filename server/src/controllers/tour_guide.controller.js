@@ -189,6 +189,24 @@ class TourGuideController {
             return res.status(500).json({ message: error.message })
         }
     }
+
+    getAllTasksOfTourGuide = async (req, res, next) => {
+        try {
+            const user_id = req.params.user_id
+            const allTasks = await Task.findAll({
+                where: {
+                    user_id: user_id
+                }
+            })
+
+            return res.status(200).json({
+                message: "Get all tasks sussessfully!",
+                tasks: allTasks
+            })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
 }
 
 module.exports = new TourGuideController()
