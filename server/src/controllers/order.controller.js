@@ -323,7 +323,7 @@ class OrderController {
             const order = await Order.findAll({
                 where: { user_id: user_id, status: StatusOrder.PENDING },
                 include: [
-                    Tour, OrderItem
+                    OrderItem
                 ]
             })
     
@@ -344,19 +344,22 @@ class OrderController {
         try {
             const user_id = req.params.user_id;
 
-            const order = await Order.findAll({
-                where: { user_id: user_id, status: StatusOrder.COMPLETE },
+            const orders = await Order.findAll({
+                where: {
+                    user_id: user_id,
+                    status: StatusOrder.COMPLETE
+                },
                 include: [{
                     model: OrderItem
                 }]
             });
     
-            if (!order) 
+            if (!orders) 
                 return res.status(404).json({ message: "You haven't complete order"})
     
             return res.status(200).json({
                 message: "Get complete order successfully!",
-                complete_orders: order
+                complete_orders: orders
             })
         } catch(error) {
             return res.status(500).json({ message: error.message })
