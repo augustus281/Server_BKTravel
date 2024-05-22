@@ -79,7 +79,7 @@ class ScheduleController {
         try {
             const id = req.params.id;
             const {
-                tour_id, schedule_detail
+                tour_id, schedule_date, range_time, note, status
             } = req.body
 
             const tour = await findTourById(tour_id)
@@ -141,6 +141,50 @@ class ScheduleController {
             return res.status(500).json({ message: error.message })
         }
     }
+
+    updateScheduleDetails = async (req, res, next) => {
+        try {
+            const { tour_id, schedule_detail: updatedScheduleDetails } = req.body;
+
+            const schedule = await Schedule.findOne({
+                where: { tour_id }
+            });
+    
+            if (!schedule) {
+                return res.status(404).json({ message: "Schedule not found for the specified tour" });
+            }
+    
+            const scheduleDetail = schedule.schedule_detail;
+            for (const updatedSchedule of updatedScheduleDetails) {
+                const { date, detail } = updatedSchedule;
+                
+                const currentSchedule = scheduleDetail.find(s => s.date === date);
+                if (!currentSchedule) {
+                    continue;
+                }
+
+                for (const updatedDetail of detail) {
+                    const { range_time, note, status } = updatedDetail;
+                    const currentDetail = currentSchedule.detail.find(d => d.range_time === range_time);
+                    if (currentDetail) {
+                        currentDetail.note = note !== undefined ? note : currentDetail.note;
+                        currentDetail.status = status !== undefined ? status : currentDetail.status;
+                    }
+                }
+            }
+    
+            schedule.schedule_detail = scheduleDetail;
+            await schedule.save();
+    
+            return res.status(200).json({
+                message: "Schedule updated successfully",
+                schedule
+            });
+        } catch (error) {
+            return res.status(500).json({ message: error.message });
+        }
+    };
+    
 
     deleteSchedule = async(req, res, next) => {
         try {
