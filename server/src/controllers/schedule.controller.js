@@ -154,6 +154,7 @@ class ScheduleController {
                 return res.status(404).json({ message: "Schedule not found for the specified tour" });
             }
     
+            let status_response
             const scheduleDetail = schedule.schedule_detail;
             for (const updatedSchedule of updatedScheduleDetails) {
                 const { date, detail } = updatedSchedule;
@@ -165,6 +166,7 @@ class ScheduleController {
 
                 for (const updatedDetail of detail) {
                     const { range_time, note, status } = updatedDetail;
+                    status_response = status
                     const currentDetail = currentSchedule.detail.find(d => d.range_time === range_time);
                     if (currentDetail) {
                         currentDetail.note = note !== undefined ? note : currentDetail.note;
@@ -178,7 +180,8 @@ class ScheduleController {
     
             return res.status(200).json({
                 message: "Schedule updated successfully",
-                schedule
+                schedule,
+                status: status_response
             });
         } catch (error) {
             return res.status(500).json({ message: error.message });

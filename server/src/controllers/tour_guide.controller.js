@@ -10,6 +10,7 @@ const { isAdmin } = require("../middlewares/authenticate");
 const User = require("../models/user.model");
 const { Op } = require("sequelize");
 const Task = require("../models/task.model");
+const Tour = require("../models/tour.model");
 
 const role_user = {
     ADMIN: 'admin',
@@ -196,7 +197,8 @@ class TourGuideController {
             const allTasks = await Task.findAll({
                 where: {
                     user_id: user_id
-                }
+                },
+                include: [Tour]
             })
 
             return res.status(200).json({
