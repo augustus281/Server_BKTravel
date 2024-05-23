@@ -104,9 +104,6 @@ class TourController {
                 list_image: JSON.stringify(list_image),
                 status: StatusTour.WAITING
             });
-
-            // Delete cached data from Redis
-            redisClient.del("waiting_tours")
             
             // Associate destinations with the tour
             for (const dest of destinations) {
@@ -129,6 +126,11 @@ class TourController {
                     defaults: { attraction_id: exist_attraction.attraction_id, tour_id: newTour.tour_id }
                 })
             }
+
+             // Delete cached data from Redis
+            redisClient.del("online_tours")
+            redisClient.del("waiting_tours")
+            redisClient.del("tours")
             
             return res.status(201).json({
                 message: 'Create tour successfully!',
@@ -147,6 +149,8 @@ class TourController {
             if (!newTour) return res.status(400).json({ message: "Failed to copy tour!" })
 
             redisClient.delete("waiting_tours")
+            redisClient.delete("tours")
+
             return res.status(201).json({
                 message: "Copy tour successfully!",
                 data: newTour
@@ -177,6 +181,7 @@ class TourController {
             // Deleted cached data from Redis
             redisClient.del("online_tours")
             redisClient.del("waiting_tours")
+            redisClient.del("tours")
 
             return res.status(200).json({
                 message: "Update tour successfully!",
@@ -197,6 +202,11 @@ class TourController {
             const link_image = await cloudinary.uploader.upload(cover_image)
             tour.cover_image = link_image.secure_url
             await tour.save()
+
+            redisClient.del("online_tours")
+            redisClient.del("waiting_tours")
+            redisClient.del("tours")
+
             return res.status(200).json({
                 message: "Upload cover image successfully!",
                 link_image: link_image.secure_url
