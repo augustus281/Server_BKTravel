@@ -148,8 +148,8 @@ class TourController {
             const newTour = await duplicateTour(tour_id)
             if (!newTour) return res.status(400).json({ message: "Failed to copy tour!" })
 
-            redisClient.delete("waiting_tours")
-            redisClient.delete("tours")
+            redisClient.del("waiting_tours")
+            redisClient.del("tours")
 
             return res.status(201).json({
                 message: "Copy tour successfully!",
