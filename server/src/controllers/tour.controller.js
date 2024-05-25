@@ -411,21 +411,25 @@ class TourController {
         }
     }
 
-    getScheduleByIdTour = async(req, res, next) => {
-        const tour_id = req.params.tour_id
+    getScheduleByIdTour = async (req, res, next) => {
+        const tour_id = req.params.tour_id;
         try {
             const schedule_tour = await Schedule.findOne({
                 where: { tour_id: tour_id }
-            })
+            });
     
-            if (!schedule_tour) return res.status(404).json({ message: "Not found schedule of tour!" })
+            if (!schedule_tour) return res.status(404).json({ message: "Not found schedule of tour!" });
+    
+            console.log('Fetched Schedule Details:', schedule_tour.schedule_detail); // Ghi log dữ liệu đã truy xuất
+    
             return res.status(200).json({
                 schedule_tour: schedule_tour
-            })
-        } catch(error) {
-            return res.status(500).json({ message: error.message })
+            });
+        } catch (error) {
+            return res.status(500).json({ message: error.message });
         }
-    }
+    };
+    
 
     getAllTours = async(req, res, next) => {
         try {

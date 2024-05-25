@@ -77,7 +77,7 @@ class ScheduleController {
 
     updateSchedule = async (req, res, next) => {
         try {
-            const id = req.params.id;
+            // const id = req.params.id;
             const {
                 tour_id, schedule_date, range_time, note, status
             } = req.body
@@ -89,7 +89,6 @@ class ScheduleController {
 
             const schedule = await Schedule.findOne({
                 where: {
-                    id,
                     tour_id
                 }
             })
@@ -97,7 +96,7 @@ class ScheduleController {
                 return res.status(404).json({ message: "Not found schedule for updating!" })
             }
 
-            for (const scheduleItem of schedule_detail) {
+            for (const scheduleItem of schedule.schedule_detail) {
                 for (const detail of scheduleItem.detail) {
                     const name = detail.name;
     
@@ -144,49 +143,51 @@ class ScheduleController {
 
     updateScheduleDetails = async (req, res, next) => {
         try {
-            const { tour_id, schedule_detail: updatedScheduleDetails } = req.body;
-
-            const schedule = await Schedule.findOne({
-                where: { tour_id }
-            });
+            const { tour_id, schedule_detail } = req.body;
+    
+            const schedule = await Schedule.findOne({ where: { tour_id } });
     
             if (!schedule) {
-                return res.status(404).json({ message: "Schedule not found for the specified tour" });
+                return res.status(404).json({ message: "Schedule not found!" });
             }
     
-            let status_response
-            const scheduleDetail = schedule.schedule_detail;
-            for (const updatedSchedule of updatedScheduleDetails) {
-                const { date, detail } = updatedSchedule;
-                
-                const currentSchedule = scheduleDetail.find(s => s.date === date);
-                if (!currentSchedule) {
-                    continue;
-                }
-
-                for (const updatedDetail of detail) {
-                    const { range_time, note, status } = updatedDetail;
-                    status_response = status
-                    const currentDetail = currentSchedule.detail.find(d => d.range_time === range_time);
-                    if (currentDetail) {
-                        currentDetail.note = note !== undefined ? note : currentDetail.note;
-                        currentDetail.status = status !== undefined ? status : currentDetail.status;
-                    }
+            let scheduleDetails = schedule.schedule_detail;
+            schedule.schedule_detail = [];
+            await schedule.save()
+    
+            for (const detailUpdate of schedule_detail) {
+                const { date, detail } = detailUpdate;
+                for (const item of detail) {
+                    const { range_time, note, status } = item;
+    
+                    scheduleDetails = scheduleDetails.map(sd => {
+                        if (sd.date === date) {
+                            sd.detail = sd.detail.map(d => {
+                                if (d.range_time === range_time) {
+                                    if (note !== undefined) d.note = note;
+                                    if (status !== undefined) d.status = status;
+                                }
+                                return d;
+                            });
+                        }
+                        return sd;
+                    });
                 }
             }
     
-            schedule.schedule_detail = scheduleDetail;
+            schedule.schedule_detail = scheduleDetails;
             await schedule.save();
     
             return res.status(200).json({
-                message: "Schedule updated successfully",
-                schedule,
-                status: status_response
+                message: "Schedule updated successfully!",
+                schedule
             });
+    
         } catch (error) {
             return res.status(500).json({ message: error.message });
         }
     };
+    
     
 
     deleteSchedule = async(req, res, next) => {
@@ -204,7 +205,6 @@ class ScheduleController {
         const { city } = req.query
         const apiKey = process.env.API_KEY_WEATHER
         const encodedCity = encodeURIComponent(city);
-        console.log(`apiKey:::`, city)
         const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&APPID=${apiKey}`;
         try {
             const response = await fetch(weatherURL)
