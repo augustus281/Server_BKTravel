@@ -121,7 +121,6 @@ class PaymentController {
             vnp_Params['vnp_SecureHash'] = hmac.update(Buffer.from(signData, 'utf-8')).digest("hex");
             vnpUrl += '?' + querystring.stringify(vnp_Params, { encode: false });
 
-            console.log(`vnpUrl:::`, vnpUrl, orderId)
             return res.status(200).json({
                 link_payment: vnpUrl,
                 order: new_order
@@ -161,13 +160,13 @@ class PaymentController {
                     
                     for (const orderItem of listOrderItems) {
                         console.log("orderItem.is_updated_slot", orderItem.is_updated_slot)
-                        if (orderItem.is_updated_slot == 0) {
+                        if (orderItem.is_updated_slot == false) {
                             const tour = await findTourById(orderItem.tour_id)
                             tour.current_customers += orderItem.quantity
                             tour.booked_number += orderItem.quantity
-                            orderItem.is_updated_slot = 1
+                            orderItem.is_updated_slot = true
                             await tour.save()
-                            
+                            await orderItem.save()
                             redisClient.del("online_tours")
                         }
                         else continue

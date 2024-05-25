@@ -36,12 +36,10 @@ class TourGuideController {
             });
     
             const conditions = guideNames.map(name => ({
-                firstname: name.firstname,
-                lastname: name.lastname,
+                firstname: name.lastname,
+                lastname: name.firstname,
                 role_user: RoleUser.GUIDER
             }));
-
-            console.log("conditions::::", conditions)
     
             const tourGuides = await User.findAll({
                 where: {
