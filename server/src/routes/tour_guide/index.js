@@ -8,6 +8,6 @@ const { authenticate } = require("../../middlewares/authenticate")
 
 router.post("", authenticate, asyncHandler(tourGuideController.createTourGuideDefault))
 router.get("/", authenticate, asyncHandler(tourGuideController.getAllTourGuide))
-router.get("/:user_id/tasks", authenticate, asyncHandler(tourGuideController.getAllTasksOfTourGuide))
+router.get("/:user_id/tasks", asyncHandler(tourGuideController.getAllTasksOfTourGuide))
 
 module.exports = router

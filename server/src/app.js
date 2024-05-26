@@ -7,7 +7,6 @@ const bodyParser = require('body-parser')
 const cors = require("cors")
 const app = express();
 
-require("./utils/passport")
 require("./models/user.model")
 
 // init middlewares

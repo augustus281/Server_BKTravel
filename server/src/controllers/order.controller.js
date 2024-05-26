@@ -349,9 +349,7 @@ class OrderController {
                     user_id: user_id,
                     status: StatusOrder.COMPLETE
                 },
-                include: [{
-                    model: OrderItem
-                }]
+                include: [Tour, OrderItem]
             });
     
             if (!orders) 
