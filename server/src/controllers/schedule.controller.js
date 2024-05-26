@@ -77,9 +77,9 @@ class ScheduleController {
 
     updateSchedule = async (req, res, next) => {
         try {
-            // const id = req.params.id;
+            const id = req.params.id;
             const {
-                tour_id, schedule_date, range_time, note, status
+                tour_id, schedule_detail
             } = req.body
 
             const tour = await findTourById(tour_id)
@@ -89,7 +89,8 @@ class ScheduleController {
 
             const schedule = await Schedule.findOne({
                 where: {
-                    tour_id
+                    tour_id,
+                    id
                 }
             })
             if (!schedule) {
