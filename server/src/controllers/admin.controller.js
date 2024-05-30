@@ -1,6 +1,6 @@
 'use strict'
 
-const { StatusOrder } = require("../common/status")
+const { StatusOrder } = require("../common/index")
 const Order = require("../models/order.model")
 const Tour = require("../models/tour.model")
 

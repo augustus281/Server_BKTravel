@@ -2,7 +2,7 @@
 
 const { DataTypes } = require("sequelize")
 const sequelize = require("../database/connect.mysql")
-const { TypeDiscount } = require("../common/status")
+const { TypeDiscount } = require("../common/index")
 
 const Voucher = sequelize.define("voucher", {
     voucher_id: {

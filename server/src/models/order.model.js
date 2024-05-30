@@ -2,7 +2,7 @@
 
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../database/connect.mysql");
-const { StatusOrder } = require("../common/status");
+const { StatusOrder } = require("../common/index");
 const OrderItem = require("./order_item.model");
 
 class Order extends Model {}

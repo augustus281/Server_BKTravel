@@ -2,6 +2,7 @@
 
 const Attraction = require("../models/attraction.model")
 const Destination = require("../models/destination.model")
+const Hotel = require("../models/hotel.model")
 
 class AttractionController {
     getAllAttractionsByDestination = async(req, res, next) => {
@@ -26,6 +27,34 @@ class AttractionController {
                 data: attractions
             });
         } catch(error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    getAllHotelsByDestination = async (req, res, next) => {
+        try {
+            const { destination } = req.query
+            const dest = await Destination.findOne({
+                where: {
+                    name: destination
+                }
+            })
+
+            if (!dest) {
+                return res.status(404).json({ message: "Not found destination." });
+            }
+
+            const hotels = await Hotel.findAll({
+                where: {
+                    destination_id: dest.destination_id
+                }
+            })
+
+            return res.status(200).json({
+                message: "Get all hotels by destination successfully!",
+                data: hotels
+            });
+        } catch (error) {
             return res.status(500).json({ message: error.message })
         }
     }

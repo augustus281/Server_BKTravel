@@ -1,6 +1,6 @@
 'use strict'
 
-const { StatusOrder } = require("../common/status");
+const { StatusOrder } = require("../common/index");
 const { NotFoundError, BadRequestError } = require("../core/error.response");
 const Order = require("../models/order.model");
 const OrderItem = require("../models/order_item.model");

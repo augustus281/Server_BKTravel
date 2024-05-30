@@ -7,7 +7,7 @@ const { findTourById } = require("../services/tour.service")
 const { findUserById } = require("../services/user.service")
 const Comment = require("../models/comment.model")
 const Order = require("../models/order.model")
-const { StatusOrder } = require("../common/status")
+const { StatusOrder } = require("../common/index")
 const Tour = require("../models/tour.model")
 
 class ReviewController {

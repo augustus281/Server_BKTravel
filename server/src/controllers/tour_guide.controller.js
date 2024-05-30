@@ -1,6 +1,6 @@
 'use strict'
 
-const { RoleUser } = require("../common/status");
+const { RoleUser } = require("../common/index");
 const { BadRequestError } = require("../core/error.response");
 const GuideTour = require("../models/task.model");
 const TourGuide = require("../models/tour_guide.model");

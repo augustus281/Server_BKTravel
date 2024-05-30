@@ -1,6 +1,6 @@
 'use strict'
 
-const { StatusTour } = require("../common/status")
+const { StatusTour } = require("../common/index")
 const Attraction = require("../models/attraction.model")
 const OtherAttraction = require("../models/other_attraction.model")
 const Schedule = require("../models/schedule.model")
@@ -153,7 +153,7 @@ class ScheduleController {
             }
     
             let scheduleDetails = schedule.schedule_detail;
-            schedule.schedule_detail = [];
+            schedule.schedule_detail = null;
             await schedule.save()
     
             for (const detailUpdate of schedule_detail) {
@@ -178,6 +178,7 @@ class ScheduleController {
     
             schedule.schedule_detail = scheduleDetails;
             await schedule.save();
+
     
             return res.status(200).json({
                 message: "Schedule updated successfully!",

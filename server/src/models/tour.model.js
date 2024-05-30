@@ -3,7 +3,7 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../database/connect.mysql")
 
-const { StatusTour } = require("../common/status");
+const { StatusTour } = require("../common");
 const OrderItem = require("./order_item.model");
 const Comment = require("./comment.model");
 const Review = require("./review.model");

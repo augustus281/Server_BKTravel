@@ -32,10 +32,22 @@ const TypeNotification = {
     TOUR_001: "new tour by customer like"
 }
 
+const Transport = {
+    PLANE: "Máy bay",
+    TRAIN: "Tàu hỏa",
+    BUS: "Xe bus",
+    MOTORBIKE: "Xe máy",
+    BICYCLE: "Xe đạp",
+    COACH: "Xe khách",
+    TAXI: "Taxi",
+    CAR: "Ô tô"
+}
+
 module.exports = {
     StatusTour,
     StatusOrder,
     RoleUser,
     TypeDiscount,
-    TypeNotification
+    TypeNotification,
+    Transport
 }

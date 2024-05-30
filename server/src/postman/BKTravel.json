@@ -587,7 +587,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 16\r\n}",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"order_id\": 18\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -653,7 +653,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/api/v1/users/payment/vnpay_ipn?vnp_Amount=329637600&vnp_BankCode=NCB&vnp_BankTranNo=VNP14425596&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240522223945&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14425596&vnp_TransactionStatus=00&vnp_TxnRef=22153927&vnp_SecureHash=908568b3da2da8448ba732d93b4de386974d8f7d7bb8a5841cd1164b40f74c550cd749a344db1fcc460a41380c4f85f88d57bf108381ffc4c73744ea7994ca5f",
+							"raw": "http://localhost:8080/api/v1/users/payment/vnpay_ipn?vnp_Amount=329637600&vnp_BankCode=NCB&vnp_BankTranNo=VNP14429097&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240525132446&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14429097&vnp_TransactionStatus=00&vnp_TxnRef=25062436&vnp_SecureHash=e6c65ccd593d7e7ca390395b79cae93aaf6b0f3213eed8da373bd21871128550b19616082de59a202190fd68d2d57ec6e44f0d89bddcd29dabd1900e12303d22",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -677,7 +677,7 @@
 								},
 								{
 									"key": "vnp_BankTranNo",
-									"value": "VNP14425596"
+									"value": "VNP14429097"
 								},
 								{
 									"key": "vnp_CardType",
@@ -689,7 +689,7 @@
 								},
 								{
 									"key": "vnp_PayDate",
-									"value": "20240522223945"
+									"value": "20240525132446"
 								},
 								{
 									"key": "vnp_ResponseCode",
@@ -701,7 +701,7 @@
 								},
 								{
 									"key": "vnp_TransactionNo",
-									"value": "14425596"
+									"value": "14429097"
 								},
 								{
 									"key": "vnp_TransactionStatus",
@@ -709,11 +709,11 @@
 								},
 								{
 									"key": "vnp_TxnRef",
-									"value": "22153927"
+									"value": "25062436"
 								},
 								{
 									"key": "vnp_SecureHash",
-									"value": "908568b3da2da8448ba732d93b4de386974d8f7d7bb8a5841cd1164b40f74c550cd749a344db1fcc460a41380c4f85f88d57bf108381ffc4c73744ea7994ca5f"
+									"value": "e6c65ccd593d7e7ca390395b79cae93aaf6b0f3213eed8da373bd21871128550b19616082de59a202190fd68d2d57ec6e44f0d89bddcd29dabd1900e12303d22"
 								}
 							]
 						}
@@ -987,7 +987,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"user_id\": 1,\r\n    \"child_quantity\": 2,\r\n    \"adult_quantity\": 3,\r\n    \"tour_id\": 1,\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"child_quantity\": 2,\r\n    \"adult_quantity\": 3,\r\n    \"tour_id\": 20,\r\n    \"name_customer\": \"Nguyen Duc Huy\",\r\n    \"phone_customer\": \"0979957328\",\r\n    \"address_customer\": \"Ho Chi Minh City\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1468,6 +1468,121 @@
 					"response": []
 				},
 				{
+					"name": "Get all tours",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Tour Ngày Tham Quan Đà Nẵng\n",
+									"type": "text"
+								},
+								{
+									"key": "max_customer",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "departure_date",
+									"value": "2024-04-13",
+									"type": "text"
+								},
+								{
+									"key": "deadline_book_time",
+									"value": "2024-01-30",
+									"type": "text"
+								},
+								{
+									"key": "departure_time",
+									"value": "7 AM",
+									"type": "text"
+								},
+								{
+									"key": "destination_places",
+									"value": "Bình Định, Phú Yên",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "1 ngày 5 giờ",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "732528",
+									"type": "text"
+								},
+								{
+									"key": "highlight",
+									"value": "Dành cả ngày khám phá Đà Nẵng và ghé thăm các địa điểm lịch sử hấp dẫn và thu hút du khách nhất của thành phố",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "Tour đã gồm đưa đón và trả khách ở khách sạn cũng như ăn trưa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Nằm ở ngay tại trung tâm Việt Nam, Đà Nẵng là điểm dừng chân không thể bỏ qua cho bất kỳ hành trình nào của bạn ở Việt Nam. Chuyến đi trong ngày này sẽ đưa bạn đến những điểm tham quan hấp dẫn của thành phố và sẽ giúp bạn đắm chìm vào cuộc sống của một cư dân Đà Nẵng điển hình. Bắt đầu với chuyến thăm làng đá Non Nước nằm ngay dưới chân núi Ngũ Hành Sơn. Bạn sẽ có cơ hội chiêm ngưỡng quá trình tạo tác đầy điêu luyện của các nghệ nhân. Sau đó, bạn tiếp tục đến tham quan chùa Linh Ứng Bãi Bụt, ngôi chùa lớn nhất của thành phố. Hoạt động kế theo chính là trải nghiệm cầu Thuận Phước, cầy dây văng dài nhất Việt Nam, trong khi ngắm nhìn cảnh đẹp trên sông Hàn và những vùng xung quanh. Điểm đến sau đó là Bảo Tàng Điêu Khắc Chăm, nơi lưu giữ hình ảnh của những người Chăm bản địa từng sinh sống nơi đây. Bạn sẽ dừng ăn trưa tại nhà hàng gần đó, nạp năng lượng để chuẩn bị cho điểm tham quan cuối: chợ Hàn - nơi bạn có thể khám phá nhịp sống và buôn bán tấp nập của người địa phương. Sau đó bạn sẽ được đưa về tận khách sạn hoặc điểm tập trung ban đầu và kết thúc tour.",
+									"type": "text"
+								},
+								{
+									"key": "attractions[0][Phú Yên]",
+									"value": "Tháp Nghinh Phong",
+									"type": "text"
+								},
+								{
+									"key": "attractions[1][Phú Yên]",
+									"value": "Xóm rế",
+									"type": "text"
+								},
+								{
+									"key": "attractions[0][Bình Định]",
+									"value": "Đập Đá",
+									"type": "text"
+								},
+								{
+									"key": "attractions[1][Bình Định]",
+									"value": "Đa cua",
+									"type": "text"
+								},
+								{
+									"key": "cover_image",
+									"type": "file",
+									"src": "postman-cloud:///1eed137c-d19f-4160-a111-e30af71d0e4d"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Upload cover image",
 					"request": {
 						"method": "POST",
@@ -1717,6 +1832,40 @@
 					"response": []
 				},
 				{
+					"name": "Get all hotel by destination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/destinations/hotels?destination=Đắk Lắk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"destinations",
+								"hotels"
+							],
+							"query": [
+								{
+									"key": "destination",
+									"value": "Đắk Lắk"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get online tours",
 					"request": {
 						"method": "GET",
@@ -1740,6 +1889,35 @@
 								"tours",
 								"all",
 								"online"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get schedules of tour",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tours/1/schedules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tours",
+								"1",
+								"schedules"
 							]
 						}
 					},
@@ -1775,14 +1953,13 @@
 					"response": []
 				},
 				{
-					"name": "Create destination & attractions",
+					"name": "Create destination & attractions, hotels",
 					"request": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930"
 							}
 						],
 						"url": {
@@ -1813,7 +1990,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tour_id\": 1,\r\n    \"schedule_detail\": [\r\n  {\r\n    \"schedule_date\": \"Ngày 1\",\r\n    \"date\": \"08/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Ăn sáng\", \"status\": \"\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Xóm rế\", \"status\": \"\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  },\r\n  {\r\n    \"schedule_date\": \"Ngày 2\",\r\n    \"date\": \"09/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Đập Đá\", \"status\": \"\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Đa cua\", \"status\": \"\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  }\r\n]\r\n}",
+							"raw": "{\r\n    \"tour_id\": 20,\r\n    \"schedule_detail\": [\r\n  {\r\n    \"schedule_date\": \"Ngày 1\",\r\n    \"date\": \"08/03/2024\",\r\n    \"transport\": \"Xe máy, ô tô\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Ăn sáng\", \"status\": \"\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Ăn sáng ở nhà hàng\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Xóm rế\", \"status\": \"\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  },\r\n  {\r\n    \"schedule_date\": \"Ngày 2\",\r\n    \"transport\": \"Xe máy, ô tô\",\r\n    \"date\": \"09/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Đập Đá\", \"status\": \"\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Đa cua\", \"status\": \"\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  }\r\n]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2116,7 +2293,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tour_id\": 2,\r\n    \"schedule_detail\": [\r\n        {\r\n            \"date\": \"08/03/2024\",\r\n            \"detail\": [\r\n                {\r\n                    \"range_time\": \"8AM-10AM\",\r\n                    \"note\": \"Updated note for Cố Đô Huế\",\r\n                    \"status\": \"Updated status\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
+							"raw": "{\r\n    \"tour_id\": 1,\r\n    \"schedule_detail\": [\r\n        {\r\n            \"date\": \"08/03/2024\",\r\n            \"detail\": [\r\n                {\r\n                    \"range_time\": \"8AM-10AM\",\r\n                    \"note\": \"Updated note for Cố Đô Huế\",\r\n                    \"status\": \"Next\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2124,7 +2301,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/schedules/1",
+							"raw": "http://localhost:8080/api/v1/schedules",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -2133,8 +2310,7 @@
 							"path": [
 								"api",
 								"v1",
-								"schedules",
-								"1"
+								"schedules"
 							]
 						}
 					},

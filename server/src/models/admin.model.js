@@ -3,7 +3,7 @@
 const { DataTypes } = require("sequelize")
 const sequelize = require("../database/connect.mysql")
 const User = require("./user.model")
-const { RoleUser } = require("../common/status")
+const { RoleUser } = require("../common/index")
 const bcrypt = require('bcrypt');
 
 class Admin extends User {}

@@ -1,832 +1,2925 @@
 {
-  "destinations": [
-      {
-          "name": "Hà Nội",
-          "attractions": [
-              { "name": "Hồ Hoàn Kiếm" },
-              { "name": "Cầu Thê Húc" },
-              { "name": "Đền Ngọc Sơn" },
-              { "name": "Nhà ngục Hỏa Lò" },
-              { "name": "Phố cổ Hà Nội" },
-              { "name": "Lăng Bác" },
-              { "name": "Văn Miếu - Quốc Tử Giám" },
-              { "name": "Chùa Trấn Quốc" },
-              { "name": "Chùa Một Cột" },
-              { "name": "Nhà thờ lớn Hà Nội" },
-              { "name": "Làng gồm Bát Tràng" },
-              { "name": "Làng lụa Vạn Phúc" },
-              { "name": "Chợ Đồng Xuân" },
-              { "name": "Bảo Tàng Lịch sử Quốc gia Việt Nam" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Sofitel Legend Metropole Hà Nội" },
-              { "name": "Khách sạn Daewoo Hà Nội" },
-              { "name": "Khách sạn Melia Hà Nội" },
-              { "name": "Khách sạn Bảo Sơn" },
-              { "name": "Khách sạn Mường Thanh Grand Hà Nội" },
-              { "name": "Khách sạn Hòa Bình" },
-              { "name": "Khách sạn Hà Nội" },
-              { "name": "Khách sạn Công Đoàn Hà Nội" },
-              { "name": "Khách sạn Thăng Long Opera" },
-              { "name": "Khách sạn La Casa" },
-              { "name": "Khách sạn Hữu Nghị" },
-              { "name": "Khách sạn Đông Đô" },
-              { "name": "Khách sạn Phú Gia" },
-              { "name": "Khách sạn Thăng Long Espana" },
-              { "name": "Khách sạn Kim Liên" },
-              { "name": "Khách sạn Quốc tế Hà Nội" },
-              { "name": "Khách sạn Hòa Bình Palace" },
-              { "name": "Khách sạn Hà Nội Horizon" },
-              { "name": "Khách sạn Hàng Hải" },
-              { "name": "Khách sạn Hoa Sen" },
-              { "name": "Khách sạn Bảo Việt" },
-              { "name": "Khách sạn Nam Cường" },
-              { "name": "Khách sạn Phương Đông" },
-              { "name": "Khách sạn Thương Mại" },
-              { "name": "Khách sạn Công Đoàn Việt Nam" },
-              { "name": "Khách sạn Hạ Long" },
-              { "name": "Khách sạn Hồng Hà" },
-              { "name": "Khách sạn Phúc An" },
-              { "name": "Khách sạn Bắc Kinh" },
-              { "name": "Khách sạn Châu Long" }
-          ]
-      },
-      {
-          "name": "TP. Hồ Chí Minh",
-          "attractions": [
-              { "name": "Bưu điện thành phố" },
-              { "name": "Nhà thờ Đức Bà" },
-              { "name": "Dinh Độc Lập" },
-              { "name": "Chợ Bến Thành" },
-              { "name": "Bảo tàng chứng tích Chiến tranh" },
-              { "name": "Thảo cầm viên" },
-              { "name": "Công viên Tao Đàn" },
-              { "name": "Phố đi bộ Nguyễn Huệ" },
-              { "name": "Landmark 81" },
-              { "name": "Bến Nhà Rồng" },
-              { "name": "Bảo tàng Mỹ thuật Việt Nam" },
-              { "name": "Công viên nước Đầm Sen" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Rex" },
-              { "name": "Khách sạn Majestic Sài Gòn" },
-              { "name": "Khách sạn Continental Sài Gòn" },
-              { "name": "Khách sạn Đệ Nhất" },
-              { "name": "Khách sạn Sài Gòn Prince" },
-              { "name": "Khách sạn Bông Sen" },
-              { "name": "Khách sạn Á Đông" },
-              { "name": "Khách sạn Tân Sơn Nhất" },
-              { "name": "Khách sạn Đông Kinh" },
-              { "name": "Khách sạn Đông Phương" },
-              { "name": "Khách sạn Hà Đô" },
-              { "name": "Khách sạn Thiên Tùng" },
-              { "name": "Khách sạn Thiên Tân" },
-              { "name": "Khách sạn Hoa Sen" },
-              { "name": "Khách sạn Phú Thọ" },
-              { "name": "Khách sạn Ánh Dương" },
-              { "name": "Khách sạn Bến Thành" },
-              { "name": "Khách sạn Tân Hải Long" },
-              { "name": "Khách sạn Hòa Bình" },
-              { "name": "Khách sạn Kim Đô" },
-              { "name": "Khách sạn Tân Mỹ Đình" },
-              { "name": "Khách sạn Á Châu" },
-              { "name": "Khách sạn Hương Sen" },
-              { "name": "Khách sạn Đại Nam" },
-              { "name": "Khách sạn Kỳ Hòa" },
-              { "name": "Khách sạn Hòa Phát" },
-              { "name": "Khách sạn Thiên Tân" },
-              { "name": "Khách sạn Phước An" },
-              { "name": "Khách sạn Cửu Long" },
-              { "name": "Khách sạn Ánh Sao" }
-          ]
-      },
-      {
-          "name": "TP. Đà Nẵng",
-          "attractions": [
-              { "name": "Bà Nà Hills" },
-              { "name": "Cầu Rồng" },
-              { "name": "Bãi biển Mỹ Khê" },
-              { "name": "Chùa Linh Ứng" },
-              { "name": "Ngũ Hành Sơn" },
-              { "name": "Công viên Châu Á" },
-              { "name": "Biển Non Nước" },
-              { "name": "Chợ Cồn" },
-              { "name": "Cầu Tình yêu" },
-              { "name": "Khu du lịch sinh thái núi Thần Tài" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Vinpearl Luxury Đà Nẵng" },
-              { "name": "Khách sạn Novotel Đà Nẵng Premier Hàn River" },
-              { "name": "Khách sạn Grand Mercure Đà Nẵng" },
-              { "name": "Khách sạn Hilton Đà Nẵng" },
-              { "name": "Khách sạn Diamond Sea" },
-              { "name": "Khách sạn Monarque Đà Nẵng" },
-              { "name": "Khách sạn Sala Đà Nẵng Beach" },
-              { "name": "Khách sạn TMS Đà Nẵng Beach" },
-              { "name": "Khách sạn Nalod Đà Nẵng" },
-              { "name": "Khách sạn Mường Thanh Luxury Đà Nẵng" },
-              { "name": "Khách sạn Đà Nẵng Golden Bay" },
-              { "name": "Khách sạn Rosamia Đà Nẵng" },
-              { "name": "Khách sạn DLG Đà Nẵng" },
-              { "name": "Khách sạn Belle Maison Parosand Đà Nẵng" }
-          ]
-      },
-      {
-          "name": "Quảng Nam",
-          "attractions": [
-              { "name": "Phố cổ Hội An" },
-              { "name": "Vinpearl Land Hội An" },
-              { "name": "Đảo Cù Lao Chàm" },
-              { "name": "Thánh địa Mỹ Sơn" },
-              { "name": "Ngũ Hành Sơn" },
-              { "name": "Bãi biển Cửa Đại" },
-              { "name": "Thành phố Tam Kỳ" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Palm Garden Beach Resort & Spa" },
-              { "name": "Khách sạn Sunrise Premium Resort Hội An" },
-              { "name": "Khách sạn Vinpearl Resort & Spa Hội An" },
-              { "name": "Khách sạn Hội An Silk Marina Resort & Spa" },
-              { "name": "Khách sạn Hội An Historic" },
-              { "name": "Khách sạn Royal Riverside Hội An" },
-              { "name": "Khách sạn Vĩnh Hưng Riverside Resort" },
-              { "name": "Khách sạn Belle Maison Hadana Hội An" },
-              { "name": "Khách sạn Golden Sand Resort & Spa Hội An" },
-              { "name": "Khách sạn Êmm Hội An" },
-              { "name": "Khách sạn Little Hội An Boutique Hotel & Spa" },
-              { "name": "Khách sạn Mường Thanh Holiday Hội An" },
-              { "name": "Khách sạn Hoi An Silk Village Resort & Spa" },
-              { "name": "Khách sạn Laluna Hội An Riverside Hotel & Spa" },
-              { "name": "Khách sạn Hoi An Chic Hotel" },
-              { "name": "Khách sạn Phu Thinh Boutique Resort & Spa" }
-          ]
-      },
-      {
-          "name": "Khánh Hòa",
-          "attractions": [
-              { "name": "Tháp Bà" },
-              { "name": "Vịnh Nha Trang" },
-              { "name": "Đảo Hòn Mun" },
-              { "name": "Đảo Bình Ba" },
-              { "name": "Vinpearl Land Nha Trang" },
-              { "name": "Bãi biển Nha Trang" },
-              { "name": "Chùa Long Sơn" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Vinpearl Resort Nha Trang" },
-              { "name": "Khách sạn InterContinental Nha Trang" },
-              { "name": "Khách sạn Sheraton Nha Trang" },
-              { "name": "Khách sạn Novotel Nha Trang" },
-              { "name": "Khách sạn Mường Thanh Luxury Nha Trang" },
-              { "name": "Khách sạn Sunrise Nha Trang Beach Hotel & Spa" },
-              { "name": "Khách sạn Liberty Central Nha Trang" },
-              { "name": "Khách sạn The Anam Resort" },
-              { "name": "Khách sạn Amiana Resort Nha Trang" },
-              { "name": "Khách sạn Duyên Hà Resort Cam Ranh" },
-              { "name": "Khách sạn Havana Nha Trang" },
-              { "name": "Khách sạn Yasaka Saigon Nha Trang" },
-              { "name": "Khách sạn Diamond Bay Resort & Spa" },
-              { "name": "Khách sạn Evason Ana Mandara Nha Trang" },
-              { "name": "Khách sạn Six Senses Ninh Vân Bay" },
-              {
-                  "name": "Khách sạn Champa Island Nha Trang Resort Hotel & Spa"
-              },
-              { "name": "Khách sạn L'Alya Ninh Vân Bay" },
-              { "name": "Khách sạn Sherwood Residence" },
-              { "name": "Khách sạn TTC Hotel - Michelia" },
-              { "name": "Khách sạn Green World Hotel Nha Trang" }
-          ]
-      },
-      {
-          "name": "Kiên Giang",
-          "attractions": [
-              { "name": "Đảo Phú Quốc" },
-              { "name": "Côn Đảo" },
-              { "name": "Vườn Quốc gia U Minh Thượng" },
-              { "name": "Chùa Tam Bảo" },
-              { "name": "Di tích lịch sử Nhà tù Phú Quốc" },
-              { "name": "Chợ đêm Phú Quốc" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Sài Gòn Rạch Giá" },
-              { "name": "Khách sạn Hòa Bình Rạch Giá" },
-              { "name": "Khách sạn Hương Biển" },
-              { "name": "Khách sạn Kinh Bắc" },
-              { "name": "Khách sạn Kim Co" },
-              { "name": "Khách sạn Thiên Hải Sơn" },
-              { "name": "Khách sạn An Bình" },
-              { "name": "Khách sạn Lý Thanh" },
-              { "name": "Khách sạn Bảo Sơn" },
-              { "name": "Khách sạn Hàm Ninh" },
-              { "name": "Khách sạn Đông Xuân Hồng" },
-              { "name": "Khách sạn An Phú" },
-              { "name": "Khách sạn Hải Vân" },
-              { "name": "Khách sạn Phương Trinh" },
-              { "name": "Khách sạn Trường Thịnh" },
-              { "name": "Khách sạn Đoàn Kết" },
-              { "name": "Khách sạn Ngọc Mai" },
-              { "name": "Khách sạn Minh Nhựt" },
-              { "name": "Khách sạn Thảo Nguyên" },
-              { "name": "Khách sạn Hồng Hải" }
-          ]
-      },
-      {
-          "name": "Lâm Đồng",
-          "attractions": [
-              { "name": "Thung lũng tình yêu" },
-              { "name": "Đồi Mộng Mơ" },
-              { "name": "Nhà thờ Con Gà" },
-              { "name": "Núi LangBiang" },
-              { "name": "Làng Cù Lần" },
-              { "name": "Hồ Xuân Hương" },
-              { "name": "Đồi chè Cầu Đất" },
-              { "name": "Chợ đêm Đà Lạt" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Sài Gòn - Đà Lạt" },
-              { "name": "Khách sạn Đà Lạt Palace Heritage" },
-              { "name": "Khách sạn Ngọc Lan" },
-              { "name": "Khách sạn TTC Premium Ngọc Lan" },
-              { "name": "Khách sạn Hoàng Anh - Đất Xanh Resort" },
-              { "name": "Khách sạn Dalat Plaza" },
-              { "name": "Khách sạn Mường Thanh Đà Lạt" },
-              { "name": "Khách sạn Saphir Đà Lạt" },
-              { "name": "Khách sạn Cẩm Đô" },
-              { "name": "Khách sạn Dalat Edensee Lake Resort & Spa" },
-              { "name": "Khách sạn Ana Mandara Villas Đà Lạt Resort & Spa" },
-              { "name": "Khách sạn Đà Lạt Wonder Resort" },
-              { "name": "Khách sạn Swiss-Belresort Tuyền Lâm" },
-              { "name": "Khách sạn Hoàng Ngọc" },
-              { "name": "Khách sạn Nhật Vy" },
-              { "name": "Khách sạn La Sapinette Đà Lạt" },
-              { "name": "Khách sạn Ngọc Phát" },
-              { "name": "Khách sạn Hải Long Vương" },
-              { "name": "Khách sạn Cường Thịnh" },
-              { "name": "Khách sạn Đà Lạt Du Parc" }
-          ]
-      },
-      {
-          "name": "Lào Cai",
-          "attractions": [
-              { "name": "Núi Hàm Rồng" },
-              { "name": "Cổng trời Sapa" },
-              { "name": "Bản Cát Cát" },
-              { "name": "Bản Tả Phìn" },
-              { "name": "Vườn Quốc gia Hoàng Liên Sơn" },
-              { "name": "Thác tình yêu" },
-              { "name": "Chợ tình Sapa" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Lào Cai" },
-              { "name": "Khách sạn Aristo International" },
-              { "name": "Khách sạn Sapaly Lào Cai" },
-              { "name": "Khách sạn Lào Cai Star" },
-              { "name": "Khách sạn Kim Cương" },
-              { "name": "Khách sạn Thiên Hải" },
-              { "name": "Khách sạn A25" },
-              { "name": "Khách sạn White Lotus" },
-              { "name": "Khách sạn Hoàng Yến" },
-              { "name": "Khách sạn Hoàng Gia" },
-              { "name": "Khách sạn Hàm Rồng" },
-              { "name": "Khách sạn Sơn Hà" },
-              { "name": "Khách sạn Fansipan View" },
-              { "name": "Khách sạn Sapa Highland Resort & Spa" },
-              { "name": "Khách sạn Amazing Sapa" },
-              { "name": "Khách sạn Sapa Legend Hotel & Spa" },
-              { "name": "Khách sạn Bamboo Sapa" },
-              { "name": "Khách sạn Châu Long Sapa" },
-              { "name": "Khách sạn Victoria Sapa Resort & Spa" },
-              {
-                  "name": "Khách sạn MGallery by Sofitel - Hotel de la Coupole"
-              }
-          ]
-      },
-      {
-          "name": "Thừa Thiên Huế",
-          "attractions": [
-              { "name": "Đại Nội Huế" },
-              { "name": "Chùa Thiên Mụ" },
-              { "name": "Lăng Cô" },
-              { "name": "Núi Bạch Mã" },
-              { "name": "Chợ Đông Ba" },
-              { "name": "Biển Thuận An" },
-              { "name": "Cầu Tràng Tiền" },
-              { "name": "Nhà thờ Phủ Cam" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Imperial Huế" },
-              { "name": "Khách sạn Mường Thanh Holiday Huế" },
-              { "name": "Khách sạn Saigon Morin" },
-              { "name": "Khách sạn Century Riverside Huế" },
-              { "name": "Khách sạn Indochine Palace" },
-              { "name": "Khách sạn Hương Giang" },
-              { "name": "Khách sạn Eldora" },
-              { "name": "Khách sạn Alba Spa" },
-              { "name": "Khách sạn Park View" },
-              { "name": "Khách sạn Romance" },
-              { "name": "Khách sạn Mondial Huế" },
-              { "name": "Khách sạn Villa Huế" },
-              { "name": "Khách sạn Moonlight Huế" },
-              { "name": "Khách sạn Midtown Huế" },
-              { "name": "Khách sạn Duy Tân" },
-              { "name": "Khách sạn Festival Huế" },
-              { "name": "Khách sạn Jasmine" },
-              { "name": "Khách sạn Tràng Tiền" },
-              { "name": "Khách sạn Cherish Huế" },
-              { "name": "Khách sạn Bình Dương 3" }
-          ]
-      },
-      {
-          "name": "Quảng Ninh",
-          "attractions": [
-              { "name": "Vịnh Hạ Long" },
-              { "name": "Công viên Sun World Hạ Long" },
-              { "name": "Bãi Cháy" },
-              { "name": "Động Thiên Cung" },
-              { "name": "Quần thể di tích Yên Tử" },
-              { "name": "Làng chài Cửa Vạn" },
-              { "name": "Chợ Hạ Long" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Luxury Quảng Ninh" },
-              { "name": "Khách sạn Vinpearl Resort & Spa Hạ Long" },
-              { "name": "Khách sạn Wyndham Legend Hạ Long" },
-              { "name": "Khách sạn Sài Gòn Hạ Long" },
-              { "name": "Khách sạn Royal Lotus Hạ Long" },
-              { "name": "Khách sạn Novotel Hạ Long Bay" },
-              { "name": "Khách sạn Hạ Long Plaza" },
-              { "name": "Khách sạn Paradise Suites" },
-              { "name": "Khách sạn Grand Hạ Long" },
-              { "name": "Khách sạn Asean Hạ Long" },
-              { "name": "Khách sạn Bạch Đằng Hạ Long" },
-              { "name": "Khách sạn Starcity Hạ Long Bay" },
-              { "name": "Khách sạn Mithrin Hạ Long" },
-              { "name": "Khách sạn Golden Hạ Long" },
-              { "name": "Khách sạn Hạ Long DC" },
-              { "name": "Khách sạn City Bay Palace" },
-              { "name": "Khách sạn Vân Hải" },
-              { "name": "Khách sạn La Paz Resort Tuần Châu" },
-              { "name": "Khách sạn Hidden Charm Hạ Long" },
-              { "name": "Khách sạn Moonlight Hạ Long" }
-          ]
-      },
-      {
-          "name": "Bà Rịa - Vũng Tàu",
-          "attractions": [
-              { "name": "Biển Vũng Tàu" },
-              { "name": "Bãi Trước" },
-              { "name": "Bãi Sau" },
-              { "name": "Đồi Con Heo" },
-              { "name": "Tượng Chúa Kitô" },
-              { "name": "Bạch Dinh" },
-              { "name": "Quảng trường" },
-              { "name": "Khu du lịch Hồ Tràm" },
-              { "name": "Khu du lịch Hồ Cốc" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Imperial Vũng Tàu" },
-              { "name": "Khách sạn Pullman Vũng Tàu" },
-              { "name": "Khách sạn Malibu Vũng Tàu" },
-              { "name": "Khách sạn Rex Vũng Tàu" },
-              { "name": "Khách sạn Petro House" },
-              { "name": "Khách sạn Corvin Vũng Tàu" },
-              { "name": "Khách sạn Dic Star" },
-              { "name": "Khách sạn New Wave" },
-              { "name": "Khách sạn Palace Vũng Tàu" },
-              { "name": "Khách sạn Green Vũng Tàu" },
-              { "name": "Khách sạn Royal Hotel Vũng Tàu" },
-              { "name": "Khách sạn Grand Vũng Tàu" },
-              { "name": "Khách sạn Sammy Vũng Tàu" },
-              { "name": "Khách sạn Seaside Resort Vũng Tàu" },
-              { "name": "Khách sạn Ocean Star" },
-              { "name": "Khách sạn Tháng Mười" },
-              { "name": "Khách sạn Cap Saint Jacques" },
-              { "name": "Khách sạn Minh Đăng" },
-              { "name": "Khách sạn Hoàng Hoa" },
-              { "name": "Khách sạn Hoa Bảo" }
-          ]
-      },
-      {
-          "name": "Cần Thơ",
-          "attractions": [
-              { "name": "Chợ nổi Cái Răng" },
-              { "name": "Bến Ninh Kiều" },
-              { "name": "Vườn cò Bằng Lăng" },
-              { "name": "Thiền viện Trúc Lâm Phương Nam" },
-              { "name": "Chợ đêm Tây Đô" },
-              { "name": "Bảo tàng Cần Thơ" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Luxury Cần Thơ" },
-              { "name": "Khách sạn Ninh Kiều Riverside" },
-              { "name": "Khách sạn TTC Premium Cần Thơ" },
-              { "name": "Khách sạn Vinpearl Hotel Cần Thơ" },
-              { "name": "Khách sạn Tây Đô" },
-              { "name": "Khách sạn Iris Cần Thơ" },
-              { "name": "Khách sạn Nesta Cần Thơ" },
-              { "name": "Khách sạn Kim Thơ" },
-              { "name": "Khách sạn Holiday One" },
-              { "name": "Khách sạn Á Châu" },
-              { "name": "Khách sạn Vạn Phát Riverside" },
-              { "name": "Khách sạn Sài Gòn Cần Thơ" },
-              { "name": "Khách sạn Đông Hà Fortuneland" },
-              { "name": "Khách sạn Cửu Long" },
-              { "name": "Khách sạn Phương Đông" },
-              { "name": "Khách sạn Hạnh Phúc" },
-              { "name": "Khách sạn Linh Phương" },
-              { "name": "Khách sạn Anh Đào Mekong" },
-              { "name": "Khách sạn Lan Vy" },
-              { "name": "Khách sạn Hoa Phượng" }
-          ]
-      },
-      {
-          "name": "Bình Thuận",
-          "attractions": [
-              { "name": "Mũi Né" },
-              { "name": "Hòn Rơm" },
-              { "name": "Suối Tiên" },
-              { "name": "Làng chài Mũi Né" },
-              { "name": "Bãi đá Ông Địa" },
-              { "name": "Tháp Chàm" },
-              { "name": "Chợ Phan Thiết" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Holiday Mũi Né" },
-              { "name": "Khách sạn TTC Premium Phan Thiết" },
-              { "name": "Khách sạn Ocean Dunes Resort" },
-              { "name": "Khách sạn Đồi Dương" },
-              { "name": "Khách sạn Hoàng Long" },
-              { "name": "Khách sạn Phú Hải Resort" },
-              { "name": "Khách sạn Romana Resort & Spa" },
-              { "name": "Khách sạn Sea Links Beach Resort" },
-              { "name": "Khách sạn Victoria Phan Thiết Beach Resort & Spa" },
-              { "name": "Khách sạn Pandanus Resort" },
-              { "name": "Khách sạn Terracotta Resort & Spa" },
-              { "name": "Khách sạn Saigon Mũi Né Resort" },
-              { "name": "Khách sạn Bamboo Village Beach Resort & Spa" },
-              { "name": "Khách sạn The Cliff Resort & Residences" },
-              { "name": "Khách sạn Lotus Mũi Né Resort & Spa" },
-              { "name": "Khách sạn Blue Ocean Resort" },
-              { "name": "Khách sạn Anantara Mũi Né Resort" },
-              { "name": "Khách sạn Sailing Club Resort Mũi Né" },
-              { "name": "Khách sạn Villa Del Sol Beach Resort & Spa" },
-              { "name": "Khách sạn Hoàng Ngọc Resort" }
-          ]
-      },
-      {
-          "name": "Bình Định",
-          "attractions": [
-              { "name": "Eo Gió" },
-              { "name": "Biển Kỳ Co" },
-              { "name": "Hòn Khô" },
-              { "name": "Tháp Đôi" },
-              { "name": "Chùa Ông Núi" },
-              { "name": "Biển Quy Nhơn" },
-              { "name": "Làng chài Nhơn Lý" },
-              { "name": "Chợ Quy Nhơn" },
-              { "name": "Vườn quốc gia Núi Bà" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Quy Nhơn" },
-              { "name": "Khách sạn Sài Gòn Quy Nhơn" },
-              { "name": "Khách sạn Hoàng Yến" },
-              { "name": "Khách sạn Hải Âu Quy Nhơn" },
-              { "name": "Khách sạn Khang Khang 2" },
-              { "name": "Khách sạn Y Linh" },
-              { "name": "Khách sạn Bình Dương" },
-              {
-                  "name": "Khách sạn Royal Hotel & Healthcare Resort Quy Nhơn"
-              },
-              { "name": "Khách sạn Seagull Quy Nhơn" },
-              { "name": "Khách sạn AVANI Quy Nhơn Resort & Spa" },
-              { "name": "Khách sạn Hoàng Gia Quy Nhơn" },
-              { "name": "Khách sạn Quy Nhơn" },
-              { "name": "Khách sạn Aurora Villas & Resort" },
-              { "name": "Khách sạn Crown Retreat Quy Nhơn" },
-              { "name": "Khách sạn FLC Luxury Hotel Quy Nhơn" },
-              { "name": "Khách sạn Mira Bãi Xếp" },
-              { "name": "Khách sạn Flora Quy Nhơn" },
-              { "name": "Khách sạn Anya Hotel Quy Nhơn" },
-              { "name": "Khách sạn La Maison Boutique" },
-              { "name": "Khách sạn Osaka Quy Nhơn" }
-          ]
-      },
-      {
-          "name": "Vĩnh Phúc",
-          "attractions": [
-              { "name": "Biển hồ Đại Lải" },
-              { "name": "Khu du lịch sinh thái Hồ Núi Cốc" },
-              { "name": "Chùa Tam Đảo" },
-              { "name": "Thiền viện Trúc Lâm Tây Thiên" },
-              { "name": "Đồi hoa hồng" },
-              { "name": "Làng gốm Hương Canh" },
-              { "name": "Đồi chè Long Đinh" },
-              { "name": "Chợ đêm Tam Đảo" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn DIC Star Hotels & Resorts Vĩnh Phúc" },
-              { "name": "Khách sạn Westlake Hotel & Resort Vĩnh Phúc" },
-              { "name": "Khách sạn Royal Huy Vĩnh Phúc" },
-              { "name": "Khách sạn Sông Hồng Resort" },
-              { "name": "Khách sạn Crowne Plaza Vĩnh Yên City Centre" },
-              { "name": "Khách sạn Flamingo Đại Lải Resort" },
-              { "name": "Khách sạn Mela Hotel" },
-              { "name": "Khách sạn Paradise Đại Lải Resort" },
-              { "name": "Khách sạn Vĩnh Yên Hotel" },
-              { "name": "Khách sạn Thái Dương Hotel" },
-              { "name": "Khách sạn Ngọc Hà Vĩnh Yên" },
-              { "name": "Khách sạn Hoàng Quy Hotel" },
-              { "name": "Khách sạn Phúc Yên Hotel" },
-              { "name": "Khách sạn Đạt Hoa Hotel" },
-              { "name": "Khách sạn An Bình Hotel" },
-              { "name": "Khách sạn Tam Đảo Belvedere Resort" },
-              { "name": "Khách sạn Hanvet Hotel" },
-              { "name": "Khách sạn Gia Lê Hotel" },
-              { "name": "Khách sạn Hưng Hải Hotel" },
-              { "name": "Khách sạn Minh Hương Hotel" }
-          ]
-      },
-      {
-          "name": "Cao Bằng",
-          "attractions": [
-              { "name": "Hang Pác Bó" },
-              { "name": "Núi Các Mác" },
-              { "name": "Thác Bản Giốc" },
-              { "name": "Động Ngườm Ngao" },
-              { "name": "Động Ngườm Thuồng Luồng" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Bằng Giang" },
-              { "name": "Khách sạn Ánh Dương" },
-              { "name": "Khách sạn Sunny" },
-              { "name": "Khách sạn Hoàng Anh" },
-              { "name": "Khách sạn Thành Loan" },
-              { "name": "Khách sạn Sơn Tùng" },
-              { "name": "Khách sạn Kim Đồng" },
-              { "name": "Khách sạn Tường Tín" },
-              { "name": "Khách sạn Hoàng Long" },
-              { "name": "Khách sạn Đức Trung" },
-              { "name": "Khách sạn Hồng Vân" },
-              { "name": "Khách sạn Minh Hoàng" },
-              { "name": "Khách sạn Hoàng An" },
-              { "name": "Khách sạn Gia Quý" },
-              { "name": "Khách sạn Bảo Ngọc Diamond" },
-              { "name": "Khách sạn Cao Bằng" },
-              { "name": "Khách sạn Phong Lan" },
-              { "name": "Khách sạn Quỳnh Mai" },
-              { "name": "Khách sạn Hoàng Ngọc" },
-              { "name": "Khách sạn Nam Phong" }
-          ]
-      },
-      {
-          "name": "Bắc Ninh",
-          "attractions": [
-              { "name": "Khu di tích lịch sử Đền Đô" },
-              { "name": "Chùa Phật Tích" },
-              { "name": "Làng tranh Đông Hồ" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Luxury Bắc Ninh" },
-              { "name": "Khách sạn Phoenix Resort Bắc Ninh" },
-              { "name": "Khách sạn Le Indochina Hotel" },
-              { "name": "Khách sạn Center Hotel Bắc Ninh" },
-              { "name": "Khách sạn Mandala Hotel & Spa" },
-              { "name": "Khách sạn Grand Phoenix Hotel" },
-              { "name": "Khách sạn Gold Business Hotel" },
-              { "name": "Khách sạn Asia Hotel Bắc Ninh" },
-              { "name": "Khách sạn Bac Ninh Royal Hotel" },
-              { "name": "Khách sạn Hoàng Gia Hotel Bắc Ninh" },
-              { "name": "Khách sạn Khách Sạn Vinhomes Bắc Ninh" },
-              { "name": "Khách sạn Rosana Legend Hotel" },
-              { "name": "Khách sạn Hana 2 Luxury Hotel" },
-              { "name": "Khách sạn Dream Vân Hoa Hotel" },
-              { "name": "Khách sạn Victory Hotel Bắc Ninh" },
-              { "name": "Khách sạn Phú Sơn Resort" },
-              { "name": "Khách sạn Tu Son Luxury Hotel" },
-              { "name": "Khách sạn Hoang Gia Bac Ninh Hotel" },
-              { "name": "Khách sạn Bac Ninh Charming Hotel" },
-              { "name": "Khách sạn Asia Apartment Hotel Bac Ninh" }
-          ]
-      },
-      {
-          "name": "Ninh Bình",
-          "attractions": [
-              { "name": "Quần thể danh thắng Tràng An" },
-              { "name": "Cố đô Hoa Lư" },
-              { "name": "Hang Múa" },
-              { "name": "Tam Cốc - Bích Động" },
-              { "name": "Vườn quốc gia Cúc Phương" },
-              { "name": "Làng chài Ninh Hải" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Ninh Bình Hidden Charm" },
-              { "name": "Khách sạn Mường Thanh Luxury Ninh Bình" },
-              { "name": "Khách sạn Emeralda Resort Ninh Bình" },
-              { "name": "Khách sạn Ninh Bình Legend" },
-              { "name": "Khách sạn Hoàng Sơn Peace" },
-              { "name": "Khách sạn The Reed Ninh Bình" },
-              { "name": "Khách sạn Tam Coc Garden Resort" },
-              { "name": "Khách sạn Aravinda Resort" },
-              { "name": "Khách sạn Tam Coc La Montagne Resort & Spa" },
-              { "name": "Khách sạn Vissai Hotel Ninh Bình" },
-              { "name": "Khách sạn Bai Dinh Garden Resort & Spa" },
-              { "name": "Khách sạn Ninh Binh Panorama Homestay" },
-              { "name": "Khách sạn Tam Coc Rice Fields Resort" },
-              { "name": "Khách sạn Ninh Binh Valley Homestay" },
-              { "name": "Khách sạn King Kong Homestay" },
-              { "name": "Khách sạn Chez Loan Hotel" },
-              { "name": "Khách sạn An's Eco Garden Resort" },
-              { "name": "Khách sạn Xuan Hoa Hotel" },
-              { "name": "Khách sạn Golden Season Hotel" },
-              { "name": "Khách sạn AIQ Hotel Ninh Bình" }
-          ]
-      },
-      {
-          "name": "Hà Giang",
-          "attractions": [
-              { "name": "Cao nguyên đá Đồng Văn" },
-              { "name": "Cột cờ Lũng Cú" },
-              { "name": "Cột cờ Lũng Cú" },
-              { "name": "Mèo Vạc" },
-              { "name": "Sông Nho Quế" },
-              { "name": "Đèo Mãi Pì Lèng" },
-              { "name": "Phố Cáo" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Phoenix Hà Giang" },
-              { "name": "Khách sạn Hà Giang Resort" },
-              { "name": "Khách sạn Silk River Hotel Hà Giang" },
-              { "name": "Khách sạn Cao Nguyên Đá" },
-              { "name": "Khách sạn Royal Hà Giang" },
-              { "name": "Khách sạn Huy Hoàn" },
-              { "name": "Khách sạn Hoàng Su Phì Lodge" },
-              { "name": "Khách sạn Hà An" },
-              { "name": "Khách sạn Tiến Đạt" },
-              { "name": "Khách sạn Tam Giác Mạch" },
-              { "name": "Khách sạn Đá Vàng" },
-              { "name": "Khách sạn Đồng Văn" },
-              { "name": "Khách sạn Lâm Tùng" },
-              { "name": "Khách sạn Khánh Linh" },
-              { "name": "Khách sạn Bụi" },
-              { "name": "Khách sạn Hồng Hào" },
-              { "name": "Khách sạn Hà Giang Historic" },
-              { "name": "Khách sạn P'apiu Resort" },
-              { "name": "Khách sạn Ecolodge Pan Hou Village" },
-              { "name": "Khách sạn Hà Giang Creekside Homestay and Hostel" }
-          ]
-      },
-      {
-          "name": "Điện Biên",
-          "attractions": [
-              { "name": "Di tích chiến thắng Điện Biên Phủ" },
-              { "name": "Tượng đài chiến thắng Điện Biên Phủ" },
-              { "name": "Thung lũng Mường Than" },
-              { "name": "Đồi A1" },
-              { "name": "Chợ Mường Thanh" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Điện Biên Phủ" },
-              { "name": "Khách sạn Him Lam" },
-              { "name": "Khách sạn A1" },
-              { "name": "Khách sạn Công Đoàn Điện Biên" },
-              { "name": "Khách sạn Ruby" },
-              { "name": "Khách sạn Phương Nam" },
-              { "name": "Khách sạn Hà Nội - Điện Biên Phủ" },
-              { "name": "Khách sạn Điện Biên" },
-              { "name": "Khách sạn Sao Xanh" },
-              { "name": "Khách sạn Tây Bắc" },
-              { "name": "Khách sạn Victory Điện Biên" },
-              { "name": "Khách sạn Phú Gia" },
-              { "name": "Khách sạn Him Lam Resort" },
-              { "name": "Khách sạn Lan Anh" },
-              { "name": "Khách sạn Nhà khách UBND tỉnh Điện Biên" },
-              { "name": "Khách sạn Dân Tộc" },
-              { "name": "Khách sạn Golden Ruby Hotel" },
-              { "name": "Khách sạn Điện Biên Phủ" },
-              { "name": "Khách sạn Hồng Kỳ" },
-              { "name": "Khách sạn Thanh Bình" }
-          ]
-      },
-      {
-          "name": "Lạng Sơn",
-          "attractions": [
-              { "name": "Đền Mẫu Đồng Đăng" },
-              { "name": "Thành nhà Mạc" },
-              { "name": "Núi Tô Thị" },
-              { "name": "Chợ Kỳ Lừa" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Vinpearl Lạng Sơn" },
-              { "name": "Khách sạn Mường Thanh Lạng Sơn" },
-              { "name": "Khách sạn Hoàng Sơn" },
-              { "name": "Khách sạn Kim Sơn" },
-              { "name": "Khách sạn Hoàng Thịnh" },
-              { "name": "Khách sạn Hoa Sim" },
-              { "name": "Khách sạn Kim Lệ Dung" },
-              { "name": "Khách sạn Vạn Xuân" },
-              { "name": "Khách sạn A1 Lạng Sơn" },
-              { "name": "Khách sạn Nam Hoàng Đồng" },
-              { "name": "Khách sạn Công Đoàn Lạng Sơn" },
-              { "name": "Khách sạn Đại Dương" },
-              { "name": "Khách sạn White Hotel" },
-              { "name": "Khách sạn Hương Sơn" },
-              { "name": "Khách sạn Nhật Hà" },
-              { "name": "Khách sạn Sơn Hà" },
-              { "name": "Khách sạn Minh Quang" },
-              { "name": "Khách sạn Hoa Sen" },
-              { "name": "Khách sạn Song Long" },
-              { "name": "Khách sạn Thiên Phú" }
-          ]
-      },
-      {
-          "name": "Quảng Bình",
-          "attractions": [
-              { "name": "Vườn quốc gia Phong Nha - Kẻ Bàng" },
-              { "name": "Biển Nhật Lệ" },
-              { "name": "Vũng Chùa - Đảo Yến" },
-              { "name": "Suối nước Moọc" },
-              { "name": "Đèo Ngang" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Luxury Nhật Lệ" },
-              { "name": "Khách sạn Vinpearl Hotel Quảng Bình" },
-              { "name": "Khách sạn Sài Gòn Quảng Bình" },
-              { "name": "Khách sạn Royal Quảng Bình" },
-              { "name": "Khách sạn Cao Minh" },
-              { "name": "Khách sạn Osaka Quảng Bình" },
-              { "name": "Khách sạn Luxe Quảng Bình" },
-              { "name": "Khách sạn Amanda Quảng Bình" },
-              { "name": "Khách sạn Vĩnh Hoàng" },
-              { "name": "Khách sạn Riverside Hotel Quảng Bình" },
-              { "name": "Khách sạn Anh Linh 2" },
-              { "name": "Khách sạn CKC Thiên Đường" },
-              { "name": "Khách sạn Phú Cường Beach" },
-              { "name": "Khách sạn Tân Bình" },
-              { "name": "Khách sạn Ban Mai" },
-              { "name": "Khách sạn Nam Long Plus" },
-              { "name": "Khách sạn Luxe Villa" },
-              { "name": "Khách sạn Phương Nam" },
-              { "name": "Khách sạn Hoàng Linh" },
-              { "name": "Khách sạn Geminai Hotel & Cafe" }
-          ]
-      },
-      {
-          "name": "Quảng Ngãi",
-          "attractions": [
-              { "name": "Đảo Lý Sơn" },
-              { "name": "Cánh đồng muối Sa Huỳnh" },
-              { "name": "Núi Thiên Ấn" },
-              { "name": "Khu di tích lịch sử văn hóa Sa Huỳnh" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Holiday Lý Sơn" },
-              { "name": "Khách sạn Central Hotel Quảng Ngãi" },
-              { "name": "Khách sạn Sa Huỳnh Resort" },
-              { "name": "Khách sạn Thiên Ấn Riverside" },
-              { "name": "Khách sạn Cẩm Thành" },
-              { "name": "Khách sạn Petrosetco Tower" },
-              { "name": "Khách sạn Đảo Ngọc Lý Sơn" },
-              { "name": "Khách sạn Lý Sơn Pearl Island" },
-              { "name": "Khách sạn Mỹ Trà Riverside" },
-              { "name": "Khách sạn King Hotel" },
-              { "name": "Khách sạn Hùng Vương" },
-              { "name": "Khách sạn Đồng Khánh" },
-              { "name": "Khách sạn Hòa Bình" },
-              { "name": "Khách sạn Mỹ Khê" },
-              { "name": "Khách sạn Bình Hòa" },
-              { "name": "Khách sạn Central Ly Son" },
-              { "name": "Khách sạn Lý Sơn Holiday" },
-              { "name": "Khách sạn Saigon Quang Ngai" },
-              { "name": "Khách sạn Tân Thành" },
-              { "name": "Khách sạn Đông Trường Sơn" }
-          ]
-      },
-      {
-          "name": "Đắk Lắk",
-          "attractions": [
-              { "name": "Biển hồ T'Nưng" },
-              { "name": "Thác Đray Sáp" },
-              { "name": "Vườn quốc gia Chư Yang Sin" }
-          ],
-          "hotels": [
-              { "name": "Khách sạn Mường Thanh Luxury Buôn Ma Thuột" },
-              { "name": "Khách sạn Hai Bà Trưng" },
-              { "name": "Khách sạn Sài Gòn - Ban Mê" },
-              { "name": "Khách sạn Dakruco" },
-              { "name": "Khách sạn Biệt Điện" },
-              { "name": "Khách sạn Bazan Xanh" },
-              { "name": "Khách sạn Hoàng Lộc" },
-              { "name": "Khách sạn Thiên Đường" },
-              { "name": "Khách sạn Thanh Mai" },
-              { "name": "Khách sạn Đam San" },
-              { "name": "Khách sạn Eden" },
-              { "name": "Khách sạn Palama" },
-              { "name": "Khách sạn Cao Nguyên" },
-              { "name": "Khách sạn Hoàng Gia" },
-              { "name": "Khách sạn Hoàng Long" },
-              { "name": "Khách sạn Ngọc Vàng" },
-              { "name": "Khách sạn Elephants" }
-          ]
-      }
-  ]
+    "destinations": [
+        {
+            "name": "Hà Nội",
+            "attractions": [
+                { "name": "Hồ Hoàn Kiếm" },
+                { "name": "Cầu Thê Húc" },
+                { "name": "Đền Ngọc Sơn" },
+                { "name": "Nhà ngục Hỏa Lò" },
+                { "name": "Phố cổ Hà Nội" },
+                { "name": "Lăng Bác" },
+                { "name": "Văn Miếu - Quốc Tử Giám" },
+                { "name": "Chùa Trấn Quốc" },
+                { "name": "Chùa Một Cột" },
+                { "name": "Nhà thờ lớn Hà Nội" },
+                { "name": "Làng gồm Bát Tràng" },
+                { "name": "Làng lụa Vạn Phúc" },
+                { "name": "Chợ Đồng Xuân" },
+                { "name": "Bảo Tàng Lịch sử Quốc gia Việt Nam" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Sofitel Legend Metropole Hà Nội",
+                    "price": "9,380,000 - 28,140,000 VNĐ/đêm",
+                    "description": "Khách sạn được đánh giá cao về dịch vụ xuất sắc, phòng ốc sang trọng và không gian lịch sử. Các tiêu chí đánh giá bao gồm cơ sở vật chất, sự sạch sẽ, sự thoải mái và vị trí đắc địa.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Daewoo Hà Nội",
+                    "price": "3,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Nằm ở quận Ba Đình, trung tâm của thủ đô, khách sạn này mang lại một sự kết hợp hoàn hảo giữa phong cách cổ điển và tiện nghi hiện đại.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Melia Hà Nội",
+                    "price": "3,500,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Nằm ở trung tâm Hà Nội, gần Hồ Hoàn Kiếm và Nhà hát Lớn, khách sạn Melia Hà Nội là lựa chọn lý tưởng cho khách du lịch và công tác.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Bảo Sơn",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Nằm ở quận Đống Đa, gần nhiều điểm du lịch và trung tâm thương mại, thuận tiện cho cả du khách và người đi công tác.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Mường Thanh Grand Hà Nội",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Lô CC2, KĐT Bắc Linh Đàm, Phường Đại Kim, Quận Hoàng Mai, cách trung tâm Hà Nội khoảng 6 km, phù hợp cho cả du lịch và công tác.",
+                    "rating": "7.2/10"
+                },
+                {
+                    "name": "Khách sạn Hòa Bình",
+                    "price": "1,500,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Nằm ở quận Hoàn Kiếm, gần Hồ Hoàn Kiếm và Phố Cổ Hà Nội, lý tưởng cho việc khám phá văn hóa và ẩm thực địa phương.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hà Nội",
+                    "price": "2,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Tọa lạc tại quận Ba Đình, gần các cơ quan chính phủ và địa điểm lịch sử, thuận tiện cho cả du khách và người đi công tác.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Công Đoàn Hà Nội",
+                    "price": "800,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Nằm ở quận Đống Đa, gần các khu vui chơi giải trí và trung tâm mua sắm, phù hợp cho gia đình và du khách.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Thăng Long Opera",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Nằm ở 1C Tông Đản, Quận Hoàn Kiếm, Hà Nội, khách sạn này gần Nhà Hát Lớn và hồ Hoàn Kiếm, mang lại sự tiện lợi cho việc tham quan và công tác.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn La Casa",
+                    "price": "1,300,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Nằm ở trung tâm quận Hai Bà Trưng, khách sạn La Casa mang lại sự thoải mái với phong cách hiện đại và các tiện nghi cao cấp.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Hữu Nghị",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Tọa lạc tại 33C Phạm Ngũ Lão, Hoàn Kiếm, khách sạn này mang lại không gian ấm cúng và dịch vụ tận tình, phù hợp cho cả du lịch và công tác.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Đông Đô",
+                    "price": "700,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Nằm ở 146 Nguyễn Văn Cừ, Long Biên, khách sạn Đông Đô cung cấp các phòng nghỉ tiện nghi với mức giá phải chăng.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Phú Gia",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Nằm ở 27 Phạm Ngũ Lão, Hoàn Kiếm, khách sạn này cung cấp không gian sang trọng và các dịch vụ cao cấp ngay tại trung tâm Hà Nội.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Thăng Long Espana",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Nằm tại 17 Hàng Hành, Hoàn Kiếm, khách sạn mang lại sự kết hợp giữa phong cách Tây Ban Nha và văn hóa Việt Nam.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Kim Liên",
+                    "price": "800,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Nằm ở trung tâm Hà Nội, Khách sạn Kim Liên cung cấp các phòng tiện nghi và dịch vụ đa dạng. Đây là lựa chọn phổ biến cho khách du lịch và doanh nhân.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Quốc tế Hà Nội",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Quốc tế Hà Nội tọa lạc tại khu vực trung tâm, gần các địa điểm tham quan và mua sắm, mang đến dịch vụ cao cấp và không gian sang trọng.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Hòa Bình Palace",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hòa Bình Palace nằm tại khu phố cổ, mang phong cách cổ điển kết hợp hiện đại, thuận tiện cho việc khám phá văn hóa Hà Nội.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hà Nội Horizon",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hà Nội Horizon cung cấp tầm nhìn đẹp ra toàn thành phố, dịch vụ cao cấp và tiện nghi hiện đại, lý tưởng cho các chuyến công tác và nghỉ dưỡng.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Hàng Hải",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Nằm gần trung tâm Hà Nội, Khách sạn Hàng Hải mang đến không gian thoải mái và các tiện nghi hiện đại, phục vụ tốt nhu cầu nghỉ ngơi và làm việc.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Hoa Sen",
+                    "price": "700,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn Hoa Sen nằm gần các điểm tham quan nổi tiếng của Hà Nội, cung cấp các phòng ở thoải mái với mức giá hợp lý.",
+                    "rating": "7.3/10"
+                },
+                {
+                    "name": "Khách sạn Bảo Việt",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Bảo Việt cung cấp dịch vụ chuyên nghiệp và không gian ấm cúng, tọa lạc tại khu vực trung tâm thuận tiện cho việc di chuyển.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Nam Cường",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Nam Cường mang đến dịch vụ chất lượng và không gian thoải mái, phù hợp cho cả khách du lịch và doanh nhân.",
+                    "rating": "7.7/10"
+                },
+                {
+                    "name": "Khách sạn Phương Đông",
+                    "price": "850,000 - 2,100,000 VNĐ/đêm",
+                    "description": "Khách sạn Phương Đông cung cấp không gian hiện đại và dịch vụ chu đáo, nằm gần nhiều điểm tham quan và khu vực mua sắm.",
+                    "rating": "7.6/10"
+                },
+                {
+                    "name": "Khách sạn Thương Mại",
+                    "price": "900,000 - 2,300,000 VNĐ/đêm",
+                    "description": "Khách sạn Thương Mại tọa lạc tại vị trí thuận tiện, mang đến các dịch vụ và tiện nghi hiện đại, phù hợp cho các chuyến công tác.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Công Đoàn Việt Nam",
+                    "price": "750,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Công Đoàn Việt Nam nằm ở vị trí trung tâm, cung cấp dịch vụ tốt với mức giá phải chăng, phù hợp cho nhiều đối tượng khách hàng.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Hạ Long",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hạ Long cung cấp không gian nghỉ dưỡng sang trọng và dịch vụ cao cấp, phù hợp cho các kỳ nghỉ và sự kiện quan trọng.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Hồng Hà",
+                    "price": "800,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Hồng Hà mang đến không gian ấm cúng và dịch vụ chu đáo, thuận tiện cho việc khám phá các địa điểm du lịch nổi tiếng.",
+                    "rating": "7.7/10"
+                },
+                {
+                    "name": "Khách sạn Phúc An",
+                    "price": "850,000 - 2,100,000 VNĐ/đêm",
+                    "description": "Khách sạn Phúc An tọa lạc tại vị trí thuận tiện, cung cấp các tiện nghi hiện đại và dịch vụ chất lượng, phù hợp cho cả du lịch và công tác.",
+                    "rating": "7.6/10"
+                },
+                {
+                    "name": "Khách sạn Bắc Kinh",
+                    "price": "900,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Bắc Kinh mang đến không gian sang trọng và các dịch vụ cao cấp, nằm ở vị trí đắc địa gần các điểm tham quan chính.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Châu Long",
+                    "price": "1,000,000 - 2,700,000 VNĐ/đêm",
+                    "description": "Khách sạn Châu Long tọa lạc tại trung tâm Hà Nội, cung cấp dịch vụ chất lượng và không gian thoải mái, phù hợp cho kỳ nghỉ và công tác.",
+                    "rating": "8.2/10"
+                }
+            ]
+        },
+        {
+            "name": "TP. Hồ Chí Minh",
+            "attractions": [
+                { "name": "Bưu điện thành phố" },
+                { "name": "Nhà thờ Đức Bà" },
+                { "name": "Dinh Độc Lập" },
+                { "name": "Chợ Bến Thành" },
+                { "name": "Bảo tàng chứng tích Chiến tranh" },
+                { "name": "Thảo cầm viên" },
+                { "name": "Công viên Tao Đàn" },
+                { "name": "Phố đi bộ Nguyễn Huệ" },
+                { "name": "Landmark 81" },
+                { "name": "Bến Nhà Rồng" },
+                { "name": "Bảo tàng Mỹ thuật Việt Nam" },
+                { "name": "Công viên nước Đầm Sen" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Rex",
+                    "price": "2,500,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Rex là một trong những khách sạn sang trọng và lâu đời nhất tại TP. Hồ Chí Minh, tọa lạc ngay trung tâm Quận 1, nổi tiếng với thiết kế cổ điển và dịch vụ cao cấp.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Majestic Sài Gòn",
+                    "price": "2,000,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Majestic Sài Gòn nằm bên bờ sông Sài Gòn, nổi bật với kiến trúc Pháp cổ điển, cung cấp các dịch vụ đẳng cấp và không gian sang trọng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Continental Sài Gòn",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Continental Sài Gòn nằm trên đường Đồng Khởi, gần Nhà hát Thành phố, mang đến không gian lịch sử và dịch vụ tiện nghi.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Đệ Nhất",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Đệ Nhất nằm gần sân bay Tân Sơn Nhất, cung cấp các dịch vụ hiện đại và không gian thoải mái, phù hợp cho khách công tác và du lịch.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Sài Gòn Prince",
+                    "price": "2,000,000 - 4,800,000 VNĐ/đêm",
+                    "description": "Khách sạn Sài Gòn Prince nằm tại trung tâm Quận 1, mang đến dịch vụ cao cấp và không gian sang trọng, thuận tiện cho các hoạt động thương mại và du lịch.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Bông Sen",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Bông Sen tọa lạc trên đường Đồng Khởi, cung cấp không gian thoải mái và dịch vụ chất lượng, phù hợp cho cả du lịch và công tác.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Á Đông",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Á Đông nằm ở vị trí trung tâm, gần các điểm tham quan chính, mang đến dịch vụ chu đáo và không gian tiện nghi.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Tân Sơn Nhất",
+                    "price": "1,200,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Tân Sơn Nhất cung cấp các tiện nghi hiện đại và dịch vụ chuyên nghiệp, gần sân bay Tân Sơn Nhất, thuận tiện cho việc di chuyển.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Đông Kinh",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Đông Kinh tọa lạc tại khu vực trung tâm, mang đến không gian thoải mái và dịch vụ tốt, phù hợp cho khách du lịch và công tác.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Đông Phương",
+                    "price": "850,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Đông Phương cung cấp không gian ấm cúng và dịch vụ tận tình, nằm gần các điểm tham quan và khu mua sắm.",
+                    "rating": "7.4/10"
+                },
+                {
+                    "name": "Khách sạn Hà Đô",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hà Đô nằm gần trung tâm TP. Hồ Chí Minh, cung cấp các dịch vụ hiện đại và không gian thoải mái cho khách lưu trú.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Thiên Tùng",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Thiên Tùng mang đến không gian tiện nghi và dịch vụ chu đáo, tọa lạc gần các khu vực mua sắm và giải trí.",
+                    "rating": "7.7/10"
+                },
+                {
+                    "name": "Khách sạn Thiên Tân",
+                    "price": "850,000 - 2,100,000 VNĐ/đêm",
+                    "description": "Khách sạn Thiên Tân nằm ở vị trí thuận tiện, cung cấp các tiện nghi hiện đại và dịch vụ chất lượng, phù hợp cho cả du lịch và công tác.",
+                    "rating": "7.6/10"
+                },
+                {
+                    "name": "Khách sạn Hoa Sen",
+                    "price": "800,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hoa Sen cung cấp không gian ấm cúng và dịch vụ tận tâm, nằm gần các điểm tham quan chính của thành phố.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Phú Thọ",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Phú Thọ tọa lạc tại trung tâm thành phố, cung cấp dịch vụ chuyên nghiệp và không gian thoải mái, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Ánh Dương",
+                    "price": "850,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Ánh Dương mang đến không gian tiện nghi và dịch vụ tốt, tọa lạc gần các khu vực mua sắm và giải trí của thành phố.",
+                    "rating": "7.6/10"
+                },
+                {
+                    "name": "Khách sạn Bến Thành",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Bến Thành nằm ở vị trí trung tâm, gần chợ Bến Thành và các điểm tham quan nổi tiếng, cung cấp dịch vụ chất lượng và không gian thoải mái.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Tân Hải Long",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Tân Hải Long cung cấp không gian sang trọng và dịch vụ cao cấp, tọa lạc gần các khu vực mua sắm và giải trí của thành phố.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Hòa Bình",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hòa Bình mang đến không gian thoải mái và dịch vụ chu đáo, nằm ở vị trí trung tâm, thuận tiện cho việc di chuyển và khám phá thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Kim Đô",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Kim Đô tọa lạc ngay trung tâm Quận 1, cung cấp dịch vụ cao cấp và không gian sang trọng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Tân Mỹ Đình",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Tân Mỹ Đình cung cấp các dịch vụ tiện nghi và không gian thoải mái, nằm gần các điểm tham quan chính và khu vực mua sắm của thành phố.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Á Châu",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Á Châu tọa lạc tại vị trí thuận tiện, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho cả du lịch và công tác.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Hương Sen",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hương Sen nằm trên đường Đồng Khởi, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các chuyến công tác và nghỉ dưỡng.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Đại Nam",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Đại Nam cung cấp các tiện nghi hiện đại và không gian thoải mái, nằm ở vị trí trung tâm, thuận tiện cho việc di chuyển và tham quan.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Kỳ Hòa",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Kỳ Hòa mang đến không gian thoải mái và dịch vụ tốt, tọa lạc gần các khu vực mua sắm và giải trí của thành phố.",
+                    "rating": "7.7/10"
+                },
+                {
+                    "name": "Khách sạn Hòa Phát",
+                    "price": "850,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hòa Phát cung cấp không gian ấm cúng và dịch vụ tận tâm, nằm gần các điểm tham quan và khu vực mua sắm của thành phố.",
+                    "rating": "7.6/10"
+                },
+                {
+                    "name": "Khách sạn Thiên Tân",
+                    "price": "850,000 - 2,100,000 VNĐ/đêm",
+                    "description": "Khách sạn Thiên Tân tọa lạc tại vị trí thuận tiện, cung cấp các tiện nghi hiện đại và dịch vụ chất lượng, phù hợp cho cả du lịch và công tác.",
+                    "rating": "7.6/10"
+                },
+                {
+                    "name": "Khách sạn Phước An",
+                    "price": "800,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Phước An mang đến không gian thoải mái và dịch vụ tốt, nằm ở vị trí trung tâm, thuận tiện cho việc di chuyển và khám phá thành phố.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Cửu Long",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Cửu Long cung cấp không gian tiện nghi và dịch vụ chất lượng, tọa lạc gần các điểm tham quan và khu vực mua sắm của thành phố.",
+                    "rating": "7.7/10"
+                },
+                {
+                    "name": "Khách sạn Ánh Sao",
+                    "price": "800,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Ánh Sao mang đến không gian ấm cúng và dịch vụ tốt, nằm gần các điểm tham quan và khu vực mua sắm của thành phố.",
+                    "rating": "7.6/10"
+                }
+            ]
+        },
+        {
+            "name": "TP. Đà Nẵng",
+            "attractions": [
+                { "name": "Bà Nà Hills" },
+                { "name": "Cầu Rồng" },
+                { "name": "Bãi biển Mỹ Khê" },
+                { "name": "Chùa Linh Ứng" },
+                { "name": "Ngũ Hành Sơn" },
+                { "name": "Công viên Châu Á" },
+                { "name": "Biển Non Nước" },
+                { "name": "Chợ Cồn" },
+                { "name": "Cầu Tình yêu" },
+                { "name": "Khu du lịch sinh thái núi Thần Tài" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Vinpearl Luxury Đà Nẵng",
+                    "price": "3,000,000 - 7,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Vinpearl Luxury Đà Nẵng tọa lạc tại bãi biển Non Nước, cung cấp không gian sang trọng và dịch vụ cao cấp, phù hợp cho kỳ nghỉ dưỡng đẳng cấp.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Novotel Đà Nẵng Premier Hàn River",
+                    "price": "2,000,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Novotel Đà Nẵng Premier Hàn River nằm bên bờ sông Hàn, mang đến dịch vụ tiện nghi và không gian hiện đại, lý tưởng cho cả du lịch và công tác.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Grand Mercure Đà Nẵng",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Grand Mercure Đà Nẵng cung cấp không gian sang trọng và dịch vụ chuyên nghiệp, nằm gần trung tâm thành phố và các điểm tham quan chính.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Hilton Đà Nẵng",
+                    "price": "2,500,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hilton Đà Nẵng tọa lạc tại trung tâm thành phố, mang đến không gian hiện đại và dịch vụ cao cấp, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.9/10"
+                },
+                {
+                    "name": "Khách sạn Diamond Sea",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Diamond Sea nằm trên bãi biển Mỹ Khê, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho kỳ nghỉ biển.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Monarque Đà Nẵng",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Monarque Đà Nẵng mang đến không gian sang trọng và dịch vụ tận tâm, tọa lạc gần bãi biển Mỹ Khê, thuận tiện cho các hoạt động giải trí và nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Sala Đà Nẵng Beach",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Sala Đà Nẵng Beach tọa lạc tại bãi biển Mỹ Khê, cung cấp không gian hiện đại và dịch vụ chất lượng, phù hợp cho các kỳ nghỉ dưỡng và công tác.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn TMS Đà Nẵng Beach",
+                    "price": "1,700,000 - 4,300,000 VNĐ/đêm",
+                    "description": "Khách sạn TMS Đà Nẵng Beach mang đến không gian sang trọng và dịch vụ cao cấp, nằm gần bãi biển Mỹ Khê, lý tưởng cho các kỳ nghỉ biển.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Nalod Đà Nẵng",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Nalod Đà Nẵng cung cấp không gian thoải mái và dịch vụ chất lượng, nằm gần bãi biển Mỹ Khê và các điểm tham quan chính của thành phố.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Mường Thanh Luxury Đà Nẵng",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Mường Thanh Luxury Đà Nẵng tọa lạc tại bãi biển Mỹ Khê, cung cấp dịch vụ cao cấp và không gian sang trọng, phù hợp cho các chuyến nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Đà Nẵng Golden Bay",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Đà Nẵng Golden Bay mang đến không gian sang trọng và dịch vụ cao cấp, với tầm nhìn toàn cảnh vịnh Đà Nẵng, lý tưởng cho các kỳ nghỉ dưỡng đẳng cấp.",
+                    "rating": "8.9/10"
+                },
+                {
+                    "name": "Khách sạn Rosamia Đà Nẵng",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Rosamia Đà Nẵng tọa lạc tại bãi biển Mỹ Khê, cung cấp dịch vụ chất lượng và không gian sang trọng, phù hợp cho các kỳ nghỉ dưỡng và công tác.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn DLG Đà Nẵng",
+                    "price": "1,700,000 - 4,200,000 VNĐ/đêm",
+                    "description": "Khách sạn DLG Đà Nẵng nằm trên bãi biển Mỹ Khê, mang đến không gian thoải mái và dịch vụ chất lượng, lý tưởng cho kỳ nghỉ biển và công tác.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Belle Maison Parosand Đà Nẵng",
+                    "price": "1,600,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Belle Maison Parosand Đà Nẵng cung cấp không gian sang trọng và dịch vụ chất lượng, tọa lạc gần bãi biển Mỹ Khê, thuận tiện cho các hoạt động giải trí và nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                }
+            ]
+        },
+        {
+            "name": "Quảng Nam",
+            "attractions": [
+                { "name": "Phố cổ Hội An" },
+                { "name": "Vinpearl Land Hội An" },
+                { "name": "Đảo Cù Lao Chàm" },
+                { "name": "Thánh địa Mỹ Sơn" },
+                { "name": "Ngũ Hành Sơn" },
+                { "name": "Bãi biển Cửa Đại" },
+                { "name": "Thành phố Tam Kỳ" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Palm Garden Beach Resort & Spa",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Palm Garden Beach Resort & Spa tọa lạc tại bãi biển Cửa Đại, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho kỳ nghỉ dưỡng và thư giãn.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Sunrise Premium Resort Hội An",
+                    "price": "2,500,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Sunrise Premium Resort Hội An mang đến không gian hiện đại và dịch vụ đẳng cấp, nằm trên bãi biển Cửa Đại, phù hợp cho các kỳ nghỉ biển sang trọng.",
+                    "rating": "8.9/10"
+                },
+                {
+                    "name": "Khách sạn Vinpearl Resort & Spa Hội An",
+                    "price": "3,000,000 - 7,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Vinpearl Resort & Spa Hội An tọa lạc tại bãi biển Bình Minh, cung cấp dịch vụ cao cấp và không gian sang trọng, lý tưởng cho kỳ nghỉ dưỡng đẳng cấp.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Hội An Silk Marina Resort & Spa",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hội An Silk Marina Resort & Spa nằm gần phố cổ Hội An, mang đến không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Hội An Historic",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hội An Historic tọa lạc tại trung tâm phố cổ Hội An, cung cấp không gian lịch sử và dịch vụ chất lượng, phù hợp cho các chuyến tham quan và khám phá văn hóa.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Royal Riverside Hội An",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Royal Riverside Hội An nằm bên sông Thu Bồn, mang đến không gian thoải mái và dịch vụ tốt, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Vĩnh Hưng Riverside Resort",
+                    "price": "1,800,000 - 4,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Vĩnh Hưng Riverside Resort tọa lạc bên bờ sông Thu Bồn, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến nghỉ dưỡng và thư giãn.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Belle Maison Hadana Hội An",
+                    "price": "1,600,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Belle Maison Hadana Hội An cung cấp không gian sang trọng và dịch vụ cao cấp, nằm gần phố cổ Hội An, thuận tiện cho các hoạt động tham quan và mua sắm.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Golden Sand Resort & Spa Hội An",
+                    "price": "2,000,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Golden Sand Resort & Spa Hội An tọa lạc tại bãi biển Cửa Đại, mang đến không gian hiện đại và dịch vụ cao cấp, phù hợp cho các kỳ nghỉ biển sang trọng.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Êmm Hội An",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Êmm Hội An nằm gần phố cổ Hội An, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Little Hội An Boutique Hotel & Spa",
+                    "price": "1,500,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Khách sạn Little Hội An Boutique Hotel & Spa cung cấp không gian sang trọng và dịch vụ cao cấp, tọa lạc gần phố cổ Hội An, thuận tiện cho các hoạt động tham quan và mua sắm.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Mường Thanh Holiday Hội An",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Mường Thanh Holiday Hội An tọa lạc tại bãi biển Cửa Đại, cung cấp dịch vụ cao cấp và không gian sang trọng, phù hợp cho các chuyến nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Hoi An Silk Village Resort & Spa",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hoi An Silk Village Resort & Spa nằm gần làng lụa Hội An, mang đến không gian sang trọng và dịch vụ chất lượng, lý tưởng cho các kỳ nghỉ dưỡng và thư giãn.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Laluna Hội An Riverside Hotel & Spa",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Laluna Hội An Riverside Hotel & Spa tọa lạc bên bờ sông Thu Bồn, cung cấp không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Hoi An Chic Hotel",
+                    "price": "1,200,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Hoi An Chic Hotel nằm gần cánh đồng lúa, mang đến không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Phu Thinh Boutique Resort & Spa",
+                    "price": "1,500,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Khách sạn Phu Thinh Boutique Resort & Spa cung cấp không gian sang trọng và dịch vụ cao cấp, tọa lạc gần phố cổ Hội An, thuận tiện cho các hoạt động tham quan và mua sắm.",
+                    "rating": "8.6/10"
+                }
+            ]
+        },
+        {
+            "name": "Khánh Hòa",
+            "attractions": [
+                { "name": "Tháp Bà" },
+                { "name": "Vịnh Nha Trang" },
+                { "name": "Đảo Hòn Mun" },
+                { "name": "Đảo Bình Ba" },
+                { "name": "Vinpearl Land Nha Trang" },
+                { "name": "Bãi biển Nha Trang" },
+                { "name": "Chùa Long Sơn" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Vinpearl Resort Nha Trang",
+                    "price": "3,000,000 - 7,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Vinpearl Resort Nha Trang tọa lạc trên đảo Hòn Tre, cung cấp dịch vụ cao cấp và không gian sang trọng, lý tưởng cho kỳ nghỉ dưỡng đẳng cấp.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn InterContinental Nha Trang",
+                    "price": "2,500,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Khách sạn InterContinental Nha Trang nằm ở trung tâm thành phố, mang đến không gian hiện đại và dịch vụ cao cấp, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Sheraton Nha Trang",
+                    "price": "2,800,000 - 6,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Sheraton Nha Trang tọa lạc tại bãi biển Nha Trang, cung cấp không gian sang trọng và dịch vụ đẳng cấp, lý tưởng cho các kỳ nghỉ biển và công tác.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Novotel Nha Trang",
+                    "price": "2,000,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Novotel Nha Trang mang đến không gian hiện đại và dịch vụ chất lượng, nằm tại trung tâm thành phố, thuận tiện cho các hoạt động giải trí và công tác.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Mường Thanh Luxury Nha Trang",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Mường Thanh Luxury Nha Trang tọa lạc tại bãi biển Nha Trang, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các chuyến nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Sunrise Nha Trang Beach Hotel & Spa",
+                    "price": "2,200,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Sunrise Nha Trang Beach Hotel & Spa nằm tại bãi biển Nha Trang, mang đến không gian sang trọng và dịch vụ chất lượng, lý tưởng cho các kỳ nghỉ dưỡng và công tác.",
+                    "rating": "8.9/10"
+                },
+                {
+                    "name": "Khách sạn Liberty Central Nha Trang",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Liberty Central Nha Trang tọa lạc tại trung tâm thành phố, cung cấp không gian hiện đại và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn The Anam Resort",
+                    "price": "2,500,000 - 6,500,000 VNĐ/đêm",
+                    "description": "Khách sạn The Anam Resort nằm tại bãi biển Bắc Cam Ranh, mang đến không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng đẳng cấp.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Amiana Resort Nha Trang",
+                    "price": "3,000,000 - 7,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Amiana Resort Nha Trang tọa lạc tại bãi biển Nha Trang, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Duyên Hà Resort Cam Ranh",
+                    "price": "2,000,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Duyên Hà Resort Cam Ranh tọa lạc tại bãi biển Cam Ranh, cung cấp không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ biển và thư giãn.",
+                    "rating": "8.9/10"
+                },
+                {
+                    "name": "Khách sạn Havana Nha Trang",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Havana Nha Trang nằm tại bãi biển Nha Trang, mang đến không gian sang trọng và dịch vụ chất lượng, lý tưởng cho các kỳ nghỉ dưỡng và công tác.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Yasaka Saigon Nha Trang",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Yasaka Saigon Nha Trang tọa lạc tại bãi biển Nha Trang, cung cấp không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Diamond Bay Resort & Spa",
+                    "price": "2,000,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Diamond Bay Resort & Spa nằm tại bãi biển Nha Trang, mang đến không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng và thư giãn.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Evason Ana Mandara Nha Trang",
+                    "price": "3,000,000 - 7,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Evason Ana Mandara Nha Trang tọa lạc tại bãi biển Nha Trang, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng đẳng cấp.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Six Senses Ninh Vân Bay",
+                    "price": "8,000,000 - 15,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Six Senses Ninh Vân Bay tọa lạc tại bán đảo Ninh Vân, mang đến không gian sang trọng và dịch vụ đẳng cấp, lý tưởng cho các kỳ nghỉ dưỡng cao cấp và lãng mạn.",
+                    "rating": "9.5/10"
+                },
+                {
+                    "name": "Khách sạn Champa Island Nha Trang Resort Hotel & Spa",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Champa Island Nha Trang Resort Hotel & Spa nằm trên đảo Champa, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn L'Alya Ninh Vân Bay",
+                    "price": "6,000,000 - 12,000,000 VNĐ/đêm",
+                    "description": "Khách sạn L'Alya Ninh Vân Bay tọa lạc tại bán đảo Ninh Vân, mang đến không gian sang trọng và dịch vụ đẳng cấp, lý tưởng cho các kỳ nghỉ dưỡng cao cấp và lãng mạn.",
+                    "rating": "9.4/10"
+                },
+                {
+                    "name": "Khách sạn Sherwood Residence",
+                    "price": "1,800,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Sherwood Residence tọa lạc tại trung tâm Nha Trang, mang đến không gian hiện đại và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn TTC Hotel - Michelia",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn TTC Hotel - Michelia nằm tại trung tâm thành phố Nha Trang, cung cấp không gian hiện đại và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và công tác.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Green World Hotel Nha Trang",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Green World Hotel Nha Trang tọa lạc tại trung tâm thành phố, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                }
+            ]
+        },
+        {
+            "name": "Kiên Giang",
+            "attractions": [
+                { "name": "Đảo Phú Quốc" },
+                { "name": "Côn Đảo" },
+                { "name": "Vườn Quốc gia U Minh Thượng" },
+                { "name": "Chùa Tam Bảo" },
+                { "name": "Di tích lịch sử Nhà tù Phú Quốc" },
+                { "name": "Chợ đêm Phú Quốc" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Sài Gòn Rạch Giá",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Sài Gòn Rạch Giá tọa lạc tại trung tâm thành phố Rạch Giá, cung cấp không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Hòa Bình Rạch Giá",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hòa Bình Rạch Giá nằm tại trung tâm Rạch Giá, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Hương Biển",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hương Biển tọa lạc tại trung tâm Phú Quốc, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến nghỉ dưỡng và du lịch biển.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Kinh Bắc",
+                    "price": "1,000,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Kinh Bắc nằm tại trung tâm Phú Quốc, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến nghỉ dưỡng và du lịch.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Kim Co",
+                    "price": "600,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Kim Co tọa lạc tại trung tâm Rạch Giá, cung cấp không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến du lịch và công tác.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Thiên Hải Sơn",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Thiên Hải Sơn nằm tại bãi biển Phú Quốc, mang đến không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng và du lịch biển.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn An Bình",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn An Bình tọa lạc tại trung tâm Rạch Giá, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Lý Thanh",
+                    "price": "700,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Lý Thanh nằm tại trung tâm Rạch Giá, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến du lịch và công tác.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Bảo Sơn",
+                    "price": "1,000,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Bảo Sơn tọa lạc tại trung tâm Rạch Giá, cung cấp không gian hiện đại và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Hàm Ninh",
+                    "price": "900,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hàm Ninh nằm tại Phú Quốc, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến nghỉ dưỡng và du lịch biển.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Đông Xuân Hồng",
+                    "price": "600,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Đông Xuân Hồng tọa lạc tại trung tâm Rạch Giá, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn An Phú",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn An Phú nằm tại trung tâm Rạch Giá, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hải Vân",
+                    "price": "700,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Hải Vân tọa lạc tại trung tâm Rạch Giá, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Phương Trinh",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Phương Trinh nằm tại trung tâm Rạch Giá, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Trường Thịnh",
+                    "price": "900,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Trường Thịnh tọa lạc tại trung tâm Rạch Giá, cung cấp không gian hiện đại và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Đoàn Kết",
+                    "price": "600,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Đoàn Kết nằm tại trung tâm Rạch Giá, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Ngọc Mai",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Ngọc Mai tọa lạc tại trung tâm Rạch Giá, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Minh Nhựt",
+                    "price": "700,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Minh Nhựt nằm tại trung tâm Rạch Giá, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Thảo Nguyên",
+                    "price": "900,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Thảo Nguyên tọa lạc tại trung tâm Rạch Giá, cung cấp không gian hiện đại và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Hồng Hải",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hồng Hải nằm tại trung tâm Rạch Giá, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                }
+            ]
+        },
+        {
+            "name": "Lâm Đồng",
+            "attractions": [
+                { "name": "Thung lũng tình yêu" },
+                { "name": "Đồi Mộng Mơ" },
+                { "name": "Nhà thờ Con Gà" },
+                { "name": "Núi LangBiang" },
+                { "name": "Làng Cù Lần" },
+                { "name": "Hồ Xuân Hương" },
+                { "name": "Đồi chè Cầu Đất" },
+                { "name": "Chợ đêm Đà Lạt" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Sài Gòn - Đà Lạt",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Sài Gòn - Đà Lạt nằm tại trung tâm thành phố Đà Lạt, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Đà Lạt Palace Heritage",
+                    "price": "3,000,000 - 7,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Đà Lạt Palace Heritage là một trong những khách sạn sang trọng và cổ điển nhất Đà Lạt, cung cấp không gian lãng mạn và dịch vụ đẳng cấp.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Ngọc Lan",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Ngọc Lan tọa lạc tại trung tâm Đà Lạt, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến du lịch và công tác.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn TTC Premium Ngọc Lan",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn TTC Premium Ngọc Lan nằm tại trung tâm Đà Lạt, cung cấp không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Anh - Đất Xanh Resort",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hoàng Anh - Đất Xanh Resort tọa lạc tại Đà Lạt, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Dalat Plaza",
+                    "price": "1,000,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Dalat Plaza nằm tại trung tâm Đà Lạt, cung cấp không gian hiện đại và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và công tác.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Mường Thanh Đà Lạt",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Mường Thanh Đà Lạt tọa lạc tại trung tâm thành phố Đà Lạt, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Saphir Đà Lạt",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Saphir Đà Lạt nằm tại trung tâm thành phố Đà Lạt, cung cấp không gian cổ điển và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Cẩm Đô",
+                    "price": "900,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Cẩm Đô tọa lạc tại trung tâm Đà Lạt, cung cấp không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Dalat Edensee Lake Resort & Spa",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Dalat Edensee Lake Resort & Spa nằm bên hồ Tuyền Lâm, mang đến không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Ana Mandara Villas Đà Lạt Resort & Spa",
+                    "price": "2,500,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Ana Mandara Villas Đà Lạt Resort & Spa tọa lạc trên đồi núi Đà Lạt, cung cấp không gian lãng mạn và dịch vụ đẳng cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Đà Lạt Wonder Resort",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Đà Lạt Wonder Resort nằm bên hồ Tuyền Lâm, mang đến không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Swiss-Belresort Tuyền Lâm",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Swiss-Belresort Tuyền Lâm tọa lạc tại Tuyền Lâm, Đà Lạt, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Ngọc",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hoàng Ngọc nằm tại trung tâm Đà Lạt, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Nhật Vy",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Nhật Vy tọa lạc tại trung tâm Đà Lạt, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn La Sapinette Đà Lạt",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn La Sapinette Đà Lạt nằm tại trung tâm Đà Lạt, mang đến không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Ngọc Phát",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Ngọc Phát tọa lạc tại trung tâm Đà Lạt, cung cấp không gian hiện đại và dịch vụ chất lượng, phù hợp cho các chuyến du lịch và công tác.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Hải Long Vương",
+                    "price": "600,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hải Long Vương nằm tại trung tâm Đà Lạt, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Cường Thịnh",
+                    "price": "700,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Cường Thịnh tọa lạc tại trung tâm Đà Lạt, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Đà Lạt Du Parc",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Đà Lạt Du Parc nằm tại trung tâm Đà Lạt, mang đến không gian cổ điển và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.3/10"
+                }
+            ]
+        },
+        {
+            "name": "Lào Cai",
+            "attractions": [
+                { "name": "Núi Hàm Rồng" },
+                { "name": "Cổng trời Sapa" },
+                { "name": "Bản Cát Cát" },
+                { "name": "Bản Tả Phìn" },
+                { "name": "Vườn Quốc gia Hoàng Liên Sơn" },
+                { "name": "Thác tình yêu" },
+                { "name": "Chợ tình Sapa" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Lào Cai",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Mường Thanh Lào Cai tọa lạc tại trung tâm thành phố Lào Cai, cung cấp không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Aristo International",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Aristo International nằm tại trung tâm Lào Cai, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các chuyến công tác và nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Sapaly Lào Cai",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Sapaly Lào Cai tọa lạc tại trung tâm Lào Cai, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Lào Cai Star",
+                    "price": "1,000,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Lào Cai Star nằm tại trung tâm Lào Cai, cung cấp không gian hiện đại và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Kim Cương",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Kim Cương tọa lạc tại trung tâm Lào Cai, cung cấp không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Thiên Hải",
+                    "price": "700,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Thiên Hải nằm tại trung tâm Lào Cai, mang đến không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn A25",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn A25 tọa lạc tại trung tâm Lào Cai, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn White Lotus",
+                    "price": "1,000,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn White Lotus nằm tại trung tâm Lào Cai, mang đến không gian hiện đại và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Yến",
+                    "price": "600,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Hoàng Yến tọa lạc tại trung tâm Lào Cai, cung cấp không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Gia",
+                    "price": "700,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn Hoàng Gia nằm tại trung tâm Lào Cai, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Hàm Rồng",
+                    "price": "900,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Hàm Rồng tọa lạc tại trung tâm Lào Cai, cung cấp không gian hiện đại và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Sơn Hà",
+                    "price": "800,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Sơn Hà nằm tại trung tâm Lào Cai, mang đến không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Fansipan View",
+                    "price": "900,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Fansipan View tọa lạc tại trung tâm Lào Cai, cung cấp không gian hiện đại và dịch vụ chất lượng, lý tưởng cho các chuyến công tác và du lịch.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Sapa Highland Resort & Spa",
+                    "price": "2,000,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Sapa Highland Resort & Spa nằm tại trung tâm Sapa, mang đến không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Amazing Sapa",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Amazing Sapa tọa lạc tại trung tâm Sapa, cung cấp không gian hiện đại và dịch vụ cao cấp, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Sapa Legend Hotel & Spa",
+                    "price": "1,500,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Sapa Legend Hotel & Spa nằm tại trung tâm Sapa, mang đến không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Bamboo Sapa",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Bamboo Sapa tọa lạc tại trung tâm Sapa, cung cấp không gian thoải mái và dịch vụ chất lượng, phù hợp cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Châu Long Sapa",
+                    "price": "1,200,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn Châu Long Sapa nằm tại trung tâm Sapa, mang đến không gian thoải mái và dịch vụ chất lượng, lý tưởng cho các chuyến du lịch và nghỉ dưỡng.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Victoria Sapa Resort & Spa",
+                    "price": "2,500,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Khách sạn Victoria Sapa Resort & Spa tọa lạc tại trung tâm Sapa, cung cấp không gian sang trọng và dịch vụ cao cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn MGallery by Sofitel - Hotel de la Coupole",
+                    "price": "3,000,000 - 7,000,000 VNĐ/đêm",
+                    "description": "Khách sạn MGallery by Sofitel - Hotel de la Coupole nằm tại trung tâm Sapa, mang đến không gian sang trọng và dịch vụ đẳng cấp, lý tưởng cho các kỳ nghỉ dưỡng.",
+                    "rating": "9.0/10"
+                }
+            ]
+        },
+        {
+            "name": "Thừa Thiên Huế",
+            "attractions": [
+                { "name": "Đại Nội Huế" },
+                { "name": "Chùa Thiên Mụ" },
+                { "name": "Lăng Cô" },
+                { "name": "Núi Bạch Mã" },
+                { "name": "Chợ Đông Ba" },
+                { "name": "Biển Thuận An" },
+                { "name": "Cầu Tràng Tiền" },
+                { "name": "Nhà thờ Phủ Cam" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Imperial Huế",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Nằm ở trung tâm thành phố Huế, khách sạn 5 sao này cung cấp các tiện nghi sang trọng và dịch vụ chuyên nghiệp.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Mường Thanh Holiday Huế",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với vị trí thuận lợi, gần các điểm tham quan chính của Huế.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Saigon Morin",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn lịch sử với kiến trúc cổ điển và dịch vụ cao cấp.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Century Riverside Huế",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Nằm dọc theo sông Hương, khách sạn này mang đến khung cảnh yên bình và dịch vụ tốt.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Indochine Palace",
+                    "price": "2,500,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 5 sao với thiết kế sang trọng và các tiện nghi hiện đại.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Hương Giang",
+                    "price": "1,000,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ chuyên nghiệp và vị trí đẹp bên sông Hương.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Eldora",
+                    "price": "1,300,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn boutique với phong cách độc đáo và dịch vụ thân thiện.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Alba Spa",
+                    "price": "1,200,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao nổi bật với dịch vụ spa chuyên nghiệp và không gian yên tĩnh.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Park View",
+                    "price": "1,000,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và vị trí trung tâm.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Romance",
+                    "price": "1,200,000 - 2,700,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ chuyên nghiệp và thiết kế lãng mạn.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Mondial Huế",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và tiện nghi hiện đại.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Villa Huế",
+                    "price": "1,000,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với không gian ấm cúng và dịch vụ thân thiện.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Moonlight Huế",
+                    "price": "1,200,000 - 2,700,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với thiết kế hiện đại và dịch vụ chuyên nghiệp.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Midtown Huế",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với vị trí trung tâm và dịch vụ tốt.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Duy Tân",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và giá cả hợp lý.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Festival Huế",
+                    "price": "1,000,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và vị trí trung tâm.",
+                    "rating": "7.6/10"
+                },
+                {
+                    "name": "Khách sạn Jasmine",
+                    "price": "1,000,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với không gian ấm cúng và dịch vụ thân thiện.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Tràng Tiền",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 2 sao với tiện nghi cơ bản và giá cả hợp lý.",
+                    "rating": "7.2/10"
+                },
+                {
+                    "name": "Khách sạn Cherish Huế",
+                    "price": "1,200,000 - 2,700,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với thiết kế hiện đại và dịch vụ chuyên nghiệp.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Bình Dương 3",
+                    "price": "700,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 2 sao với tiện nghi cơ bản và giá cả hợp lý.",
+                    "rating": "7.0/10"
+                }
+            ]
+        },
+        {
+            "name": "Quảng Ninh",
+            "attractions": [
+                { "name": "Vịnh Hạ Long" },
+                { "name": "Công viên Sun World Hạ Long" },
+                { "name": "Bãi Cháy" },
+                { "name": "Động Thiên Cung" },
+                { "name": "Quần thể di tích Yên Tử" },
+                { "name": "Làng chài Cửa Vạn" },
+                { "name": "Chợ Hạ Long" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Luxury Quảng Ninh",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 5 sao với thiết kế sang trọng và các tiện nghi hiện đại, nằm tại vị trí trung tâm Hạ Long.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Vinpearl Resort & Spa Hạ Long",
+                    "price": "3,000,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng 5 sao với các dịch vụ cao cấp và cảnh quan tuyệt đẹp bên vịnh Hạ Long.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Wyndham Legend Hạ Long",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 5 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần trung tâm thành phố.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Sài Gòn Hạ Long",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và vị trí thuận tiện, gần các điểm du lịch chính của Hạ Long.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Royal Lotus Hạ Long",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với thiết kế hiện đại và các tiện nghi cao cấp, nằm gần vịnh Hạ Long.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Novotel Hạ Long Bay",
+                    "price": "2,200,000 - 4,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các dịch vụ chuyên nghiệp và vị trí đắc địa nhìn ra vịnh Hạ Long.",
+                    "rating": "8.9/10"
+                },
+                {
+                    "name": "Khách sạn Hạ Long Plaza",
+                    "price": "1,600,000 - 3,600,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm Hạ Long.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Paradise Suites",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi sang trọng và dịch vụ chuyên nghiệp, nằm trên đảo Tuần Châu.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Grand Hạ Long",
+                    "price": "1,400,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi cơ bản, nằm ở trung tâm Hạ Long.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Asean Hạ Long",
+                    "price": "1,300,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với các tiện nghi cơ bản và dịch vụ thân thiện, nằm gần vịnh Hạ Long.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Bạch Đằng Hạ Long",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với các tiện nghi cơ bản và vị trí thuận tiện, gần các điểm du lịch chính.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Starcity Hạ Long Bay",
+                    "price": "1,600,000 - 3,600,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm Hạ Long.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Mithrin Hạ Long",
+                    "price": "1,500,000 - 3,400,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi cơ bản và dịch vụ thân thiện, nằm gần vịnh Hạ Long.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Golden Hạ Long",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và giá cả hợp lý, nằm ở trung tâm Hạ Long.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Hạ Long DC",
+                    "price": "1,400,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần trung tâm thành phố.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn City Bay Palace",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và giá cả hợp lý, nằm ở trung tâm Hạ Long.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Vân Hải",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và vị trí thuận tiện, gần các điểm du lịch chính.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn La Paz Resort Tuần Châu",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng 4 sao với các dịch vụ cao cấp và cảnh quan tuyệt đẹp trên đảo Tuần Châu.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Hidden Charm Hạ Long",
+                    "price": "1,500,000 - 3,400,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần trung tâm thành phố.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Moonlight Hạ Long",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và giá cả hợp lý, nằm ở trung tâm Hạ Long.",
+                    "rating": "7.9/10"
+                }
+            ]
+        },
+        {
+            "name": "Bà Rịa - Vũng Tàu",
+            "attractions": [
+                { "name": "Biển Vũng Tàu" },
+                { "name": "Bãi Trước" },
+                { "name": "Bãi Sau" },
+                { "name": "Đồi Con Heo" },
+                { "name": "Tượng Chúa Kitô" },
+                { "name": "Bạch Dinh" },
+                { "name": "Quảng trường" },
+                { "name": "Khu du lịch Hồ Tràm" },
+                { "name": "Khu du lịch Hồ Cốc" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Imperial Vũng Tàu",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 5 sao với thiết kế sang trọng và các tiện nghi hiện đại, nằm tại vị trí trung tâm Vũng Tàu.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Pullman Vũng Tàu",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 5 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần trung tâm thành phố.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Malibu Vũng Tàu",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 5 sao với các dịch vụ cao cấp và tiện nghi hiện đại, nằm gần bãi biển.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Rex Vũng Tàu",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và vị trí thuận tiện, gần các điểm du lịch chính của Vũng Tàu.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Petro House",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và dịch vụ tốt, nằm gần trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Corvin Vũng Tàu",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với các tiện nghi cơ bản và dịch vụ thân thiện, nằm gần bãi biển.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Dic Star",
+                    "price": "1,500,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ tốt, nằm gần trung tâm thành phố.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn New Wave",
+                    "price": "1,300,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với các tiện nghi cơ bản và dịch vụ tốt, nằm gần bãi biển.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Palace Vũng Tàu",
+                    "price": "1,600,000 - 3,600,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm Vũng Tàu.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Green Vũng Tàu",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và giá cả hợp lý, nằm ở trung tâm Vũng Tàu.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Royal Hotel Vũng Tàu",
+                    "price": "1,300,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và dịch vụ tốt, nằm gần bãi biển.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Grand Vũng Tàu",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm Vũng Tàu.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Sammy Vũng Tàu",
+                    "price": "1,500,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi cơ bản và dịch vụ tốt, nằm gần bãi biển.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Seaside Resort Vũng Tàu",
+                    "price": "1,600,000 - 3,600,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm Vũng Tàu.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Ocean Star",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và dịch vụ thân thiện, nằm gần bãi biển.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Tháng Mười",
+                    "price": "1,000,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và giá cả hợp lý, nằm ở trung tâm Vũng Tàu.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Cap Saint Jacques",
+                    "price": "1,600,000 - 3,600,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm gần bãi biển.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Minh Đăng",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và giá cả hợp lý, nằm ở trung tâm Vũng Tàu.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Hoa",
+                    "price": "1,000,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 2 sao với dịch vụ cơ bản và giá cả hợp lý, nằm ở trung tâm Vũng Tàu.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Hoa Bảo",
+                    "price": "1,000,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 2 sao với dịch vụ cơ bản và giá cả hợp lý, nằm ở trung tâm Vũng Tàu.",
+                    "rating": "7.5/10"
+                }
+            ]
+        },
+        {
+            "name": "Cần Thơ",
+            "attractions": [
+                { "name": "Chợ nổi Cái Răng" },
+                { "name": "Bến Ninh Kiều" },
+                { "name": "Vườn cò Bằng Lăng" },
+                { "name": "Thiền viện Trúc Lâm Phương Nam" },
+                { "name": "Chợ đêm Tây Đô" },
+                { "name": "Bảo tàng Cần Thơ" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Luxury Cần Thơ",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 5 sao với thiết kế sang trọng và các tiện nghi hiện đại, nằm ở trung tâm thành phố.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Ninh Kiều Riverside",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và vị trí tuyệt đẹp bên bờ sông Hậu.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn TTC Premium Cần Thơ",
+                    "price": "1,300,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần trung tâm thành phố.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Vinpearl Hotel Cần Thơ",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 5 sao với các tiện nghi cao cấp và dịch vụ xuất sắc, nằm ở vị trí trung tâm.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Tây Đô",
+                    "price": "900,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ tốt và vị trí thuận tiện, gần các điểm tham quan chính.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Iris Cần Thơ",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với thiết kế hiện đại và các tiện nghi sang trọng, nằm gần trung tâm thành phố.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Nesta Cần Thơ",
+                    "price": "1,100,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với các tiện nghi cơ bản và dịch vụ thân thiện, nằm gần bờ sông.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Kim Thơ",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ tốt và vị trí đẹp, nằm ngay trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Holiday One",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần trung tâm.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Á Châu",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và giá cả hợp lý, nằm ở trung tâm Cần Thơ.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Vạn Phát Riverside",
+                    "price": "1,300,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và vị trí đẹp bên bờ sông, cách trung tâm không xa.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Sài Gòn Cần Thơ",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với các tiện nghi cơ bản và dịch vụ tốt, nằm gần các điểm du lịch chính.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Đông Hà Fortuneland",
+                    "price": "1,100,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm ở trung tâm thành phố.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Cửu Long",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và dịch vụ tốt, nằm ở trung tâm Cần Thơ.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Phương Đông",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ tốt và vị trí thuận tiện, gần các điểm tham quan chính.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hạnh Phúc",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với các tiện nghi cơ bản và dịch vụ thân thiện, nằm ở trung tâm thành phố.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Linh Phương",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và giá cả hợp lý, nằm ở trung tâm Cần Thơ.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Anh Đào Mekong",
+                    "price": "1,100,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với các tiện nghi hiện đại và dịch vụ tốt, nằm gần trung tâm thành phố.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Lan Vy",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và dịch vụ thân thiện, nằm ở trung tâm thành phố.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Hoa Phượng",
+                    "price": "800,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 2 sao với dịch vụ cơ bản và giá cả hợp lý, nằm ở trung tâm Cần Thơ.",
+                    "rating": "7.5/10"
+                }
+            ]
+        },
+        {
+            "name": "Bình Thuận",
+            "attractions": [
+                { "name": "Mũi Né" },
+                { "name": "Hòn Rơm" },
+                { "name": "Suối Tiên" },
+                { "name": "Làng chài Mũi Né" },
+                { "name": "Bãi đá Ông Địa" },
+                { "name": "Tháp Chàm" },
+                { "name": "Chợ Phan Thiết" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Holiday Mũi Né",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ tốt, nằm gần bãi biển Mũi Né.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn TTC Premium Phan Thiết",
+                    "price": "1,600,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm Phan Thiết.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Ocean Dunes Resort",
+                    "price": "1,700,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi cao cấp và dịch vụ chuyên nghiệp, nằm gần bãi biển.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Đồi Dương",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và giá cả hợp lý, nằm gần bãi biển Đồi Dương.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Long",
+                    "price": "1,100,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ tốt và các tiện nghi cơ bản, nằm ở trung tâm Phan Thiết.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Phú Hải Resort",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi cao cấp và dịch vụ xuất sắc, nằm gần bãi biển.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Romana Resort & Spa",
+                    "price": "1,800,000 - 4,200,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm ở Mũi Né.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Sea Links Beach Resort",
+                    "price": "2,200,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Resort 5 sao với các tiện nghi sang trọng và dịch vụ cao cấp, nằm gần bãi biển Mũi Né.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Victoria Phan Thiết Beach Resort & Spa",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Resort 5 sao với các tiện nghi cao cấp và dịch vụ xuất sắc, nằm ngay bờ biển Phan Thiết.",
+                    "rating": "9.3/10"
+                },
+                {
+                    "name": "Khách sạn Pandanus Resort",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần bãi biển Mũi Né.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Terracotta Resort & Spa",
+                    "price": "1,800,000 - 4,200,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm gần bãi biển Mũi Né.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Saigon Mũi Né Resort",
+                    "price": "1,600,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi hiện đại và dịch vụ tốt, nằm ở Mũi Né.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Bamboo Village Beach Resort & Spa",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi cao cấp và dịch vụ xuất sắc, nằm gần bãi biển Mũi Né.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn The Cliff Resort & Residences",
+                    "price": "2,200,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Resort 5 sao với các tiện nghi sang trọng và dịch vụ cao cấp, nằm trên bờ biển Phan Thiết.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Lotus Mũi Né Resort & Spa",
+                    "price": "1,800,000 - 4,200,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần bãi biển Mũi Né.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Blue Ocean Resort",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi cao cấp và dịch vụ xuất sắc, nằm ngay bờ biển Mũi Né.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Anantara Mũi Né Resort",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Resort 5 sao với các tiện nghi sang trọng và dịch vụ cao cấp, nằm gần bãi biển.",
+                    "rating": "9.3/10"
+                },
+                {
+                    "name": "Khách sạn Sailing Club Resort Mũi Né",
+                    "price": "2,200,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Resort 5 sao với các tiện nghi hiện đại và dịch vụ cao cấp, nằm ở Mũi Né.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Villa Del Sol Beach Resort & Spa",
+                    "price": "1,800,000 - 4,200,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi hiện đại và dịch vụ tốt, nằm gần bãi biển.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Ngọc Resort",
+                    "price": "1,800,000 - 4,200,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi hiện đại và dịch vụ tốt, nằm ở Mũi Né.",
+                    "rating": "8.5/10"
+                }
+            ]
+        },
+        {
+            "name": "Bình Định",
+            "attractions": [
+                { "name": "Eo Gió" },
+                { "name": "Biển Kỳ Co" },
+                { "name": "Hòn Khô" },
+                { "name": "Tháp Đôi" },
+                { "name": "Chùa Ông Núi" },
+                { "name": "Biển Quy Nhơn" },
+                { "name": "Làng chài Nhơn Lý" },
+                { "name": "Chợ Quy Nhơn" },
+                { "name": "Vườn quốc gia Núi Bà" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Quy Nhơn",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần bãi biển.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Sài Gòn Quy Nhơn",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm thành phố.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Yến",
+                    "price": "1,100,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và giá cả hợp lý, nằm gần bãi biển.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hải Âu Quy Nhơn",
+                    "price": "1,300,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần bãi biển.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Khang Khang 2",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với tiện nghi cơ bản và dịch vụ tốt, nằm ở trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Y Linh",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 2 sao với dịch vụ cơ bản và giá cả hợp lý, nằm gần bãi biển.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn Bình Dương",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ tốt và các tiện nghi cơ bản, nằm ở trung tâm Quy Nhơn.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Royal Hotel & Healthcare Resort Quy Nhơn",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi cao cấp và dịch vụ xuất sắc, nằm gần bãi biển.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Seagull Quy Nhơn",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần bãi biển.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn AVANI Quy Nhơn Resort & Spa",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Resort 5 sao với các tiện nghi cao cấp và dịch vụ xuất sắc, nằm ngay bờ biển.",
+                    "rating": "9.3/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Gia Quy Nhơn",
+                    "price": "1,600,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ tốt, nằm ở trung tâm thành phố.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Quy Nhơn",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ cơ bản và giá cả hợp lý, nằm ở trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Aurora Villas & Resort",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Resort 4 sao với các tiện nghi hiện đại và dịch vụ xuất sắc, nằm gần bãi biển.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Crown Retreat Quy Nhơn",
+                    "price": "2,200,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Resort 5 sao với các tiện nghi cao cấp và dịch vụ chuyên nghiệp, nằm ngay bờ biển.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn FLC Luxury Hotel Quy Nhơn",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Resort 5 sao với các tiện nghi sang trọng và dịch vụ cao cấp, nằm gần bãi biển.",
+                    "rating": "9.3/10"
+                },
+                {
+                    "name": "Khách sạn Mira Bãi Xếp",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ tốt và các tiện nghi cơ bản, nằm gần bãi biển.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Flora Quy Nhơn",
+                    "price": "1,100,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm thành phố.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Anya Hotel Quy Nhơn",
+                    "price": "1,300,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, nằm gần bãi biển.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn La Maison Boutique",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn 3 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm ở trung tâm thành phố.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Osaka Quy Nhơn",
+                    "price": "1,300,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khách sạn 4 sao với dịch vụ tốt và các tiện nghi hiện đại, nằm gần bãi biển.",
+                    "rating": "8.5/10"
+                }
+            ]
+        },
+        {
+            "name": "Vĩnh Phúc",
+            "attractions": [
+                { "name": "Biển hồ Đại Lải" },
+                { "name": "Khu du lịch sinh thái Hồ Núi Cốc" },
+                { "name": "Chùa Tam Đảo" },
+                { "name": "Thiền viện Trúc Lâm Tây Thiên" },
+                { "name": "Đồi hoa hồng" },
+                { "name": "Làng gốm Hương Canh" },
+                { "name": "Đồi chè Long Đinh" },
+                { "name": "Chợ đêm Tam Đảo" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn DIC Star Hotels & Resorts Vĩnh Phúc",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn sang trọng với tầm nhìn tuyệt đẹp ra hồ Đầm Vạc, cung cấp các tiện ích hiện đại và dịch vụ chuyên nghiệp.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Westlake Hotel & Resort Vĩnh Phúc",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng cao cấp với cảnh quan thiên nhiên xanh mát, hồ bơi ngoài trời và các tiện ích giải trí đa dạng.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Royal Huy Vĩnh Phúc",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại nằm ở trung tâm Vĩnh Yên, mang đến sự thoải mái và tiện nghi cho du khách.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Sông Hồng Resort",
+                    "price": "1,200,000 - 3,200,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng rộng lớn với cảnh quan sông Hồng thơ mộng, phù hợp cho cả nghỉ dưỡng và tổ chức sự kiện.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Crowne Plaza Vĩnh Yên City Centre",
+                    "price": "2,500,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khách sạn đẳng cấp quốc tế với vị trí trung tâm Vĩnh Yên, cung cấp các tiện nghi cao cấp và dịch vụ hoàn hảo.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Flamingo Đại Lải Resort",
+                    "price": "3,000,000 - 7,000,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng hàng đầu với cảnh quan tuyệt đẹp, biệt thự sang trọng và nhiều hoạt động giải trí thú vị.",
+                    "rating": "9.5/10"
+                },
+                {
+                    "name": "Khách sạn Mela Hotel",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn nhỏ xinh, tiện nghi, nằm ở vị trí thuận tiện cho việc khám phá thành phố Vĩnh Yên.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Paradise Đại Lải Resort",
+                    "price": "2,200,000 - 5,200,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng cao cấp với các biệt thự riêng biệt, cảnh quan thiên nhiên và các hoạt động thể thao nước.",
+                    "rating": "8.9/10"
+                },
+                {
+                    "name": "Khách sạn Vĩnh Yên Hotel",
+                    "price": "1,200,000 - 3,000,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm thành phố Vĩnh Yên, cung cấp dịch vụ tốt và tiện nghi đầy đủ.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Thái Dương Hotel",
+                    "price": "800,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn giá cả phải chăng, phù hợp cho khách du lịch muốn tiết kiệm chi phí.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Ngọc Hà Vĩnh Yên",
+                    "price": "900,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn nhỏ với phòng nghỉ thoải mái, gần các tiện ích và khu vui chơi của thành phố.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Quy Hotel",
+                    "price": "700,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn thân thiện và ấm cúng, nằm ở vị trí trung tâm dễ dàng tiếp cận các điểm tham quan.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Phúc Yên Hotel",
+                    "price": "850,000 - 2,100,000 VNĐ/đêm",
+                    "description": "Khách sạn tiện nghi với dịch vụ tốt, nằm gần các khu công nghiệp lớn của Vĩnh Phúc.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Đạt Hoa Hotel",
+                    "price": "600,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn giá rẻ với các phòng nghỉ cơ bản, phù hợp cho các chuyến đi ngắn ngày.",
+                    "rating": "7.5/10"
+                },
+                {
+                    "name": "Khách sạn An Bình Hotel",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn có vị trí thuận lợi, phòng nghỉ tiện nghi và dịch vụ tốt.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Tam Đảo Belvedere Resort",
+                    "price": "2,500,000 - 6,000,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng cao cấp với cảnh quan núi rừng tuyệt đẹp, các tiện ích sang trọng và dịch vụ chuyên nghiệp.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Hanvet Hotel",
+                    "price": "800,000 - 2,200,000 VNĐ/đêm",
+                    "description": "Khách sạn thân thiện, có vị trí thuận tiện và giá cả phải chăng.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Gia Lê Hotel",
+                    "price": "700,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn nhỏ với phòng nghỉ thoải mái, dịch vụ tốt và vị trí trung tâm.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Hưng Hải Hotel",
+                    "price": "750,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn giá cả hợp lý, dịch vụ tốt và gần các tiện ích của thành phố.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Minh Hương Hotel",
+                    "price": "650,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn nhỏ, tiện nghi cơ bản, phù hợp cho khách du lịch tiết kiệm chi phí.",
+                    "rating": "7.6/10"
+                }
+            ]
+        },
+        {
+            "name": "Cao Bằng",
+            "attractions": [
+                { "name": "Hang Pác Bó" },
+                { "name": "Núi Các Mác" },
+                { "name": "Thác Bản Giốc" },
+                { "name": "Động Ngườm Ngao" },
+                { "name": "Động Ngườm Thuồng Luồng" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Bằng Giang",
+                    "price": "700,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ thoải mái và dịch vụ chu đáo, gần các điểm tham quan chính.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Ánh Dương",
+                    "price": "600,000 - 1,300,000 VNĐ/đêm",
+                    "description": "Khách sạn tiện nghi cơ bản với giá cả phải chăng, thích hợp cho khách du lịch tiết kiệm.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Sunny",
+                    "price": "800,000 - 1,700,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại, cung cấp các tiện ích đầy đủ và vị trí thuận tiện.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Anh",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn với dịch vụ tốt và phòng nghỉ sạch sẽ, gần các tiện ích và nhà hàng.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Thành Loan",
+                    "price": "700,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn giá rẻ, phòng nghỉ cơ bản nhưng thoải mái, phù hợp cho các chuyến đi ngắn ngày.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Sơn Tùng",
+                    "price": "600,000 - 1,400,000 VNĐ/đêm",
+                    "description": "Khách sạn nhỏ, ấm cúng, cung cấp các tiện nghi cơ bản và dịch vụ thân thiện.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Kim Đồng",
+                    "price": "700,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ thoải mái, gần các điểm tham quan chính của thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Tường Tín",
+                    "price": "650,000 - 1,400,000 VNĐ/đêm",
+                    "description": "Khách sạn giá cả hợp lý với các tiện nghi cơ bản, phù hợp cho khách du lịch tiết kiệm.",
+                    "rating": "7.7/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Long",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn với dịch vụ tốt, phòng nghỉ thoải mái và vị trí thuận tiện.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Đức Trung",
+                    "price": "600,000 - 1,300,000 VNĐ/đêm",
+                    "description": "Khách sạn nhỏ, cung cấp các tiện nghi cơ bản và giá cả phải chăng.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Hồng Vân",
+                    "price": "650,000 - 1,400,000 VNĐ/đêm",
+                    "description": "Khách sạn với các tiện nghi cơ bản, phù hợp cho khách du lịch tiết kiệm chi phí.",
+                    "rating": "7.7/10"
+                },
+                {
+                    "name": "Khách sạn Minh Hoàng",
+                    "price": "700,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm, cung cấp phòng nghỉ thoải mái và dịch vụ tốt.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng An",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn thân thiện, cung cấp dịch vụ tốt và phòng nghỉ thoải mái.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Gia Quý",
+                    "price": "600,000 - 1,300,000 VNĐ/đêm",
+                    "description": "Khách sạn giá rẻ, phù hợp cho các chuyến đi ngắn ngày và tiết kiệm chi phí.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Bảo Ngọc Diamond",
+                    "price": "800,000 - 1,700,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại, cung cấp các tiện nghi đầy đủ và dịch vụ chu đáo.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Cao Bằng",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ thoải mái, dịch vụ tốt và giá cả hợp lý.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Phong Lan",
+                    "price": "600,000 - 1,300,000 VNĐ/đêm",
+                    "description": "Khách sạn nhỏ, cung cấp các tiện nghi cơ bản và giá cả phải chăng.",
+                    "rating": "7.7/10"
+                },
+                {
+                    "name": "Khách sạn Quỳnh Mai",
+                    "price": "650,000 - 1,400,000 VNĐ/đêm",
+                    "description": "Khách sạn thân thiện với dịch vụ tốt và phòng nghỉ thoải mái.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Ngọc",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại, cung cấp các tiện nghi đầy đủ và vị trí thuận tiện.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Nam Phong",
+                    "price": "700,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn giá cả hợp lý với các tiện nghi cơ bản và dịch vụ tốt.",
+                    "rating": "8.0/10"
+                }
+            ]
+        },
+        {
+            "name": "Bắc Ninh",
+            "attractions": [
+                { "name": "Khu di tích lịch sử Đền Đô" },
+                { "name": "Chùa Phật Tích" },
+                { "name": "Làng tranh Đông Hồ" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Luxury Bắc Ninh",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với các tiện nghi hiện đại và dịch vụ chuyên nghiệp, phù hợp cho doanh nhân và du khách.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Phoenix Resort Bắc Ninh",
+                    "price": "2,500,000 - 5,000,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng sang trọng với không gian yên tĩnh, hồ bơi và các tiện ích giải trí đa dạng.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Le Indochina Hotel",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với phòng nghỉ thoải mái, nhà hàng và các dịch vụ tiện ích.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Center Hotel Bắc Ninh",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn nằm ở vị trí trung tâm, gần các điểm tham quan và tiện ích của thành phố.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Mandala Hotel & Spa",
+                    "price": "2,200,000 - 4,800,000 VNĐ/đêm",
+                    "description": "Khách sạn sang trọng với dịch vụ spa, nhà hàng và các tiện ích cao cấp.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Grand Phoenix Hotel",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với không gian sang trọng và các dịch vụ tiện ích đa dạng.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Gold Business Hotel",
+                    "price": "1,800,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Asia Hotel Bắc Ninh",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn nằm ở vị trí trung tâm, cung cấp các dịch vụ tiện ích và phòng nghỉ thoải mái.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Bac Ninh Royal Hotel",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với các tiện nghi đầy đủ, phù hợp cho cả doanh nhân và du khách.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Gia Hotel Bắc Ninh",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cung cấp các tiện ích hiện đại và vị trí thuận tiện cho việc khám phá thành phố.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Vinhomes Bắc Ninh",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với các tiện ích hiện đại và dịch vụ chuyên nghiệp.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Rosana Legend Hotel",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại, cung cấp các tiện ích đầy đủ và vị trí thuận tiện.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Hana 2 Luxury Hotel",
+                    "price": "1,700,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với các tiện ích hiện đại và dịch vụ chuyên nghiệp.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn Dream Vân Hoa Hotel",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại, cung cấp các tiện ích đầy đủ và vị trí thuận tiện.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Victory Hotel Bắc Ninh",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn với dịch vụ tốt, phòng nghỉ thoải mái và vị trí trung tâm.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Phú Sơn Resort",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng với không gian yên tĩnh, hồ bơi và các tiện ích giải trí đa dạng.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Tu Son Luxury Hotel",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với các tiện nghi hiện đại và dịch vụ chuyên nghiệp.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Hoang Gia Bac Ninh Hotel",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại, cung cấp các tiện ích đầy đủ và vị trí thuận tiện.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Bac Ninh Charming Hotel",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn với dịch vụ tốt, phòng nghỉ thoải mái và vị trí trung tâm.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Asia Apartment Hotel Bac Ninh",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Khách sạn với các tiện ích hiện đại, phù hợp cho các chuyến công tác và du lịch.",
+                    "rating": "8.5/10"
+                }
+            ]
+        },
+        {
+            "name": "Ninh Bình",
+            "attractions": [
+                { "name": "Quần thể danh thắng Tràng An" },
+                { "name": "Cố đô Hoa Lư" },
+                { "name": "Hang Múa" },
+                { "name": "Tam Cốc - Bích Động" },
+                { "name": "Vườn quốc gia Cúc Phương" },
+                { "name": "Làng chài Ninh Hải" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Ninh Bình Hidden Charm",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với không gian yên tĩnh, dịch vụ tốt và vị trí thuận tiện cho việc khám phá các danh lam thắng cảnh.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Mường Thanh Luxury Ninh Bình",
+                    "price": "2,200,000 - 4,800,000 VNĐ/đêm",
+                    "description": "Khách sạn sang trọng với các tiện ích hiện đại và dịch vụ chuyên nghiệp.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Emeralda Resort Ninh Bình",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng cao cấp với không gian xanh mát, hồ bơi và các tiện ích giải trí đa dạng.",
+                    "rating": "9.3/10"
+                },
+                {
+                    "name": "Khách sạn Ninh Bình Legend",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với không gian sang trọng và các dịch vụ tiện ích đầy đủ.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Sơn Peace",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại, cung cấp các tiện ích đầy đủ và vị trí thuận tiện.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn The Reed Ninh Bình",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với dịch vụ chuyên nghiệp và các tiện ích hiện đại.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Tam Coc Garden Resort",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng cao cấp với không gian xanh mát, dịch vụ tốt và các hoạt động giải trí thú vị.",
+                    "rating": "9.3/10"
+                },
+                {
+                    "name": "Khách sạn Aravinda Resort",
+                    "price": "2,200,000 - 4,800,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng cao cấp với không gian yên tĩnh, dịch vụ tốt và vị trí thuận tiện.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Tam Coc La Montagne Resort & Spa",
+                    "price": "2,500,000 - 5,500,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng cao cấp với không gian xanh mát, dịch vụ spa và các tiện ích giải trí đa dạng.",
+                    "rating": "9.3/10"
+                },
+                {
+                    "name": "Khách sạn Vissai Hotel Ninh Bình",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với các tiện ích hiện đại và dịch vụ chuyên nghiệp.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Bai Dinh Garden Resort & Spa",
+                    "price": "2,200,000 - 4,800,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng cao cấp với không gian yên tĩnh, dịch vụ spa và các tiện ích giải trí đa dạng.",
+                    "rating": "9.1/10"
+                },
+                {
+                    "name": "Khách sạn Ninh Bình Panorama Homestay",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Homestay thoải mái với không gian yên tĩnh và phòng nghỉ sạch sẽ, gần các điểm tham quan.",
+                    "rating": "8.8/10"
+                },
+                {
+                    "name": "Khách sạn Tam Coc Rice Fields Resort",
+                    "price": "2,200,000 - 4,800,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng nằm giữa cánh đồng lúa xanh mát, cung cấp trải nghiệm gần gũi với thiên nhiên.",
+                    "rating": "9.2/10"
+                },
+                {
+                    "name": "Khách sạn Ninh Bình Valley Homestay",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Homestay ấm cúng với không gian yên tĩnh và dịch vụ thân thiện, phù hợp cho chuyến du lịch gia đình.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn King Kong Homestay",
+                    "price": "1,600,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Homestay với phòng nghỉ đơn giản nhưng thoải mái, gần các điểm tham quan và tiện ích.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Chez Loan Hotel",
+                    "price": "1,700,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ thoải mái và dịch vụ tốt, gần các điểm tham quan chính.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn An's Eco Garden Resort",
+                    "price": "2,000,000 - 4,500,000 VNĐ/đêm",
+                    "description": "Khu nghỉ dưỡng gần gũi với thiên nhiên, cung cấp các hoạt động giải trí và dịch vụ tốt.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Xuan Hoa Hotel",
+                    "price": "1,600,000 - 3,800,000 VNĐ/đêm",
+                    "description": "Khách sạn nhỏ với không gian yên tĩnh và phòng nghỉ thoải mái, phù hợp cho chuyến đi thư giãn.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Golden Season Hotel",
+                    "price": "1,700,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ sạch sẽ và dịch vụ tốt, gần các điểm tham quan và tiện ích.",
+                    "rating": "8.6/10"
+                },
+                {
+                    "name": "Khách sạn AIQ Hotel Ninh Bình",
+                    "price": "1,800,000 - 4,000,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với không gian thoải mái và dịch vụ tốt, gần các điểm tham quan chính.",
+                    "rating": "8.8/10"
+                }
+            ]
+        },
+        {
+            "name": "Hà Giang",
+            "attractions": [
+                { "name": "Cao nguyên đá Đồng Văn" },
+                { "name": "Cột cờ Lũng Cú" },
+                { "name": "Cột cờ Lũng Cú" },
+                { "name": "Mèo Vạc" },
+                { "name": "Sông Nho Quế" },
+                { "name": "Đèo Mãi Pì Lèng" },
+                { "name": "Phố Cáo" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Phoenix Hà Giang",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ sạch sẽ và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Hà Giang Resort",
+                    "price": "1,000,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Resort ven núi với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến du lịch thư giãn.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Silk River Hotel Hà Giang",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với phòng nghỉ thoải mái và dịch vụ chuyên nghiệp, gần trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Cao Nguyên Đá",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ tiện nghi và dịch vụ tốt, gần các điểm tham quan chính.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Royal Hà Giang",
+                    "price": "1,100,000 - 2,600,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với không gian sang trọng và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.4/10"
+                },
+                {
+                    "name": "Khách sạn Huy Hoàn",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ sạch sẽ và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Su Phì Lodge",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Lodge ven núi với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến du lịch thư giãn.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Hà An",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với phòng nghỉ thoải mái và dịch vụ chuyên nghiệp, gần trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Tiến Đạt",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ tiện nghi và dịch vụ tốt, gần các điểm tham quan chính.",
+                    "rating": "8.1/10"
+                },
+                {
+                    "name": "Khách sạn Tam Giác Mạch",
+                    "price": "1,100,000 - 2,600,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với không gian sang trọng và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.4/10"
+                }
+            ]
+        },
+        {
+            "name": "Điện Biên",
+            "attractions": [
+                { "name": "Di tích chiến thắng Điện Biên Phủ" },
+                { "name": "Tượng đài chiến thắng Điện Biên Phủ" },
+                { "name": "Thung lũng Mường Than" },
+                { "name": "Đồi A1" },
+                { "name": "Chợ Mường Thanh" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Điện Biên Phủ",
+                    "price": "1,200,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn lớn với phòng nghỉ thoải mái và dịch vụ đa dạng, gần trung tâm thành phố.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Him Lam",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ sạch sẽ và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn A1",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn tiện nghi với phòng nghỉ đơn giản nhưng thoải mái, gần các điểm tham quan.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Công Đoàn Điện Biên",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ sạch sẽ và dịch vụ tốt, gần trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Ruby",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với không gian sang trọng và dịch vụ chuyên nghiệp, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Phương Nam",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ thoải mái và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Hà Nội - Điện Biên Phủ",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ tiện nghi và dịch vụ tốt, gần các điểm tham quan chính.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Điện Biên",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn đơn giản nhưng thoải mái, gần trung tâm thành phố và các điểm tham quan.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Sao Xanh",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Tây Bắc",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn tiện nghi với phòng nghỉ sạch sẽ và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                }
+            ]
+        },
+        {
+            "name": "Lạng Sơn",
+            "attractions": [
+                { "name": "Đền Mẫu Đồng Đăng" },
+                { "name": "Thành nhà Mạc" },
+                { "name": "Núi Tô Thị" },
+                { "name": "Chợ Kỳ Lừa" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Vinpearl Lạng Sơn",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Resort sang trọng với các tiện ích cao cấp và dịch vụ chuyên nghiệp, phù hợp cho kỳ nghỉ nghỉ dưỡng.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Mường Thanh Lạng Sơn",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn lớn với phòng nghỉ thoải mái và dịch vụ đa dạng, gần trung tâm thành phố.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Sơn",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ sạch sẽ và dịch vụ tốt, gần trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Kim Sơn",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ thoải mái và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Thịnh",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn tiện nghi với phòng nghỉ đơn giản nhưng thoải mái, gần các điểm tham quan.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Hoa Sim",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Kim Lệ Dung",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với không gian sang trọng và dịch vụ chuyên nghiệp, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Vạn Xuân",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn đơn giản nhưng thoải mái, gần trung tâm thành phố và các điểm tham quan.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn A1 Lạng Sơn",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ tiện nghi và dịch vụ tốt, gần các điểm tham quan chính.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Nam Hoàng Đồng",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ thoải mái và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                }
+            ]
+        },
+        {
+            "name": "Quảng Bình",
+            "attractions": [
+                { "name": "Vườn quốc gia Phong Nha - Kẻ Bàng" },
+                { "name": "Biển Nhật Lệ" },
+                { "name": "Vũng Chùa - Đảo Yến" },
+                { "name": "Suối nước Moọc" },
+                { "name": "Đèo Ngang" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Luxury Nhật Lệ",
+                    "price": "1,300,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Resort cao cấp với không gian sang trọng và các tiện ích hiện đại, phù hợp cho kỳ nghỉ nghỉ dưỡng.",
+                    "rating": "8.7/10"
+                },
+                {
+                    "name": "Khách sạn Vinpearl Hotel Quảng Bình",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Resort sang trọng với các tiện ích cao cấp và dịch vụ chuyên nghiệp, phù hợp cho kỳ nghỉ nghỉ dưỡng.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Sài Gòn Quảng Bình",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn lớn với phòng nghỉ thoải mái và dịch vụ đa dạng, gần trung tâm thành phố.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Royal Quảng Bình",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với không gian sang trọng và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Cao Minh",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Osaka Quảng Bình",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với phòng nghỉ thoải mái và dịch vụ chuyên nghiệp, gần trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Luxe Quảng Bình",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ sạch sẽ và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Amanda Quảng Bình",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn trung tâm với phòng nghỉ thoải mái và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Vĩnh Hoàng",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn đơn giản nhưng thoải mái, gần trung tâm thành phố và các điểm tham quan.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Riverside Hotel Quảng Bình",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Resort ven sông với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến du lịch thư giãn.",
+                    "rating": "8.2/10"
+                }
+            ]
+        },
+        {
+            "name": "Quảng Ngãi",
+            "attractions": [
+                { "name": "Đảo Lý Sơn" },
+                { "name": "Cánh đồng muối Sa Huỳnh" },
+                { "name": "Núi Thiên Ấn" },
+                { "name": "Khu di tích lịch sử văn hóa Sa Huỳnh" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Holiday Lý Sơn",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Resort sang trọng với các tiện ích cao cấp và dịch vụ chuyên nghiệp, phù hợp cho kỳ nghỉ nghỉ dưỡng.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Central Hotel Quảng Ngãi",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn lớn với phòng nghỉ thoải mái và dịch vụ đa dạng, gần trung tâm thành phố.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Sa Huỳnh Resort",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Resort ven biển với không gian yên tĩnh và dịch vụ tốt, phù hợp cho kỳ nghỉ nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Thiên Ấn Riverside",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Resort ven sông với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến du lịch thư giãn.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Cẩm Thành",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ sạch sẽ và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Petrosetco Tower",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn hiện đại với phòng nghỉ thoải mái và dịch vụ chuyên nghiệp, gần trung tâm thành phố.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Đảo Ngọc Lý Sơn",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Resort ven biển với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến du lịch thư giãn.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Lý Sơn Pearl Island",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Resort ven biển với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến du lịch thư giãn.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Mỹ Trà Riverside",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn King Hotel",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn tiện nghi với phòng nghỉ đơn giản nhưng thoải mái, gần các điểm tham quan.",
+                    "rating": "7.8/10"
+                }
+            ]
+        },
+        {
+            "name": "Đắk Lắk",
+            "attractions": [
+                { "name": "Biển hồ T'Nưng" },
+                { "name": "Thác Đray Sáp" },
+                { "name": "Vườn quốc gia Chư Yang Sin" }
+            ],
+            "hotels": [
+                {
+                    "name": "Khách sạn Mường Thanh Luxury Buôn Ma Thuột",
+                    "price": "1,500,000 - 3,500,000 VNĐ/đêm",
+                    "description": "Resort cao cấp với không gian sang trọng và các tiện ích hiện đại, phù hợp cho kỳ nghỉ nghỉ dưỡng.",
+                    "rating": "9.0/10"
+                },
+                {
+                    "name": "Khách sạn Hai Bà Trưng",
+                    "price": "1,200,000 - 2,800,000 VNĐ/đêm",
+                    "description": "Khách sạn lớn với phòng nghỉ thoải mái và dịch vụ đa dạng, gần trung tâm thành phố.",
+                    "rating": "8.3/10"
+                },
+                {
+                    "name": "Khách sạn Sài Gòn - Ban Mê",
+                    "price": "1,100,000 - 2,500,000 VNĐ/đêm",
+                    "description": "Resort nằm ở vùng ngoại ô với không gian yên tĩnh và dịch vụ tốt, phù hợp cho kỳ nghỉ nghỉ dưỡng.",
+                    "rating": "8.5/10"
+                },
+                {
+                    "name": "Khách sạn Dakruco",
+                    "price": "900,000 - 2,000,000 VNĐ/đêm",
+                    "description": "Khách sạn với không gian thoải mái và dịch vụ tốt, gần các điểm tham quan.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Biệt Điện",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn cao cấp với không gian sang trọng và dịch vụ chuyên nghiệp, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.2/10"
+                },
+                {
+                    "name": "Khách sạn Bazan Xanh",
+                    "price": "850,000 - 1,900,000 VNĐ/đêm",
+                    "description": "Khách sạn với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "8.0/10"
+                },
+                {
+                    "name": "Khách sạn Hoàng Lộc",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn với phòng nghỉ sạch sẽ và dịch vụ thân thiện, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Thiên Đường",
+                    "price": "800,000 - 1,800,000 VNĐ/đêm",
+                    "description": "Khách sạn đơn giản nhưng thoải mái, gần trung tâm thành phố và các điểm tham quan.",
+                    "rating": "7.9/10"
+                },
+                {
+                    "name": "Khách sạn Thanh Mai",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn với không gian yên tĩnh và dịch vụ tốt, phù hợp cho chuyến đi nghỉ dưỡng.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Đam San",
+                    "price": "750,000 - 1,600,000 VNĐ/đêm",
+                    "description": "Khách sạn tiện nghi với phòng nghỉ đơn giản nhưng thoải mái, gần các điểm tham quan.",
+                    "rating": "7.8/10"
+                },
+                {
+                    "name": "Khách sạn Eden",
+                    "price": "700,000 - 1,500,000 VNĐ/đêm",
+                    "description": "Khách sạn đơn giản nhưng thoải mái, phù hợp cho chuyến đi tiết kiệm chi phí.",
+                    "rating": "7.7/10"
+                }
+            ]
+        }
+    ]
 }

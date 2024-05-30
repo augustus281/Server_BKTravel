@@ -1,7 +1,7 @@
 'use strict'
 
 const jwt = require('jsonwebtoken')
-const { RoleUser } = require('../common/status')
+const { RoleUser } = require('../common')
 const { AuthFailureError } = require('../core/error.response')
 
 const HEADER = {

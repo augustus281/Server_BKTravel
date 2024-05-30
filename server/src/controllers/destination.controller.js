@@ -40,6 +40,7 @@ class DestinationController {
                             name: hotelInfo.name, 
                             price: hotelInfo.price, 
                             rating: hotelInfo.rating,
+                            description: hotelInfo.description,
                             destination_id: destination.destination_id
                         }
                     })  
@@ -64,6 +65,7 @@ class DestinationController {
                             name: hotelInfo.name, 
                             price: hotelInfo.price, 
                             rating: hotelInfo.rating,
+                            description: hotelInfo.description,
                             destination_id: destination.destination_id
                         }
                     })  
