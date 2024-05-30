@@ -1,291 +1,832 @@
 {
-    "destinations": [
+  "destinations": [
       {
-        "name": "Hà Nội",
-        "attractions": [
-          { "name": "Hồ Hoàn Kiếm" },
-          { "name": "Cầu Thê Húc" },
-          { "name": "Đền Ngọc Sơn" },
-          { "name": "Nhà ngục Hỏa Lò" },
-          { "name": "Phố cổ Hà Nội" },
-          { "name": "Lăng Bác" },
-          { "name": "Văn Miếu - Quốc Tử Giám" },
-          { "name": "Chùa Trấn Quốc" },
-          { "name": "Chùa Một Cột" },
-          { "name": "Nhà thờ lớn Hà Nội" },
-          { "name": "Làng gồm Bát Tràng" },
-          { "name": "Làng lụa Vạn Phúc" },
-          { "name": "Chợ Đồng Xuân" },
-          { "name": "Bảo Tàng Lịch sử Quốc gia Việt Nam" }
-        ]
+          "name": "Hà Nội",
+          "attractions": [
+              { "name": "Hồ Hoàn Kiếm" },
+              { "name": "Cầu Thê Húc" },
+              { "name": "Đền Ngọc Sơn" },
+              { "name": "Nhà ngục Hỏa Lò" },
+              { "name": "Phố cổ Hà Nội" },
+              { "name": "Lăng Bác" },
+              { "name": "Văn Miếu - Quốc Tử Giám" },
+              { "name": "Chùa Trấn Quốc" },
+              { "name": "Chùa Một Cột" },
+              { "name": "Nhà thờ lớn Hà Nội" },
+              { "name": "Làng gồm Bát Tràng" },
+              { "name": "Làng lụa Vạn Phúc" },
+              { "name": "Chợ Đồng Xuân" },
+              { "name": "Bảo Tàng Lịch sử Quốc gia Việt Nam" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Sofitel Legend Metropole Hà Nội" },
+              { "name": "Khách sạn Daewoo Hà Nội" },
+              { "name": "Khách sạn Melia Hà Nội" },
+              { "name": "Khách sạn Bảo Sơn" },
+              { "name": "Khách sạn Mường Thanh Grand Hà Nội" },
+              { "name": "Khách sạn Hòa Bình" },
+              { "name": "Khách sạn Hà Nội" },
+              { "name": "Khách sạn Công Đoàn Hà Nội" },
+              { "name": "Khách sạn Thăng Long Opera" },
+              { "name": "Khách sạn La Casa" },
+              { "name": "Khách sạn Hữu Nghị" },
+              { "name": "Khách sạn Đông Đô" },
+              { "name": "Khách sạn Phú Gia" },
+              { "name": "Khách sạn Thăng Long Espana" },
+              { "name": "Khách sạn Kim Liên" },
+              { "name": "Khách sạn Quốc tế Hà Nội" },
+              { "name": "Khách sạn Hòa Bình Palace" },
+              { "name": "Khách sạn Hà Nội Horizon" },
+              { "name": "Khách sạn Hàng Hải" },
+              { "name": "Khách sạn Hoa Sen" },
+              { "name": "Khách sạn Bảo Việt" },
+              { "name": "Khách sạn Nam Cường" },
+              { "name": "Khách sạn Phương Đông" },
+              { "name": "Khách sạn Thương Mại" },
+              { "name": "Khách sạn Công Đoàn Việt Nam" },
+              { "name": "Khách sạn Hạ Long" },
+              { "name": "Khách sạn Hồng Hà" },
+              { "name": "Khách sạn Phúc An" },
+              { "name": "Khách sạn Bắc Kinh" },
+              { "name": "Khách sạn Châu Long" }
+          ]
       },
       {
-        "name": "TP. Hồ Chí Minh",
-        "attractions": [
-            { "name": "Bưu điện thành phố" },
-            { "name": "Nhà thờ Đức Bà" },
-            { "name": "Dinh Độc Lập" },
-            { "name": "Chợ Bến Thành" },
-            { "name": "Bảo tàng chứng tích Chiến tranh" },
-            { "name": "Thảo cầm viên" },
-            { "name": "Công viên Tao Đàn" },
-            { "name": "Phố đi bộ Nguyễn Huệ" },
-            { "name": "Landmark 81" },
-            { "name": "Bến Nhà Rồng" },
-            { "name": "Bảo tàng Mỹ thuật Việt Nam" },
-            { "name": "Công viên nước Đầm Sen" }
-        ]
+          "name": "TP. Hồ Chí Minh",
+          "attractions": [
+              { "name": "Bưu điện thành phố" },
+              { "name": "Nhà thờ Đức Bà" },
+              { "name": "Dinh Độc Lập" },
+              { "name": "Chợ Bến Thành" },
+              { "name": "Bảo tàng chứng tích Chiến tranh" },
+              { "name": "Thảo cầm viên" },
+              { "name": "Công viên Tao Đàn" },
+              { "name": "Phố đi bộ Nguyễn Huệ" },
+              { "name": "Landmark 81" },
+              { "name": "Bến Nhà Rồng" },
+              { "name": "Bảo tàng Mỹ thuật Việt Nam" },
+              { "name": "Công viên nước Đầm Sen" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Rex" },
+              { "name": "Khách sạn Majestic Sài Gòn" },
+              { "name": "Khách sạn Continental Sài Gòn" },
+              { "name": "Khách sạn Đệ Nhất" },
+              { "name": "Khách sạn Sài Gòn Prince" },
+              { "name": "Khách sạn Bông Sen" },
+              { "name": "Khách sạn Á Đông" },
+              { "name": "Khách sạn Tân Sơn Nhất" },
+              { "name": "Khách sạn Đông Kinh" },
+              { "name": "Khách sạn Đông Phương" },
+              { "name": "Khách sạn Hà Đô" },
+              { "name": "Khách sạn Thiên Tùng" },
+              { "name": "Khách sạn Thiên Tân" },
+              { "name": "Khách sạn Hoa Sen" },
+              { "name": "Khách sạn Phú Thọ" },
+              { "name": "Khách sạn Ánh Dương" },
+              { "name": "Khách sạn Bến Thành" },
+              { "name": "Khách sạn Tân Hải Long" },
+              { "name": "Khách sạn Hòa Bình" },
+              { "name": "Khách sạn Kim Đô" },
+              { "name": "Khách sạn Tân Mỹ Đình" },
+              { "name": "Khách sạn Á Châu" },
+              { "name": "Khách sạn Hương Sen" },
+              { "name": "Khách sạn Đại Nam" },
+              { "name": "Khách sạn Kỳ Hòa" },
+              { "name": "Khách sạn Hòa Phát" },
+              { "name": "Khách sạn Thiên Tân" },
+              { "name": "Khách sạn Phước An" },
+              { "name": "Khách sạn Cửu Long" },
+              { "name": "Khách sạn Ánh Sao" }
+          ]
       },
       {
-        "name": "TP. Đà Nẵng",
-        "attractions": [
-            { "name": "Bà Nà Hills" },
-            { "name": "Cầu Rồng" },
-            { "name": "Bãi biển Mỹ Khê" },
-            { "name": "Chùa Linh Ứng" },
-            { "name": "Ngũ Hành Sơn" },
-            { "name": "Công viên Châu Á" },
-            { "name": "Biển Non Nước" },
-            { "name": "Chợ Cồn" },
-            { "name": "Cầu Tình yêu" },
-            { "name": "Khu du lịch sinh thái núi Thần Tài" }
-        ]
+          "name": "TP. Đà Nẵng",
+          "attractions": [
+              { "name": "Bà Nà Hills" },
+              { "name": "Cầu Rồng" },
+              { "name": "Bãi biển Mỹ Khê" },
+              { "name": "Chùa Linh Ứng" },
+              { "name": "Ngũ Hành Sơn" },
+              { "name": "Công viên Châu Á" },
+              { "name": "Biển Non Nước" },
+              { "name": "Chợ Cồn" },
+              { "name": "Cầu Tình yêu" },
+              { "name": "Khu du lịch sinh thái núi Thần Tài" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Vinpearl Luxury Đà Nẵng" },
+              { "name": "Khách sạn Novotel Đà Nẵng Premier Hàn River" },
+              { "name": "Khách sạn Grand Mercure Đà Nẵng" },
+              { "name": "Khách sạn Hilton Đà Nẵng" },
+              { "name": "Khách sạn Diamond Sea" },
+              { "name": "Khách sạn Monarque Đà Nẵng" },
+              { "name": "Khách sạn Sala Đà Nẵng Beach" },
+              { "name": "Khách sạn TMS Đà Nẵng Beach" },
+              { "name": "Khách sạn Nalod Đà Nẵng" },
+              { "name": "Khách sạn Mường Thanh Luxury Đà Nẵng" },
+              { "name": "Khách sạn Đà Nẵng Golden Bay" },
+              { "name": "Khách sạn Rosamia Đà Nẵng" },
+              { "name": "Khách sạn DLG Đà Nẵng" },
+              { "name": "Khách sạn Belle Maison Parosand Đà Nẵng" }
+          ]
       },
       {
-        "name": "Quảng Nam",
-        "attractions": [
-            { "name": "Phố cổ Hội An" },
-            { "name": "Vinpearl Land Hội An" },
-            { "name": "Đảo Cù Lao Chàm" },
-            { "name": "Thánh địa Mỹ Sơn" },
-            { "name": "Ngũ Hành Sơn" },
-            { "name": "Bãi biển Cửa Đại" },
-            { "name": "Thành phố Tam Kỳ" }
-        ]
+          "name": "Quảng Nam",
+          "attractions": [
+              { "name": "Phố cổ Hội An" },
+              { "name": "Vinpearl Land Hội An" },
+              { "name": "Đảo Cù Lao Chàm" },
+              { "name": "Thánh địa Mỹ Sơn" },
+              { "name": "Ngũ Hành Sơn" },
+              { "name": "Bãi biển Cửa Đại" },
+              { "name": "Thành phố Tam Kỳ" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Palm Garden Beach Resort & Spa" },
+              { "name": "Khách sạn Sunrise Premium Resort Hội An" },
+              { "name": "Khách sạn Vinpearl Resort & Spa Hội An" },
+              { "name": "Khách sạn Hội An Silk Marina Resort & Spa" },
+              { "name": "Khách sạn Hội An Historic" },
+              { "name": "Khách sạn Royal Riverside Hội An" },
+              { "name": "Khách sạn Vĩnh Hưng Riverside Resort" },
+              { "name": "Khách sạn Belle Maison Hadana Hội An" },
+              { "name": "Khách sạn Golden Sand Resort & Spa Hội An" },
+              { "name": "Khách sạn Êmm Hội An" },
+              { "name": "Khách sạn Little Hội An Boutique Hotel & Spa" },
+              { "name": "Khách sạn Mường Thanh Holiday Hội An" },
+              { "name": "Khách sạn Hoi An Silk Village Resort & Spa" },
+              { "name": "Khách sạn Laluna Hội An Riverside Hotel & Spa" },
+              { "name": "Khách sạn Hoi An Chic Hotel" },
+              { "name": "Khách sạn Phu Thinh Boutique Resort & Spa" }
+          ]
       },
       {
-        "name": "Khánh Hòa",
-        "attractions": [
-            { "name": "Tháp Bà" },
-            { "name": "Vịnh Nha Trang" },
-            { "name": "Đảo Hòn Mun" },
-            { "name": "Đảo Bình Ba" },
-            { "name": "Vinpearl Land Nha Trang" },
-            { "name": "Bãi biển Nha Trang" },
-            { "name": "Chùa Long Sơn" }
-        ]
+          "name": "Khánh Hòa",
+          "attractions": [
+              { "name": "Tháp Bà" },
+              { "name": "Vịnh Nha Trang" },
+              { "name": "Đảo Hòn Mun" },
+              { "name": "Đảo Bình Ba" },
+              { "name": "Vinpearl Land Nha Trang" },
+              { "name": "Bãi biển Nha Trang" },
+              { "name": "Chùa Long Sơn" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Vinpearl Resort Nha Trang" },
+              { "name": "Khách sạn InterContinental Nha Trang" },
+              { "name": "Khách sạn Sheraton Nha Trang" },
+              { "name": "Khách sạn Novotel Nha Trang" },
+              { "name": "Khách sạn Mường Thanh Luxury Nha Trang" },
+              { "name": "Khách sạn Sunrise Nha Trang Beach Hotel & Spa" },
+              { "name": "Khách sạn Liberty Central Nha Trang" },
+              { "name": "Khách sạn The Anam Resort" },
+              { "name": "Khách sạn Amiana Resort Nha Trang" },
+              { "name": "Khách sạn Duyên Hà Resort Cam Ranh" },
+              { "name": "Khách sạn Havana Nha Trang" },
+              { "name": "Khách sạn Yasaka Saigon Nha Trang" },
+              { "name": "Khách sạn Diamond Bay Resort & Spa" },
+              { "name": "Khách sạn Evason Ana Mandara Nha Trang" },
+              { "name": "Khách sạn Six Senses Ninh Vân Bay" },
+              {
+                  "name": "Khách sạn Champa Island Nha Trang Resort Hotel & Spa"
+              },
+              { "name": "Khách sạn L'Alya Ninh Vân Bay" },
+              { "name": "Khách sạn Sherwood Residence" },
+              { "name": "Khách sạn TTC Hotel - Michelia" },
+              { "name": "Khách sạn Green World Hotel Nha Trang" }
+          ]
       },
       {
-        "name": "Kiên Giang",
-        "attractions": [
-            { "name": "Đảo Phú Quốc" },
-            { "name": "Côn Đảo" },
-            { "name": "Vườn Quốc gia U Minh Thượng" },
-            { "name": "Chùa Tam Bảo" },
-            { "name": "Di tích lịch sử Nhà tù Phú Quốc" },
-            { "name": "Chợ đêm Phú Quốc" }
-        ]
+          "name": "Kiên Giang",
+          "attractions": [
+              { "name": "Đảo Phú Quốc" },
+              { "name": "Côn Đảo" },
+              { "name": "Vườn Quốc gia U Minh Thượng" },
+              { "name": "Chùa Tam Bảo" },
+              { "name": "Di tích lịch sử Nhà tù Phú Quốc" },
+              { "name": "Chợ đêm Phú Quốc" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Sài Gòn Rạch Giá" },
+              { "name": "Khách sạn Hòa Bình Rạch Giá" },
+              { "name": "Khách sạn Hương Biển" },
+              { "name": "Khách sạn Kinh Bắc" },
+              { "name": "Khách sạn Kim Co" },
+              { "name": "Khách sạn Thiên Hải Sơn" },
+              { "name": "Khách sạn An Bình" },
+              { "name": "Khách sạn Lý Thanh" },
+              { "name": "Khách sạn Bảo Sơn" },
+              { "name": "Khách sạn Hàm Ninh" },
+              { "name": "Khách sạn Đông Xuân Hồng" },
+              { "name": "Khách sạn An Phú" },
+              { "name": "Khách sạn Hải Vân" },
+              { "name": "Khách sạn Phương Trinh" },
+              { "name": "Khách sạn Trường Thịnh" },
+              { "name": "Khách sạn Đoàn Kết" },
+              { "name": "Khách sạn Ngọc Mai" },
+              { "name": "Khách sạn Minh Nhựt" },
+              { "name": "Khách sạn Thảo Nguyên" },
+              { "name": "Khách sạn Hồng Hải" }
+          ]
       },
       {
-        "name": "Lâm Đồng",
-        "attractions": [
-            { "name": "Thung lũng tình yêu" },
-            { "name": "Đồi Mộng Mơ" },
-            { "name": "Nhà thờ Con Gà" },
-            { "name": "Núi LangBiang" },
-            { "name": "Làng Cù Lần" },
-            { "name": "Hồ Xuân Hương" },
-            { "name": "Đồi chè Cầu Đất" },
-            { "name": "Chợ đêm Đà Lạt" }
-        ]
+          "name": "Lâm Đồng",
+          "attractions": [
+              { "name": "Thung lũng tình yêu" },
+              { "name": "Đồi Mộng Mơ" },
+              { "name": "Nhà thờ Con Gà" },
+              { "name": "Núi LangBiang" },
+              { "name": "Làng Cù Lần" },
+              { "name": "Hồ Xuân Hương" },
+              { "name": "Đồi chè Cầu Đất" },
+              { "name": "Chợ đêm Đà Lạt" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Sài Gòn - Đà Lạt" },
+              { "name": "Khách sạn Đà Lạt Palace Heritage" },
+              { "name": "Khách sạn Ngọc Lan" },
+              { "name": "Khách sạn TTC Premium Ngọc Lan" },
+              { "name": "Khách sạn Hoàng Anh - Đất Xanh Resort" },
+              { "name": "Khách sạn Dalat Plaza" },
+              { "name": "Khách sạn Mường Thanh Đà Lạt" },
+              { "name": "Khách sạn Saphir Đà Lạt" },
+              { "name": "Khách sạn Cẩm Đô" },
+              { "name": "Khách sạn Dalat Edensee Lake Resort & Spa" },
+              { "name": "Khách sạn Ana Mandara Villas Đà Lạt Resort & Spa" },
+              { "name": "Khách sạn Đà Lạt Wonder Resort" },
+              { "name": "Khách sạn Swiss-Belresort Tuyền Lâm" },
+              { "name": "Khách sạn Hoàng Ngọc" },
+              { "name": "Khách sạn Nhật Vy" },
+              { "name": "Khách sạn La Sapinette Đà Lạt" },
+              { "name": "Khách sạn Ngọc Phát" },
+              { "name": "Khách sạn Hải Long Vương" },
+              { "name": "Khách sạn Cường Thịnh" },
+              { "name": "Khách sạn Đà Lạt Du Parc" }
+          ]
       },
       {
-        "name": "Lào Cai",
-        "attractions": [
-            { "name": "Núi Hàm Rồng" },
-            { "name": "Cổng trời Sapa" },
-            { "name": "Bản Cát Cát" },
-            { "name": "Bản Tả Phìn" },
-            { "name": "Vườn Quốc gia Hoàng Liên Sơn" },
-            { "name": "Thác tình yêu" },
-            { "name": "Chợ tình Sapa" }
-        ]
+          "name": "Lào Cai",
+          "attractions": [
+              { "name": "Núi Hàm Rồng" },
+              { "name": "Cổng trời Sapa" },
+              { "name": "Bản Cát Cát" },
+              { "name": "Bản Tả Phìn" },
+              { "name": "Vườn Quốc gia Hoàng Liên Sơn" },
+              { "name": "Thác tình yêu" },
+              { "name": "Chợ tình Sapa" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Lào Cai" },
+              { "name": "Khách sạn Aristo International" },
+              { "name": "Khách sạn Sapaly Lào Cai" },
+              { "name": "Khách sạn Lào Cai Star" },
+              { "name": "Khách sạn Kim Cương" },
+              { "name": "Khách sạn Thiên Hải" },
+              { "name": "Khách sạn A25" },
+              { "name": "Khách sạn White Lotus" },
+              { "name": "Khách sạn Hoàng Yến" },
+              { "name": "Khách sạn Hoàng Gia" },
+              { "name": "Khách sạn Hàm Rồng" },
+              { "name": "Khách sạn Sơn Hà" },
+              { "name": "Khách sạn Fansipan View" },
+              { "name": "Khách sạn Sapa Highland Resort & Spa" },
+              { "name": "Khách sạn Amazing Sapa" },
+              { "name": "Khách sạn Sapa Legend Hotel & Spa" },
+              { "name": "Khách sạn Bamboo Sapa" },
+              { "name": "Khách sạn Châu Long Sapa" },
+              { "name": "Khách sạn Victoria Sapa Resort & Spa" },
+              {
+                  "name": "Khách sạn MGallery by Sofitel - Hotel de la Coupole"
+              }
+          ]
       },
       {
-        "name": "Thừa Thiên Huế",
-        "attractions": [
-            { "name": "Đại Nội Huế" },
-            { "name": "Chùa Thiên Mụ" },
-            { "name": "Lăng Cô" },
-            { "name": "Núi Bạch Mã" },
-            { "name": "Chợ Đông Ba" },
-            { "name": "Biển Thuận An" },
-            { "name": "Cầu Tràng Tiền" },
-            { "name": "Nhà thờ Phủ Cam" }
-        ]
+          "name": "Thừa Thiên Huế",
+          "attractions": [
+              { "name": "Đại Nội Huế" },
+              { "name": "Chùa Thiên Mụ" },
+              { "name": "Lăng Cô" },
+              { "name": "Núi Bạch Mã" },
+              { "name": "Chợ Đông Ba" },
+              { "name": "Biển Thuận An" },
+              { "name": "Cầu Tràng Tiền" },
+              { "name": "Nhà thờ Phủ Cam" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Imperial Huế" },
+              { "name": "Khách sạn Mường Thanh Holiday Huế" },
+              { "name": "Khách sạn Saigon Morin" },
+              { "name": "Khách sạn Century Riverside Huế" },
+              { "name": "Khách sạn Indochine Palace" },
+              { "name": "Khách sạn Hương Giang" },
+              { "name": "Khách sạn Eldora" },
+              { "name": "Khách sạn Alba Spa" },
+              { "name": "Khách sạn Park View" },
+              { "name": "Khách sạn Romance" },
+              { "name": "Khách sạn Mondial Huế" },
+              { "name": "Khách sạn Villa Huế" },
+              { "name": "Khách sạn Moonlight Huế" },
+              { "name": "Khách sạn Midtown Huế" },
+              { "name": "Khách sạn Duy Tân" },
+              { "name": "Khách sạn Festival Huế" },
+              { "name": "Khách sạn Jasmine" },
+              { "name": "Khách sạn Tràng Tiền" },
+              { "name": "Khách sạn Cherish Huế" },
+              { "name": "Khách sạn Bình Dương 3" }
+          ]
       },
       {
-        "name": "Quảng Ninh",
-        "attractions": [
-            { "name": "Vịnh Hạ Long" },
-            { "name": "Công viên Sun World Hạ Long" },
-            { "name": "Bãi Cháy" },
-            { "name": "Động Thiên Cung" },
-            { "name": "Quần thể di tích Yên Tử" },
-            { "name": "Làng chài Cửa Vạn" },
-            { "name": "Chợ Hạ Long" }
-        ]
+          "name": "Quảng Ninh",
+          "attractions": [
+              { "name": "Vịnh Hạ Long" },
+              { "name": "Công viên Sun World Hạ Long" },
+              { "name": "Bãi Cháy" },
+              { "name": "Động Thiên Cung" },
+              { "name": "Quần thể di tích Yên Tử" },
+              { "name": "Làng chài Cửa Vạn" },
+              { "name": "Chợ Hạ Long" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Luxury Quảng Ninh" },
+              { "name": "Khách sạn Vinpearl Resort & Spa Hạ Long" },
+              { "name": "Khách sạn Wyndham Legend Hạ Long" },
+              { "name": "Khách sạn Sài Gòn Hạ Long" },
+              { "name": "Khách sạn Royal Lotus Hạ Long" },
+              { "name": "Khách sạn Novotel Hạ Long Bay" },
+              { "name": "Khách sạn Hạ Long Plaza" },
+              { "name": "Khách sạn Paradise Suites" },
+              { "name": "Khách sạn Grand Hạ Long" },
+              { "name": "Khách sạn Asean Hạ Long" },
+              { "name": "Khách sạn Bạch Đằng Hạ Long" },
+              { "name": "Khách sạn Starcity Hạ Long Bay" },
+              { "name": "Khách sạn Mithrin Hạ Long" },
+              { "name": "Khách sạn Golden Hạ Long" },
+              { "name": "Khách sạn Hạ Long DC" },
+              { "name": "Khách sạn City Bay Palace" },
+              { "name": "Khách sạn Vân Hải" },
+              { "name": "Khách sạn La Paz Resort Tuần Châu" },
+              { "name": "Khách sạn Hidden Charm Hạ Long" },
+              { "name": "Khách sạn Moonlight Hạ Long" }
+          ]
       },
       {
-        "name": "Bà Rịa - Vũng Tàu",
-        "attractions": [
-            { "name": "Biển Vũng Tàu" },
-            { "name": "Bãi Trước" },
-            { "name": "Bãi Sau" },
-            { "name": "Đồi Con Heo" },
-            { "name": "Tượng Chúa Kitô" },
-            { "name": "Bạch Dinh" },
-            { "name": "Quảng trường" },
-            { "name": "Khu du lịch Hồ Tràm" },
-            { "name": "Khu du lịch Hồ Cốc" }
-        ]
+          "name": "Bà Rịa - Vũng Tàu",
+          "attractions": [
+              { "name": "Biển Vũng Tàu" },
+              { "name": "Bãi Trước" },
+              { "name": "Bãi Sau" },
+              { "name": "Đồi Con Heo" },
+              { "name": "Tượng Chúa Kitô" },
+              { "name": "Bạch Dinh" },
+              { "name": "Quảng trường" },
+              { "name": "Khu du lịch Hồ Tràm" },
+              { "name": "Khu du lịch Hồ Cốc" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Imperial Vũng Tàu" },
+              { "name": "Khách sạn Pullman Vũng Tàu" },
+              { "name": "Khách sạn Malibu Vũng Tàu" },
+              { "name": "Khách sạn Rex Vũng Tàu" },
+              { "name": "Khách sạn Petro House" },
+              { "name": "Khách sạn Corvin Vũng Tàu" },
+              { "name": "Khách sạn Dic Star" },
+              { "name": "Khách sạn New Wave" },
+              { "name": "Khách sạn Palace Vũng Tàu" },
+              { "name": "Khách sạn Green Vũng Tàu" },
+              { "name": "Khách sạn Royal Hotel Vũng Tàu" },
+              { "name": "Khách sạn Grand Vũng Tàu" },
+              { "name": "Khách sạn Sammy Vũng Tàu" },
+              { "name": "Khách sạn Seaside Resort Vũng Tàu" },
+              { "name": "Khách sạn Ocean Star" },
+              { "name": "Khách sạn Tháng Mười" },
+              { "name": "Khách sạn Cap Saint Jacques" },
+              { "name": "Khách sạn Minh Đăng" },
+              { "name": "Khách sạn Hoàng Hoa" },
+              { "name": "Khách sạn Hoa Bảo" }
+          ]
       },
       {
-        "name": "Cần Thơ",
-        "attractions": [
-            { "name": "Chợ nổi Cái Răng" },
-            { "name": "Bến Ninh Kiều" },
-            { "name": "Vườn cò Bằng Lăng" },
-            { "name": "Thiền viện Trúc Lâm Phương Nam" },
-            { "name": "Chợ đêm Tây Đô" },
-            { "name": "Bảo tàng Cần Thơ" }
-        ]
+          "name": "Cần Thơ",
+          "attractions": [
+              { "name": "Chợ nổi Cái Răng" },
+              { "name": "Bến Ninh Kiều" },
+              { "name": "Vườn cò Bằng Lăng" },
+              { "name": "Thiền viện Trúc Lâm Phương Nam" },
+              { "name": "Chợ đêm Tây Đô" },
+              { "name": "Bảo tàng Cần Thơ" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Luxury Cần Thơ" },
+              { "name": "Khách sạn Ninh Kiều Riverside" },
+              { "name": "Khách sạn TTC Premium Cần Thơ" },
+              { "name": "Khách sạn Vinpearl Hotel Cần Thơ" },
+              { "name": "Khách sạn Tây Đô" },
+              { "name": "Khách sạn Iris Cần Thơ" },
+              { "name": "Khách sạn Nesta Cần Thơ" },
+              { "name": "Khách sạn Kim Thơ" },
+              { "name": "Khách sạn Holiday One" },
+              { "name": "Khách sạn Á Châu" },
+              { "name": "Khách sạn Vạn Phát Riverside" },
+              { "name": "Khách sạn Sài Gòn Cần Thơ" },
+              { "name": "Khách sạn Đông Hà Fortuneland" },
+              { "name": "Khách sạn Cửu Long" },
+              { "name": "Khách sạn Phương Đông" },
+              { "name": "Khách sạn Hạnh Phúc" },
+              { "name": "Khách sạn Linh Phương" },
+              { "name": "Khách sạn Anh Đào Mekong" },
+              { "name": "Khách sạn Lan Vy" },
+              { "name": "Khách sạn Hoa Phượng" }
+          ]
       },
       {
-        "name": "Bình Thuận",
-        "attractions": [
-            { "name": "Mũi Né" },
-            { "name": "Hòn Rơm" },
-            { "name": "Suối Tiên" },
-            { "name": "Làng chài Mũi Né" },
-            { "name": "Bãi đá Ông Địa" },
-            { "name": "Tháp Chàm" },
-            { "name": "Chợ Phan Thiết" }
-        ]
+          "name": "Bình Thuận",
+          "attractions": [
+              { "name": "Mũi Né" },
+              { "name": "Hòn Rơm" },
+              { "name": "Suối Tiên" },
+              { "name": "Làng chài Mũi Né" },
+              { "name": "Bãi đá Ông Địa" },
+              { "name": "Tháp Chàm" },
+              { "name": "Chợ Phan Thiết" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Holiday Mũi Né" },
+              { "name": "Khách sạn TTC Premium Phan Thiết" },
+              { "name": "Khách sạn Ocean Dunes Resort" },
+              { "name": "Khách sạn Đồi Dương" },
+              { "name": "Khách sạn Hoàng Long" },
+              { "name": "Khách sạn Phú Hải Resort" },
+              { "name": "Khách sạn Romana Resort & Spa" },
+              { "name": "Khách sạn Sea Links Beach Resort" },
+              { "name": "Khách sạn Victoria Phan Thiết Beach Resort & Spa" },
+              { "name": "Khách sạn Pandanus Resort" },
+              { "name": "Khách sạn Terracotta Resort & Spa" },
+              { "name": "Khách sạn Saigon Mũi Né Resort" },
+              { "name": "Khách sạn Bamboo Village Beach Resort & Spa" },
+              { "name": "Khách sạn The Cliff Resort & Residences" },
+              { "name": "Khách sạn Lotus Mũi Né Resort & Spa" },
+              { "name": "Khách sạn Blue Ocean Resort" },
+              { "name": "Khách sạn Anantara Mũi Né Resort" },
+              { "name": "Khách sạn Sailing Club Resort Mũi Né" },
+              { "name": "Khách sạn Villa Del Sol Beach Resort & Spa" },
+              { "name": "Khách sạn Hoàng Ngọc Resort" }
+          ]
       },
       {
-        "name": "Bình Định",
-        "attractions": [
-            { "name": "Eo Gió" },
-            { "name": "Biển Kỳ Co" },
-            { "name": "Hòn Khô" },
-            { "name": "Tháp Đôi" },
-            { "name": "Chùa Ông Núi" },
-            { "name": "Biển Quy Nhơn" },
-            { "name": "Làng chài Nhơn Lý"},
-            { "name": "Chợ Quy Nhơn"},
-            { "name": "Vườn quốc gia Núi Bà"}
-        ]
+          "name": "Bình Định",
+          "attractions": [
+              { "name": "Eo Gió" },
+              { "name": "Biển Kỳ Co" },
+              { "name": "Hòn Khô" },
+              { "name": "Tháp Đôi" },
+              { "name": "Chùa Ông Núi" },
+              { "name": "Biển Quy Nhơn" },
+              { "name": "Làng chài Nhơn Lý" },
+              { "name": "Chợ Quy Nhơn" },
+              { "name": "Vườn quốc gia Núi Bà" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Quy Nhơn" },
+              { "name": "Khách sạn Sài Gòn Quy Nhơn" },
+              { "name": "Khách sạn Hoàng Yến" },
+              { "name": "Khách sạn Hải Âu Quy Nhơn" },
+              { "name": "Khách sạn Khang Khang 2" },
+              { "name": "Khách sạn Y Linh" },
+              { "name": "Khách sạn Bình Dương" },
+              {
+                  "name": "Khách sạn Royal Hotel & Healthcare Resort Quy Nhơn"
+              },
+              { "name": "Khách sạn Seagull Quy Nhơn" },
+              { "name": "Khách sạn AVANI Quy Nhơn Resort & Spa" },
+              { "name": "Khách sạn Hoàng Gia Quy Nhơn" },
+              { "name": "Khách sạn Quy Nhơn" },
+              { "name": "Khách sạn Aurora Villas & Resort" },
+              { "name": "Khách sạn Crown Retreat Quy Nhơn" },
+              { "name": "Khách sạn FLC Luxury Hotel Quy Nhơn" },
+              { "name": "Khách sạn Mira Bãi Xếp" },
+              { "name": "Khách sạn Flora Quy Nhơn" },
+              { "name": "Khách sạn Anya Hotel Quy Nhơn" },
+              { "name": "Khách sạn La Maison Boutique" },
+              { "name": "Khách sạn Osaka Quy Nhơn" }
+          ]
       },
       {
-        "name": "Vĩnh Phúc",
-        "attractions": [
-            { "name": "Biển hồ Đại Lải" },
-            { "name": "Khu du lịch sinh thái Hồ Núi Cốc" },
-            { "name": "Chùa Tam Đảo" },
-            { "name": "Thiền viện Trúc Lâm Tây Thiên" },
-            { "name": "Đồi hoa hồng" },
-            { "name": "Làng gốm Hương Canh" },
-            { "name": "Đồi chè Long Đinh"},
-            { "name": "Chợ đêm Tam Đảo"}
-        ]
+          "name": "Vĩnh Phúc",
+          "attractions": [
+              { "name": "Biển hồ Đại Lải" },
+              { "name": "Khu du lịch sinh thái Hồ Núi Cốc" },
+              { "name": "Chùa Tam Đảo" },
+              { "name": "Thiền viện Trúc Lâm Tây Thiên" },
+              { "name": "Đồi hoa hồng" },
+              { "name": "Làng gốm Hương Canh" },
+              { "name": "Đồi chè Long Đinh" },
+              { "name": "Chợ đêm Tam Đảo" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn DIC Star Hotels & Resorts Vĩnh Phúc" },
+              { "name": "Khách sạn Westlake Hotel & Resort Vĩnh Phúc" },
+              { "name": "Khách sạn Royal Huy Vĩnh Phúc" },
+              { "name": "Khách sạn Sông Hồng Resort" },
+              { "name": "Khách sạn Crowne Plaza Vĩnh Yên City Centre" },
+              { "name": "Khách sạn Flamingo Đại Lải Resort" },
+              { "name": "Khách sạn Mela Hotel" },
+              { "name": "Khách sạn Paradise Đại Lải Resort" },
+              { "name": "Khách sạn Vĩnh Yên Hotel" },
+              { "name": "Khách sạn Thái Dương Hotel" },
+              { "name": "Khách sạn Ngọc Hà Vĩnh Yên" },
+              { "name": "Khách sạn Hoàng Quy Hotel" },
+              { "name": "Khách sạn Phúc Yên Hotel" },
+              { "name": "Khách sạn Đạt Hoa Hotel" },
+              { "name": "Khách sạn An Bình Hotel" },
+              { "name": "Khách sạn Tam Đảo Belvedere Resort" },
+              { "name": "Khách sạn Hanvet Hotel" },
+              { "name": "Khách sạn Gia Lê Hotel" },
+              { "name": "Khách sạn Hưng Hải Hotel" },
+              { "name": "Khách sạn Minh Hương Hotel" }
+          ]
       },
       {
-        "name": "Cao Bằng",
-        "attractions": [
-            { "name": "Hang Pác Bó"},
-            { "name": "Núi Các Mác"},
-            { "name": "Thác Bản Giốc"},
-            { "name": "Động Ngườm Ngao"},
-            { "name": "Động Ngườm Thuồng Luồng"}
-        ]
+          "name": "Cao Bằng",
+          "attractions": [
+              { "name": "Hang Pác Bó" },
+              { "name": "Núi Các Mác" },
+              { "name": "Thác Bản Giốc" },
+              { "name": "Động Ngườm Ngao" },
+              { "name": "Động Ngườm Thuồng Luồng" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Bằng Giang" },
+              { "name": "Khách sạn Ánh Dương" },
+              { "name": "Khách sạn Sunny" },
+              { "name": "Khách sạn Hoàng Anh" },
+              { "name": "Khách sạn Thành Loan" },
+              { "name": "Khách sạn Sơn Tùng" },
+              { "name": "Khách sạn Kim Đồng" },
+              { "name": "Khách sạn Tường Tín" },
+              { "name": "Khách sạn Hoàng Long" },
+              { "name": "Khách sạn Đức Trung" },
+              { "name": "Khách sạn Hồng Vân" },
+              { "name": "Khách sạn Minh Hoàng" },
+              { "name": "Khách sạn Hoàng An" },
+              { "name": "Khách sạn Gia Quý" },
+              { "name": "Khách sạn Bảo Ngọc Diamond" },
+              { "name": "Khách sạn Cao Bằng" },
+              { "name": "Khách sạn Phong Lan" },
+              { "name": "Khách sạn Quỳnh Mai" },
+              { "name": "Khách sạn Hoàng Ngọc" },
+              { "name": "Khách sạn Nam Phong" }
+          ]
       },
       {
-        "name": "Bắc Ninh",
-        "attractions": [
-            { "name": "Khu di tích lịch sử Đền Đô"},
-            { "name": "Chùa Phật Tích"},
-            { "name": "Làng tranh Đông Hồ"}
-        ]
+          "name": "Bắc Ninh",
+          "attractions": [
+              { "name": "Khu di tích lịch sử Đền Đô" },
+              { "name": "Chùa Phật Tích" },
+              { "name": "Làng tranh Đông Hồ" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Luxury Bắc Ninh" },
+              { "name": "Khách sạn Phoenix Resort Bắc Ninh" },
+              { "name": "Khách sạn Le Indochina Hotel" },
+              { "name": "Khách sạn Center Hotel Bắc Ninh" },
+              { "name": "Khách sạn Mandala Hotel & Spa" },
+              { "name": "Khách sạn Grand Phoenix Hotel" },
+              { "name": "Khách sạn Gold Business Hotel" },
+              { "name": "Khách sạn Asia Hotel Bắc Ninh" },
+              { "name": "Khách sạn Bac Ninh Royal Hotel" },
+              { "name": "Khách sạn Hoàng Gia Hotel Bắc Ninh" },
+              { "name": "Khách sạn Khách Sạn Vinhomes Bắc Ninh" },
+              { "name": "Khách sạn Rosana Legend Hotel" },
+              { "name": "Khách sạn Hana 2 Luxury Hotel" },
+              { "name": "Khách sạn Dream Vân Hoa Hotel" },
+              { "name": "Khách sạn Victory Hotel Bắc Ninh" },
+              { "name": "Khách sạn Phú Sơn Resort" },
+              { "name": "Khách sạn Tu Son Luxury Hotel" },
+              { "name": "Khách sạn Hoang Gia Bac Ninh Hotel" },
+              { "name": "Khách sạn Bac Ninh Charming Hotel" },
+              { "name": "Khách sạn Asia Apartment Hotel Bac Ninh" }
+          ]
       },
       {
-        "name": "Ninh Bình",
-        "attractions": [
-            { "name": "Quần thể danh thắng Tràng An" },
-            { "name": "Cố đô Hoa Lư" },
-            { "name": "Hang Múa" },
-            { "name": "Tam Cốc - Bích Động" },
-            { "name": "Vườn quốc gia Cúc Phương" },
-            { "name": "Làng chài Ninh Hải" }
-        ]
+          "name": "Ninh Bình",
+          "attractions": [
+              { "name": "Quần thể danh thắng Tràng An" },
+              { "name": "Cố đô Hoa Lư" },
+              { "name": "Hang Múa" },
+              { "name": "Tam Cốc - Bích Động" },
+              { "name": "Vườn quốc gia Cúc Phương" },
+              { "name": "Làng chài Ninh Hải" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Ninh Bình Hidden Charm" },
+              { "name": "Khách sạn Mường Thanh Luxury Ninh Bình" },
+              { "name": "Khách sạn Emeralda Resort Ninh Bình" },
+              { "name": "Khách sạn Ninh Bình Legend" },
+              { "name": "Khách sạn Hoàng Sơn Peace" },
+              { "name": "Khách sạn The Reed Ninh Bình" },
+              { "name": "Khách sạn Tam Coc Garden Resort" },
+              { "name": "Khách sạn Aravinda Resort" },
+              { "name": "Khách sạn Tam Coc La Montagne Resort & Spa" },
+              { "name": "Khách sạn Vissai Hotel Ninh Bình" },
+              { "name": "Khách sạn Bai Dinh Garden Resort & Spa" },
+              { "name": "Khách sạn Ninh Binh Panorama Homestay" },
+              { "name": "Khách sạn Tam Coc Rice Fields Resort" },
+              { "name": "Khách sạn Ninh Binh Valley Homestay" },
+              { "name": "Khách sạn King Kong Homestay" },
+              { "name": "Khách sạn Chez Loan Hotel" },
+              { "name": "Khách sạn An's Eco Garden Resort" },
+              { "name": "Khách sạn Xuan Hoa Hotel" },
+              { "name": "Khách sạn Golden Season Hotel" },
+              { "name": "Khách sạn AIQ Hotel Ninh Bình" }
+          ]
       },
       {
-        "name": "Hà Giang",
-        "attractions": [
-            { "name": "Cao nguyên đá Đồng Văn" },
-            { "name": "Cột cờ Lũng Cú" },
-            { "name": "Cột cờ Lũng Cú" },
-            { "name": "Mèo Vạc" },
-            { "name": "Sông Nho Quế" },
-            { "name": "Đèo Mãi Pì Lèng" },
-            { "name": "Phố Cáo" }
-        ]
+          "name": "Hà Giang",
+          "attractions": [
+              { "name": "Cao nguyên đá Đồng Văn" },
+              { "name": "Cột cờ Lũng Cú" },
+              { "name": "Cột cờ Lũng Cú" },
+              { "name": "Mèo Vạc" },
+              { "name": "Sông Nho Quế" },
+              { "name": "Đèo Mãi Pì Lèng" },
+              { "name": "Phố Cáo" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Phoenix Hà Giang" },
+              { "name": "Khách sạn Hà Giang Resort" },
+              { "name": "Khách sạn Silk River Hotel Hà Giang" },
+              { "name": "Khách sạn Cao Nguyên Đá" },
+              { "name": "Khách sạn Royal Hà Giang" },
+              { "name": "Khách sạn Huy Hoàn" },
+              { "name": "Khách sạn Hoàng Su Phì Lodge" },
+              { "name": "Khách sạn Hà An" },
+              { "name": "Khách sạn Tiến Đạt" },
+              { "name": "Khách sạn Tam Giác Mạch" },
+              { "name": "Khách sạn Đá Vàng" },
+              { "name": "Khách sạn Đồng Văn" },
+              { "name": "Khách sạn Lâm Tùng" },
+              { "name": "Khách sạn Khánh Linh" },
+              { "name": "Khách sạn Bụi" },
+              { "name": "Khách sạn Hồng Hào" },
+              { "name": "Khách sạn Hà Giang Historic" },
+              { "name": "Khách sạn P'apiu Resort" },
+              { "name": "Khách sạn Ecolodge Pan Hou Village" },
+              { "name": "Khách sạn Hà Giang Creekside Homestay and Hostel" }
+          ]
       },
       {
-        "name": "Điện Biên",
-        "attractions": [
-            { "name": "Di tích chiến thắng Điện Biên Phủ" },
-            { "name": "Tượng đài chiến thắng Điện Biên Phủ" },
-            { "name": "Thung lũng Mường Than" },
-            { "name": "Đồi A1" },
-            { "name": "Chợ Mường Thanh" }
-        ]
+          "name": "Điện Biên",
+          "attractions": [
+              { "name": "Di tích chiến thắng Điện Biên Phủ" },
+              { "name": "Tượng đài chiến thắng Điện Biên Phủ" },
+              { "name": "Thung lũng Mường Than" },
+              { "name": "Đồi A1" },
+              { "name": "Chợ Mường Thanh" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Điện Biên Phủ" },
+              { "name": "Khách sạn Him Lam" },
+              { "name": "Khách sạn A1" },
+              { "name": "Khách sạn Công Đoàn Điện Biên" },
+              { "name": "Khách sạn Ruby" },
+              { "name": "Khách sạn Phương Nam" },
+              { "name": "Khách sạn Hà Nội - Điện Biên Phủ" },
+              { "name": "Khách sạn Điện Biên" },
+              { "name": "Khách sạn Sao Xanh" },
+              { "name": "Khách sạn Tây Bắc" },
+              { "name": "Khách sạn Victory Điện Biên" },
+              { "name": "Khách sạn Phú Gia" },
+              { "name": "Khách sạn Him Lam Resort" },
+              { "name": "Khách sạn Lan Anh" },
+              { "name": "Khách sạn Nhà khách UBND tỉnh Điện Biên" },
+              { "name": "Khách sạn Dân Tộc" },
+              { "name": "Khách sạn Golden Ruby Hotel" },
+              { "name": "Khách sạn Điện Biên Phủ" },
+              { "name": "Khách sạn Hồng Kỳ" },
+              { "name": "Khách sạn Thanh Bình" }
+          ]
       },
       {
-        "name": "Lạng Sơn",
-        "attractions": [
-            { "name": "Đền Mẫu Đồng Đăng" },
-            { "name": "Thành nhà Mạc" },
-            { "name": "Núi Tô Thị" },
-            { "name": "Chợ Kỳ Lừa" }
-        ]
+          "name": "Lạng Sơn",
+          "attractions": [
+              { "name": "Đền Mẫu Đồng Đăng" },
+              { "name": "Thành nhà Mạc" },
+              { "name": "Núi Tô Thị" },
+              { "name": "Chợ Kỳ Lừa" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Vinpearl Lạng Sơn" },
+              { "name": "Khách sạn Mường Thanh Lạng Sơn" },
+              { "name": "Khách sạn Hoàng Sơn" },
+              { "name": "Khách sạn Kim Sơn" },
+              { "name": "Khách sạn Hoàng Thịnh" },
+              { "name": "Khách sạn Hoa Sim" },
+              { "name": "Khách sạn Kim Lệ Dung" },
+              { "name": "Khách sạn Vạn Xuân" },
+              { "name": "Khách sạn A1 Lạng Sơn" },
+              { "name": "Khách sạn Nam Hoàng Đồng" },
+              { "name": "Khách sạn Công Đoàn Lạng Sơn" },
+              { "name": "Khách sạn Đại Dương" },
+              { "name": "Khách sạn White Hotel" },
+              { "name": "Khách sạn Hương Sơn" },
+              { "name": "Khách sạn Nhật Hà" },
+              { "name": "Khách sạn Sơn Hà" },
+              { "name": "Khách sạn Minh Quang" },
+              { "name": "Khách sạn Hoa Sen" },
+              { "name": "Khách sạn Song Long" },
+              { "name": "Khách sạn Thiên Phú" }
+          ]
       },
       {
-        "name": "Quảng Bình",
-        "attractions": [
-            { "name": "Vườn quốc gia Phong Nha - Kẻ Bàng" },
-            { "name": "Biển Nhật Lệ" },
-            { "name": "Vũng Chùa - Đảo Yến" },
-            { "name": "Suối nước Moọc" },
-            { "name": "Đèo Ngang" }
-        ]
+          "name": "Quảng Bình",
+          "attractions": [
+              { "name": "Vườn quốc gia Phong Nha - Kẻ Bàng" },
+              { "name": "Biển Nhật Lệ" },
+              { "name": "Vũng Chùa - Đảo Yến" },
+              { "name": "Suối nước Moọc" },
+              { "name": "Đèo Ngang" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Luxury Nhật Lệ" },
+              { "name": "Khách sạn Vinpearl Hotel Quảng Bình" },
+              { "name": "Khách sạn Sài Gòn Quảng Bình" },
+              { "name": "Khách sạn Royal Quảng Bình" },
+              { "name": "Khách sạn Cao Minh" },
+              { "name": "Khách sạn Osaka Quảng Bình" },
+              { "name": "Khách sạn Luxe Quảng Bình" },
+              { "name": "Khách sạn Amanda Quảng Bình" },
+              { "name": "Khách sạn Vĩnh Hoàng" },
+              { "name": "Khách sạn Riverside Hotel Quảng Bình" },
+              { "name": "Khách sạn Anh Linh 2" },
+              { "name": "Khách sạn CKC Thiên Đường" },
+              { "name": "Khách sạn Phú Cường Beach" },
+              { "name": "Khách sạn Tân Bình" },
+              { "name": "Khách sạn Ban Mai" },
+              { "name": "Khách sạn Nam Long Plus" },
+              { "name": "Khách sạn Luxe Villa" },
+              { "name": "Khách sạn Phương Nam" },
+              { "name": "Khách sạn Hoàng Linh" },
+              { "name": "Khách sạn Geminai Hotel & Cafe" }
+          ]
       },
       {
-        "name": "Quảng Ngãi",
-        "attractions": [
-            { "name": "Đảo Lý Sơn" },
-            { "name": "Cánh đồng muối Sa Huỳnh" },
-            { "name": "Núi Thiên Ấn" },
-            { "name": "Khu di tích lịch sử văn hóa Sa Huỳnh" }
-        ]
+          "name": "Quảng Ngãi",
+          "attractions": [
+              { "name": "Đảo Lý Sơn" },
+              { "name": "Cánh đồng muối Sa Huỳnh" },
+              { "name": "Núi Thiên Ấn" },
+              { "name": "Khu di tích lịch sử văn hóa Sa Huỳnh" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Holiday Lý Sơn" },
+              { "name": "Khách sạn Central Hotel Quảng Ngãi" },
+              { "name": "Khách sạn Sa Huỳnh Resort" },
+              { "name": "Khách sạn Thiên Ấn Riverside" },
+              { "name": "Khách sạn Cẩm Thành" },
+              { "name": "Khách sạn Petrosetco Tower" },
+              { "name": "Khách sạn Đảo Ngọc Lý Sơn" },
+              { "name": "Khách sạn Lý Sơn Pearl Island" },
+              { "name": "Khách sạn Mỹ Trà Riverside" },
+              { "name": "Khách sạn King Hotel" },
+              { "name": "Khách sạn Hùng Vương" },
+              { "name": "Khách sạn Đồng Khánh" },
+              { "name": "Khách sạn Hòa Bình" },
+              { "name": "Khách sạn Mỹ Khê" },
+              { "name": "Khách sạn Bình Hòa" },
+              { "name": "Khách sạn Central Ly Son" },
+              { "name": "Khách sạn Lý Sơn Holiday" },
+              { "name": "Khách sạn Saigon Quang Ngai" },
+              { "name": "Khách sạn Tân Thành" },
+              { "name": "Khách sạn Đông Trường Sơn" }
+          ]
       },
       {
-        "name": "Đắk Lắk",
-        "attractions": [
-            { "name": "Biển hồ T'Nưng" },
-            { "name": "Thác Đray Sáp" },
-            { "name": "Vườn quốc gia Chư Yang Sin" }
-        ]
+          "name": "Đắk Lắk",
+          "attractions": [
+              { "name": "Biển hồ T'Nưng" },
+              { "name": "Thác Đray Sáp" },
+              { "name": "Vườn quốc gia Chư Yang Sin" }
+          ],
+          "hotels": [
+              { "name": "Khách sạn Mường Thanh Luxury Buôn Ma Thuột" },
+              { "name": "Khách sạn Hai Bà Trưng" },
+              { "name": "Khách sạn Sài Gòn - Ban Mê" },
+              { "name": "Khách sạn Dakruco" },
+              { "name": "Khách sạn Biệt Điện" },
+              { "name": "Khách sạn Bazan Xanh" },
+              { "name": "Khách sạn Hoàng Lộc" },
+              { "name": "Khách sạn Thiên Đường" },
+              { "name": "Khách sạn Thanh Mai" },
+              { "name": "Khách sạn Đam San" },
+              { "name": "Khách sạn Eden" },
+              { "name": "Khách sạn Palama" },
+              { "name": "Khách sạn Cao Nguyên" },
+              { "name": "Khách sạn Hoàng Gia" },
+              { "name": "Khách sạn Hoàng Long" },
+              { "name": "Khách sạn Ngọc Vàng" },
+              { "name": "Khách sạn Elephants" }
+          ]
       }
-    ]
-  }
+  ]
+}

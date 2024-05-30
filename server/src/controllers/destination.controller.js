@@ -4,7 +4,8 @@ const Destination = require("../models/destination.model")
 const Attraction = require("../models/attraction.model")
 const fs = require("fs")
 const path = require('path');
-const { checkExistDestination } = require("../services/destination.service")
+const { checkExistDestination } = require("../services/destination.service");
+const Hotel = require("../models/hotel.model");
 const jsonFilePath = path.join(__dirname, '../data', 'destination_data.json');
 const cityFilePath = path.join(__dirname, '../data', 'city_data.json');
 const cityVNFilePath = path.join(__dirname, '../data', 'city_vi_data.json');
@@ -20,24 +21,57 @@ class DestinationController {
 
             if (!destination) {
                 const dest = await Destination.create({ name: destinationData.name})
-                console.log(`11111`, destinationData.attractions)
-                await Promise.all(destinationData.attractions.map(async attractionName => {
-                    const [attraction, createdAttraction] = await Attraction.findOrCreate({
-                        where: { name: attractionName.name},
-                        defaults: { name: attractionName.name, destination_id: dest.destination_id }
-                    })
-                }))
-            } else {
+                
+                // create attraction of destination
                 await Promise.all(destinationData.attractions.map(async attractionName => {
                     const [attraction, createdAttraction] = await Attraction.findOrCreate({
                         where: { name: attractionName.name},
                         defaults: { name: attractionName.name, destination_id: destination.destination_id }
                     })
                 }))
+
+                // create hotels of destination
+                await Promise.all(destinationData.hotels.map(async hotelInfo => {
+                    const [hotel, createdHotel] = await Hotel.findOrCreate({
+                        where: { 
+                            name: hotelInfo.name 
+                        },
+                        defaults: { 
+                            name: hotelInfo.name, 
+                            price: hotelInfo.price, 
+                            rating: hotelInfo.rating,
+                            destination_id: destination.destination_id
+                        }
+                    })  
+                })) 
+            } else {
+
+                // create attraction of destination
+                await Promise.all(destinationData.attractions.map(async attractionName => {
+                    const [attraction, createdAttraction] = await Attraction.findOrCreate({
+                        where: { name: attractionName.name},
+                        defaults: { name: attractionName.name, destination_id: destination.destination_id }
+                    })
+                }))
+
+                // create hotels of destination
+                await Promise.all(destinationData.hotels.map(async hotelInfo => {
+                    const [hotel, createdHotel] = await Hotel.findOrCreate({
+                        where: { 
+                            name: hotelInfo.name 
+                        },
+                        defaults: { 
+                            name: hotelInfo.name, 
+                            price: hotelInfo.price, 
+                            rating: hotelInfo.rating,
+                            destination_id: destination.destination_id
+                        }
+                    })  
+                })) 
             }
         }))
         return res.status(201).json({
-            message: "Create successfully!"
+            message: "Create attraction and hotel for destination successfully!"
         })
     }
 

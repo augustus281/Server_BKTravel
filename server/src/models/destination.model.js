@@ -3,6 +3,7 @@
 const { DataTypes, Model } = require("sequelize")
 const sequelize = require("../database/connect.mysql")
 const Attraction = require("./attraction.model")
+const Hotel = require("./hotel.model")
 
 class Destination extends Model {}
 
@@ -27,6 +28,6 @@ Destination.init({
     }
 }, { sequelize, modelName: 'destination' })
 
-
 Destination.hasMany(Attraction, { foreignKey: 'destination_id' })
+Destination.hasMany(Hotel, { foreignKey: "destination_id" })
 module.exports = Destination
