@@ -6,13 +6,11 @@ let querystring = require('qs');
 const crypto = require('crypto');
 const { findTourById } = require('../services/tour.service');
 const OrderItem = require('../models/order_item.model');
-const OrderTour  = require('../models/order_tour.model')
 const User = require('../models/user.model')
 const Order = require('../models/order.model');
 const { StatusOrder } = require('../common/index');
-const { updateTotalCart } = require('../services/cart.service');
 const { findVoucherById } = require('../services/voucher.service');
-const { Op } = require('sequelize');
+const axios = require("axios")
 const redis = require("redis")
 let redisClient;
 (async () => {
@@ -210,6 +208,72 @@ class PaymentController {
             res.send({ code: vnp_Params["vnp_ResponseCode"] });
         } else {
             res.send({ code: "97" });
+        }
+    }
+
+    // PAYMENT WITH MOMO
+    paymentWithMomo = async (req, res, next) => {
+        try {
+            var partnerCode = process.env.PARTNER_CODE;
+            var accessKey = process.env.ACCESS_KEY;
+            var secretkey = process.env.SECRETKEY;
+            var requestId = partnerCode + new Date().getTime();
+            var orderId = requestId;
+            var orderInfo = "pay with MoMo";
+            var redirectUrl = "https://momo.vn/return";
+            var ipnUrl = "https://callback.url/notify";
+            var amount = "50000";
+            var requestType = "captureWallet"
+            var extraData = ""; 
+
+            //before sign HMAC SHA256 with format
+            //accessKey=$accessKey&amount=$amount&extraData=$extraData&ipnUrl=$ipnUrl&orderId=$orderId&orderInfo=$orderInfo&partnerCode=$partnerCode&redirectUrl=$redirectUrl&requestId=$requestId&requestType=$requestType
+            var rawSignature = "accessKey="+accessKey+"&amount=" + amount+"&extraData=" + extraData+"&ipnUrl=" + ipnUrl+"&orderId=" + orderId+"&orderInfo=" + orderInfo+"&partnerCode=" + partnerCode +"&redirectUrl=" + redirectUrl+"&requestId=" + requestId+"&requestType=" + requestType
+
+            //signature
+            const crypto = require('crypto');
+            var signature = crypto.createHmac('sha256', secretkey)
+                .update(rawSignature)
+                .digest('hex');
+
+            //json object send to MoMo endpoint
+            const requestBody = JSON.stringify({
+                partnerCode : partnerCode,
+                accessKey : accessKey,
+                requestId : requestId,
+                amount : amount,
+                orderId : orderId,
+                orderInfo : orderInfo,
+                redirectUrl : redirectUrl,
+                ipnUrl : ipnUrl,
+                extraData : extraData,
+                requestType : requestType,
+                signature : signature,
+                lang: 'en'
+            });
+
+           
+            
+            // options for axios
+            const options = {
+                method: 'POST',
+                url: 'https://test-payment.momo.vn/v2/gateway/api/create',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Content-Length': Buffer.byteLength(requestBody),
+                },
+                data: requestBody,
+            };
+
+
+            // Send the request and handle the response
+            let result;
+            result = await axios(options);
+            console.log("1")
+            return res.status(200).json(result.data);
+    
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
         }
     }
 }

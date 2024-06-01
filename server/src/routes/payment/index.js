@@ -7,6 +7,7 @@ const paymentController = require('../../controllers/payment.controller')
 const { authenticate } = require("../../middlewares/authenticate")
 
 router.post("/", authenticate, asyncHandler(paymentController.createPaymentUrl))
+router.post("/momo", asyncHandler(paymentController.paymentWithMomo))
 router.get("/vnpay_ipn", authenticate, asyncHandler(paymentController.getResultPayment))
 
 module.exports = router
