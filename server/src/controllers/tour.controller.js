@@ -430,7 +430,6 @@ class TourController {
         }
     };
     
-
     getAllTours = async(req, res, next) => {
         try {
             const cachedData = await redisClient.get('tours');
@@ -787,6 +786,47 @@ class TourController {
             return res.status(200).json({
                 tours: tours
             })
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    // cancel tour 
+    cancelTour = async (req, res, next) => {
+        try {
+            const tour_id = req.params.tour_id
+            const tour = await findTourById(tour_id)
+            if (!tour) {
+                return res.status(404).json({ message: "Not found tour to cancel" })
+            }
+
+            const isSameDay = (date1, date2) => {
+                return date1.getFullYear() === date2.getFullYear() &&
+                    date1.getMonth() === date2.getMonth() &&
+                    date1.getDate() === date2.getDate();
+            };
+    
+            const current_date = new Date();
+
+            if (tour.deadline_book_time && isSameDay(current_date, new Date(tour.deadline_book_time))) {
+
+                const customer_count = await getCustomerCountForTour(tour_id);
+                const tour_capacity = tour.capacity;
+    
+                if (customer_count < (tour_capacity / 2)) {
+                    tour.status = StatusTour.WAITING;
+                    await tour.save();
+    
+                    redisClient.del("waiting_tours");
+                    redisClient.del("online_tours");
+    
+                    return res.status(200).json({
+                        message: "Tour has been cancelled due to insufficient customers!"
+                    });
+                }
+            }
+
+            return res.status(400).json({ message: "Failed to cancel tour!" })
         } catch (error) {
             return res.status(500).json({ message: error.message })
         }
