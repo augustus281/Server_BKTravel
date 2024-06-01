@@ -11,6 +11,7 @@ router.post("/carts", authenticate, asyncHandler(orderController.createOrderFrom
 router.post("/payments", authenticate, asyncHandler(orderController.payOrderDirectly))
 router.get("/:user_id/pending", authenticate, asyncHandler(orderController.getPendingOrderByUser))
 router.get("/:user_id/complete", authenticate, asyncHandler(orderController.getCompleteOrderByUser))
+router.get("/:user_id/canceled", authenticate, asyncHandler(orderController.getCanceledOrderByUser))
 router.post("/vouchers", authenticate, asyncHandler(orderController.applyVoucherToOrder))
 router.put("/vouchers", authenticate, asyncHandler(orderController.removeVoucherFromOrder))
 router.get("/:order_id", authenticate, asyncHandler(orderController.getDetailOrderByUser))
