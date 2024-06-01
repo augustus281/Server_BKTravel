@@ -153,7 +153,7 @@ class ScheduleController {
             }
     
             let scheduleDetails = schedule.schedule_detail;
-            schedule.schedule_detail = null;
+            schedule.schedule_detail = [];
             await schedule.save()
     
             for (const detailUpdate of schedule_detail) {
