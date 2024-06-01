@@ -211,6 +211,108 @@ class PaymentController {
         }
     }
 
+    refundPayment = async (req, res, next) => {
+        try {
+            const { order_id, payment_id } = req.body
+            const order = await Order.findOne({
+                where: {
+                    order_id: order_id,
+                    payment_id: payment_id
+                }
+            })
+            
+            if (!order) {
+                return res.status(404).json({ message: "Not found order to refund!" })
+            }
+
+            let date = new Date();
+            let createDate = moment(date).format('YYYYMMDDHHmmss');
+            process.env.TZ = 'Asia/Ho_Chi_Minh';
+        
+            let ipAddr = req.headers['x-forwarded-for'] ||
+            req.connection.remoteAddress ||
+            req.socket.remoteAddress ||
+            req.connection.socket.remoteAddress;
+        
+            let amount = order.total_to_pay;
+            let bankCode = 'NCB';
+
+            let vnpUrl = url;
+            let currCode = 'VND';
+            let vnp_Params = {};
+            vnp_Params['vnp_Version'] = '2.1.0';
+            vnp_Params['vnp_Command'] = 'pay';
+            vnp_Params['vnp_TmnCode'] = tmnCode;
+            vnp_Params['vnp_Locale'] = 'vn';
+            vnp_Params['vnp_CurrCode'] = currCode;
+            vnp_Params['vnp_TxnRef'] = payment_id;
+            vnp_Params['vnp_OrderInfo'] = `Hoàn tiên cho khách hàng ${order.name_customer}`;
+            vnp_Params['vnp_OrderType'] = 'other';
+            vnp_Params['vnp_Amount'] = amount * 100;
+            vnp_Params['vnp_ReturnUrl'] = returnUrl;
+            vnp_Params['vnp_IpAddr'] = ipAddr;
+            vnp_Params['vnp_CreateDate'] = createDate;
+            vnp_Params['vnp_BankCode'] = bankCode;
+        
+            vnp_Params = sortObject(vnp_Params);
+        
+            let signData = querystring.stringify(vnp_Params, { encode: false });
+            let hmac = crypto.createHmac("sha512", secretKey);
+            vnp_Params['vnp_SecureHash'] = hmac.update(Buffer.from(signData, 'utf-8')).digest("hex");
+            vnpUrl += '?' + querystring.stringify(vnp_Params, { encode: false });
+
+            return res.status(200).json({
+                link_payment: vnpUrl,
+                order: order
+            }) 
+        } catch (error) {
+            return res.status(500).json({ message: error.message })
+        }
+    }
+
+    getRefundPayment = async (req, res, next) => {
+        try {
+            const vnp_Params = req.query;
+            const secureHash = vnp_Params['vnp_SecureHash'];
+    
+            delete vnp_Params['vnp_SecureHash'];
+            delete vnp_Params['vnp_SecureHashType'];
+    
+            const sortedParams = sortObject(vnp_Params);
+    
+            const signData = querystring.stringify(sortedParams, { encode: false });  
+            
+            const hmac = crypto.createHmac("sha512", process.env.vnp_HashSecret);
+            const signed = hmac.update(Buffer.from(signData, 'utf-8')).digest("hex");
+    
+            if(secureHash === signed){
+                const orderId = vnp_Params['vnp_TxnRef'];
+                const rspCode = vnp_Params['vnp_ResponseCode'];
+                
+                if (rspCode === '00') {
+                    // convert status of order ---> COMPLETE
+                    const order = await Order.findOne({ where: { payment_id: orderId }})
+                    order.status = StatusOrder.CANCEL;
+                    await order.save()
+                    
+                    return res.status(200).json({ RspCode: '00', Message: 'You pay for order successfully!' });
+                } else {
+                    // convert status of order ---> FAILED
+                    const order = await Order.findOne({ where: { payment_id: orderId }})
+                    order.status = StatusOrder.FAILED;
+                    await order.save()
+
+                    return res.status(200).json({ RspCode: rspCode, Message: 'Transaction failed' });
+                }
+            } else {
+                return res.status(200).json({ RspCode: '97', Message: 'Fail checksum' });
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            return res.status(500).json({ message: "Internal server error" });
+        }
+    }
+
     // PAYMENT WITH MOMO
     paymentWithMomo = async (req, res, next) => {
         try {
