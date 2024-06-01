@@ -612,13 +612,19 @@
 					"response": []
 				},
 				{
-					"name": "Create payment url",
+					"name": "Payment with momo",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eS5uZ3V5ZW4yODAxMjAwMkBoY211dC5lZHUudm4iLCJyb2xlX3VzZXIiOiJjdXN0b21lciIsImlhdCI6MTcwNTg1OTEwMSwiZXhwIjoxNzA1ODYwOTAxfQ.CVQhYHm4g_-xFLV-rIezkRoyzOPogEkxm5nzrX6S930",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"order_items\": [2],\r\n    \"user_id\": 2\r\n}",
+							"raw": "{\r\n    \"order_id\": 15,\r\n    \"payment_id\": 22153706\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -626,7 +632,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/v1/users/payments",
+							"raw": "http://localhost:8080/api/v1/users/payment/refund",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -636,7 +642,8 @@
 								"api",
 								"v1",
 								"users",
-								"payments"
+								"payment",
+								"refund"
 							]
 						}
 					},
@@ -665,6 +672,84 @@
 								"users",
 								"payment",
 								"vnpay_ipn"
+							],
+							"query": [
+								{
+									"key": "vnp_Amount",
+									"value": "329637600"
+								},
+								{
+									"key": "vnp_BankCode",
+									"value": "NCB"
+								},
+								{
+									"key": "vnp_BankTranNo",
+									"value": "VNP14429097"
+								},
+								{
+									"key": "vnp_CardType",
+									"value": "ATM"
+								},
+								{
+									"key": "vnp_OrderInfo",
+									"value": "Thanh+toan+don+hang+ve+du+lich"
+								},
+								{
+									"key": "vnp_PayDate",
+									"value": "20240525132446"
+								},
+								{
+									"key": "vnp_ResponseCode",
+									"value": "00"
+								},
+								{
+									"key": "vnp_TmnCode",
+									"value": "7ONWQPBC"
+								},
+								{
+									"key": "vnp_TransactionNo",
+									"value": "14429097"
+								},
+								{
+									"key": "vnp_TransactionStatus",
+									"value": "00"
+								},
+								{
+									"key": "vnp_TxnRef",
+									"value": "25062436"
+								},
+								{
+									"key": "vnp_SecureHash",
+									"value": "e6c65ccd593d7e7ca390395b79cae93aaf6b0f3213eed8da373bd21871128550b19616082de59a202190fd68d2d57ec6e44f0d89bddcd29dabd1900e12303d22"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get result refund payment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJlbWFpbCI6Imh1eTI4MDExQGdtYWlsLmNvbSIsInJvbGVfdXNlciI6ImN1c3RvbWVyIiwiaWF0IjoxNzE1NjEwNTczLCJleHAiOjE3MTU2MTIzNzN9.Pjvx5eXT7H6IWVd65ed4Cn4Ew0byJiReofYcegOolXs"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/users/payment/refund?vnp_Amount=329637600&vnp_BankCode=NCB&vnp_BankTranNo=VNP14429097&vnp_CardType=ATM&vnp_OrderInfo=Thanh+toan+don+hang+ve+du+lich&vnp_PayDate=20240525132446&vnp_ResponseCode=00&vnp_TmnCode=7ONWQPBC&vnp_TransactionNo=14429097&vnp_TransactionStatus=00&vnp_TxnRef=25062436&vnp_SecureHash=e6c65ccd593d7e7ca390395b79cae93aaf6b0f3213eed8da373bd21871128550b19616082de59a202190fd68d2d57ec6e44f0d89bddcd29dabd1900e12303d22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"payment",
+								"refund"
 							],
 							"query": [
 								{
@@ -1990,7 +2075,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tour_id\": 20,\r\n    \"schedule_detail\": [\r\n  {\r\n    \"schedule_date\": \"Ngày 1\",\r\n    \"date\": \"08/03/2024\",\r\n    \"transport\": \"Xe máy, ô tô\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Ăn sáng\", \"status\": \"\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Ăn sáng ở nhà hàng\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Xóm rế\", \"status\": \"\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  },\r\n  {\r\n    \"schedule_date\": \"Ngày 2\",\r\n    \"transport\": \"Xe máy, ô tô\",\r\n    \"date\": \"09/03/2024\",\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Đập Đá\", \"status\": \"\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Đa cua\", \"status\": \"\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  }\r\n]\r\n}",
+							"raw": "{\r\n    \"tour_id\": 20,\r\n    \"schedule_detail\": [\r\n  {\r\n    \"schedule_date\": \"Ngày 1\",\r\n    \"date\": \"08/03/2024\",\r\n    \"transport\": [\"Xe máy\", \"Ô tô\"],\r\n    \"hotels\": [\"KS Khu A\"],\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Ăn sáng\", \"status\": \"\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Ăn sáng ở\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Xóm rế\", \"status\": \"\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  },\r\n  {\r\n    \"schedule_date\": \"Ngày 2\",\r\n    \"date\": \"09/03/2024\",\r\n    \"transport\": [\"Xe máy\", \"Ô tô\"],\r\n    \"hotels\": [\"KS Khu A\"],\r\n    \"detail\": [\r\n      {\"range_time\": \"8AM-10AM\", \"name\": \"Đập Đá\", \"status\": \"\", \"note\": \"Note for Cố Đô Huế\", \"description\": \"Description for Cố Đô Huế\"},\r\n      {\"range_time\": \"12AM-14PM\", \"name\": \"Đa cua\", \"status\": \"\", \"note\": \"Note for Chùa Thiên Mụ\", \"description\": \"Description for Chùa Thiên Mụ\"}\r\n    ]\r\n  }\r\n]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2293,7 +2378,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"tour_id\": 1,\r\n    \"schedule_detail\": [\r\n        {\r\n            \"date\": \"08/03/2024\",\r\n            \"detail\": [\r\n                {\r\n                    \"range_time\": \"8AM-10AM\",\r\n                    \"note\": \"Updated note for Cố Đô Huế\",\r\n                    \"status\": \"Next\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
+							"raw": "{\r\n    \"tour_id\": 20,\r\n    \"schedule_detail\": [\r\n        {\r\n            \"date\": \"08/03/2024\",\r\n            \"detail\": [\r\n                {\r\n                    \"range_time\": \"8AM-10AM\",\r\n                    \"note\": \"Updated note for Cố Đô Huế\",\r\n                    \"status\": \"Next\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
