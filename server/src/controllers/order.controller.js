@@ -380,6 +380,22 @@ class OrderController {
         })
     }
 
+    getCanceledOrderByUser = async (req, res, next) => {
+        const user_id = req.params.user_id;
+
+        const order = await Order.findAll({
+            where: { user_id: user_id, status: StatusOrder.CANCEL }
+        })
+
+        if (!order) 
+            return res.status(404).json({ message: "You don't have failed order"})
+
+        return res.status(200).json({
+            message: "Get failed order successfully!",
+            failed_orders: order
+        })
+    }
+
     getVoucherByOrderId = async (req, res, next) => {
         try {
             const order_id = req.params.order_id;
