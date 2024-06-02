@@ -299,7 +299,7 @@ class PaymentController {
                     // update slot tour
                     const orderItems = await OrderItem.findAll({
                         where: {
-                            order_id: order_id
+                            order_id: orderId
                         }
                     })
                     
