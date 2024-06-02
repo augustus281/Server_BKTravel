@@ -342,8 +342,7 @@ class UserController {
                 time,
                 max_number,
                 note,
-                user_id,
-                schedule_detail
+                user_id
             } = req.body
 
             const currentDate = new Date()
@@ -385,43 +384,8 @@ class UserController {
                 })
             }
 
-            
             await UserTour.create({
                 user_id: user_id,
-                tour_id: newTour.tour_id
-            })
-
-            // Create schedule for tour
-
-            for (const schedule of schedule_detail) {
-                for (const detail of schedule.detail) {
-                    const name = detail.name;
-
-                    const attraction = await Attraction.findOne({ where: { name: name }})
-                    if (!attraction) {
-                        let exist_attraction = await OtherAttraction.findOne({ where: { name: name }})
-                        if (!exist_attraction) {
-                            exist_attraction = await OtherAttraction.create({
-                                name: detail.name,
-                                note: detail.note || null,
-                                description: detail.description
-                            })
-                        }
-                        else {
-                            exist_attraction.note = detail.note || null;
-                            exist_attraction.description = detail.description;
-                            await exist_attraction.save()
-                        }
-                    }
-                    else {
-                        attraction.note = detail.note || null;
-                        attraction.description = detail.description;
-                        await attraction.save()
-                    }
-                }
-            }
-            const new_schedule = await Schedule.create({
-                schedule_detail: JSON.parse(JSON.stringify(schedule_detail)),
                 tour_id: newTour.tour_id
             })
 
@@ -432,8 +396,7 @@ class UserController {
                         tour_id: newTour.tour_id
                     },
                     include: [Destination, Attraction]
-                }),
-                schedule: new_schedule
+                })
             })
         } catch (error) {
             return res.status(500).json({ message: error.message })
