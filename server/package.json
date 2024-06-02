@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --recursive",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "vercel-build": "echo bktravel"
   },
   "keywords": [],
   "author": "",
