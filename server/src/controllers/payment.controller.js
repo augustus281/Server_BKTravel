@@ -306,7 +306,6 @@ class PaymentController {
                     for (const orderItem of orderItems) {
                         if (orderItem.is_updated_slot) {
                             const tourId = orderItem.tour_id
-                            console.log(`11111111111`, tourId)
                             const tour = await findTourById(tourId)
                             if (!tour) {
                                 return res.status(404).json({ 
