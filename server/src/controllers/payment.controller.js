@@ -299,13 +299,14 @@ class PaymentController {
                     // update slot tour
                     const orderItems = await OrderItem.findAll({
                         where: {
-                            order_id: orderId
+                            order_id: order.order_id
                         }
                     })
-                    
+                    console.log("orderItems", orderItems)
                     for (const orderItem of orderItems) {
                         if (orderItem.is_updated_slot) {
                             const tourId = orderItem.tour_id
+                            console.log(`11111111111`, tourId)
                             const tour = await findTourById(tourId)
                             if (!tour) {
                                 return res.status(404).json({ 
@@ -313,6 +314,7 @@ class PaymentController {
                                 })
                             }
                             tour.current_customers += orderItem.quantity
+                            console.log(1)
                             await tour.save()
 
                             orderItem.is_updated_slot = false;
