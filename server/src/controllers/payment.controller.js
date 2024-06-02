@@ -6,6 +6,7 @@ let querystring = require('qs');
 const crypto = require('crypto');
 const { findTourById } = require('../services/tour.service');
 const OrderItem = require('../models/order_item.model');
+const OrderTour = require('../models/order_tour.model')
 const User = require('../models/user.model')
 const Order = require('../models/order.model');
 const { StatusOrder } = require('../common/index');
@@ -295,6 +296,33 @@ class PaymentController {
                     order.status = StatusOrder.CANCEL;
                     await order.save()
                     
+                    // update slot tour
+                    const orderItems = await OrderItem.findAll({
+                        where: {
+                            order_id: order_id
+                        }
+                    })
+                    
+                    for (const orderItem of orderItems) {
+                        if (orderItem.is_updated_slot) {
+                            const tourId = orderItem.tour_id
+                            const tour = await findTourById(tourId)
+                            if (!tour) {
+                                return res.status(404).json({ 
+                                    message: "Not found tour in order item!"
+                                })
+                            }
+                            tour.current_customers += orderItem.quantity
+                            await tour.save()
+
+                            orderItem.is_updated_slot = false;
+                            await orderItem.save()
+                        }
+                        else {
+                            continue
+                        }
+                    }
+
                     return res.status(200).json({ RspCode: '00', Message: 'You pay for order successfully!' });
                 } else {
                     // convert status of order ---> FAILED
