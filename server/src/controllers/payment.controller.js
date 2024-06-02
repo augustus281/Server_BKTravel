@@ -302,7 +302,6 @@ class PaymentController {
                             order_id: order.order_id
                         }
                     })
-                    console.log("orderItems", orderItems)
                     for (const orderItem of orderItems) {
                         if (orderItem.is_updated_slot) {
                             const tourId = orderItem.tour_id
@@ -312,10 +311,11 @@ class PaymentController {
                                     message: "Not found tour in order item!"
                                 })
                             }
-                            tour.current_customers += orderItem.quantity
-                            console.log(1)
+                            tour.current_customers -= orderItem.quantity
+                            tour.booked_number -= orderItem.quantity
                             await tour.save()
 
+                            redisClient.del("online_tours")
                             orderItem.is_updated_slot = false;
                             await orderItem.save()
                         }
